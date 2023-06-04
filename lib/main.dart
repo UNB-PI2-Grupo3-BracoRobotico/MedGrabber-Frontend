@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grabber/features/template/template_page.dart';
+import 'package:grabber/config/router.dart';
+import 'package:grabber/config/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const TemplatePage(),
+      initialRoute: AppRoutes.initial,
+      routes: AppRouter.mapRoutes(),
     );
   }
 }
