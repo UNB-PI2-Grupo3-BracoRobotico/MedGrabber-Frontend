@@ -13,12 +13,15 @@ class DSButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(backgroundColor: kPrimary),
-      onPressed: onPressed,
-      child: Text(
-        label,
-        style: Theme.of(context).textTheme.titleMedium,
+    return SizedBox(
+      width: double.maxFinite,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(backgroundColor: kPrimary),
+        onPressed: onPressed,
+        child: Text(
+          label,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
       ),
     );
   }
