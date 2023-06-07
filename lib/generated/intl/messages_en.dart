@@ -23,6 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
-            MessageLookupByLibrary.simpleMessage("Continue")
+            MessageLookupByLibrary.simpleMessage("Continue"),
+        "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "setup_machine_error_description": MessageLookupByLibrary.simpleMessage(
+            "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team."),
+        "setup_machine_error_title":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "setup_machine_loading_title":
+            MessageLookupByLibrary.simpleMessage("Setting up your machine..."),
+        "setup_machine_success_title":
+            MessageLookupByLibrary.simpleMessage("Arm configurated!"),
+        "try_again": MessageLookupByLibrary.simpleMessage("Try again")
       };
 }

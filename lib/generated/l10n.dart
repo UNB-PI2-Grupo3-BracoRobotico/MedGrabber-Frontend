@@ -59,6 +59,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Try again`
+  String get try_again {
+    return Intl.message(
+      'Try again',
+      name: 'try_again',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help`
+  String get help {
+    return Intl.message(
+      'Help',
+      name: 'help',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting up your machine...`
+  String get setup_machine_loading_title {
+    return Intl.message(
+      'Setting up your machine...',
+      name: 'setup_machine_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arm configurated!`
+  String get setup_machine_success_title {
+    return Intl.message(
+      'Arm configurated!',
+      name: 'setup_machine_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get setup_machine_error_title {
+    return Intl.message(
+      'Something went wrong',
+      name: 'setup_machine_error_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team.`
+  String get setup_machine_error_description {
+    return Intl.message(
+      'It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team.',
+      name: 'setup_machine_error_description',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
