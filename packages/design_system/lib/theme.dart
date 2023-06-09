@@ -9,6 +9,9 @@ class CustomTheme {
       backgroundColor: kWhite,
       primaryColor: kPrimary,
       useMaterial3: true,
+      colorScheme: const ColorScheme.light().copyWith(
+        primary: kPrimary,
+      ),
       appBarTheme: const AppBarTheme(
         backgroundColor: kWhite,
         elevation: 0,

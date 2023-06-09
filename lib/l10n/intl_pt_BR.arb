@@ -1,0 +1,10 @@
+{
+    "continue_button_label": "Continuar",
+    "try_again": "Tentar novamente",
+    "help": "Ajuda",
+
+    "setup_machine_loading_title": "Configurando sua máquina...",
+    "setup_machine_success_title": "Braço configurado!",
+    "setup_machine_error_title": "Algo deu errado",
+    "setup_machine_error_description": "Não foi possível configurar sua máquina.\nTente novamente. Caso o erro persista,\ncontate nossa equipe."
+}
