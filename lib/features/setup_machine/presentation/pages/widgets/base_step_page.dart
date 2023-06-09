@@ -41,7 +41,7 @@ class StepBasePage extends StatelessWidget {
                 textAlign: TextAlign.justify,
               ),
               const Spacer(),
-              DSButton(
+              DSButton.primary(
                 onPressed: onPressed,
                 label: buttonLabel,
               ),

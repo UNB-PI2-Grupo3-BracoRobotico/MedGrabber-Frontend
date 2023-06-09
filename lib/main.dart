@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
       color: kWhite,
       title: 'grabber',
       theme: CustomTheme.getThemeData(),
-      initialRoute: AppRoutes.initial,
+      //TODO(Mauricio): Define initial page later on
+      initialRoute: AppRoutes.setup1,
       routes: AppRouter.mapRoutes(),
       supportedLocales: localizationsDelegate.supportedLocales,
       localizationsDelegates: const [
