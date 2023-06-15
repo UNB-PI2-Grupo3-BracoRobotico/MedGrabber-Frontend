@@ -119,6 +119,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Settings`
+  String get settings_title {
+    return Intl.message(
+      'Settings',
+      name: 'settings_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get settings_name_option_title {
+    return Intl.message(
+      'Name',
+      name: 'settings_name_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get settings_phone_option_title {
+    return Intl.message(
+      'Phone',
+      name: 'settings_phone_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get settings_address_option_title {
+    return Intl.message(
+      'Address',
+      name: 'settings_address_option_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

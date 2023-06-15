@@ -8,6 +8,7 @@ class CustomTheme {
       scaffoldBackgroundColor: kWhite,
       backgroundColor: kWhite,
       primaryColor: kPrimary,
+      splashColor: kPrimary,
       useMaterial3: true,
       colorScheme: const ColorScheme.light().copyWith(
         primary: kPrimary,

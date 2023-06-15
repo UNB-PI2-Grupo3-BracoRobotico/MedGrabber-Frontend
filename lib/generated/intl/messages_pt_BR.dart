@@ -24,6 +24,14 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
+        "settings_address_option_title":
+            MessageLookupByLibrary.simpleMessage("Endereço"),
+        "settings_name_option_title":
+            MessageLookupByLibrary.simpleMessage("Nome"),
+        "settings_phone_option_title":
+            MessageLookupByLibrary.simpleMessage("Telefone"),
+        "settings_title": MessageLookupByLibrary.simpleMessage("Configurações"),
         "setup_machine_error_description": MessageLookupByLibrary.simpleMessage(
             "Não foi possível configurar sua máquina.\nTente novamente. Caso o erro persista,\ncontate nossa equipe."),
         "setup_machine_error_title":

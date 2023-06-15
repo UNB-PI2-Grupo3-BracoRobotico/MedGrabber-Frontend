@@ -6,5 +6,10 @@
     "setup_machine_loading_title": "Setting up your machine...",
     "setup_machine_success_title": "Arm configurated!",
     "setup_machine_error_title": "Something went wrong",
-    "setup_machine_error_description": "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team."
+    "setup_machine_error_description": "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team.",
+
+    "settings_title": "Settings",
+    "settings_name_option_title": "Name",
+    "settings_phone_option_title": "Phone",
+    "settings_address_option_title": "Address"
 }

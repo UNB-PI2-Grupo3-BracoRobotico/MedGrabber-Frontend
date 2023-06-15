@@ -25,6 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "settings_address_option_title":
+            MessageLookupByLibrary.simpleMessage("Address"),
+        "settings_name_option_title":
+            MessageLookupByLibrary.simpleMessage("Name"),
+        "settings_phone_option_title":
+            MessageLookupByLibrary.simpleMessage("Phone"),
+        "settings_title": MessageLookupByLibrary.simpleMessage("Settings"),
         "setup_machine_error_description": MessageLookupByLibrary.simpleMessage(
             "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team."),
         "setup_machine_error_title":
