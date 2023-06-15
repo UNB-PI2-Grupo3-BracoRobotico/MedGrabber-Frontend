@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/navigation/example_home_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
+import 'package:grabber/features/settings/pages/settings_page.dart';
 import 'package:grabber/features/setup_machine/presentation/blocs/setup_status/setup_status_bloc.dart';
 import 'package:grabber/features/setup_machine/presentation/pages/step_final.dart';
 
@@ -21,6 +22,7 @@ abstract class AppRouter {
           ),
       //TODO(Mauricio): Change for actual home page later
       AppRoutes.home: (_) => const ExampleHomePage(),
+      AppRoutes.settings: (_) => const SettingsPage(),
     };
   }
 }
