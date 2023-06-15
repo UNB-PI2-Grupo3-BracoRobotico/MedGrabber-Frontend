@@ -17,10 +17,6 @@ class CustomTheme {
         backgroundColor: kWhite,
         elevation: 0,
         centerTitle: false,
-        titleTextStyle: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.normal,
-        ),
       ),
       textTheme: const TextTheme(
         bodySmall: TextStyle(
