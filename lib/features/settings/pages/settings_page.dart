@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/settings/widgets/option_tile.dart';
 
 import '../../../generated/l10n.dart';
@@ -30,8 +31,9 @@ class SettingsPage extends StatelessWidget {
               OptionTile(
                 title: S.current.settings_name_option_title,
                 icon: Icons.account_circle_outlined,
-                //TODO(Mauricio): Implement onTap
-                onTap: () {},
+                onTap: () => Navigator.of(context).pushNamed(
+                  AppRoutes.settingsName,
+                ),
               ),
               const VerticalGap.xxs(),
               OptionTile(
