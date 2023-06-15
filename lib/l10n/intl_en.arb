@@ -2,6 +2,7 @@
     "continue_button_label": "Continue",
     "try_again": "Try again",
     "help": "Help",
+    "save": "Save",
 
     "setup_machine_loading_title": "Setting up your machine...",
     "setup_machine_success_title": "Arm configurated!",
@@ -11,5 +12,7 @@
     "settings_title": "Settings",
     "settings_name_option_title": "Name",
     "settings_phone_option_title": "Phone",
-    "settings_address_option_title": "Address"
+    "settings_address_option_title": "Address",
+    "name_page_title": "Store's Name",
+    "name_page_description": "Modify your store's name so that clients can see the updated name.\nYour name must follow these <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>"
 }

@@ -25,6 +25,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "name_page_description": MessageLookupByLibrary.simpleMessage(
+            "Modify your store\'s name so that clients can see the updated name.\nYour name must follow this <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>"),
+        "name_page_title":
+            MessageLookupByLibrary.simpleMessage("Store\'s Name"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),
         "settings_name_option_title":

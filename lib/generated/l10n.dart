@@ -80,6 +80,16 @@ class S {
     );
   }
 
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Setting up your machine...`
   String get setup_machine_loading_title {
     return Intl.message(
@@ -155,6 +165,26 @@ class S {
     return Intl.message(
       'Address',
       name: 'settings_address_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Store's Name`
+  String get name_page_title {
+    return Intl.message(
+      'Store\'s Name',
+      name: 'name_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modify your store's name so that clients can see the updated name.\nYour name must follow this <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>`
+  String get name_page_description {
+    return Intl.message(
+      'Modify your store\'s name so that clients can see the updated name.\nYour name must follow this <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>',
+      name: 'name_page_description',
       desc: '',
       args: [],
     );
