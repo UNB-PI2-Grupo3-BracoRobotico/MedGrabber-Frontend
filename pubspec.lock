@@ -169,6 +169,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.5"
+  dartz:
+    dependency: "direct main"
+    description:
+      name: dartz
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.10.1"
   design_system:
     dependency: "direct main"
     description:
@@ -209,6 +216,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_animate:
+    dependency: "direct main"
+    description:
+      name: flutter_animate
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.1+1"
   flutter_bloc:
     dependency: "direct main"
     description:
@@ -254,6 +268,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "7.6.0"
   glob:
     dependency: transitive
     description:
@@ -289,6 +310,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
+  injectable:
+    dependency: "direct main"
+    description:
+      name: injectable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.2"
+  injectable_generator:
+    dependency: "direct main"
+    description:
+      name: injectable_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.6"
   intl:
     dependency: "direct main"
     description:
@@ -443,6 +478,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.3"
+  recase:
+    dependency: transitive
+    description:
+      name: recase
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.0"
   shelf:
     dependency: transitive
     description:
