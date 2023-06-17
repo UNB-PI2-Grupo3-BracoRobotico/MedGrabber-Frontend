@@ -9,11 +9,13 @@ class BaseOptionPage extends StatelessWidget {
     required this.title,
     required this.content,
     required this.onContinueTap,
+    this.buttonEnabled = true,
   });
 
   final String title;
   final Widget content;
   final VoidCallback onContinueTap;
+  final bool buttonEnabled;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +48,7 @@ class BaseOptionPage extends StatelessWidget {
               DSButton.primary(
                 onPressed: onContinueTap,
                 label: S.current.save,
+                enabled: buttonEnabled,
               ),
             ],
           ),
