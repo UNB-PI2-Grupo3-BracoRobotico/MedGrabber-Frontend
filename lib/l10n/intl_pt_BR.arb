@@ -13,6 +13,14 @@
     "settings_name_option_title": "Nome",
     "settings_phone_option_title": "Telefone",
     "settings_address_option_title": "Endereço",
+
     "name_page_title": "Nome da Loja",
-    "name_page_description": "Modifique o nome da loja que seus clientes irão enxergar durante as compras.\nSeu nome deve seguir algumas <bold>regras:\n• Não pode começar com números\n• Deve ter ao máximo 25 caracteres</bold>"
+    "name_page_description": "Modifique o nome da loja que seus clientes irão enxergar durante as compras.\nSeu nome deve seguir algumas <bold>regras:\n• Não pode começar com números\n• Deve ter ao máximo 25 caracteres</bold>",
+    "name_page_field_error_cannot_start_with_number": "O nome da loja não pode começar com número",
+    "name_error_page_title": "Algo deu errado",
+    "name_error_page_description": "Nós não conseguimos atualizar o nome da sua loja.\nPor favor, tente novamente ou troque o nome inserido.",
+    "name_error_page_primary_button_label": "Tentar novamente",
+    "name_error_page_secondary_button_label": "Trocar nome",
+    "name_loading_page_title": "Atualizando o nome da sua loja...",
+    "name_success_page_title": "Nome da loja atulizado!"
 }

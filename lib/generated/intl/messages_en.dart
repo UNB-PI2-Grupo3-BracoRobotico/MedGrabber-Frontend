@@ -25,10 +25,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "name_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "We couldn\'t update your store\'s name.\nPlease try again or change the inserted name."),
+        "name_error_page_primary_button_label":
+            MessageLookupByLibrary.simpleMessage("Try again"),
+        "name_error_page_secondary_button_label":
+            MessageLookupByLibrary.simpleMessage("Change name"),
+        "name_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "name_loading_page_title": MessageLookupByLibrary.simpleMessage(
+            "Updating your store\'s name..."),
         "name_page_description": MessageLookupByLibrary.simpleMessage(
-            "Modify your store\'s name so that clients can see the updated name.\nYour name must follow this <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>"),
+            "Modify your store\'s name so that clients can see the updated name.\nYour name must follow these <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>"),
+        "name_page_field_error_cannot_start_with_number":
+            MessageLookupByLibrary.simpleMessage(
+                "The store name cannot start with number"),
         "name_page_title":
             MessageLookupByLibrary.simpleMessage("Store\'s Name"),
+        "name_success_page_title":
+            MessageLookupByLibrary.simpleMessage("Store name updated!"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),
