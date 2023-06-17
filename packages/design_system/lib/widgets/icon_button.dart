@@ -1,4 +1,3 @@
-import 'package:design_system/spacing.dart';
 import 'package:flutter/material.dart';
 
 import '../icons/ds_icons.dart';
