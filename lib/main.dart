@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:grabber/config/routes/router.dart';
 import 'package:grabber/config/routes/routes.dart';
+import 'package:grabber/core/injection.dart';
 
 import 'core/app_localizations_delegate.dart';
 import 'generated/l10n.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependecies();
   runApp(const MyApp());
 }
 
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'grabber',
       theme: CustomTheme.getThemeData(),
       //TODO(Mauricio): Define initial page later on
-      initialRoute: AppRoutes.setup1,
+      initialRoute: AppRoutes.settings,
       routes: AppRouter.mapRoutes(),
       supportedLocales: localizationsDelegate.supportedLocales,
       localizationsDelegates: const [
