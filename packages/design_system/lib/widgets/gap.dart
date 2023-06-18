@@ -50,27 +50,27 @@ class HorizontalGap extends StatelessWidget {
 
   final double size;
 
-  const HorizontalGap.kSpacingQuarck({super.key}) : size = kSpacingQuarck;
+  const HorizontalGap.quarck({super.key}) : size = kSpacingQuarck;
 
-  const HorizontalGap.kSpacingNano({super.key}) : size = kSpacingNano;
+  const HorizontalGap.nano({super.key}) : size = kSpacingNano;
 
-  const HorizontalGap.kSpacingXXXS({super.key}) : size = kSpacingXXXS;
+  const HorizontalGap.xxxs({super.key}) : size = kSpacingXXXS;
 
-  const HorizontalGap.kSpacingXXS({super.key}) : size = kSpacingXXS;
+  const HorizontalGap.xxs({super.key}) : size = kSpacingXXS;
 
-  const HorizontalGap.kSpacingXS({super.key}) : size = kSpacingXS;
+  const HorizontalGap.xs({super.key}) : size = kSpacingXS;
 
-  const HorizontalGap.kSpacingSM({super.key}) : size = kSpacingSM;
+  const HorizontalGap.sm({super.key}) : size = kSpacingSM;
 
-  const HorizontalGap.kSpacingMD({super.key}) : size = kSpacingMD;
+  const HorizontalGap.md({super.key}) : size = kSpacingMD;
 
-  const HorizontalGap.kSpacingLG({super.key}) : size = kSpacingLG;
+  const HorizontalGap.lg({super.key}) : size = kSpacingLG;
 
-  const HorizontalGap.kSpacingXL({super.key}) : size = kSpacingXL;
+  const HorizontalGap.xl({super.key}) : size = kSpacingXL;
 
-  const HorizontalGap.kSpacingXXL({super.key}) : size = kSpacingXXL;
+  const HorizontalGap.xxl({super.key}) : size = kSpacingXXL;
 
-  const HorizontalGap.kSpacingXXXL({super.key}) : size = kSpacingXXXL;
+  const HorizontalGap.xxxl({super.key}) : size = kSpacingXXXL;
 
   const HorizontalGap.kSpacingHuge({super.key}) : size = kSpacingHuge;
 

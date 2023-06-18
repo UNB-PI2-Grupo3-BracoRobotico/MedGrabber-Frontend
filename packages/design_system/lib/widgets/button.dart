@@ -8,28 +8,37 @@ class DSButton extends StatelessWidget {
     required this.onPressed,
     required this.label,
     required this.style,
+    this.textColor,
   });
 
   final VoidCallback onPressed;
   final String label;
   final ButtonStyle? style;
+  final Color? textColor;
 
   factory DSButton.primary({
     required VoidCallback onPressed,
     required String label,
+    bool enabled = true,
   }) {
     return DSButton(
       onPressed: onPressed,
       label: label,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: kPrimary,
-      ),
+      style: enabled
+          ? ElevatedButton.styleFrom(
+              backgroundColor: kPrimary,
+            )
+          : ElevatedButton.styleFrom(
+              backgroundColor: kDisabledPrimary,
+            ),
+      textColor: enabled ? null : kDisabledText,
     );
   }
 
   factory DSButton.outlined({
     required VoidCallback onPressed,
     required String label,
+    bool enabled = true,
   }) {
     return DSButton(
       onPressed: onPressed,
@@ -40,11 +49,12 @@ class DSButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             kSpacingXS,
           ),
-          side: const BorderSide(
-            color: kBlack,
+          side: BorderSide(
+            color: enabled ? kBlack : kDisabledText,
           ),
         ),
       ),
+      textColor: enabled ? null : kDisabledText,
     );
   }
 
@@ -57,7 +67,9 @@ class DSButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           label,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: textColor,
+              ),
         ),
       ),
     );

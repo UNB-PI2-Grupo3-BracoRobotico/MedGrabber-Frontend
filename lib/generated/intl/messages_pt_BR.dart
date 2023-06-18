@@ -24,6 +24,33 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
+        "name_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos atualizar o nome da sua loja.\nPor favor, tente novamente ou troque o nome inserido."),
+        "name_error_page_primary_button_label":
+            MessageLookupByLibrary.simpleMessage("Tentar novamente"),
+        "name_error_page_secondary_button_label":
+            MessageLookupByLibrary.simpleMessage("Trocar nome"),
+        "name_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Algo deu errado"),
+        "name_loading_page_title": MessageLookupByLibrary.simpleMessage(
+            "Atualizando o nome da sua loja..."),
+        "name_page_description": MessageLookupByLibrary.simpleMessage(
+            "Modifique o nome da loja que seus clientes irão enxergar durante as compras.\nSeu nome deve seguir algumas <bold>regras:\n• Não pode começar com números\n• Deve ter ao máximo 25 caracteres</bold>"),
+        "name_page_field_error_cannot_start_with_number":
+            MessageLookupByLibrary.simpleMessage(
+                "O nome da loja não pode começar com número"),
+        "name_page_title": MessageLookupByLibrary.simpleMessage("Nome da Loja"),
+        "name_success_page_title":
+            MessageLookupByLibrary.simpleMessage("Nome da loja atulizado!"),
+        "save": MessageLookupByLibrary.simpleMessage("Salvar"),
+        "settings_address_option_title":
+            MessageLookupByLibrary.simpleMessage("Endereço"),
+        "settings_name_option_title":
+            MessageLookupByLibrary.simpleMessage("Nome"),
+        "settings_phone_option_title":
+            MessageLookupByLibrary.simpleMessage("Telefone"),
+        "settings_title": MessageLookupByLibrary.simpleMessage("Configurações"),
         "setup_machine_error_description": MessageLookupByLibrary.simpleMessage(
             "Não foi possível configurar sua máquina.\nTente novamente. Caso o erro persista,\ncontate nossa equipe."),
         "setup_machine_error_title":

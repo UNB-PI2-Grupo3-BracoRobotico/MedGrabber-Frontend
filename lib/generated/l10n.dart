@@ -80,6 +80,16 @@ class S {
     );
   }
 
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Setting up your machine...`
   String get setup_machine_loading_title {
     return Intl.message(
@@ -115,6 +125,136 @@ class S {
     return Intl.message(
       'It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team.',
       name: 'setup_machine_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings_title {
+    return Intl.message(
+      'Settings',
+      name: 'settings_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get settings_name_option_title {
+    return Intl.message(
+      'Name',
+      name: 'settings_name_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get settings_phone_option_title {
+    return Intl.message(
+      'Phone',
+      name: 'settings_phone_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get settings_address_option_title {
+    return Intl.message(
+      'Address',
+      name: 'settings_address_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Store's Name`
+  String get name_page_title {
+    return Intl.message(
+      'Store\'s Name',
+      name: 'name_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modify your store's name so that clients can see the updated name.\nYour name must follow these <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>`
+  String get name_page_description {
+    return Intl.message(
+      'Modify your store\'s name so that clients can see the updated name.\nYour name must follow these <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>',
+      name: 'name_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The store name cannot start with number`
+  String get name_page_field_error_cannot_start_with_number {
+    return Intl.message(
+      'The store name cannot start with number',
+      name: 'name_page_field_error_cannot_start_with_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get name_error_page_title {
+    return Intl.message(
+      'Something went wrong',
+      name: 'name_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We couldn't update your store's name.\nPlease try again or change the inserted name.`
+  String get name_error_page_description {
+    return Intl.message(
+      'We couldn\'t update your store\'s name.\nPlease try again or change the inserted name.',
+      name: 'name_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get name_error_page_primary_button_label {
+    return Intl.message(
+      'Try again',
+      name: 'name_error_page_primary_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change name`
+  String get name_error_page_secondary_button_label {
+    return Intl.message(
+      'Change name',
+      name: 'name_error_page_secondary_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating your store's name...`
+  String get name_loading_page_title {
+    return Intl.message(
+      'Updating your store\'s name...',
+      name: 'name_loading_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Store name updated!`
+  String get name_success_page_title {
+    return Intl.message(
+      'Store name updated!',
+      name: 'name_success_page_title',
       desc: '',
       args: [],
     );

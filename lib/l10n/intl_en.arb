@@ -2,9 +2,26 @@
     "continue_button_label": "Continue",
     "try_again": "Try again",
     "help": "Help",
+    "save": "Save",
 
     "setup_machine_loading_title": "Setting up your machine...",
     "setup_machine_success_title": "Arm configurated!",
     "setup_machine_error_title": "Something went wrong",
-    "setup_machine_error_description": "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team."
+    "setup_machine_error_description": "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team.",
+
+    "settings_title": "Settings",
+    "settings_name_option_title": "Name",
+    "settings_phone_option_title": "Phone",
+    "settings_address_option_title": "Address",
+
+    "name_page_title": "Store's Name",
+    "name_page_description": "Modify your store's name so that clients can see the updated name.\nYour name must follow these <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>",
+    "name_page_field_error_cannot_start_with_number": "The store name cannot start with number",
+    "name_error_page_title": "Something went wrong",
+    "name_error_page_description": "We couldn't update your store's name.\nPlease try again or change the inserted name.",
+    "name_error_page_primary_button_label": "Try again",
+    "name_error_page_secondary_button_label": "Change name",
+    "name_loading_page_title": "Updating your store's name...",
+    "name_success_page_title": "Store name updated!"
+
 }
