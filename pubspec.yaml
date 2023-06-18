@@ -44,6 +44,12 @@ dependencies:
   freezed_annotation: ^2.2.0
   equatable: ^2.0.5
   json_serializable: ^6.6.1
+  styled_text: ^6.0.0
+  flutter_animate: ^4.1.1+1
+  injectable: ^2.1.2
+  injectable_generator: ^2.1.6
+  get_it: ^7.6.0
+  dartz: ^0.10.1
 
 dev_dependencies:
   flutter_test:
