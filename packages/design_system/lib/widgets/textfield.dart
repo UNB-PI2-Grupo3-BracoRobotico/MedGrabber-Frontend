@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../colors.dart';
 import '../icons/ds_icons.dart';
@@ -17,6 +18,8 @@ class DSTextField extends StatefulWidget {
     required this.controller,
     this.maxLength,
     this.borderColor = kDarkGrey,
+    this.keyboardType,
+    this.inputFormatters,
   }) : super(key: key);
 
   final String label;
@@ -26,6 +29,8 @@ class DSTextField extends StatefulWidget {
   final TextEditingController controller;
   final int? maxLength;
   final Color borderColor;
+  final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
 
   final void Function(String)? onChanged;
 
@@ -114,6 +119,8 @@ class _DSTextFieldState extends State<DSTextField> {
                 focusedBorder: _defaultBorder,
                 enabledBorder: _defaultBorder,
               ),
+              keyboardType: widget.keyboardType ?? TextInputType.text,
+              inputFormatters: widget.inputFormatters,
             ),
             const VerticalGap.quarck(),
             if (hasError)
