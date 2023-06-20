@@ -90,6 +90,34 @@ class S {
     );
   }
 
+String get onboarding_initial_tile {
+  return Intl.message(
+      'Bem vindo ao Grabber',
+      name: 'onboarding_initial_tile ',
+      desc: '',
+      args: [],
+    );
+}
+
+String get onboarding_description_tile {
+  return Intl.message(
+      'Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência.',
+      name: 'onboarding_description_tile ',
+      desc: '',
+      args: [],
+    );
+}
+
+/// `Updating your store's name...`
+  String get onboarding_token_validating_title {
+    return Intl.message(
+      'Validating your token connection',
+      name: 'name_loading_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Setting up your machine...`
   String get setup_machine_loading_title {
     return Intl.message(
