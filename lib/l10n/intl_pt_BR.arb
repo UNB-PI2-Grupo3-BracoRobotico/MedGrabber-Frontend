@@ -3,6 +3,7 @@
     "try_again": "Tentar novamente",
     "help": "Ajuda",
     "save": "Salvar",
+    "got_it": "Entendi",
 
     "setup_machine_loading_title": "Configurando sua máquina...",
     "setup_machine_success_title": "Braço configurado!",
@@ -22,5 +23,14 @@
     "name_error_page_primary_button_label": "Tentar novamente",
     "name_error_page_secondary_button_label": "Trocar nome",
     "name_loading_page_title": "Atualizando o nome da sua loja...",
-    "name_success_page_title": "Nome da loja atulizado!"
+    "name_success_page_title": "Nome da loja atulizado!",
+
+    "phone_page_title": "Telefone",
+    "phone_page_description": "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras.",
+    "phone_page_error_bottomsheet_title": "Número invalido",
+    "phone_page_error_bottomsheet_description": "Verifique novamente o número inserido. Lembrando, o número inserido deve ser do Brasil.",
+    "phone_page_error_page_title": "Algo deu errado",
+    "phone_page_error_page_description": "Não foi possível atualizar seu número de telefone.\nTente novamente, caso o erro persista, contate nossa equipe.",
+    "phone_page_success_title": "Número de telefone atualizado!",
+    "phone_page_loading_title": "Atualizando o número do seu telefone..."
 }

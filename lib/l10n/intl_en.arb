@@ -3,6 +3,7 @@
     "try_again": "Try again",
     "help": "Help",
     "save": "Save",
+    "got_it": "Got it",
 
     "setup_machine_loading_title": "Setting up your machine...",
     "setup_machine_success_title": "Arm configurated!",
@@ -22,6 +23,14 @@
     "name_error_page_primary_button_label": "Try again",
     "name_error_page_secondary_button_label": "Change name",
     "name_loading_page_title": "Updating your store's name...",
-    "name_success_page_title": "Store name updated!"
+    "name_success_page_title": "Store name updated!",
 
+    "phone_page_title": "Phone Number",
+    "phone_page_description": "Modify the number of your store to keep clients informed during their purchases.",
+    "phone_page_error_bottomsheet_title": "Invalid number",
+    "phone_page_error_bottomsheet_description": "Please recheck the phone number you inserted.\nJust to remember the phone number must be from Brazil.",
+    "phone_page_error_page_title": "Something went wrong",
+    "phone_page_error_page_description": "It wasn't possible to update your phone number.\nTry again, if the error persists, contact our team.",
+    "phone_page_success_title": "Phone number updated!",
+    "phone_page_loading_title": "Updating your phone number..."
 }
