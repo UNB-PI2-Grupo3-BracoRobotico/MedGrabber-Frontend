@@ -50,6 +50,7 @@ dependencies:
   injectable_generator: ^2.1.6
   get_it: ^7.6.0
   dartz: ^0.10.1
+  mask_text_input_formatter: ^2.4.0
 
 dev_dependencies:
   flutter_test:
