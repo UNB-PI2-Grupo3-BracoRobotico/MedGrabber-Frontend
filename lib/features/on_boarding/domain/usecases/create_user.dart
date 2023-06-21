@@ -16,9 +16,11 @@ class CreateUserImpl implements CreateUser {
   // final SettingsRepository repository;
 
   CreateUserImpl();
-
+  
   @override
-  Future<Option<Failure>> call(String storeName) async {
-    return const None();
+  Future<Option<Failure>> call(String token, String storeName, String phoneNumber) {
+    // TODO: implement call
+    throw UnimplementedError();
   }
+
 }

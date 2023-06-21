@@ -1,13 +1,13 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grabber/features/on_boarding/pages/token/bloc/on_boarding_token_cubit.dart';
 import 'package:grabber/features/on_boarding/pages/widgets/on_boarding_base_page.dart';
-import 'package:grabber/features/on_boarding/token/bloc/on_boarding_token_cubit.dart';
-import 'package:grabber/features/settings/pages/phone_option/widgets/phone_number_error_footer.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:grabber/generated/l10n.dart';
+import 'package:styled_text/styled_text.dart';
 
 class OnBoardingTokenPage extends StatefulWidget {
   const OnBoardingTokenPage({super.key});
@@ -48,10 +48,10 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
       builder: (_, state) {
         return state.when(
           loading: () => BaseLoadingPage(
-            title: S.current.phone_page_loading_title,
+            title: S.current.token_page_loading_title,
           ),
           success: () => BaseSuccessPage(
-            title: S.current.phone_page_success_title,
+            title: S.current.token_page_success_title,
             canPop: false,
           ),
           error: () => BaseErrorPage(

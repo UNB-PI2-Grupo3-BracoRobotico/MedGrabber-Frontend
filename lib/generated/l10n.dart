@@ -59,6 +59,7 @@ class S {
       args: [],
     );
   }
+
   /// `Continue`
   String get start_button_label {
     return Intl.message(
@@ -117,7 +118,7 @@ class S {
     );
   }
 
-    /// `Phone Number`
+  /// `token`
   String get token_page_title {
     return Intl.message(
       'Código da máquina',
@@ -127,6 +128,25 @@ class S {
     );
   }
 
+  /// `Token connected!`
+  String get token_page_success_title {
+    return Intl.message(
+      'Token conectado com braço!',
+      name: 'token_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating your token...`
+  String get token_page_loading_title {
+    return Intl.message(
+      'Conectando com a máquina...',
+      name: 'token_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
 
   /// `Updating your store's name...`
   String get onboarding_token_validating_title {

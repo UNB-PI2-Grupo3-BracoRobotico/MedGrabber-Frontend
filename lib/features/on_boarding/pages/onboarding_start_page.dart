@@ -3,11 +3,11 @@ import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/on_boarding/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/generated/l10n.dart';
 
-class OnBoardinStartPage extends StatelessWidget {
-  final TabController tabController;
-  const OnBoardinStartPage({
+class OnBoardingStartPage extends StatelessWidget {
+  // final TabController tabController;
+  const OnBoardingStartPage({
     Key? key,
-    required this.tabController,
+    // required this.tabController,
   }) : super(key: key);
 
   @override
@@ -17,15 +17,15 @@ class OnBoardinStartPage extends StatelessWidget {
       content: Column(
         children: [
           Text(
-                S.current.onboarding_description_tile,
-                style: Theme.of(context).textTheme.bodyMedium,
-                textAlign: TextAlign.justify,
-              ),
+            S.current.onboarding_description_tile,
+            style: Theme.of(context).textTheme.bodyMedium,
+            textAlign: TextAlign.justify,
+          ),
         ],
       ),
-      onPressed: () {
-        tabController.animateTo(tabController.index+1);
-      },
+      onPressed: () => Navigator.of(context).pushNamed(
+        AppRoutes.onBoardingToken,
+      ),// tabController.animateTo(tabController.index + 1);
       buttonLabel: S.current.start_button_label,
     );
   }

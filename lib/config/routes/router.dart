@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/navigation/example_home_page.dart';
-import 'package:grabber/features/on_boarding/pages/on_boarding_page.dart';
-import 'package:grabber/features/on_boarding/pages/on_boarding_page.dart';
+import 'package:grabber/features/on_boarding/domain/usecases/register_token.dart';
+import 'package:grabber/features/on_boarding/pages/onboarding_start_page.dart';
+import 'package:grabber/features/on_boarding/pages/onboarding_token_page.dart';
+import 'package:grabber/features/on_boarding/pages/token/bloc/on_boarding_token_cubit.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
 import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
 import 'package:grabber/features/settings/pages/settings_page.dart';
@@ -19,7 +21,13 @@ import '../../features/setup_machine/presentation/pages/step_2.dart';
 abstract class AppRouter {
   static Map<String, Widget Function(BuildContext)> mapRoutes() {
     return {
-      AppRoutes.onBoarding: (_) => OnBoardingPage(),
+      AppRoutes.onBoarding: (_) => const OnBoardingStartPage(),
+      AppRoutes.onBoardingToken: (_) => BlocProvider(
+            create: (_) => OnBoardingTokenCubit(
+                // registerToken: getIt.get(),
+                ),
+            child: const OnBoardingTokenPage(),
+          ),
       // AppRoutes.onBoardingCompanyInfo: (_) => const OnBoardingTokenPage(),
       AppRoutes.setup1: (_) => const Step1(),
       AppRoutes.setup2: (_) => const Step2(),
