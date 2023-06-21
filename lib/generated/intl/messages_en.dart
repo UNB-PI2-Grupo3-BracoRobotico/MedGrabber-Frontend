@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
+        "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t update your store\'s name.\nPlease try again or change the inserted name."),
@@ -44,6 +45,23 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Store\'s Name"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Store name updated!"),
+        "phone_page_description": MessageLookupByLibrary.simpleMessage(
+            "Modify the number of your store to keep clients informed during their purchases."),
+        "phone_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Please recheck the phone number you inserted.\nJust to remember the phone number must be from Brazil."),
+        "phone_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage("Invalid number"),
+        "phone_page_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "It wasn\'t possible to update your phone number.\nTry again, if the error persists, contact our team."),
+        "phone_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "phone_page_loading_title": MessageLookupByLibrary.simpleMessage(
+            "Updating your phone number..."),
+        "phone_page_success_title":
+            MessageLookupByLibrary.simpleMessage("Phone number updated!"),
+        "phone_page_title":
+            MessageLookupByLibrary.simpleMessage("Phone Number"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),

@@ -22,7 +22,7 @@ class DSButton extends StatelessWidget {
     bool enabled = true,
   }) {
     return DSButton(
-      onPressed: onPressed,
+      onPressed: enabled ? onPressed : () {},
       label: label,
       style: enabled
           ? ElevatedButton.styleFrom(
@@ -41,7 +41,7 @@ class DSButton extends StatelessWidget {
     bool enabled = true,
   }) {
     return DSButton(
-      onPressed: onPressed,
+      onPressed: enabled ? onPressed : () {},
       label: label,
       style: ElevatedButton.styleFrom(
         backgroundColor: kWhite,

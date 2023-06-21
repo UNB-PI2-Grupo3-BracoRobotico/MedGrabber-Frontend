@@ -39,8 +39,9 @@ class SettingsPage extends StatelessWidget {
               OptionTile(
                 title: S.current.settings_phone_option_title,
                 icon: Icons.phone_outlined,
-                //TODO(Mauricio): Implement onTap
-                onTap: () {},
+                onTap: () => Navigator.of(context).pushNamed(
+                  AppRoutes.settingsPhone,
+                ),
               ),
               const VerticalGap.xxs(),
               OptionTile(

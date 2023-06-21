@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `Got it`
+  String get got_it {
+    return Intl.message(
+      'Got it',
+      name: 'got_it',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Setting up your machine...`
   String get setup_machine_loading_title {
     return Intl.message(
@@ -255,6 +265,86 @@ class S {
     return Intl.message(
       'Store name updated!',
       name: 'name_success_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_page_title {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modify the number of your store to keep clients informed during their purchases.`
+  String get phone_page_description {
+    return Intl.message(
+      'Modify the number of your store to keep clients informed during their purchases.',
+      name: 'phone_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid number`
+  String get phone_page_error_bottomsheet_title {
+    return Intl.message(
+      'Invalid number',
+      name: 'phone_page_error_bottomsheet_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please recheck the phone number you inserted.\nJust to remember the phone number must be from Brazil.`
+  String get phone_page_error_bottomsheet_description {
+    return Intl.message(
+      'Please recheck the phone number you inserted.\nJust to remember the phone number must be from Brazil.',
+      name: 'phone_page_error_bottomsheet_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get phone_page_error_page_title {
+    return Intl.message(
+      'Something went wrong',
+      name: 'phone_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It wasn't possible to update your phone number.\nTry again, if the error persists, contact our team.`
+  String get phone_page_error_page_description {
+    return Intl.message(
+      'It wasn\'t possible to update your phone number.\nTry again, if the error persists, contact our team.',
+      name: 'phone_page_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number updated!`
+  String get phone_page_success_title {
+    return Intl.message(
+      'Phone number updated!',
+      name: 'phone_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating your phone number...`
+  String get phone_page_loading_title {
+    return Intl.message(
+      'Updating your phone number...',
+      name: 'phone_page_loading_title',
       desc: '',
       args: [],
     );
