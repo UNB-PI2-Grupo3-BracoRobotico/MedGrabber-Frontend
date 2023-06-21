@@ -6,11 +6,13 @@ import 'package:grabber/features/navigation/example_home_page.dart';
 import 'package:grabber/features/on_boarding/pages/on_boarding_page.dart';
 import 'package:grabber/features/on_boarding/pages/on_boarding_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
+import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
 import 'package:grabber/features/settings/pages/settings_page.dart';
 import 'package:grabber/features/setup_machine/presentation/blocs/setup_status/setup_status_bloc.dart';
 import 'package:grabber/features/setup_machine/presentation/pages/step_final.dart';
 
 import '../../features/settings/pages/name_option/blocs/name_page/name_page_cubit.dart';
+import '../../features/settings/pages/phone_option/phone_page.dart';
 import '../../features/setup_machine/presentation/pages/step_1.dart';
 import '../../features/setup_machine/presentation/pages/step_2.dart';
 
@@ -33,6 +35,12 @@ abstract class AppRouter {
               updateStoreName: getIt.get(),
             ),
             child: const NamePage(),
+          ),
+      AppRoutes.settingsPhone: (_) => BlocProvider(
+            create: (_) => UpdatePhoneCubit(
+              updatePhoneNumber: getIt.get(),
+            ),
+            child: const PhonePage(),
           ),
     };
   }

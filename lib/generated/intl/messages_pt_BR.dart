@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o nome da sua loja.\nPor favor, tente novamente ou troque o nome inserido."),
@@ -43,6 +44,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_page_title": MessageLookupByLibrary.simpleMessage("Nome da Loja"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Nome da loja atulizado!"),
+        "phone_page_description": MessageLookupByLibrary.simpleMessage(
+            "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras."),
+        "phone_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Verifique novamente o número inserido. Lembrando, o número inserido deve ser do Brasil."),
+        "phone_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage("Número invalido"),
+        "phone_page_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "Não foi possível atualizar seu número de telefone.\nTente novamente, caso o erro persista, contate nossa equipe."),
+        "phone_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Algo deu errado"),
+        "phone_page_loading_title": MessageLookupByLibrary.simpleMessage(
+            "Atualizando o número do seu telefone..."),
+        "phone_page_success_title": MessageLookupByLibrary.simpleMessage(
+            "Número de telefone atualizado!"),
+        "phone_page_title": MessageLookupByLibrary.simpleMessage("Telefone"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Endereço"),

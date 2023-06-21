@@ -12,13 +12,21 @@ class OnBoardinStartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnBoardingBasePage(
+    return BaseOnBoardingPage(
       title: S.current.onboarding_initial_tile,
-      description: S.current.onboarding_description_tile,
+      content: Column(
+        children: [
+          Text(
+                S.current.onboarding_description_tile,
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.justify,
+              ),
+        ],
+      ),
       onPressed: () {
         tabController.animateTo(tabController.index+1);
       },
-      buttonLabel: S.current.continue_button_label,
+      buttonLabel: S.current.start_button_label,
     );
   }
 }

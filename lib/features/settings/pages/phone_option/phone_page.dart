@@ -1,23 +1,34 @@
+import 'dart:developer';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grabber/features/on_boarding/pages/widgets/on_boarding_base_page.dart';
-import 'package:grabber/features/on_boarding/token/bloc/on_boarding_token_cubit.dart';
+import 'package:grabber/core/phone_region.dart';
+import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
 import 'package:grabber/features/settings/pages/phone_option/widgets/phone_number_error_footer.dart';
+import 'package:grabber/features/settings/widgets/base_option_page.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
-import 'package:grabber/generated/l10n.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:phone_number/phone_number.dart';
+import 'package:styled_text/styled_text.dart';
 
-class OnBoardingTokenPage extends StatefulWidget {
-  const OnBoardingTokenPage({super.key});
+import '../../../../generated/l10n.dart';
+
+class PhonePage extends StatefulWidget {
+  const PhonePage({super.key});
 
   @override
-  State<OnBoardingTokenPage> createState() => _OnBoardingTokenState();
+  State<PhonePage> createState() => _PhonePageState();
 }
 
-class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
+class _PhonePageState extends State<PhonePage> {
   late final TextEditingController _controller;
+  final MaskTextInputFormatter maskFormatter = MaskTextInputFormatter(
+    mask: '(##) #####-####',
+  );
   bool canContinue = false;
 
   @override
@@ -34,7 +45,7 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<OnBoardingTokenCubit, OnBoardingTokenState>(
+    return BlocConsumer<UpdatePhoneCubit, UpdatePhoneState>(
       listener: (_, state) => state.whenOrNull(
         success: () async {
           final navigator = Navigator.of(context);
@@ -57,13 +68,13 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
           error: () => BaseErrorPage(
             title: S.current.phone_page_error_page_title,
             description: S.current.phone_page_error_page_description,
-            // footer: PhoneNumberErrorFooter(
-            //   primaryLabel: S.current.try_again,
-            //   primaryOnTap: _resetRegisterProcess,
-            // ),
+            footer: PhoneNumberErrorFooter(
+              primaryLabel: S.current.try_again,
+              primaryOnTap: _resetUpdateProcess,
+            ),
           ),
-          initial: () => BaseOnBoardingPage(
-            title: S.current.token_page_title,
+          initial: () => BaseOptionPage(
+            title: S.current.phone_page_title,
             content: Column(
               children: [
                 DSTextField(
@@ -83,6 +94,10 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
                   },
                   maxLength: 15,
                   keyboardType: TextInputType.number,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    maskFormatter,
+                  ],
                 ),
                 const VerticalGap.xxxs(),
                 StyledText(
@@ -98,21 +113,50 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
               ],
             ),
             buttonEnabled: canContinue,
-            buttonLabel: S.current.continue_button_label,
-            onPressed: () => _registerToken(_controller.text),
+            onContinueTap: _updatePhoneNumber,
           ),
         );
       },
     );
   }
 
-  Future<void> _registerToken(String token) async {
-    
+  Future<void> _updatePhoneNumber() async {
+    final rawPhoneNumber = maskFormatter.getUnmaskedText();
+    final updatePhoneCubit = context.read<UpdatePhoneCubit>();
+    final phoneIsValid = await _phoneNumberIsValid(rawPhoneNumber);
+    if (phoneIsValid) {
+      updatePhoneCubit.updatePhoneNumber(rawPhoneNumber);
+    } else {
+      showModalBottomSheet(
+        context: context,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(
+              kSpacingXXXS,
+            ),
+          ),
+        ),
+        builder: (context) {
+          return DSBottomSheet(
+            title: S.current.phone_page_error_bottomsheet_title,
+            description: S.current.phone_page_error_bottomsheet_description,
+            icon: Icons.error_outline_rounded,
+            buttonLabel: S.current.got_it,
+            onTap: Navigator.of(context).pop,
+          );
+        },
+      );
+    }
   }
 
-  void _resetRegisterProcess() {
-    context.read<OnBoardingTokenCubit>().reset();
+  void _resetUpdateProcess() {
+    context.read<UpdatePhoneCubit>().reset();
   }
 
-  
+  Future<bool> _phoneNumberIsValid(String phoneNumber) async {
+    return await PhoneNumberUtil().validate(
+      phoneNumber,
+      regionCode: kRegion.code,
+    );
+  }
 }

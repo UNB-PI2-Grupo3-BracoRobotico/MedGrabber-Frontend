@@ -74,7 +74,7 @@ class _NamePageState extends State<NamePage> {
                 DSTextField(
                   controller: _controller,
                   errorText: errorText,
-                  label: "Nome da loja",
+                  label: S.current.name_page_title,
                   onChanged: (val) {
                     final result = _storeNameIsValid(val);
                     if (result) {

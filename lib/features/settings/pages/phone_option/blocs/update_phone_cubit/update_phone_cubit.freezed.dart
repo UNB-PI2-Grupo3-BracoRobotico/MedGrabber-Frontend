@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'on_boarding_page_cubit.dart';
+part of 'update_phone_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$OnBoardingPageState {
+mixin _$UpdatePhoneState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -45,7 +45,7 @@ mixin _$OnBoardingPageState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_success value) success,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ mixin _$OnBoardingPageState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_success value)? success,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ mixin _$OnBoardingPageState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -69,16 +69,16 @@ mixin _$OnBoardingPageState {
 }
 
 /// @nodoc
-abstract class $OnBoardingPageStateCopyWith<$Res> {
-  factory $OnBoardingPageStateCopyWith(
-          OnBoardingPageState value, $Res Function(OnBoardingPageState) then) =
-      _$OnBoardingPageStateCopyWithImpl<$Res, OnBoardingPageState>;
+abstract class $UpdatePhoneStateCopyWith<$Res> {
+  factory $UpdatePhoneStateCopyWith(
+          UpdatePhoneState value, $Res Function(UpdatePhoneState) then) =
+      _$UpdatePhoneStateCopyWithImpl<$Res, UpdatePhoneState>;
 }
 
 /// @nodoc
-class _$OnBoardingPageStateCopyWithImpl<$Res, $Val extends OnBoardingPageState>
-    implements $OnBoardingPageStateCopyWith<$Res> {
-  _$OnBoardingPageStateCopyWithImpl(this._value, this._then);
+class _$UpdatePhoneStateCopyWithImpl<$Res, $Val extends UpdatePhoneState>
+    implements $UpdatePhoneStateCopyWith<$Res> {
+  _$UpdatePhoneStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +95,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$OnBoardingPageStateCopyWithImpl<$Res, _$_Initial>
+    extends _$UpdatePhoneStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -108,7 +108,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'OnBoardingPageState.initial()';
+    return 'UpdatePhoneState.initial()';
   }
 
   @override
@@ -162,7 +162,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_success value) success,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -173,7 +173,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_success value)? success,
     TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -184,7 +184,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -195,7 +195,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements OnBoardingPageState {
+abstract class _Initial implements UpdatePhoneState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -208,7 +208,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<$Res>
-    extends _$OnBoardingPageStateCopyWithImpl<$Res, _$_Loading>
+    extends _$UpdatePhoneStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
@@ -221,7 +221,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'OnBoardingPageState.loading()';
+    return 'UpdatePhoneState.loading()';
   }
 
   @override
@@ -275,7 +275,7 @@ class _$_Loading implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_success value) success,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -286,7 +286,7 @@ class _$_Loading implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_success value)? success,
     TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -297,7 +297,7 @@ class _$_Loading implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -308,39 +308,39 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements OnBoardingPageState {
+abstract class _Loading implements UpdatePhoneState {
   const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$_successCopyWith<$Res> {
+  factory _$$_successCopyWith(
+          _$_success value, $Res Function(_$_success) then) =
+      __$$_successCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$OnBoardingPageStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$_successCopyWithImpl<$Res>
+    extends _$UpdatePhoneStateCopyWithImpl<$Res, _$_success>
+    implements _$$_successCopyWith<$Res> {
+  __$$_successCopyWithImpl(_$_success _value, $Res Function(_$_success) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success();
+class _$_success implements _success {
+  const _$_success();
 
   @override
   String toString() {
-    return 'OnBoardingPageState.success()';
+    return 'UpdatePhoneState.success()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Success);
+        (other.runtimeType == runtimeType && other is _$_success);
   }
 
   @override
@@ -388,7 +388,7 @@ class _$_Success implements _Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_success value) success,
     required TResult Function(_Error value) error,
   }) {
     return success(this);
@@ -399,7 +399,7 @@ class _$_Success implements _Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_success value)? success,
     TResult? Function(_Error value)? error,
   }) {
     return success?.call(this);
@@ -410,7 +410,7 @@ class _$_Success implements _Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -421,8 +421,8 @@ class _$_Success implements _Success {
   }
 }
 
-abstract class _Success implements OnBoardingPageState {
-  const factory _Success() = _$_Success;
+abstract class _success implements UpdatePhoneState {
+  const factory _success() = _$_success;
 }
 
 /// @nodoc
@@ -433,7 +433,7 @@ abstract class _$$_ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ErrorCopyWithImpl<$Res>
-    extends _$OnBoardingPageStateCopyWithImpl<$Res, _$_Error>
+    extends _$UpdatePhoneStateCopyWithImpl<$Res, _$_Error>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
       : super(_value, _then);
@@ -446,7 +446,7 @@ class _$_Error implements _Error {
 
   @override
   String toString() {
-    return 'OnBoardingPageState.error()';
+    return 'UpdatePhoneState.error()';
   }
 
   @override
@@ -500,7 +500,7 @@ class _$_Error implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_success value) success,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -511,7 +511,7 @@ class _$_Error implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_success value)? success,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -522,7 +522,7 @@ class _$_Error implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -533,6 +533,6 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements OnBoardingPageState {
+abstract class _Error implements UpdatePhoneState {
   const factory _Error() = _$_Error;
 }

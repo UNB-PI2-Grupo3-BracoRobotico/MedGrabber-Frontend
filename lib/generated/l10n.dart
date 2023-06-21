@@ -53,7 +53,16 @@ class S {
   /// `Continue`
   String get continue_button_label {
     return Intl.message(
-      'Continue',
+      'Continuar',
+      name: 'continue_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+  /// `Continue`
+  String get start_button_label {
+    return Intl.message(
+      'Iniciar',
       name: 'continue_button_label',
       desc: '',
       args: [],
@@ -90,29 +99,50 @@ class S {
     );
   }
 
-String get onboarding_initial_tile {
-  return Intl.message(
+  String get onboarding_initial_tile {
+    return Intl.message(
       'Bem vindo ao Grabber',
       name: 'onboarding_initial_tile ',
       desc: '',
       args: [],
     );
-}
+  }
 
-String get onboarding_description_tile {
-  return Intl.message(
+  String get onboarding_description_tile {
+    return Intl.message(
       'Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência.',
       name: 'onboarding_description_tile ',
       desc: '',
       args: [],
     );
-}
+  }
 
-/// `Updating your store's name...`
+    /// `Phone Number`
+  String get token_page_title {
+    return Intl.message(
+      'Código da máquina',
+      name: 'token_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+
+  /// `Updating your store's name...`
   String get onboarding_token_validating_title {
     return Intl.message(
       'Validating your token connection',
-      name: 'name_loading_page_title',
+      name: 'onboarding_loading_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Got it`
+  String get got_it {
+    return Intl.message(
+      'Got it',
+      name: 'got_it',
       desc: '',
       args: [],
     );
@@ -283,6 +313,86 @@ String get onboarding_description_tile {
     return Intl.message(
       'Store name updated!',
       name: 'name_success_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_page_title {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modify the number of your store to keep clients informed during their purchases.`
+  String get phone_page_description {
+    return Intl.message(
+      'Modify the number of your store to keep clients informed during their purchases.',
+      name: 'phone_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid number`
+  String get phone_page_error_bottomsheet_title {
+    return Intl.message(
+      'Invalid number',
+      name: 'phone_page_error_bottomsheet_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please recheck the phone number you inserted.\nJust to remember the phone number must be from Brazil.`
+  String get phone_page_error_bottomsheet_description {
+    return Intl.message(
+      'Please recheck the phone number you inserted.\nJust to remember the phone number must be from Brazil.',
+      name: 'phone_page_error_bottomsheet_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get phone_page_error_page_title {
+    return Intl.message(
+      'Something went wrong',
+      name: 'phone_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It wasn't possible to update your phone number.\nTry again, if the error persists, contact our team.`
+  String get phone_page_error_page_description {
+    return Intl.message(
+      'It wasn\'t possible to update your phone number.\nTry again, if the error persists, contact our team.',
+      name: 'phone_page_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number updated!`
+  String get phone_page_success_title {
+    return Intl.message(
+      'Phone number updated!',
+      name: 'phone_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating your phone number...`
+  String get phone_page_loading_title {
+    return Intl.message(
+      'Updating your phone number...',
+      name: 'phone_page_loading_title',
       desc: '',
       args: [],
     );

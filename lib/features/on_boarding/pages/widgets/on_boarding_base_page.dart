@@ -1,19 +1,21 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
-class OnBoardingBasePage extends StatelessWidget {
-  const OnBoardingBasePage({
+class BaseOnBoardingPage extends StatelessWidget {
+  const BaseOnBoardingPage({
     super.key,
     required this.title,
-    required this.description,
+    required this.content,
     required this.onPressed,
     required this.buttonLabel,
+    this.buttonEnabled = true
   });
 
   final String title;
-  final String description;
+  final Widget content;
   final VoidCallback onPressed;
   final String buttonLabel;
+  final bool buttonEnabled;
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +37,9 @@ class OnBoardingBasePage extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               const VerticalGap.xl(),
-              Text(
-                description,
-                style: Theme.of(context).textTheme.bodyMedium,
-                textAlign: TextAlign.justify,
-              ),
-              const Spacer(),
+              Expanded(child: ListView(
+                children: [content],
+              )),
               DSButton.primary(
                 onPressed: onPressed,
                 label: buttonLabel,
