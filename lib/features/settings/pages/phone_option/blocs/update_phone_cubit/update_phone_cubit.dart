@@ -16,7 +16,9 @@ class UpdatePhoneCubit extends Cubit<UpdatePhoneState> {
     String newPhoneNumber,
   ) async {
     emit(const UpdatePhoneState.loading());
-    final sucessOrFailureUpdate = await _updatePhoneNumber.call(newPhoneNumber);
+    final sucessOrFailureUpdate = await _updatePhoneNumber.call(
+      newPhoneNumber,
+    );
     emit(
       sucessOrFailureUpdate.fold(
         UpdatePhoneState.success,

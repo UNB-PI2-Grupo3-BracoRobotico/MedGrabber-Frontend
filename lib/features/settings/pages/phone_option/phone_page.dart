@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grabber/core/phone_region.dart';
 import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
 import 'package:grabber/features/settings/pages/phone_option/widgets/phone_number_error_footer.dart';
 import 'package:grabber/features/settings/widgets/base_option_page.dart';
@@ -9,6 +12,7 @@ import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:phone_number/phone_number.dart';
 import 'package:styled_text/styled_text.dart';
 
 import '../../../../generated/l10n.dart';
@@ -116,10 +120,12 @@ class _PhonePageState extends State<PhonePage> {
     );
   }
 
-  void _updatePhoneNumber() {
+  Future<void> _updatePhoneNumber() async {
     final rawPhoneNumber = maskFormatter.getUnmaskedText();
-    if (_phoneNumberIsValid(rawPhoneNumber)) {
-      context.read<UpdatePhoneCubit>().updatePhoneNumber(rawPhoneNumber);
+    final updatePhoneCubit = context.read<UpdatePhoneCubit>();
+    final phoneIsValid = await _phoneNumberIsValid(rawPhoneNumber);
+    if (phoneIsValid) {
+      updatePhoneCubit.updatePhoneNumber(rawPhoneNumber);
     } else {
       showModalBottomSheet(
         context: context,
@@ -147,8 +153,10 @@ class _PhonePageState extends State<PhonePage> {
     context.read<UpdatePhoneCubit>().reset();
   }
 
-  bool _phoneNumberIsValid(String phoneNumber) {
-    //TODO(Mauricio): Implement method to validate phone number
-    throw UnimplementedError();
+  Future<bool> _phoneNumberIsValid(String phoneNumber) async {
+    return await PhoneNumberUtil().validate(
+      phoneNumber,
+      regionCode: kRegion.code,
+    );
   }
 }
