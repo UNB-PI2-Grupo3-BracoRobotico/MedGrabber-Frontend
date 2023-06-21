@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/navigation/example_home_page.dart';
+import 'package:grabber/features/home/presentation/home_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
 import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
@@ -25,8 +25,7 @@ abstract class AppRouter {
             create: (_) => SetupStatusBloc(),
             child: const StepFinal(),
           ),
-      //TODO(Mauricio): Change for actual home page later
-      AppRoutes.home: (_) => const ExampleHomePage(),
+      AppRoutes.home: (_) => const HomePage(),
       AppRoutes.settings: (_) => const SettingsPage(),
       AppRoutes.settingsName: (_) => BlocProvider(
             create: (_) => NamePageCubit(
@@ -40,6 +39,18 @@ abstract class AppRouter {
             ),
             child: const PhonePage(),
           ),
+      AppRoutes.notifications: (_) {
+        //TODO(Mauricio): Implement route
+        throw UnimplementedError();
+      },
+      AppRoutes.dashboard: (_) {
+        //TODO(Mauricio): Implement route
+        throw UnimplementedError();
+      },
+      AppRoutes.help: (_) {
+        //TODO(Mauricio): Implement route
+        throw UnimplementedError();
+      },
     };
   }
 }
