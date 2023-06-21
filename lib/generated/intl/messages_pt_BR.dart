@@ -22,6 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "bottom_navigation_dashboard_option":
+            MessageLookupByLibrary.simpleMessage("Dashboard"),
+        "bottom_navigation_help_option":
+            MessageLookupByLibrary.simpleMessage("Ajuda"),
+        "bottom_navigation_home_option":
+            MessageLookupByLibrary.simpleMessage("Início"),
+        "bottom_navigation_notifications_option":
+            MessageLookupByLibrary.simpleMessage("Notificações"),
+        "bottom_navigation_settings_option":
+            MessageLookupByLibrary.simpleMessage("Configurações"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
