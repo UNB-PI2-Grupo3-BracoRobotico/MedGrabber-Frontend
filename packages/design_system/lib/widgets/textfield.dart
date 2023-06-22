@@ -19,6 +19,7 @@ class DSTextField extends StatefulWidget {
     this.maxLength,
     this.borderColor = kDarkGrey,
     this.keyboardType,
+    this.obscureText = false,
     this.inputFormatters,
   }) : super(key: key);
 
@@ -31,7 +32,7 @@ class DSTextField extends StatefulWidget {
   final Color borderColor;
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
-
+  final bool obscureText;
   final void Function(String)? onChanged;
 
   @override
@@ -99,6 +100,7 @@ class _DSTextFieldState extends State<DSTextField> {
             ),
             const VerticalGap.nano(),
             TextField(
+              obscureText: widget.obscureText,
               maxLength: widget.maxLength,
               style: Theme.of(context).textTheme.bodyMedium,
               controller: _controller,

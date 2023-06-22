@@ -13,11 +13,11 @@ class OnBoardingStartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseOnBoardingPage(
-      title: S.current.onboarding_initial_tile,
+      title: S.current.on_boarding_initial_title,
       content: Column(
         children: [
           Text(
-            S.current.onboarding_description_tile,
+            S.current.on_boarding_description_title,
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.justify,
           ),

@@ -100,19 +100,19 @@ class S {
     );
   }
 
-  String get onboarding_initial_tile {
+  String get on_boarding_initial_title {
     return Intl.message(
       'Bem vindo ao Grabber',
-      name: 'onboarding_initial_tile ',
+      name: 'initial_tile ',
       desc: '',
       args: [],
     );
   }
 
-  String get onboarding_description_tile {
+  String get on_boarding_description_title {
     return Intl.message(
       'Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência.',
-      name: 'onboarding_description_tile ',
+      name: 'description_tile ',
       desc: '',
       args: [],
     );
@@ -148,11 +148,119 @@ class S {
     );
   }
 
+  /// `Something went wrong`
+  String get token_page_error_page_title {
+    return Intl.message(
+      'Ops! Não foi possível conectar com token, tente novamente.',
+      name: 'token_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modify the number of your store to keep clients informed during their purchases.`
+  String get token_page_description {
+    return Intl.message(
+      'Insira o token fornecido pela equipe de desenvolvimento para conectar com máquina.',
+      name: 'token_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Updating your store's name...`
-  String get onboarding_token_validating_title {
+  String get token_validating_title {
     return Intl.message(
       'Validating your token connection',
-      name: 'onboarding_loading_page_title',
+      name: 'token_validating_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  ///
+  String get token_page_error_page_description {
+    return Intl.message(
+      'Erro ao inserir token! Tente novamente.',
+      name: 'token_page_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get base_auth_page_email_title {
+    return Intl.message(
+      'Email:',
+      name: 'base_auth_page_email_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get base_auth_page_password_title {
+    return Intl.message(
+      'Senha:',
+      name: 'base_auth_page_password_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Token connected!`
+  String get signup_page_success_title {
+    return Intl.message(
+      'Usuário cadastrado com sucesso!',
+      name: 'signup_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating your token...`
+  String get signup_page_loading_title {
+    return Intl.message(
+      'Conectando com a máquina...',
+      name: 'token_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get signup_page_error_page_title {
+    return Intl.message(
+      'Ops! Não foi possível criar usuario.',
+      name: 'signup_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+  
+  /// `Updating your store's name...`
+  String get signup_validating_title {
+    return Intl.message(
+      'Validando dados do usuário',
+      name: 'signup_validating_title ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  ///
+  String get signup_page_email_error_label {
+    return Intl.message(
+      'Formato de email inválido.',
+      name: 'signup_page_email_error_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  ///
+  String get signup_page_password_error_label {
+    return Intl.message(
+      'Senha precisa ter 8 caracteres.',
+      name: 'signup_page_password_error_label',
       desc: '',
       args: [],
     );

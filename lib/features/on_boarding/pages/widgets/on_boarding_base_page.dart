@@ -2,16 +2,15 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class BaseOnBoardingPage extends StatelessWidget {
-  const BaseOnBoardingPage({
-    super.key,
-    required this.title,
-    required this.content,
-    required this.onPressed,
-    required this.buttonLabel,
-    this.buttonEnabled = true
-  });
+  const BaseOnBoardingPage(
+      {super.key,
+      this.title,
+      required this.content,
+      required this.onPressed,
+      required this.buttonLabel,
+      this.buttonEnabled = true});
 
-  final String title;
+  final String? title;
   final Widget content;
   final VoidCallback onPressed;
   final String buttonLabel;
@@ -32,12 +31,14 @@ class BaseOnBoardingPage extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               const VerticalGap.xl(),
-              Text(
-                title,
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
-              const VerticalGap.xl(),
-              Expanded(child: ListView(
+              if (title != null)
+                Text(
+                  title!,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+              if (title != null) const VerticalGap.xl(),
+              Expanded(
+                  child: ListView(
                 children: [content],
               )),
               DSButton.primary(

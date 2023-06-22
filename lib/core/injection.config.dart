@@ -14,6 +14,10 @@ import 'package:grabber/features/on_boarding/domain/usecases/create_user.dart'
     as _i3;
 import 'package:grabber/features/on_boarding/domain/usecases/register_token.dart'
     as _i4;
+import 'package:grabber/features/on_boarding/domain/usecases/validate_token.dart'
+    as _i7;
+import 'package:grabber/features/on_boarding/pages/base_auth/bloc/signup_cubit.dart'
+    as _i8;
 import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
     as _i5;
 import 'package:grabber/features/settings/domain/usecases/update_store_name.dart'
@@ -35,6 +39,9 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i4.RegisterToken>(() => _i4.RegisterTokenImpl());
     gh.factory<_i5.UpdatePhoneNumber>(() => _i5.UpdatePhoneNumberImpl());
     gh.factory<_i6.UpdateStoreName>(() => _i6.UpdateStoreNameImpl());
+    gh.factory<_i7.ValidateToken>(() => _i7.ValidateTokenImpl());
+    gh.singleton<_i8.SignupCubit>(
+        _i8.SignupCubit(validateToken: gh<_i7.ValidateToken>()));
     return this;
   }
 }
