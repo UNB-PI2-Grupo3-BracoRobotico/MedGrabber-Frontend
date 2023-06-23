@@ -53,18 +53,28 @@ class S {
   /// `Continue`
   String get continue_button_label {
     return Intl.message(
-      'Continuar',
+      'Continue',
       name: 'continue_button_label',
       desc: '',
       args: [],
     );
   }
 
-  /// `Continue`
+  /// `Get Started`
   String get start_button_label {
     return Intl.message(
-      'Iniciar',
-      name: 'continue_button_label',
+      'Get Started',
+      name: 'start_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish Signup`
+  String get finish_on_boarding_button_label {
+    return Intl.message(
+      'Finish Signup',
+      name: 'finish_on_boarding_button_label',
       desc: '',
       args: [],
     );
@@ -95,172 +105,6 @@ class S {
     return Intl.message(
       'Save',
       name: 'save',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get on_boarding_initial_title {
-    return Intl.message(
-      'Bem vindo ao Grabber',
-      name: 'initial_tile ',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get on_boarding_description_title {
-    return Intl.message(
-      'Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência.',
-      name: 'description_tile ',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `token`
-  String get token_page_title {
-    return Intl.message(
-      'Código da máquina',
-      name: 'token_page_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Token connected!`
-  String get token_page_success_title {
-    return Intl.message(
-      'Token conectado com braço!',
-      name: 'token_page_success_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Updating your token...`
-  String get token_page_loading_title {
-    return Intl.message(
-      'Conectando com a máquina...',
-      name: 'token_page_loading_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Something went wrong`
-  String get token_page_error_page_title {
-    return Intl.message(
-      'Ops! Não foi possível conectar com token, tente novamente.',
-      name: 'token_page_error_page_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Modify the number of your store to keep clients informed during their purchases.`
-  String get token_page_description {
-    return Intl.message(
-      'Insira o token fornecido pela equipe de desenvolvimento para conectar com máquina.',
-      name: 'token_page_description',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Updating your store's name...`
-  String get token_validating_title {
-    return Intl.message(
-      'Validating your token connection',
-      name: 'token_validating_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  ///
-  String get token_page_error_page_description {
-    return Intl.message(
-      'Erro ao inserir token! Tente novamente.',
-      name: 'token_page_error_page_description',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get base_auth_page_email_title {
-    return Intl.message(
-      'Email:',
-      name: 'base_auth_page_email_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get base_auth_page_password_title {
-    return Intl.message(
-      'Senha:',
-      name: 'base_auth_page_password_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Token connected!`
-  String get signup_page_success_title {
-    return Intl.message(
-      'Usuário cadastrado com sucesso!',
-      name: 'signup_page_success_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Updating your token...`
-  String get signup_page_loading_title {
-    return Intl.message(
-      'Conectando com a máquina...',
-      name: 'token_page_loading_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Something went wrong`
-  String get signup_page_error_page_title {
-    return Intl.message(
-      'Ops! Não foi possível criar usuario.',
-      name: 'signup_page_error_page_title',
-      desc: '',
-      args: [],
-    );
-  }
-  
-  /// `Updating your store's name...`
-  String get signup_validating_title {
-    return Intl.message(
-      'Validando dados do usuário',
-      name: 'signup_validating_title ',
-      desc: '',
-      args: [],
-    );
-  }
-
-  ///
-  String get signup_page_email_error_label {
-    return Intl.message(
-      'Formato de email inválido.',
-      name: 'signup_page_email_error_label',
-      desc: '',
-      args: [],
-    );
-  }
-
-  ///
-  String get signup_page_password_error_label {
-    return Intl.message(
-      'Senha precisa ter 8 caracteres.',
-      name: 'signup_page_password_error_label',
       desc: '',
       args: [],
     );
@@ -521,6 +365,356 @@ class S {
     return Intl.message(
       'Updating your phone number...',
       name: 'phone_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Machine Code`
+  String get on_boarding_token_page_title {
+    return Intl.message(
+      'Machine Code',
+      name: 'on_boarding_token_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the token provided by the development team to connect with the machine.`
+  String get on_boarding_token_page_description {
+    return Intl.message(
+      'Enter the token provided by the development team to connect with the machine.',
+      name: 'on_boarding_token_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid Code! Please try again`
+  String get on_boarding_token_page_error_bottomsheet_title {
+    return Intl.message(
+      'Invalid Code! Please try again',
+      name: 'on_boarding_token_page_error_bottomsheet_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If the problem persists, contact the development team.`
+  String get on_boarding_token_page_error_bottomsheet_description {
+    return Intl.message(
+      'If the problem persists, contact the development team.',
+      name: 'on_boarding_token_page_error_bottomsheet_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected Error! Contact the development team to provide a new Code`
+  String get on_boarding_token_page_error_page_title {
+    return Intl.message(
+      'Unexpected Error! Contact the development team to provide a new Code',
+      name: 'on_boarding_token_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Code cannot be null.`
+  String get on_boarding_token_page_error_page_description {
+    return Intl.message(
+      'Code cannot be null.',
+      name: 'on_boarding_token_page_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Machine Code successfully linked!`
+  String get on_boarding_token_page_success_title {
+    return Intl.message(
+      'Machine Code successfully linked!',
+      name: 'on_boarding_token_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Linking machine code...`
+  String get on_boarding_token_page_loading_title {
+    return Intl.message(
+      'Linking machine code...',
+      name: 'on_boarding_token_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email:`
+  String get on_boarding_email_page_title {
+    return Intl.message(
+      'Email:',
+      name: 'on_boarding_email_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email to proceed with onboarding.`
+  String get on_boarding_email_page_description {
+    return Intl.message(
+      'Enter your email to proceed with onboarding.',
+      name: 'on_boarding_email_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid Email! Please try again.`
+  String get on_boarding_email_page_error_bottomsheet_title {
+    return Intl.message(
+      'Invalid Email! Please try again.',
+      name: 'on_boarding_email_page_error_bottomsheet_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If the problem persists, please check your email and try again.`
+  String get on_boarding_email_page_error_bottomsheet_description {
+    return Intl.message(
+      'If the problem persists, please check your email and try again.',
+      name: 'on_boarding_email_page_error_bottomsheet_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected Error! Please try again later or contact support for assistance.`
+  String get on_boarding_email_page_error_page_title {
+    return Intl.message(
+      'Unexpected Error! Please try again later or contact support for assistance.',
+      name: 'on_boarding_email_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email cannot be empty.`
+  String get on_boarding_email_page_error_page_description {
+    return Intl.message(
+      'Email cannot be empty.',
+      name: 'on_boarding_email_page_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Successfully Added!`
+  String get on_boarding_email_page_success_title {
+    return Intl.message(
+      'Email Successfully Added!',
+      name: 'on_boarding_email_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adding email...`
+  String get on_boarding_email_page_loading_title {
+    return Intl.message(
+      'Adding email...',
+      name: 'on_boarding_email_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number:`
+  String get on_boarding_phone_page_title {
+    return Intl.message(
+      'Phone Number:',
+      name: 'on_boarding_phone_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your phone number to proceed with onboarding.`
+  String get on_boarding_phone_page_description {
+    return Intl.message(
+      'Enter your phone number to proceed with onboarding.',
+      name: 'on_boarding_phone_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid Phone Number! Please try again.`
+  String get on_boarding_phone_page_error_bottomsheet_title {
+    return Intl.message(
+      'Invalid Phone Number! Please try again.',
+      name: 'on_boarding_phone_page_error_bottomsheet_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If the problem persists, please check your phone number and try again.`
+  String get on_boarding_phone_page_error_bottomsheet_description {
+    return Intl.message(
+      'If the problem persists, please check your phone number and try again.',
+      name: 'on_boarding_phone_page_error_bottomsheet_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected Error! Please try again later or contact support for assistance.`
+  String get on_boarding_phone_page_error_page_title {
+    return Intl.message(
+      'Unexpected Error! Please try again later or contact support for assistance.',
+      name: 'on_boarding_phone_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number cannot be empty.`
+  String get on_boarding_phone_page_error_page_description {
+    return Intl.message(
+      'Phone number cannot be empty.',
+      name: 'on_boarding_phone_page_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number Successfully Added!`
+  String get on_boarding_phone_page_success_title {
+    return Intl.message(
+      'Phone Number Successfully Added!',
+      name: 'on_boarding_phone_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adding phone number...`
+  String get on_boarding_phone_page_loading_title {
+    return Intl.message(
+      'Adding phone number...',
+      name: 'on_boarding_phone_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password:`
+  String get on_boarding_password_page_title {
+    return Intl.message(
+      'Password:',
+      name: 'on_boarding_password_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password:`
+  String get on_boarding_password_confirm_page_title {
+    return Intl.message(
+      'Confirm Password:',
+      name: 'on_boarding_password_confirm_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a password for your account with at least 8 characters.`
+  String get on_boarding_password_page_description {
+    return Intl.message(
+      'Enter a password for your account with at least 8 characters.',
+      name: 'on_boarding_password_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid Password! Please try again.`
+  String get on_boarding_password_page_error_bottomsheet_title {
+    return Intl.message(
+      'Invalid Password! Please try again.',
+      name: 'on_boarding_password_page_error_bottomsheet_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If the problem persists, please check your password and try again.`
+  String get on_boarding_password_page_error_bottomsheet_description {
+    return Intl.message(
+      'If the problem persists, please check your password and try again.',
+      name: 'on_boarding_password_page_error_bottomsheet_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unexpected Error! Please try again later or contact support for assistance.`
+  String get on_boarding_password_page_error_page_title {
+    return Intl.message(
+      'Unexpected Error! Please try again later or contact support for assistance.',
+      name: 'on_boarding_password_page_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password cannot be empty.`
+  String get on_boarding_password_page_error_page_description {
+    return Intl.message(
+      'Password cannot be empty.',
+      name: 'on_boarding_password_page_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password Successfully Set!`
+  String get on_boarding_password_page_success_title {
+    return Intl.message(
+      'Password Successfully Set!',
+      name: 'on_boarding_password_page_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting password...`
+  String get on_boarding_password_page_loading_title {
+    return Intl.message(
+      'Setting password...',
+      name: 'on_boarding_password_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Grabber`
+  String get on_boarding_initial_title {
+    return Intl.message(
+      'Welcome to Grabber',
+      name: 'on_boarding_initial_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us.`
+  String get on_boarding_description_title {
+    return Intl.message(
+      'For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us.',
+      name: 'on_boarding_description_title',
       desc: '',
       args: [],
     );

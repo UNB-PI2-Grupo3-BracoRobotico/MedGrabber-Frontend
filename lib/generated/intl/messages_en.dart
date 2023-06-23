@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
+        "finish_on_boarding_button_label":
+            MessageLookupByLibrary.simpleMessage("Finish Signup"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
@@ -45,6 +47,94 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Store\'s Name"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Store name updated!"),
+        "on_boarding_description_title": MessageLookupByLibrary.simpleMessage(
+            "For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us."),
+        "on_boarding_email_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Enter your email to proceed with onboarding."),
+        "on_boarding_email_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "If the problem persists, please check your email and try again."),
+        "on_boarding_email_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Invalid Email! Please try again."),
+        "on_boarding_email_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage("Email cannot be empty."),
+        "on_boarding_email_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Unexpected Error! Please try again later or contact support for assistance."),
+        "on_boarding_email_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Adding email..."),
+        "on_boarding_email_page_success_title":
+            MessageLookupByLibrary.simpleMessage("Email Successfully Added!"),
+        "on_boarding_email_page_title":
+            MessageLookupByLibrary.simpleMessage("Email:"),
+        "on_boarding_initial_title":
+            MessageLookupByLibrary.simpleMessage("Welcome to Grabber"),
+        "on_boarding_password_confirm_page_title":
+            MessageLookupByLibrary.simpleMessage("Confirm Password:"),
+        "on_boarding_password_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Enter a password for your account with at least 8 characters."),
+        "on_boarding_password_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "If the problem persists, please check your password and try again."),
+        "on_boarding_password_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Invalid Password! Please try again."),
+        "on_boarding_password_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage("Password cannot be empty."),
+        "on_boarding_password_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Unexpected Error! Please try again later or contact support for assistance."),
+        "on_boarding_password_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Setting password..."),
+        "on_boarding_password_page_success_title":
+            MessageLookupByLibrary.simpleMessage("Password Successfully Set!"),
+        "on_boarding_password_page_title":
+            MessageLookupByLibrary.simpleMessage("Password:"),
+        "on_boarding_phone_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Enter your phone number to proceed with onboarding."),
+        "on_boarding_phone_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "If the problem persists, please check your phone number and try again."),
+        "on_boarding_phone_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Invalid Phone Number! Please try again."),
+        "on_boarding_phone_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Phone number cannot be empty."),
+        "on_boarding_phone_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Unexpected Error! Please try again later or contact support for assistance."),
+        "on_boarding_phone_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Adding phone number..."),
+        "on_boarding_phone_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Phone Number Successfully Added!"),
+        "on_boarding_phone_page_title":
+            MessageLookupByLibrary.simpleMessage("Phone Number:"),
+        "on_boarding_token_page_description": MessageLookupByLibrary.simpleMessage(
+            "Enter the token provided by the development team to connect with the machine."),
+        "on_boarding_token_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "If the problem persists, contact the development team."),
+        "on_boarding_token_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Invalid Code! Please try again"),
+        "on_boarding_token_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage("Code cannot be null."),
+        "on_boarding_token_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Unexpected Error! Contact the development team to provide a new Code"),
+        "on_boarding_token_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Linking machine code..."),
+        "on_boarding_token_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Machine Code successfully linked!"),
+        "on_boarding_token_page_title":
+            MessageLookupByLibrary.simpleMessage("Machine Code"),
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modify the number of your store to keep clients informed during their purchases."),
         "phone_page_error_bottomsheet_description":
@@ -78,6 +168,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Setting up your machine..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Arm configurated!"),
+        "start_button_label":
+            MessageLookupByLibrary.simpleMessage("Get Started"),
         "try_again": MessageLookupByLibrary.simpleMessage("Try again")
       };
 }

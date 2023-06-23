@@ -1,22 +1,27 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/on_boarding/pages/base_auth/bloc/signup_cubit.dart';
 import 'package:grabber/features/on_boarding/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/generated/l10n.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:styled_text/styled_text.dart';
 
-class OnBoardingTokenPage extends StatefulWidget {
-  const OnBoardingTokenPage({super.key});
+class OnBoardingPhonePage extends StatefulWidget {
+  const OnBoardingPhonePage({super.key});
 
   @override
-  State<OnBoardingTokenPage> createState() => _OnBoardingTokenState();
+  State<OnBoardingPhonePage> createState() => _OnBoardingPhoneState();
 }
 
-class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
+class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
   late final TextEditingController _controller;
+  final MaskTextInputFormatter maskFormatter = MaskTextInputFormatter(
+    mask: '(##) #####-####',
+  );
   final SignupCubit _signupCubit = getIt.get();
   bool canContinue = false;
   // TODO(Natanael)
@@ -39,12 +44,13 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
     return BlocConsumer<SignupCubit, SignupState>(
       bloc: _signupCubit,
       listener: (context, state) {
-        if (state.tokenIsValid) {
-          Navigator.of(context).pushNamed(
-            AppRoutes.signup,
-          );
-        } else if (!state.tokenIsValid && state.tokenFailureText.isNotEmpty) {
-          _showTokenError();
+        if (state.phoneIsValid) {
+          print(state.toString());
+          // Navigator.of(context).pushNamed(
+          //   AppRoutes.home,
+          // );
+        } else {
+          _showPhoneError();
         }
       },
       builder: (_, state) {
@@ -53,7 +59,7 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
             children: [
               DSTextField(
                 controller: _controller,
-                label: S.current.token_page_title,
+                label: S.current.on_boarding_phone_page_title,
                 onChanged: (val) {
                   if (val.length < max && canContinue == true) {
                     setState(() {
@@ -67,24 +73,24 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
                   }
                 },
                 maxLength: max,
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  maskFormatter,
+                ],
               ),
               const VerticalGap.xxxs(),
               StyledText(
-                text: S.current.token_page_description,
+                text: S.current.on_boarding_phone_page_description,
                 textAlign: TextAlign.justify,
                 style: Theme.of(context).textTheme.bodyMedium,
-                tags: {
-                  "bold": StyledTextTag(
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
-                },
               ),
             ],
           ),
           buttonEnabled: canContinue,
           buttonLabel: S.current.continue_button_label,
           onPressed: () {
-            _signupCubit.validateToken(_controller.text);
+            _signupCubit.validatePhone(_controller.text);
 
             // Navigator.of(context).pushNamed(
             //   AppRoutes.signup,
@@ -95,7 +101,7 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
     );
   }
 
-  void _showTokenError() {
+  void _showPhoneError() {
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -107,10 +113,10 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
       ),
       builder: (context) {
         return DSBottomSheet(
-          title: 'erro',
-          description: 'erro',
+          title: S.current.phone_page_error_bottomsheet_title,
+          description: S.current.phone_page_error_bottomsheet_description,
           icon: Icons.error_outline_rounded,
-          buttonLabel: 'erro',
+          buttonLabel: S.current.try_again,
           onTap: () {
             _signupCubit.cleanTokenFailure();
             Navigator.of(context).pop();

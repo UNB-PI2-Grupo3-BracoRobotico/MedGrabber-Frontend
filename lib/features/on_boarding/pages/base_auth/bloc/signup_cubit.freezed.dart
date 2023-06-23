@@ -19,6 +19,9 @@ mixin _$SignupState {
   String get token => throw _privateConstructorUsedError;
   String get tokenFailureText => throw _privateConstructorUsedError;
   bool get tokenIsValid => throw _privateConstructorUsedError;
+  bool get emailIsValid => throw _privateConstructorUsedError;
+  bool get phoneIsValid => throw _privateConstructorUsedError;
+  bool get passwordIsValid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   bool get isSubmiting => throw _privateConstructorUsedError;
@@ -39,6 +42,9 @@ abstract class $SignupStateCopyWith<$Res> {
       {String token,
       String tokenFailureText,
       bool tokenIsValid,
+      bool emailIsValid,
+      bool phoneIsValid,
+      bool passwordIsValid,
       String email,
       String password,
       bool isSubmiting,
@@ -61,6 +67,9 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
     Object? token = null,
     Object? tokenFailureText = null,
     Object? tokenIsValid = null,
+    Object? emailIsValid = null,
+    Object? phoneIsValid = null,
+    Object? passwordIsValid = null,
     Object? email = null,
     Object? password = null,
     Object? isSubmiting = null,
@@ -78,6 +87,18 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
       tokenIsValid: null == tokenIsValid
           ? _value.tokenIsValid
           : tokenIsValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emailIsValid: null == emailIsValid
+          ? _value.emailIsValid
+          : emailIsValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      phoneIsValid: null == phoneIsValid
+          ? _value.phoneIsValid
+          : phoneIsValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordIsValid: null == passwordIsValid
+          ? _value.passwordIsValid
+          : passwordIsValid // ignore: cast_nullable_to_non_nullable
               as bool,
       email: null == email
           ? _value.email
@@ -111,6 +132,9 @@ abstract class _$$_SignupStateCopyWith<$Res>
       {String token,
       String tokenFailureText,
       bool tokenIsValid,
+      bool emailIsValid,
+      bool phoneIsValid,
+      bool passwordIsValid,
       String email,
       String password,
       bool isSubmiting,
@@ -131,6 +155,9 @@ class __$$_SignupStateCopyWithImpl<$Res>
     Object? token = null,
     Object? tokenFailureText = null,
     Object? tokenIsValid = null,
+    Object? emailIsValid = null,
+    Object? phoneIsValid = null,
+    Object? passwordIsValid = null,
     Object? email = null,
     Object? password = null,
     Object? isSubmiting = null,
@@ -148,6 +175,18 @@ class __$$_SignupStateCopyWithImpl<$Res>
       tokenIsValid: null == tokenIsValid
           ? _value.tokenIsValid
           : tokenIsValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emailIsValid: null == emailIsValid
+          ? _value.emailIsValid
+          : emailIsValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      phoneIsValid: null == phoneIsValid
+          ? _value.phoneIsValid
+          : phoneIsValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordIsValid: null == passwordIsValid
+          ? _value.passwordIsValid
+          : passwordIsValid // ignore: cast_nullable_to_non_nullable
               as bool,
       email: null == email
           ? _value.email
@@ -176,6 +215,9 @@ class _$_SignupState implements _SignupState {
       {required this.token,
       required this.tokenFailureText,
       required this.tokenIsValid,
+      required this.emailIsValid,
+      required this.phoneIsValid,
+      required this.passwordIsValid,
       required this.email,
       required this.password,
       required this.isSubmiting,
@@ -188,6 +230,12 @@ class _$_SignupState implements _SignupState {
   @override
   final bool tokenIsValid;
   @override
+  final bool emailIsValid;
+  @override
+  final bool phoneIsValid;
+  @override
+  final bool passwordIsValid;
+  @override
   final String email;
   @override
   final String password;
@@ -198,7 +246,7 @@ class _$_SignupState implements _SignupState {
 
   @override
   String toString() {
-    return 'SignupState(token: $token, tokenFailureText: $tokenFailureText, tokenIsValid: $tokenIsValid, email: $email, password: $password, isSubmiting: $isSubmiting, phoneNumber: $phoneNumber)';
+    return 'SignupState(token: $token, tokenFailureText: $tokenFailureText, tokenIsValid: $tokenIsValid, emailIsValid: $emailIsValid, phoneIsValid: $phoneIsValid, passwordIsValid: $passwordIsValid, email: $email, password: $password, isSubmiting: $isSubmiting, phoneNumber: $phoneNumber)';
   }
 
   @override
@@ -211,6 +259,12 @@ class _$_SignupState implements _SignupState {
                 other.tokenFailureText == tokenFailureText) &&
             (identical(other.tokenIsValid, tokenIsValid) ||
                 other.tokenIsValid == tokenIsValid) &&
+            (identical(other.emailIsValid, emailIsValid) ||
+                other.emailIsValid == emailIsValid) &&
+            (identical(other.phoneIsValid, phoneIsValid) ||
+                other.phoneIsValid == phoneIsValid) &&
+            (identical(other.passwordIsValid, passwordIsValid) ||
+                other.passwordIsValid == passwordIsValid) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
@@ -221,8 +275,18 @@ class _$_SignupState implements _SignupState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token, tokenFailureText,
-      tokenIsValid, email, password, isSubmiting, phoneNumber);
+  int get hashCode => Object.hash(
+      runtimeType,
+      token,
+      tokenFailureText,
+      tokenIsValid,
+      emailIsValid,
+      phoneIsValid,
+      passwordIsValid,
+      email,
+      password,
+      isSubmiting,
+      phoneNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -236,6 +300,9 @@ abstract class _SignupState implements SignupState {
       {required final String token,
       required final String tokenFailureText,
       required final bool tokenIsValid,
+      required final bool emailIsValid,
+      required final bool phoneIsValid,
+      required final bool passwordIsValid,
       required final String email,
       required final String password,
       required final bool isSubmiting,
@@ -247,6 +314,12 @@ abstract class _SignupState implements SignupState {
   String get tokenFailureText;
   @override
   bool get tokenIsValid;
+  @override
+  bool get emailIsValid;
+  @override
+  bool get phoneIsValid;
+  @override
+  bool get passwordIsValid;
   @override
   String get email;
   @override

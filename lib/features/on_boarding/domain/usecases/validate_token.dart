@@ -18,6 +18,6 @@ class ValidateTokenImpl implements ValidateToken {
   @override
   Future<Option<Failure>> call(String token) async {
     //TODO(Natanael): Integrate with settings repository
-    return const Some(UnhandledFailure());
+    return const None();
   }
 }

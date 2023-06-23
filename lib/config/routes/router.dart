@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/navigation/example_home_page.dart';
-import 'package:grabber/features/on_boarding/pages/base_auth/bloc/signup_cubit.dart';
+import 'package:grabber/features/on_boarding/pages/onboarding_email_page.dart';
+import 'package:grabber/features/on_boarding/pages/onboarding_password_page.dart';
+import 'package:grabber/features/on_boarding/pages/onboarding_phone_page.dart';
 import 'package:grabber/features/on_boarding/pages/onboarding_start_page.dart';
-import 'package:grabber/features/on_boarding/pages/token/bloc/on_boarding_token_cubit.dart';
-import 'package:grabber/features/on_boarding/pages/token/onboarding_token_page.dart';
+import 'package:grabber/features/on_boarding/pages/onboarding_token_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
 import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
 import 'package:grabber/features/settings/pages/settings_page.dart';
@@ -23,6 +24,9 @@ abstract class AppRouter {
     return {
       AppRoutes.onBoarding: (_) => const OnBoardingStartPage(),
       AppRoutes.onBoardingToken: (_) => const OnBoardingTokenPage(),
+      AppRoutes.onBoardingEmail: (_) => const OnBoardingEmailPage(),
+      AppRoutes.onBoardingPassword: (_) => const OnBoardingPasswordPage(),
+      AppRoutes.onBoardingPhone: (_) => const OnBoardingPhonePage(),
 
       // AppRoutes.onBoardingCompanyInfo: (_) => const OnBoardingTokenPage(),
       AppRoutes.setup1: (_) => const Step1(),

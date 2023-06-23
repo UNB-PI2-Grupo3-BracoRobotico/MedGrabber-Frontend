@@ -5,7 +5,13 @@ class SignupState with _$SignupState {
   const factory SignupState({
     required String token,
     required String tokenFailureText,
+    required String emailFailureText,
+    required String passwordFailureText,
+    required String phoneFailureText,
     required bool tokenIsValid,
+    required bool emailIsValid,
+    required bool phoneIsValid,
+    required bool passwordIsValid,
     required String email,
     required String password,
     required bool isSubmiting,
@@ -13,6 +19,20 @@ class SignupState with _$SignupState {
   }) = _SignupState;
 
   factory SignupState.initial() {
-    return SignupState(token: '', tokenFailureText: '', tokenIsValid: false, email: '', password: '', isSubmiting: false, phoneNumber: '', );
+    return SignupState(
+      token: '',
+      tokenFailureText: '',
+      emailFailureText: '',
+      passwordFailureText: '',
+      phoneFailureText: '',
+      tokenIsValid: false,
+      email: '',
+      emailIsValid: false,
+      password: '',
+      passwordIsValid: false,
+      phoneNumber: '',
+      phoneIsValid: false,
+      isSubmiting: false,
+    );
   }
 }

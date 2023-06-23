@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "finish_on_boarding_button_label":
+            MessageLookupByLibrary.simpleMessage("Finalizar cadastro"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +46,98 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_page_title": MessageLookupByLibrary.simpleMessage("Nome da Loja"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Nome da loja atulizado!"),
+        "on_boarding_description_title": MessageLookupByLibrary.simpleMessage(
+            "Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência."),
+        "on_boarding_email_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Insira o seu email para prosseguir com o onboarding."),
+        "on_boarding_email_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Se o problema persistir, verifique o seu email e tente novamente."),
+        "on_boarding_email_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Email inválido! Por favor, tente novamente."),
+        "on_boarding_email_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "O email não pode estar vazio."),
+        "on_boarding_email_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda."),
+        "on_boarding_email_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Adicionando email..."),
+        "on_boarding_email_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Email adicionado com sucesso!"),
+        "on_boarding_email_page_title":
+            MessageLookupByLibrary.simpleMessage("Email:"),
+        "on_boarding_initial_title":
+            MessageLookupByLibrary.simpleMessage("Bem vindo ao Grabber"),
+        "on_boarding_password_confirm_page_title":
+            MessageLookupByLibrary.simpleMessage("Confirmar Senha:"),
+        "on_boarding_password_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Digite uma senha para sua conta com pelo menos 8 caracteres."),
+        "on_boarding_password_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Se o problema persistir, verifique sua senha e tente novamente."),
+        "on_boarding_password_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Senha inválida! Por favor, tente novamente."),
+        "on_boarding_password_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "A senha não pode estar vazia."),
+        "on_boarding_password_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda."),
+        "on_boarding_password_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Definindo senha..."),
+        "on_boarding_password_page_success_title":
+            MessageLookupByLibrary.simpleMessage("Senha definida com sucesso!"),
+        "on_boarding_password_page_title":
+            MessageLookupByLibrary.simpleMessage("Senha:"),
+        "on_boarding_phone_page_description": MessageLookupByLibrary.simpleMessage(
+            "Insira o seu número de telefone para prosseguir com o onboarding."),
+        "on_boarding_phone_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Se o problema persistir, verifique o número de telefone e tente novamente."),
+        "on_boarding_phone_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Número de telefone inválido! Por favor, tente novamente."),
+        "on_boarding_phone_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "O número de telefone não pode estar vazio."),
+        "on_boarding_phone_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda."),
+        "on_boarding_phone_page_loading_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Adicionando número de telefone..."),
+        "on_boarding_phone_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Número de telefone adicionado com sucesso!"),
+        "on_boarding_phone_page_title":
+            MessageLookupByLibrary.simpleMessage("Número de telefone:"),
+        "on_boarding_token_page_description": MessageLookupByLibrary.simpleMessage(
+            "Insira o token fornecido pela equipe de desenvolvimento para conectar com máquina."),
+        "on_boarding_token_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Caso problema persista entre em contato com equipe de desenvolvimento"),
+        "on_boarding_token_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Código inválido! Tente novamente"),
+        "on_boarding_token_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage("Código não pode ser nulo."),
+        "on_boarding_token_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Entre em contato com equipe de desenvolvimento para providenciarmos novo Código"),
+        "on_boarding_token_page_loading_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Vinculando código da máquina..."),
+        "on_boarding_token_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Código da máquina vinculado com sucesso!"),
+        "on_boarding_token_page_title":
+            MessageLookupByLibrary.simpleMessage("Código da máquina: "),
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras."),
         "phone_page_error_bottomsheet_description":
@@ -76,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurando sua máquina..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Braço configurado!"),
+        "start_button_label": MessageLookupByLibrary.simpleMessage("Iniciar"),
         "try_again": MessageLookupByLibrary.simpleMessage("Tentar novamente")
       };
 }

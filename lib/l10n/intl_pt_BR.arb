@@ -1,5 +1,7 @@
 {
     "continue_button_label": "Continuar",
+    "start_button_label": "Iniciar",
+    "finish_on_boarding_button_label": "Finalizar cadastro",
     "try_again": "Tentar novamente",
     "help": "Ajuda",
     "save": "Salvar",
@@ -32,5 +34,45 @@
     "phone_page_error_page_title": "Algo deu errado",
     "phone_page_error_page_description": "Não foi possível atualizar seu número de telefone.\nTente novamente, caso o erro persista, contate nossa equipe.",
     "phone_page_success_title": "Número de telefone atualizado!",
-    "phone_page_loading_title": "Atualizando o número do seu telefone..."
+    "phone_page_loading_title": "Atualizando o número do seu telefone...",
+    
+    "on_boarding_token_page_title": "Código da máquina: ",
+    "on_boarding_token_page_description": "Insira o token fornecido pela equipe de desenvolvimento para conectar com máquina.",
+    "on_boarding_token_page_error_bottomsheet_title": "Código inválido! Tente novamente",
+    "on_boarding_token_page_error_bottomsheet_description": "Caso problema persista entre em contato com equipe de desenvolvimento",
+    "on_boarding_token_page_error_page_title": "Erro inesperado! Entre em contato com equipe de desenvolvimento para providenciarmos novo Código",
+    "on_boarding_token_page_error_page_description": "Código não pode ser nulo.",
+    "on_boarding_token_page_success_title": "Código da máquina vinculado com sucesso!",
+    "on_boarding_token_page_loading_title": "Vinculando código da máquina...",
+
+    "on_boarding_email_page_title": "Email:",
+    "on_boarding_email_page_description": "Insira o seu email para prosseguir com o onboarding.",
+    "on_boarding_email_page_error_bottomsheet_title": "Email inválido! Por favor, tente novamente.",
+    "on_boarding_email_page_error_bottomsheet_description": "Se o problema persistir, verifique o seu email e tente novamente.",
+    "on_boarding_email_page_error_page_title": "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda.",
+    "on_boarding_email_page_error_page_description": "O email não pode estar vazio.",
+    "on_boarding_email_page_success_title": "Email adicionado com sucesso!",
+    "on_boarding_email_page_loading_title": "Adicionando email...",
+    
+    "on_boarding_phone_page_title": "Número de telefone:",
+    "on_boarding_phone_page_description": "Insira o seu número de telefone para prosseguir com o onboarding.",
+    "on_boarding_phone_page_error_bottomsheet_title": "Número de telefone inválido! Por favor, tente novamente.",
+    "on_boarding_phone_page_error_bottomsheet_description": "Se o problema persistir, verifique o número de telefone e tente novamente.",
+    "on_boarding_phone_page_error_page_title": "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda.",
+    "on_boarding_phone_page_error_page_description": "O número de telefone não pode estar vazio.",
+    "on_boarding_phone_page_success_title": "Número de telefone adicionado com sucesso!",
+    "on_boarding_phone_page_loading_title": "Adicionando número de telefone...",
+
+    "on_boarding_password_page_title": "Senha:",
+    "on_boarding_password_confirm_page_title": "Confirmar Senha:",
+    "on_boarding_password_page_description": "Digite uma senha para sua conta com pelo menos 8 caracteres.",
+    "on_boarding_password_page_error_bottomsheet_title": "Senha inválida! Por favor, tente novamente.",
+    "on_boarding_password_page_error_bottomsheet_description": "Se o problema persistir, verifique sua senha e tente novamente.",
+    "on_boarding_password_page_error_page_title": "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda.",
+    "on_boarding_password_page_error_page_description": "A senha não pode estar vazia.",
+    "on_boarding_password_page_success_title": "Senha definida com sucesso!",
+    "on_boarding_password_page_loading_title": "Definindo senha...",
+
+    "on_boarding_initial_title": "Bem vindo ao Grabber",
+    "on_boarding_description_title": "Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência."
 }

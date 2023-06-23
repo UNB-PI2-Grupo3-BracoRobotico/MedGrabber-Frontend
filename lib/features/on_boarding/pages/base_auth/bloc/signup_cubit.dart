@@ -15,7 +15,6 @@ class SignupCubit extends Cubit<SignupState> {
         super(SignupState.initial());
 
   Future<void> validateToken(String token) async {
-    
     final tokenIsValidOrFailure = await _validateToken.call(token);
     final errorText =
         tokenIsValidOrFailure.fold(() => '', (_) => 'Token invalido');
@@ -28,9 +27,35 @@ class SignupCubit extends Cubit<SignupState> {
       );
     } else {
       emit(
-        state.copyWith(tokenFailureText: '', tokenIsValid: true),
+        state.copyWith(token: token, tokenFailureText: '', tokenIsValid: true),
       );
     }
+  }
+
+  Future<void> validateEmail(String email) async {
+    //TODO(Natanael) create email validation
+    emit(
+      state.copyWith(email: email, emailIsValid: true),
+    );
+  }
+
+  Future<void> validatePassword(String password, String confirmPassword) async {
+    if (password == confirmPassword && password.isNotEmpty && password.length > 8) {
+      emit(
+        state.copyWith(password: password, passwordIsValid: true),
+      );
+    } else {
+      emit(
+        state.copyWith(passwordIsValid: false),
+      );
+    }
+  }
+
+  Future<void> validatePhone(String phone) async {
+    //TODO(Natanael) create email validation
+    emit(
+      state.copyWith(phoneNumber: phone, phoneIsValid: true),
+    );
   }
 
   void cleanTokenFailure() {
