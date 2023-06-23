@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/help_center/pages/help_center_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
 import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
@@ -19,7 +20,7 @@ import 'navigator_helper.dart';
 abstract class AppRouter {
   static Map<String, Widget Function(BuildContext)> mapRoutes() {
     return {
-      AppRoutes.initial: (_) => const TemplatePage(),
+      AppRoutes.helpCenter: (_) => const HelpCenter(),
       AppRoutes.setup1: (_) => const Step1(),
       AppRoutes.setup2: (_) => const Step2(),
       AppRoutes.setupFinal: (_) => BlocProvider(
