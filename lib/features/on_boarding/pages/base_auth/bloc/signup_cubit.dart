@@ -65,14 +65,10 @@ class SignupCubit extends Cubit<SignupState> {
   }
 
   Future<void> validatePhone(String phone) async {
-    //TODO(Natanael) create email validation
+    //TODO(Natanael) create phone validator
     emit(
       state.copyWith(phoneNumber: phone, phoneIsValid: true),
     );
-  }
-
-  Future<void> createUser() async {
-    print(state.email);
   }
 
   void cleanTokenFailure() {

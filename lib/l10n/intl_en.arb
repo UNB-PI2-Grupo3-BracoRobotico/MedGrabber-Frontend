@@ -1,7 +1,7 @@
 {
     "continue_button_label": "Continue",
     "start_button_label": "Get Started",
-    "finish_on_boarding_button_label": "Finish Signup",
+    "register_user_button_label": "Register user",
     "try_again": "Try again",
     "help": "Help",
     "save": "Save",

@@ -40,9 +40,9 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
       bloc: _signupCubit,
       listener: (context, state) {
         if (state.emailIsValid) {
-          // Navigator.of(context).pushNamed(
-          //   AppRoutes.onBoardingPassword,
-          // );
+          Navigator.of(context).pushNamed(
+            AppRoutes.onBoardingPassword,
+          );
         } else if (!state.tokenIsValid && state.tokenFailureText.isNotEmpty) {
           _showEmailError();
         }

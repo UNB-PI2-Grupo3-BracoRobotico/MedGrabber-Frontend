@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: CustomTheme.getThemeData(),
       //TODO(Mauricio): Define initial page later on
       // initialRoute: AppRoutes.initial,
-      initialRoute: AppRoutes.onBoardingEmail,
+      initialRoute: AppRoutes.onBoardingPhone,
       routes: AppRouter.mapRoutes(),
       supportedLocales: localizationsDelegate.supportedLocales,
       localizationsDelegates: const [

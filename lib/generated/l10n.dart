@@ -71,10 +71,10 @@ class S {
   }
 
   /// `Finish Signup`
-  String get finish_on_boarding_button_label {
+  String get register_user_button_label {
     return Intl.message(
       'Finish Signup',
-      name: 'finish_on_boarding_button_label',
+      name: 'register_user_button_label',
       desc: '',
       args: [],
     );

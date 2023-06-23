@@ -24,7 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
-        "finish_on_boarding_button_label":
+        "register_user_button_label":
             MessageLookupByLibrary.simpleMessage("Finalizar cadastro"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),

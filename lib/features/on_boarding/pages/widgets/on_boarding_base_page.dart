@@ -43,6 +43,7 @@ class BaseOnBoardingPage extends StatelessWidget {
               )),
               DSButton.primary(
                 onPressed: onPressed,
+                enabled: buttonEnabled,
                 label: buttonLabel,
               ),
               const VerticalGap.xxxs(),
