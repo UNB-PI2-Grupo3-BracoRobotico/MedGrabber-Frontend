@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/settings/widgets/option_tile.dart';
+import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 
 import '../../../generated/l10n.dart';
 
@@ -11,6 +12,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const GrabberBottomNavigationBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(

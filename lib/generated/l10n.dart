@@ -100,6 +100,56 @@ class S {
     );
   }
 
+  /// `Help`
+  String get bottom_navigation_help_option {
+    return Intl.message(
+      'Help',
+      name: 'bottom_navigation_help_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get bottom_navigation_settings_option {
+    return Intl.message(
+      'Settings',
+      name: 'bottom_navigation_settings_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get bottom_navigation_home_option {
+    return Intl.message(
+      'Home',
+      name: 'bottom_navigation_home_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dashboard`
+  String get bottom_navigation_dashboard_option {
+    return Intl.message(
+      'Dashboard',
+      name: 'bottom_navigation_dashboard_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get bottom_navigation_notifications_option {
+    return Intl.message(
+      'Notifications',
+      name: 'bottom_navigation_notifications_option',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Setting up your machine...`
   String get setup_machine_loading_title {
     return Intl.message(

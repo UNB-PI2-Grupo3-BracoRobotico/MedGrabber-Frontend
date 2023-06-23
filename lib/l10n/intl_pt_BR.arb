@@ -5,6 +5,12 @@
     "save": "Salvar",
     "got_it": "Entendi",
 
+    "bottom_navigation_help_option": "Ajuda",
+    "bottom_navigation_settings_option": "Configurações",
+    "bottom_navigation_home_option": "Início",
+    "bottom_navigation_dashboard_option": "Dashboard",
+    "bottom_navigation_notifications_option": "Notificações",
+
     "setup_machine_loading_title": "Configurando sua máquina...",
     "setup_machine_success_title": "Braço configurado!",
     "setup_machine_error_title": "Algo deu errado",

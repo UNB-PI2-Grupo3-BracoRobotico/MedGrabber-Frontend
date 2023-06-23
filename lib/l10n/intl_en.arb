@@ -5,6 +5,12 @@
     "save": "Save",
     "got_it": "Got it",
 
+    "bottom_navigation_help_option": "Help",
+    "bottom_navigation_settings_option": "Settings",
+    "bottom_navigation_home_option": "Home",
+    "bottom_navigation_dashboard_option": "Dashboard",
+    "bottom_navigation_notifications_option": "Notifications",
+
     "setup_machine_loading_title": "Setting up your machine...",
     "setup_machine_success_title": "Arm configurated!",
     "setup_machine_error_title": "Something went wrong",
