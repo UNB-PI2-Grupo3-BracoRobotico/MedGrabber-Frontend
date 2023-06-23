@@ -46,9 +46,8 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
       listener: (context, state) {
         if (state.phoneIsValid) {
           print(state.toString());
-          // Navigator.of(context).pushNamed(
-          //   AppRoutes.home,
-          // );
+          _signupCubit.createUser();
+          Navigator.pushReplacementNamed(context, AppRoutes.home);
         } else {
           _showPhoneError();
         }

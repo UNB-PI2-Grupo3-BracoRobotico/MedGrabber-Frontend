@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:grabber/features/on_boarding/domain/usecases/validate_token.dart';
@@ -34,13 +35,25 @@ class SignupCubit extends Cubit<SignupState> {
 
   Future<void> validateEmail(String email) async {
     //TODO(Natanael) create email validation
-    emit(
-      state.copyWith(email: email, emailIsValid: true),
-    );
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    try {
+      print(email);
+      await firebaseAuth.fetchSignInMethodsForEmail(email);
+      emit(
+        state.copyWith(email: email, emailIsValid: true),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(email: '', emailIsValid: false),
+      );
+      print('email ja existe tauba');
+    }
   }
 
   Future<void> validatePassword(String password, String confirmPassword) async {
-    if (password == confirmPassword && password.isNotEmpty && password.length > 8) {
+    if (password == confirmPassword &&
+        password.isNotEmpty &&
+        password.length > 8) {
       emit(
         state.copyWith(password: password, passwordIsValid: true),
       );
@@ -56,6 +69,10 @@ class SignupCubit extends Cubit<SignupState> {
     emit(
       state.copyWith(phoneNumber: phone, phoneIsValid: true),
     );
+  }
+
+  Future<void> createUser() async {
+    print(state.email);
   }
 
   void cleanTokenFailure() {

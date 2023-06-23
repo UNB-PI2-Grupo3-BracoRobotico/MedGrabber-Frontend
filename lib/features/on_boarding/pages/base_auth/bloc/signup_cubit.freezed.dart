@@ -18,6 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignupState {
   String get token => throw _privateConstructorUsedError;
   String get tokenFailureText => throw _privateConstructorUsedError;
+  String get emailFailureText => throw _privateConstructorUsedError;
+  String get passwordFailureText => throw _privateConstructorUsedError;
+  String get phoneFailureText => throw _privateConstructorUsedError;
   bool get tokenIsValid => throw _privateConstructorUsedError;
   bool get emailIsValid => throw _privateConstructorUsedError;
   bool get phoneIsValid => throw _privateConstructorUsedError;
@@ -41,6 +44,9 @@ abstract class $SignupStateCopyWith<$Res> {
   $Res call(
       {String token,
       String tokenFailureText,
+      String emailFailureText,
+      String passwordFailureText,
+      String phoneFailureText,
       bool tokenIsValid,
       bool emailIsValid,
       bool phoneIsValid,
@@ -66,6 +72,9 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
   $Res call({
     Object? token = null,
     Object? tokenFailureText = null,
+    Object? emailFailureText = null,
+    Object? passwordFailureText = null,
+    Object? phoneFailureText = null,
     Object? tokenIsValid = null,
     Object? emailIsValid = null,
     Object? phoneIsValid = null,
@@ -83,6 +92,18 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
       tokenFailureText: null == tokenFailureText
           ? _value.tokenFailureText
           : tokenFailureText // ignore: cast_nullable_to_non_nullable
+              as String,
+      emailFailureText: null == emailFailureText
+          ? _value.emailFailureText
+          : emailFailureText // ignore: cast_nullable_to_non_nullable
+              as String,
+      passwordFailureText: null == passwordFailureText
+          ? _value.passwordFailureText
+          : passwordFailureText // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneFailureText: null == phoneFailureText
+          ? _value.phoneFailureText
+          : phoneFailureText // ignore: cast_nullable_to_non_nullable
               as String,
       tokenIsValid: null == tokenIsValid
           ? _value.tokenIsValid
@@ -131,6 +152,9 @@ abstract class _$$_SignupStateCopyWith<$Res>
   $Res call(
       {String token,
       String tokenFailureText,
+      String emailFailureText,
+      String passwordFailureText,
+      String phoneFailureText,
       bool tokenIsValid,
       bool emailIsValid,
       bool phoneIsValid,
@@ -154,6 +178,9 @@ class __$$_SignupStateCopyWithImpl<$Res>
   $Res call({
     Object? token = null,
     Object? tokenFailureText = null,
+    Object? emailFailureText = null,
+    Object? passwordFailureText = null,
+    Object? phoneFailureText = null,
     Object? tokenIsValid = null,
     Object? emailIsValid = null,
     Object? phoneIsValid = null,
@@ -171,6 +198,18 @@ class __$$_SignupStateCopyWithImpl<$Res>
       tokenFailureText: null == tokenFailureText
           ? _value.tokenFailureText
           : tokenFailureText // ignore: cast_nullable_to_non_nullable
+              as String,
+      emailFailureText: null == emailFailureText
+          ? _value.emailFailureText
+          : emailFailureText // ignore: cast_nullable_to_non_nullable
+              as String,
+      passwordFailureText: null == passwordFailureText
+          ? _value.passwordFailureText
+          : passwordFailureText // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneFailureText: null == phoneFailureText
+          ? _value.phoneFailureText
+          : phoneFailureText // ignore: cast_nullable_to_non_nullable
               as String,
       tokenIsValid: null == tokenIsValid
           ? _value.tokenIsValid
@@ -214,6 +253,9 @@ class _$_SignupState implements _SignupState {
   const _$_SignupState(
       {required this.token,
       required this.tokenFailureText,
+      required this.emailFailureText,
+      required this.passwordFailureText,
+      required this.phoneFailureText,
       required this.tokenIsValid,
       required this.emailIsValid,
       required this.phoneIsValid,
@@ -227,6 +269,12 @@ class _$_SignupState implements _SignupState {
   final String token;
   @override
   final String tokenFailureText;
+  @override
+  final String emailFailureText;
+  @override
+  final String passwordFailureText;
+  @override
+  final String phoneFailureText;
   @override
   final bool tokenIsValid;
   @override
@@ -246,7 +294,7 @@ class _$_SignupState implements _SignupState {
 
   @override
   String toString() {
-    return 'SignupState(token: $token, tokenFailureText: $tokenFailureText, tokenIsValid: $tokenIsValid, emailIsValid: $emailIsValid, phoneIsValid: $phoneIsValid, passwordIsValid: $passwordIsValid, email: $email, password: $password, isSubmiting: $isSubmiting, phoneNumber: $phoneNumber)';
+    return 'SignupState(token: $token, tokenFailureText: $tokenFailureText, emailFailureText: $emailFailureText, passwordFailureText: $passwordFailureText, phoneFailureText: $phoneFailureText, tokenIsValid: $tokenIsValid, emailIsValid: $emailIsValid, phoneIsValid: $phoneIsValid, passwordIsValid: $passwordIsValid, email: $email, password: $password, isSubmiting: $isSubmiting, phoneNumber: $phoneNumber)';
   }
 
   @override
@@ -257,6 +305,12 @@ class _$_SignupState implements _SignupState {
             (identical(other.token, token) || other.token == token) &&
             (identical(other.tokenFailureText, tokenFailureText) ||
                 other.tokenFailureText == tokenFailureText) &&
+            (identical(other.emailFailureText, emailFailureText) ||
+                other.emailFailureText == emailFailureText) &&
+            (identical(other.passwordFailureText, passwordFailureText) ||
+                other.passwordFailureText == passwordFailureText) &&
+            (identical(other.phoneFailureText, phoneFailureText) ||
+                other.phoneFailureText == phoneFailureText) &&
             (identical(other.tokenIsValid, tokenIsValid) ||
                 other.tokenIsValid == tokenIsValid) &&
             (identical(other.emailIsValid, emailIsValid) ||
@@ -279,6 +333,9 @@ class _$_SignupState implements _SignupState {
       runtimeType,
       token,
       tokenFailureText,
+      emailFailureText,
+      passwordFailureText,
+      phoneFailureText,
       tokenIsValid,
       emailIsValid,
       phoneIsValid,
@@ -299,6 +356,9 @@ abstract class _SignupState implements SignupState {
   const factory _SignupState(
       {required final String token,
       required final String tokenFailureText,
+      required final String emailFailureText,
+      required final String passwordFailureText,
+      required final String phoneFailureText,
       required final bool tokenIsValid,
       required final bool emailIsValid,
       required final bool phoneIsValid,
@@ -312,6 +372,12 @@ abstract class _SignupState implements SignupState {
   String get token;
   @override
   String get tokenFailureText;
+  @override
+  String get emailFailureText;
+  @override
+  String get passwordFailureText;
+  @override
+  String get phoneFailureText;
   @override
   bool get tokenIsValid;
   @override
