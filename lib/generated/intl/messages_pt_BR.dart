@@ -20,6 +20,10 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt_BR';
 
+  static String m0(name) => "Bem-vindo ${name}";
+
+  static String m1(amount) => "Quantidade disponível: ${amount}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "bottom_navigation_dashboard_option":
@@ -36,6 +40,22 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Continuar"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
+        "home_page_manage_inventory_button_label":
+            MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
+        "home_page_welcome_again_title": m0,
+        "inventory_amount_card_information": m1,
+        "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte."),
+        "inventory_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Algo deu errado"),
+        "inventory_page_loading":
+            MessageLookupByLibrary.simpleMessage("Carregando seu estoque..."),
+        "inventory_page_no_item_registered_button_labek":
+            MessageLookupByLibrary.simpleMessage("Adicionar item"),
+        "inventory_page_no_item_registered_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!"),
+        "inventory_page_title": MessageLookupByLibrary.simpleMessage("Estoque"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o nome da sua loja.\nPor favor, tente novamente ou troque o nome inserido."),
         "name_error_page_primary_button_label":
