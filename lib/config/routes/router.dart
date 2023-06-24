@@ -49,10 +49,7 @@ abstract class AppRouter {
         //TODO(Mauricio): Implement route
         throw UnimplementedError();
       },
-      AppRoutes.help: (_) {
-        //TODO(Mauricio): Implement route
-        throw UnimplementedError();
-      },
+      AppRoutes.help: (_) => const HelpCenter(),
     };
   }
 
