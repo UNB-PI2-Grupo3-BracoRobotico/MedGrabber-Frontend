@@ -21,3 +21,6 @@ const kIconSizeXXL = 64.0;
 
 /// `128px`
 const kIconSizeXXXL = 128.0;
+
+/// `256px`
+const kIconSizeGiant = 256.0;
