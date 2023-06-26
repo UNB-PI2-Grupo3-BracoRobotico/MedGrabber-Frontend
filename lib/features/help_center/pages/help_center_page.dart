@@ -47,7 +47,34 @@ class HelpCenter extends StatelessWidget {
                 title: S.current.settings_name_option_title,
                 icon: Icons.account_circle_outlined,
                 onTap: () => Navigator.push(context, CupertinoPageRoute(builder: (context) => const SupportPage()))
+                ),
+                const VerticalGap.xxxl(),
+                Container(
+                width: 64,
+                height: 64,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: kPrimary, // Cor de fundo do círculo
+                ),
+                child: ClipOval(
+                  child: DSIcon(
+                    icon: Icons.email,
+                    size: kIconSizeSM,
+                  ),
+                ),
               ),
+                const VerticalGap.xxxs(),
+                Text(
+                  'Envia um email para:',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textAlign: TextAlign.justify,
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  'loremimpsum@gmail.com',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                  textAlign: TextAlign.justify,
+                ),
               ],
             ),
           ),
