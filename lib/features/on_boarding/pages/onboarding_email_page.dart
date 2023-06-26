@@ -19,8 +19,6 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
   late final TextEditingController _emailController;
   final SignupCubit _signupCubit = getIt.get();
   bool canContinue = false;
-  // TODO(Natanael)
-  final int max = 32;
 
   @override
   void initState() {
@@ -54,8 +52,18 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
               DSTextField(
                 controller: _emailController,
                 label: S.current.on_boarding_email_page_title,
-                onChanged: (val) {},
-                maxLength: max,
+                onChanged: (val) {
+                  if (RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$')
+                      .hasMatch(val)) {
+                    setState(() {
+                      canContinue = true;
+                    });
+                  } else {
+                    setState(() {
+                      canContinue = false;
+                    });
+                  }
+                },
                 keyboardType: TextInputType.emailAddress,
               ),
               const VerticalGap.xxxs(),
@@ -68,12 +76,18 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
           ),
           buttonEnabled: canContinue,
           buttonLabel: S.current.continue_button_label,
-          onPressed: () {
-            _signupCubit.validateEmail(_emailController.text);
-          },
+          onPressed: _validateEmail,
         );
       },
     );
+  }
+
+  Future<void> _validateEmail() async {
+    final isValid =await _signupCubit.validateEmail(_emailController.text);
+    if(!isValid) {
+      _showEmailError();
+    }
+    
   }
 
   void _showEmailError() {

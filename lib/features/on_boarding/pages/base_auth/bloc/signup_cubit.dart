@@ -15,7 +15,7 @@ class SignupCubit extends Cubit<SignupState> {
   })  : _validateToken = validateToken,
         super(SignupState.initial());
 
-  Future<void> validateToken(String token) async {
+  Future<bool> validateToken(String token) async {
     final tokenIsValidOrFailure = await _validateToken.call(token);
     final errorText =
         tokenIsValidOrFailure.fold(() => '', (_) => 'Token invalido');
@@ -26,27 +26,32 @@ class SignupCubit extends Cubit<SignupState> {
           tokenIsValid: false,
         ),
       );
-    } else {
-      emit(
-        state.copyWith(token: token, tokenFailureText: '', tokenIsValid: true),
-      );
+      return false;
     }
+
+    emit(
+      state.copyWith(token: token, tokenFailureText: '', tokenIsValid: true),
+    );
+    return true;
   }
 
-  Future<void> validateEmail(String email) async {
+  Future<bool> validateEmail(String email) async {
     //TODO(Natanael) create email validation
-    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
     try {
-      print(email);
-      await firebaseAuth.fetchSignInMethodsForEmail(email);
-      emit(
-        state.copyWith(email: email, emailIsValid: true),
-      );
+      final FirebaseAuth _auth = FirebaseAuth.instance;
+      final signInMethods = await _auth.fetchSignInMethodsForEmail(email);
+      final result = signInMethods.isEmpty;
+      if (result) {
+        emit(
+          state.copyWith(email: email, emailIsValid: true),
+        );
+      }
+      return result;
     } catch (e) {
       emit(
         state.copyWith(email: '', emailIsValid: false),
       );
-      print('email ja existe tauba');
+      return false;
     }
   }
 

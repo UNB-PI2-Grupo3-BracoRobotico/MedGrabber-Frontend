@@ -19,8 +19,7 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
   late final TextEditingController _controller;
   final SignupCubit _signupCubit = getIt.get();
   bool canContinue = false;
-  // TODO(Natanael)
-  final int max = 32;
+  final int max = 64;
 
   @override
   void initState() {
@@ -55,12 +54,12 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
                 controller: _controller,
                 label: S.current.on_boarding_token_page_title,
                 onChanged: (val) {
-                  if (val.length < max && canContinue == true) {
+                  if (val.isEmpty || val.length > max) {
                     setState(() {
                       canContinue = false;
                     });
-                  }
-                  if (val.length == max) {
+                  } else {
+                    // if (val.isNotEmpty && val.length < max) {
                     setState(() {
                       canContinue = true;
                     });
@@ -78,16 +77,17 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
           ),
           buttonEnabled: canContinue,
           buttonLabel: S.current.continue_button_label,
-          onPressed: () {
-            _signupCubit.validateToken(_controller.text);
-
-            // Navigator.of(context).pushNamed(
-            //   AppRoutes.signup,
-            // );
-          },
+          onPressed: _validateToken,
         );
       },
     );
+  }
+
+  Future<void> _validateToken() async {
+    bool tokenValid = await _signupCubit.validateToken(_controller.text);
+    if (!tokenValid) {
+      _showTokenError();
+    }
   }
 
   void _showTokenError() {
@@ -103,7 +103,8 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
       builder: (context) {
         return DSBottomSheet(
           title: S.current.on_boarding_token_page_error_bottomsheet_title,
-          description: S.current.on_boarding_token_page_error_bottomsheet_description,
+          description:
+              S.current.on_boarding_token_page_error_bottomsheet_description,
           icon: Icons.error_outline_rounded,
           buttonLabel: S.current.try_again,
           onTap: () {

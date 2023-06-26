@@ -19,7 +19,8 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
   late final TextEditingController _passwordController;
   late final TextEditingController _passwordConfirmController;
   final SignupCubit _signupCubit = getIt.get();
-  bool canContinue = false;
+  bool canContinuePassword = false;
+  bool canContinueConfirmPassword = false;
   // TODO(Natanael)
   final int max = 15;
 
@@ -58,14 +59,34 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
               DSTextField(
                 controller: _passwordController,
                 label: S.current.on_boarding_password_page_title,
-                onChanged: (val) {},
+                onChanged: (val) {
+                  if (val.isNotEmpty) {
+                    setState(() {
+                      canContinuePassword = true;
+                    });
+                  } else {
+                    setState(() {
+                      canContinuePassword = false;
+                    });
+                  }
+                },
                 maxLength: max,
               ),
               const VerticalGap.xxxs(),
               DSTextField(
                 controller: _passwordConfirmController,
                 label: S.current.on_boarding_password_confirm_page_title,
-                onChanged: (val) {},
+                onChanged: (val) {
+                  if (val.isNotEmpty) {
+                    setState(() {
+                      canContinueConfirmPassword = true;
+                    });
+                  } else {
+                    setState(() {
+                      canContinueConfirmPassword = false;
+                    });
+                  }
+                },
                 maxLength: max,
               ),
               const VerticalGap.xxxs(),
@@ -76,19 +97,17 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
               ),
             ],
           ),
-          buttonEnabled: canContinue,
+          buttonEnabled: canContinuePassword && canContinueConfirmPassword,
           buttonLabel: S.current.continue_button_label,
-          onPressed: () {
-            _signupCubit.validatePassword(
-                _passwordController.text, _passwordConfirmController.text);
-
-            // Navigator.of(context).pushNamed(
-            //   AppRoutes.signup,
-            // );
-          },
+          onPressed: _validatePassword(),
         );
       },
     );
+  }
+
+  Future<void> _validatePassword() {
+    _signupCubit.validatePassword(
+        _passwordController.text, _passwordConfirmController.text);
   }
 
   void _showPasswordError() {
@@ -109,7 +128,8 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
           icon: Icons.error_outline_rounded,
           buttonLabel: S.current.try_again,
           onTap: () {
-            _signupCubit.cleanTokenFailure();
+            _passwordConfirmController.clear();
+            _passwordController.clear();
             Navigator.of(context).pop();
           },
         );

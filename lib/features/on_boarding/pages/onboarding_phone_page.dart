@@ -131,7 +131,6 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
             icon: Icons.error_outline_rounded,
             buttonLabel: S.current.try_again,
             onTap: () {
-              _signupCubit.cleanTokenFailure();
               Navigator.of(context).pop();
             },
           );

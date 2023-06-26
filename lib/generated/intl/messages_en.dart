@@ -24,8 +24,6 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
-        "register_user_button_label":
-            MessageLookupByLibrary.simpleMessage("Finish Signup"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
@@ -54,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enter your email to proceed with onboarding."),
         "on_boarding_email_page_error_bottomsheet_description":
             MessageLookupByLibrary.simpleMessage(
-                "If the problem persists, please check your email and try again."),
+                "Email is already registered or has an incorrect format!"),
         "on_boarding_email_page_error_bottomsheet_title":
             MessageLookupByLibrary.simpleMessage(
                 "Invalid Email! Please try again."),
@@ -78,7 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Enter a password for your account with at least 8 characters."),
         "on_boarding_password_page_error_bottomsheet_description":
             MessageLookupByLibrary.simpleMessage(
-                "If the problem persists, please check your password and try again."),
+                "Passwords are not the same or have fewer than 8 characters."),
         "on_boarding_password_page_error_bottomsheet_title":
             MessageLookupByLibrary.simpleMessage(
                 "Invalid Password! Please try again."),
@@ -152,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number updated!"),
         "phone_page_title":
             MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "register_user_button_label":
+            MessageLookupByLibrary.simpleMessage("Register user"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),

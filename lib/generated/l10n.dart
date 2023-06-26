@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `Finish Signup`
+  /// `Register user`
   String get register_user_button_label {
     return Intl.message(
-      'Finish Signup',
+      'Register user',
       name: 'register_user_button_label',
       desc: '',
       args: [],
@@ -480,10 +480,10 @@ class S {
     );
   }
 
-  /// `If the problem persists, please check your email and try again.`
+  /// `Email is already registered or has an incorrect format!`
   String get on_boarding_email_page_error_bottomsheet_description {
     return Intl.message(
-      'If the problem persists, please check your email and try again.',
+      'Email is already registered or has an incorrect format!',
       name: 'on_boarding_email_page_error_bottomsheet_description',
       desc: '',
       args: [],
@@ -650,10 +650,10 @@ class S {
     );
   }
 
-  /// `If the problem persists, please check your password and try again.`
+  /// `Passwords are not the same or have fewer than 8 characters.`
   String get on_boarding_password_page_error_bottomsheet_description {
     return Intl.message(
-      'If the problem persists, please check your password and try again.',
+      'Passwords are not the same or have fewer than 8 characters.',
       name: 'on_boarding_password_page_error_bottomsheet_description',
       desc: '',
       args: [],

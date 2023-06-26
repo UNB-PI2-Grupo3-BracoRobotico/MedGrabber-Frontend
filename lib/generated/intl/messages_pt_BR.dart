@@ -24,8 +24,6 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
-        "register_user_button_label":
-            MessageLookupByLibrary.simpleMessage("Finalizar cadastro"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
@@ -53,7 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Insira o seu email para prosseguir com o onboarding."),
         "on_boarding_email_page_error_bottomsheet_description":
             MessageLookupByLibrary.simpleMessage(
-                "Se o problema persistir, verifique o seu email e tente novamente."),
+                "Email já cadastrado anteriormente ou com formatação incorreta!"),
         "on_boarding_email_page_error_bottomsheet_title":
             MessageLookupByLibrary.simpleMessage(
                 "Email inválido! Por favor, tente novamente."),
@@ -79,7 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Digite uma senha para sua conta com pelo menos 8 caracteres."),
         "on_boarding_password_page_error_bottomsheet_description":
             MessageLookupByLibrary.simpleMessage(
-                "Se o problema persistir, verifique sua senha e tente novamente."),
+                "Senha não estão iguais ou possuem menos que 8 caracteres"),
         "on_boarding_password_page_error_bottomsheet_title":
             MessageLookupByLibrary.simpleMessage(
                 "Senha inválida! Por favor, tente novamente."),
@@ -154,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_page_success_title": MessageLookupByLibrary.simpleMessage(
             "Número de telefone atualizado!"),
         "phone_page_title": MessageLookupByLibrary.simpleMessage("Telefone"),
+        "register_user_button_label":
+            MessageLookupByLibrary.simpleMessage("Registrar usuário"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Endereço"),
