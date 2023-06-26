@@ -1,6 +1,8 @@
 
 import 'package:design_system/design_system.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:grabber/features/help_center/pages/support_page.dart';
 import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 
 import '../../../config/routes/routes.dart';
@@ -44,9 +46,7 @@ class HelpCenter extends StatelessWidget {
                 RealTime(
                 title: S.current.settings_name_option_title,
                 icon: Icons.account_circle_outlined,
-                onTap: () => Navigator.of(context).pushNamed(
-                  AppRoutes.settingsName,
-                ),
+                onTap: () => Navigator.push(context, CupertinoPageRoute(builder: (context) => const SupportPage()))
               ),
               ],
             ),
