@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
+
 import 'package:grabber/features/help_center/pages/help_center_page.dart';
+
+import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
+
 import 'package:grabber/features/navigation/template_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
 import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
@@ -11,6 +15,7 @@ import 'package:grabber/features/setup_machine/presentation/blocs/setup_status/s
 import 'package:grabber/features/setup_machine/presentation/pages/step_final.dart';
 
 import '../../features/home/presentation/home_page.dart';
+import '../../features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import '../../features/settings/pages/name_option/blocs/name_page/name_page_cubit.dart';
 import '../../features/settings/pages/phone_option/phone_page.dart';
 import '../../features/setup_machine/presentation/pages/step_1.dart';
@@ -95,6 +100,14 @@ abstract class AppRouter {
             updatePhoneNumber: getIt.get(),
           ),
           child: const PhonePage(),
+        );
+        break;
+      case AppRoutes.inventory:
+        page = BlocProvider(
+          create: (_) => HasItemCubit(
+            getProductsList: getIt.get(),
+          ),
+          child: const InventoryPage(),
         );
         break;
       case AppRoutes.notifications:

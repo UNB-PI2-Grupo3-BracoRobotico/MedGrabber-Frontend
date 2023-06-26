@@ -20,6 +20,10 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(name) => "Welcome ${name}";
+
+  static String m1(amount) => "Amount available: ${amount}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "bottom_navigation_dashboard_option":
@@ -36,6 +40,23 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Continue"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "home_page_manage_inventory_button_label":
+            MessageLookupByLibrary.simpleMessage("Manage inventory"),
+        "home_page_welcome_again_title": m0,
+        "inventory_amount_card_information": m1,
+        "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "We couldn\'t load your store itens.\nPlease try again or contact the suport team."),
+        "inventory_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "inventory_page_loading":
+            MessageLookupByLibrary.simpleMessage("Loading your inventory..."),
+        "inventory_page_no_item_registered_button_labek":
+            MessageLookupByLibrary.simpleMessage("Add item"),
+        "inventory_page_no_item_registered_description":
+            MessageLookupByLibrary.simpleMessage(
+                "It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!"),
+        "inventory_page_title":
+            MessageLookupByLibrary.simpleMessage("Inventory"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t update your store\'s name.\nPlease try again or change the inserted name."),
         "name_error_page_primary_button_label":
