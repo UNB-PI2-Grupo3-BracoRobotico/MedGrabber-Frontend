@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         title: 'grabber',
         theme: CustomTheme.getThemeData(),
         //TODO(Mauricio): Define initial page later on
-        initialRoute: AppRoutes.helpCenter,
+        initialRoute: AppRoutes.home,
         routes: AppRouter.mapRoutes(),
         onGenerateRoute: AppRouter.routeFromSettings,
         supportedLocales: localizationsDelegate.supportedLocales,
