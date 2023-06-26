@@ -310,6 +310,16 @@ class S {
     );
   }
 
+  /// `Conecting to support page...`
+    String get supported_page_loading_tiltle {
+    return Intl.message(
+        'Aguarde um momento enquanto conectamos você ao nosso suporte...',
+      name: 'supported_page_loading_tiltle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Store name updated!`
   String get name_success_page_title {
     return Intl.message(
