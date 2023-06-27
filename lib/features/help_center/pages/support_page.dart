@@ -19,12 +19,6 @@ class SupportPage extends StatelessWidget {
             name: 'Ayoub AMINE',
             email: 'ayoubamine2a@gmail.com',
           ),
-          onLoad: () {
-            print('Hello Tawk!');
-          },
-          onLinkTap: (String url) {
-            print(url);
-          },
           placeholder: Center(
             child: BaseLoadingPage(
               title: S.current.supported_page_loading_tiltle,

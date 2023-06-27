@@ -16,12 +16,12 @@ class RealTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 28),
+      margin: const EdgeInsets.symmetric(horizontal: kSpacingXXS),
       decoration: BoxDecoration(
         color: kPrimary,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(kSpacingNano),
       ),
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(kSpacingNano),
       child: ListTile(
         onTap: onTap,
         title: Text(
