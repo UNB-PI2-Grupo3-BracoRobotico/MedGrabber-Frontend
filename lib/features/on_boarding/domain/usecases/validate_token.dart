@@ -11,8 +11,6 @@ abstract class ValidateToken {
 
 @Injectable(as: ValidateToken)
 class ValidateTokenImpl implements ValidateToken {
-  // final SettingsRepository repository;
-
   ValidateTokenImpl();
 
   @override

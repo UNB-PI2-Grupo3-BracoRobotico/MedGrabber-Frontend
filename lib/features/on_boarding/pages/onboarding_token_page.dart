@@ -59,7 +59,6 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
                       canContinue = false;
                     });
                   } else {
-                    // if (val.isNotEmpty && val.length < max) {
                     setState(() {
                       canContinue = true;
                     });

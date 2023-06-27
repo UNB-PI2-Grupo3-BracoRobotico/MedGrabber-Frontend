@@ -28,7 +28,6 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
   final SignupCubit _signupCubit = getIt.get();
   bool canContinue = false;
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  // TODO(Natanael)
   final int max = 15;
 
   @override
@@ -49,10 +48,15 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
       bloc: _signupCubit,
       listener: (context, state) {
         if (state.phoneIsValid) {
-          print(state.toString());
           _auth.createUserWithEmailAndPassword(
-              email: state.email, password: state.password);
-          Navigator.pushReplacementNamed(context, AppRoutes.home);
+            email: state.email,
+            password: state.password,
+          );
+          Navigator.pushReplacementNamed(
+            context,
+            AppRoutes.home,
+          );
+          _signupCubit.createUser();
         }
       },
       builder: (_, state) {
@@ -93,9 +97,6 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
           buttonLabel: S.current.continue_button_label,
           onPressed: () async {
             await _savePhoneNumber();
-            // Navigator.of(context).pushNamed(
-            //   AppRoutes.signup,
-            // );
           },
         );
       },
@@ -113,7 +114,7 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
     final rawPhoneNumber = maskFormatter.getUnmaskedText();
     final phoneIsValid = await _phoneNumberIsValid(rawPhoneNumber);
     if (phoneIsValid) {
-      _signupCubit.validatePhone(rawPhoneNumber);
+      _signupCubit.savePhone(rawPhoneNumber);
     } else {
       showModalBottomSheet(
         context: context,
@@ -130,9 +131,7 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
             description: S.current.phone_page_error_bottomsheet_description,
             icon: Icons.error_outline_rounded,
             buttonLabel: S.current.try_again,
-            onTap: () {
-              Navigator.of(context).pop();
-            },
+            onTap: Navigator.of(context).pop,
           );
         },
       );

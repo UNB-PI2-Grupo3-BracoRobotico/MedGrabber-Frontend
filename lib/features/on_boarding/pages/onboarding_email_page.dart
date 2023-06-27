@@ -53,16 +53,7 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
                 controller: _emailController,
                 label: S.current.on_boarding_email_page_title,
                 onChanged: (val) {
-                  if (RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$')
-                      .hasMatch(val)) {
-                    setState(() {
-                      canContinue = true;
-                    });
-                  } else {
-                    setState(() {
-                      canContinue = false;
-                    });
-                  }
+                  _validateEmailPattern(val);
                 },
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -83,11 +74,22 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
   }
 
   Future<void> _validateEmail() async {
-    final isValid =await _signupCubit.validateEmail(_emailController.text);
-    if(!isValid) {
+    final isValid = await _signupCubit.validateEmail(_emailController.text);
+    if (!isValid) {
       _showEmailError();
     }
-    
+  }
+
+  Future<void> _validateEmailPattern(String email) async {
+    if (RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$').hasMatch(email)) {
+      setState(() {
+        canContinue = true;
+      });
+    } else {
+      setState(() {
+        canContinue = false;
+      });
+    }
   }
 
   void _showEmailError() {
@@ -107,9 +109,7 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
               S.current.on_boarding_email_page_error_bottomsheet_description,
           icon: Icons.error_outline_rounded,
           buttonLabel: S.current.try_again,
-          onTap: () {
-            Navigator.of(context).pop();
-          },
+          onTap: Navigator.of(context).pop,
         );
       },
     );

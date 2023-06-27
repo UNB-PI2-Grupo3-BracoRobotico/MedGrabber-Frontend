@@ -21,7 +21,6 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
   final SignupCubit _signupCubit = getIt.get();
   bool canContinuePassword = false;
   bool canContinueConfirmPassword = false;
-  // TODO(Natanael)
   final int max = 15;
 
   @override
@@ -44,8 +43,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
       bloc: _signupCubit,
       listener: (context, state) {
         if (state.passwordIsValid) {
-          print(state.toString());
-          Navigator.of(context).pushNamed(
+          Navigator.of(context).pushReplacementNamed(
             AppRoutes.onBoardingPhone,
           );
         } else if (!state.passwordIsValid && state.password.isEmpty) {
@@ -59,6 +57,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
               DSTextField(
                 controller: _passwordController,
                 label: S.current.on_boarding_password_page_title,
+                obscureText: true,
                 onChanged: (val) {
                   if (val.isNotEmpty) {
                     setState(() {
@@ -75,6 +74,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
               const VerticalGap.xxxs(),
               DSTextField(
                 controller: _passwordConfirmController,
+                obscureText: true,
                 label: S.current.on_boarding_password_confirm_page_title,
                 onChanged: (val) {
                   if (val.isNotEmpty) {
@@ -99,15 +99,26 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
           ),
           buttonEnabled: canContinuePassword && canContinueConfirmPassword,
           buttonLabel: S.current.continue_button_label,
-          onPressed: _validatePassword(),
+          onPressed: () {
+            _savePassword(
+              _passwordController.text,
+              _passwordConfirmController.text,
+            );
+          },
         );
       },
     );
   }
 
-  Future<void> _validatePassword() {
-    _signupCubit.validatePassword(
-        _passwordController.text, _passwordConfirmController.text);
+  Future<void> _savePassword(String password, String confirmPassword) async {
+    if (password == confirmPassword &&
+        password.isNotEmpty &&
+        password.length > 8) {
+      _signupCubit.savePassword(
+          _passwordController.text, _passwordConfirmController.text);
+    } else {
+      _showPasswordError();
+    }
   }
 
   void _showPasswordError() {
@@ -124,7 +135,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
         return DSBottomSheet(
           title: S.current.on_boarding_password_page_error_bottomsheet_title,
           description:
-              S.current.on_boarding_password_page_error_page_description,
+              S.current.on_boarding_password_page_error_bottomsheet_description,
           icon: Icons.error_outline_rounded,
           buttonLabel: S.current.try_again,
           onTap: () {

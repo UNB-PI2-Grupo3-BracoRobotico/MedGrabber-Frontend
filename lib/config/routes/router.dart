@@ -27,8 +27,6 @@ abstract class AppRouter {
       AppRoutes.onBoardingEmail: (_) => const OnBoardingEmailPage(),
       AppRoutes.onBoardingPassword: (_) => const OnBoardingPasswordPage(),
       AppRoutes.onBoardingPhone: (_) => const OnBoardingPhonePage(),
-
-      // AppRoutes.onBoardingCompanyInfo: (_) => const OnBoardingTokenPage(),
       AppRoutes.setup1: (_) => const Step1(),
       AppRoutes.setup2: (_) => const Step2(),
       AppRoutes.setupFinal: (_) => BlocProvider(

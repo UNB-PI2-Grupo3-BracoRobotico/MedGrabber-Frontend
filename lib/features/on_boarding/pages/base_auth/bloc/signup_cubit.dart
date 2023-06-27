@@ -30,50 +30,60 @@ class SignupCubit extends Cubit<SignupState> {
     }
 
     emit(
-      state.copyWith(token: token, tokenFailureText: '', tokenIsValid: true),
+      state.copyWith(
+        token: token,
+        tokenFailureText: '',
+        tokenIsValid: true,
+      ),
     );
     return true;
   }
 
   Future<bool> validateEmail(String email) async {
-    //TODO(Natanael) create email validation
     try {
-      final FirebaseAuth _auth = FirebaseAuth.instance;
-      final signInMethods = await _auth.fetchSignInMethodsForEmail(email);
+      final FirebaseAuth auth = FirebaseAuth.instance;
+      final signInMethods = await auth.fetchSignInMethodsForEmail(email);
       final result = signInMethods.isEmpty;
       if (result) {
         emit(
-          state.copyWith(email: email, emailIsValid: true),
+          state.copyWith(
+            email: email,
+            emailIsValid: true,
+          ),
         );
       }
       return result;
     } catch (e) {
       emit(
-        state.copyWith(email: '', emailIsValid: false),
+        state.copyWith(
+          email: '',
+          emailIsValid: false,
+        ),
       );
       return false;
     }
   }
 
-  Future<void> validatePassword(String password, String confirmPassword) async {
-    if (password == confirmPassword &&
-        password.isNotEmpty &&
-        password.length > 8) {
-      emit(
-        state.copyWith(password: password, passwordIsValid: true),
-      );
-    } else {
-      emit(
-        state.copyWith(passwordIsValid: false),
-      );
-    }
+  Future<void> savePassword(String password, String confirmPassword) async {
+    emit(
+      state.copyWith(
+        password: password,
+        passwordIsValid: true,
+      ),
+    );
   }
 
-  Future<void> validatePhone(String phone) async {
-    //TODO(Natanael) create phone validator
+  Future<void> savePhone(String phone) async {
     emit(
-      state.copyWith(phoneNumber: phone, phoneIsValid: true),
+      state.copyWith(
+        phoneNumber: phone,
+        phoneIsValid: true,
+      ),
     );
+  }
+
+  Future<void> createUser() async {
+    //TODO(Natanael) create user in database when its available
   }
 
   void cleanTokenFailure() {

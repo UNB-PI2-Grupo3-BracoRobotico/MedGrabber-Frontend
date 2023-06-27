@@ -2,13 +2,14 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
 class BaseOnBoardingPage extends StatelessWidget {
-  const BaseOnBoardingPage(
-      {super.key,
-      this.title,
-      required this.content,
-      required this.onPressed,
-      required this.buttonLabel,
-      this.buttonEnabled = true});
+  const BaseOnBoardingPage({
+    super.key,
+    this.title,
+    required this.content,
+    required this.onPressed,
+    required this.buttonLabel,
+    this.buttonEnabled = true,
+  });
 
   final String? title;
   final Widget content;

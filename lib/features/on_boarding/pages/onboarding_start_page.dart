@@ -4,10 +4,8 @@ import 'package:grabber/features/on_boarding/pages/widgets/on_boarding_base_page
 import 'package:grabber/generated/l10n.dart';
 
 class OnBoardingStartPage extends StatelessWidget {
-  // final TabController tabController;
   const OnBoardingStartPage({
     Key? key,
-    // required this.tabController,
   }) : super(key: key);
 
   @override
@@ -25,7 +23,7 @@ class OnBoardingStartPage extends StatelessWidget {
       ),
       onPressed: () => Navigator.of(context).pushNamed(
         AppRoutes.onBoardingToken,
-      ),// tabController.animateTo(tabController.index + 1);
+      ),
       buttonLabel: S.current.start_button_label,
     );
   }
