@@ -45,7 +45,7 @@ class HelpCenter extends StatelessWidget {
                 ),
                 const VerticalGap.nano(),
                 RealTime(
-                title: '',
+                title:  S.current.help_page_buttom_label,
                 icon: Icons.account_circle_outlined,
                 onTap: () => Navigator.of(context).pushNamed(
                   AppRoutes.support)
@@ -67,13 +67,13 @@ class HelpCenter extends StatelessWidget {
               ),
                 const VerticalGap.nano(),
                 Text(
-                  'Envia um email para:',
+                  S.current.help_page_send_email,
                   style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.justify,
                 ),
                 const VerticalGap.nano(),
                 Text(
-                  'loremimpsum@gmail.com',
+                  S.current.help__email_contact,
                   style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.justify,
                 ),

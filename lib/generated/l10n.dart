@@ -149,6 +149,59 @@ class S {
       args: [],
     );
   }
+   /// `Help App Title`
+  String get help_title {
+    return Intl.message(
+      'Help Center',
+      name: 'help_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+     /// `Help App message`
+  String get help_page_help_message {
+    return Intl.message(
+      'How can we help?',
+      name: 'help_page_help_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+       /// `Help App button`
+  String get  help_page_buttom_label {
+    return Intl.message(
+      'Initate Real Time Chat!',
+      name: '  help_page_buttom_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+       /// `Help Send Email `
+  String get  help_page_send_email {
+    return Intl.message(
+      'Send Email to:',
+      name: '  help_page_send_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+       /// `Help Email `
+  String get  help__email_contact {
+    return Intl.message(
+      'loremimpsum@gmail.com',
+      name: '  help__email_contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+
+
+
 
   /// `Setting up your machine...`
   String get setup_machine_loading_title {

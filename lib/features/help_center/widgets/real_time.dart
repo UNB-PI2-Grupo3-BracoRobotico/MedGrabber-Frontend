@@ -1,6 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n.dart';
+
 class RealTime extends StatelessWidget {
   const RealTime({
     Key? key,
@@ -25,7 +27,7 @@ class RealTime extends StatelessWidget {
       child: ListTile(
         onTap: onTap,
         title: Text(
-          'Iniciar chat em Tempo Real',
+          S.current.help_page_buttom_label, 
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         leading: DSIcon(
