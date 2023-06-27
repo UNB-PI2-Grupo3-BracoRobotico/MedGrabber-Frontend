@@ -1,3 +1,4 @@
+import 'package:design_system/spacing.dart';
 import 'package:flutter/material.dart';
 
 import 'colors.dart';
@@ -12,6 +13,15 @@ class CustomTheme {
       useMaterial3: true,
       colorScheme: const ColorScheme.light().copyWith(
         primary: kPrimary,
+      ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: kPrimary,
+        splashColor: kLightGrey,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(kSpacingGiant),
+          ),
+        ),
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: kWhite,

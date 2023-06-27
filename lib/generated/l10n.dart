@@ -120,6 +120,56 @@ class S {
     );
   }
 
+  /// `Help`
+  String get bottom_navigation_help_option {
+    return Intl.message(
+      'Help',
+      name: 'bottom_navigation_help_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get bottom_navigation_settings_option {
+    return Intl.message(
+      'Settings',
+      name: 'bottom_navigation_settings_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get bottom_navigation_home_option {
+    return Intl.message(
+      'Home',
+      name: 'bottom_navigation_home_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dashboard`
+  String get bottom_navigation_dashboard_option {
+    return Intl.message(
+      'Dashboard',
+      name: 'bottom_navigation_dashboard_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get bottom_navigation_notifications_option {
+    return Intl.message(
+      'Notifications',
+      name: 'bottom_navigation_notifications_option',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Setting up your machine...`
   String get setup_machine_loading_title {
     return Intl.message(
@@ -370,6 +420,7 @@ class S {
     );
   }
 
+
   /// `Machine Code`
   String get on_boarding_token_page_title {
     return Intl.message(
@@ -525,6 +576,26 @@ class S {
     return Intl.message(
       'Adding email...',
       name: 'on_boarding_email_page_loading_title',
+            desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome {name}`
+  String home_page_welcome_again_title(Object name) {
+    return Intl.message(
+      'Welcome $name',
+      name: 'home_page_welcome_again_title',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Manage inventory`
+  String get home_page_manage_inventory_button_label {
+    return Intl.message(
+      'Manage inventory',
+      name: 'home_page_manage_inventory_button_label',
       desc: '',
       args: [],
     );
@@ -535,16 +606,36 @@ class S {
     return Intl.message(
       'Phone Number:',
       name: 'on_boarding_phone_page_title',
+            desc: '',
+      args: [],
+    );
+  }
+  /// `Inventory`
+  String get inventory_page_title {
+    return Intl.message(
+      'Inventory',
+      name: 'inventory_page_title',
       desc: '',
       args: [],
     );
   }
+
 
   /// `Enter your phone number to proceed with onboarding.`
   String get on_boarding_phone_page_description {
     return Intl.message(
       'Enter your phone number to proceed with onboarding.',
       name: 'on_boarding_phone_page_description',
+            desc: '',
+      args: [],
+    );
+  }
+
+  /// `It seems like you haven'y registered any item yet. Register now and start managing your business the best way possible!`
+  String get inventory_page_no_item_registered_description {
+    return Intl.message(
+      'It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!',
+      name: 'inventory_page_no_item_registered_description',
       desc: '',
       args: [],
     );
@@ -555,6 +646,16 @@ class S {
     return Intl.message(
       'Invalid Phone Number! Please try again.',
       name: 'on_boarding_phone_page_error_bottomsheet_title',
+
+            desc: '',
+      args: [],
+    );
+  }
+  /// `Add item`
+  String get inventory_page_no_item_registered_button_labek {
+    return Intl.message(
+      'Add item',
+      name: 'inventory_page_no_item_registered_button_labek',
       desc: '',
       args: [],
     );
@@ -715,16 +816,45 @@ class S {
     return Intl.message(
       'For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us.',
       name: 'on_boarding_description_title',
+            desc: '',
+      args: [],
+    );
+  }
+  /// `Amount available: {amount}`
+  String inventory_amount_card_information(Object amount) {
+    return Intl.message(
+      'Amount available: $amount',
+      name: 'inventory_amount_card_information',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Something went wrong`
+  String get inventory_error_page_title {
+    return Intl.message(
+      'Something went wrong',
+      name: 'inventory_error_page_title',
       desc: '',
       args: [],
     );
   }
 
+      
   /// `Invalid Token`
   String get default_invalid_token_label {
     return Intl.message(
       'Invalid Token',
       name: 'default_invalid_token_label',
+            desc: '',
+      args: [],
+    );
+  }
+  /// `We couldn't load your store itens.\nPlease try again or contact the suport team.`
+  String get inventory_error_page_description {
+    return Intl.message(
+      'We couldn\'t load your store itens.\nPlease try again or contact the suport team.',
+      name: 'inventory_error_page_description',
       desc: '',
       args: [],
     );
@@ -735,6 +865,15 @@ class S {
     return Intl.message(
       '',
       name: 'empty_string',
+            desc: '',
+      args: [],
+    );
+  }
+  /// `Loading your inventory...`
+  String get inventory_page_loading {
+    return Intl.message(
+      'Loading your inventory...',
+      name: 'inventory_page_loading',
       desc: '',
       args: [],
     );

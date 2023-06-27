@@ -7,6 +7,12 @@
     "save": "Salvar",
     "got_it": "Entendi",
 
+    "bottom_navigation_help_option": "Ajuda",
+    "bottom_navigation_settings_option": "Configurações",
+    "bottom_navigation_home_option": "Início",
+    "bottom_navigation_dashboard_option": "Dashboard",
+    "bottom_navigation_notifications_option": "Notificações",
+
     "setup_machine_loading_title": "Configurando sua máquina...",
     "setup_machine_success_title": "Braço configurado!",
     "setup_machine_error_title": "Algo deu errado",
@@ -77,5 +83,16 @@
     "on_boarding_description_title": "Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência.",
 
     "default_invalid_token_label": "Token invalido",
-    "empty_string": ""
+    "empty_string": "",
+
+    "home_page_welcome_again_title": "Bem-vindo {name}",
+    "home_page_manage_inventory_button_label": "Gerenciar estoque",
+
+    "inventory_page_title": "Estoque",
+    "inventory_page_no_item_registered_description": "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!",
+    "inventory_page_no_item_registered_button_labek": "Adicionar item",
+    "inventory_amount_card_information": "Quantidade disponível: {amount}",
+    "inventory_error_page_title": "Algo deu errado",
+    "inventory_error_page_description": "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte.",
+    "inventory_page_loading": "Carregando seu estoque..."
 }

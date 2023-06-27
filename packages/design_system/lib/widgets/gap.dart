@@ -72,9 +72,9 @@ class HorizontalGap extends StatelessWidget {
 
   const HorizontalGap.xxxl({super.key}) : size = kSpacingXXXL;
 
-  const HorizontalGap.kSpacingHuge({super.key}) : size = kSpacingHuge;
+  const HorizontalGap.huge({super.key}) : size = kSpacingHuge;
 
-  const HorizontalGap.kSpacingGiant({super.key}) : size = kSpacingGiant;
+  const HorizontalGap.giant({super.key}) : size = kSpacingGiant;
 
   @override
   Widget build(BuildContext context) {
