@@ -420,7 +420,6 @@ class S {
     );
   }
 
-
   /// `Machine Code`
   String get on_boarding_token_page_title {
     return Intl.message(
@@ -576,26 +575,6 @@ class S {
     return Intl.message(
       'Adding email...',
       name: 'on_boarding_email_page_loading_title',
-            desc: '',
-      args: [],
-    );
-  }
-
-  /// `Welcome {name}`
-  String home_page_welcome_again_title(Object name) {
-    return Intl.message(
-      'Welcome $name',
-      name: 'home_page_welcome_again_title',
-      desc: '',
-      args: [name],
-    );
-  }
-
-  /// `Manage inventory`
-  String get home_page_manage_inventory_button_label {
-    return Intl.message(
-      'Manage inventory',
-      name: 'home_page_manage_inventory_button_label',
       desc: '',
       args: [],
     );
@@ -606,36 +585,16 @@ class S {
     return Intl.message(
       'Phone Number:',
       name: 'on_boarding_phone_page_title',
-            desc: '',
-      args: [],
-    );
-  }
-  /// `Inventory`
-  String get inventory_page_title {
-    return Intl.message(
-      'Inventory',
-      name: 'inventory_page_title',
       desc: '',
       args: [],
     );
   }
-
 
   /// `Enter your phone number to proceed with onboarding.`
   String get on_boarding_phone_page_description {
     return Intl.message(
       'Enter your phone number to proceed with onboarding.',
       name: 'on_boarding_phone_page_description',
-            desc: '',
-      args: [],
-    );
-  }
-
-  /// `It seems like you haven'y registered any item yet. Register now and start managing your business the best way possible!`
-  String get inventory_page_no_item_registered_description {
-    return Intl.message(
-      'It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!',
-      name: 'inventory_page_no_item_registered_description',
       desc: '',
       args: [],
     );
@@ -646,16 +605,6 @@ class S {
     return Intl.message(
       'Invalid Phone Number! Please try again.',
       name: 'on_boarding_phone_page_error_bottomsheet_title',
-
-            desc: '',
-      args: [],
-    );
-  }
-  /// `Add item`
-  String get inventory_page_no_item_registered_button_labek {
-    return Intl.message(
-      'Add item',
-      name: 'inventory_page_no_item_registered_button_labek',
       desc: '',
       args: [],
     );
@@ -816,10 +765,81 @@ class S {
     return Intl.message(
       'For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us.',
       name: 'on_boarding_description_title',
-            desc: '',
+      desc: '',
       args: [],
     );
   }
+
+  /// `Invalid Token`
+  String get default_invalid_token_label {
+    return Intl.message(
+      'Invalid Token',
+      name: 'default_invalid_token_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get empty_string {
+    return Intl.message(
+      '',
+      name: 'empty_string',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome {name}`
+  String home_page_welcome_again_title(Object name) {
+    return Intl.message(
+      'Welcome $name',
+      name: 'home_page_welcome_again_title',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Manage inventory`
+  String get home_page_manage_inventory_button_label {
+    return Intl.message(
+      'Manage inventory',
+      name: 'home_page_manage_inventory_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Inventory`
+  String get inventory_page_title {
+    return Intl.message(
+      'Inventory',
+      name: 'inventory_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It seems like you haven'y registered any item yet. Register now and start managing your business the best way possible!`
+  String get inventory_page_no_item_registered_description {
+    return Intl.message(
+      'It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!',
+      name: 'inventory_page_no_item_registered_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add item`
+  String get inventory_page_no_item_registered_button_labek {
+    return Intl.message(
+      'Add item',
+      name: 'inventory_page_no_item_registered_button_labek',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Amount available: {amount}`
   String inventory_amount_card_information(Object amount) {
     return Intl.message(
@@ -840,16 +860,6 @@ class S {
     );
   }
 
-      
-  /// `Invalid Token`
-  String get default_invalid_token_label {
-    return Intl.message(
-      'Invalid Token',
-      name: 'default_invalid_token_label',
-            desc: '',
-      args: [],
-    );
-  }
   /// `We couldn't load your store itens.\nPlease try again or contact the suport team.`
   String get inventory_error_page_description {
     return Intl.message(
@@ -860,15 +870,6 @@ class S {
     );
   }
 
-  /// ``
-  String get empty_string {
-    return Intl.message(
-      '',
-      name: 'empty_string',
-            desc: '',
-      args: [],
-    );
-  }
   /// `Loading your inventory...`
   String get inventory_page_loading {
     return Intl.message(
