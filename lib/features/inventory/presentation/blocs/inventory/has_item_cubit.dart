@@ -46,11 +46,11 @@ class HasItemCubit extends Cubit<HasItemState> {
         seconds: 2,
       ),
     );
-    emit(const HasItemState.error());
-    // emit(
-    //   HasItemState.hasItemRegisters(
-    //     products: _products,
-    //   ),
-    // );
+    // emit(const HasItemState.error());
+    emit(
+      HasItemState.hasItemRegisters(
+        products: _products,
+      ),
+    );
   }
 }

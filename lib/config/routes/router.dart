@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/inventory/presentation/pages/add_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
@@ -108,6 +109,9 @@ abstract class AppRouter {
           ),
           child: const InventoryPage(),
         );
+        break;
+      case AppRoutes.addItem:
+        page = const AddItemPage();
         break;
       case AppRoutes.notifications:
       case AppRoutes.dashboard:
