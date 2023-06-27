@@ -25,7 +25,6 @@ import 'navigator_helper.dart';
 abstract class AppRouter {
   static Map<String, Widget Function(BuildContext)> mapRoutes() {
     return {
-      AppRoutes.helpCenter: (_) => const HelpCenter(),
       AppRoutes.setup1: (_) => const Step1(),
       AppRoutes.setup2: (_) => const Step2(),
       AppRoutes.setupFinal: (_) => BlocProvider(
@@ -113,6 +112,10 @@ abstract class AppRouter {
       case AppRoutes.notifications:
       case AppRoutes.dashboard:
       case AppRoutes.help:
+        animation = AnimationByRoute.instant;
+        page = const  HelpCenter();
+        break;
+
       default:
         throw UnimplementedError();
     }

@@ -4,7 +4,6 @@ abstract class AppRoutes {
   static const String setup2 = '/setup-2';
   static const String setupFinal = '/setup-final';
   static const String home = '/home';
-  static const String helpCenter = '/help-center';
   static const String settings = '/settings';
   static const String settingsName = '/settings-name';
   static const String settingsPhone = '/settings-phone';

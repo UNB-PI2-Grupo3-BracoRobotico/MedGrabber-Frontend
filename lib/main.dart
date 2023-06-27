@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
         theme: CustomTheme.getThemeData(),
         //TODO(Mauricio): Define initial page later on
         initialRoute: AppRoutes.home,
-        routes: AppRouter.mapRoutes(),
         onGenerateRoute: AppRouter.routeFromSettings,
         supportedLocales: localizationsDelegate.supportedLocales,
         localizationsDelegates: const [
