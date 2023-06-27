@@ -719,6 +719,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Invalid Token`
+  String get default_invalid_token_label {
+    return Intl.message(
+      'Invalid Token',
+      name: 'default_invalid_token_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
+  String get empty_string {
+    return Intl.message(
+      '',
+      name: 'empty_string',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

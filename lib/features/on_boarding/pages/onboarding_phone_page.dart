@@ -52,11 +52,11 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
             email: state.email,
             password: state.password,
           );
+          _signupCubit.saveUser();
           Navigator.pushReplacementNamed(
             context,
             AppRoutes.home,
           );
-          _signupCubit.createUser();
         }
       },
       builder: (_, state) {

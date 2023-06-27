@@ -59,15 +59,9 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
                 label: S.current.on_boarding_password_page_title,
                 obscureText: true,
                 onChanged: (val) {
-                  if (val.isNotEmpty) {
-                    setState(() {
-                      canContinuePassword = true;
-                    });
-                  } else {
-                    setState(() {
-                      canContinuePassword = false;
-                    });
-                  }
+                  setState(() {
+                    canContinuePassword = _passwordIsEmpty(val);
+                  });
                 },
                 maxLength: max,
               ),
@@ -77,15 +71,9 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
                 obscureText: true,
                 label: S.current.on_boarding_password_confirm_page_title,
                 onChanged: (val) {
-                  if (val.isNotEmpty) {
-                    setState(() {
-                      canContinueConfirmPassword = true;
-                    });
-                  } else {
-                    setState(() {
-                      canContinueConfirmPassword = false;
-                    });
-                  }
+                  setState(() {
+                    canContinueConfirmPassword = _passwordIsEmpty(val);
+                  });
                 },
                 maxLength: max,
               ),
@@ -100,7 +88,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
           buttonEnabled: canContinuePassword && canContinueConfirmPassword,
           buttonLabel: S.current.continue_button_label,
           onPressed: () {
-            _savePassword(
+            _validatePassword(
               _passwordController.text,
               _passwordConfirmController.text,
             );
@@ -110,12 +98,18 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
     );
   }
 
-  Future<void> _savePassword(String password, String confirmPassword) async {
+  bool _passwordIsEmpty(String password) {
+    return password.isNotEmpty;
+  }
+
+  Future<void> _validatePassword(
+      String password, String confirmPassword) async {
     if (password == confirmPassword &&
         password.isNotEmpty &&
         password.length > 8) {
       _signupCubit.savePassword(
-          _passwordController.text, _passwordConfirmController.text);
+        _passwordController.text,
+      );
     } else {
       _showPasswordError();
     }

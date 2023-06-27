@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "default_invalid_token_label":
+            MessageLookupByLibrary.simpleMessage("Token invalido"),
+        "empty_string": MessageLookupByLibrary.simpleMessage(""),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(

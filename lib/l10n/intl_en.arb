@@ -74,6 +74,8 @@
     "on_boarding_password_page_loading_title": "Setting password...",
 
     "on_boarding_initial_title": "Welcome to Grabber",
-    "on_boarding_description_title": "For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us."
+    "on_boarding_description_title": "For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us.",
 
+    "default_invalid_token_label": "Invalid Token",
+    "empty_string": ""
 }

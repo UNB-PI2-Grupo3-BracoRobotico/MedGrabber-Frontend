@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:grabber/features/on_boarding/domain/usecases/validate_token.dart';
+import 'package:grabber/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
 
 part 'signup_state.dart';
@@ -18,7 +19,7 @@ class SignupCubit extends Cubit<SignupState> {
   Future<bool> validateToken(String token) async {
     final tokenIsValidOrFailure = await _validateToken.call(token);
     final errorText =
-        tokenIsValidOrFailure.fold(() => '', (_) => 'Token invalido');
+        tokenIsValidOrFailure.fold(() => S.current.empty_string, (_) => S.current.default_invalid_token_label);
     if (errorText.isNotEmpty) {
       emit(
         state.copyWith(
@@ -32,7 +33,7 @@ class SignupCubit extends Cubit<SignupState> {
     emit(
       state.copyWith(
         token: token,
-        tokenFailureText: '',
+        tokenFailureText: S.current.empty_string,
         tokenIsValid: true,
       ),
     );
@@ -56,7 +57,7 @@ class SignupCubit extends Cubit<SignupState> {
     } catch (e) {
       emit(
         state.copyWith(
-          email: '',
+          email: S.current.empty_string,
           emailIsValid: false,
         ),
       );
@@ -64,7 +65,7 @@ class SignupCubit extends Cubit<SignupState> {
     }
   }
 
-  Future<void> savePassword(String password, String confirmPassword) async {
+  Future<void> savePassword(String password) async {
     emit(
       state.copyWith(
         password: password,
@@ -82,14 +83,14 @@ class SignupCubit extends Cubit<SignupState> {
     );
   }
 
-  Future<void> createUser() async {
+  Future<void> saveUser() async {
     //TODO(Natanael) create user in database when its available
   }
 
   void cleanTokenFailure() {
     emit(
       state.copyWith(
-        tokenFailureText: '',
+        tokenFailureText: S.current.empty_string,
       ),
     );
   }

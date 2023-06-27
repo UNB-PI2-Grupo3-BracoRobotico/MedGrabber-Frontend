@@ -53,17 +53,7 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
               DSTextField(
                 controller: _controller,
                 label: S.current.on_boarding_token_page_title,
-                onChanged: (val) {
-                  if (val.isEmpty || val.length > max) {
-                    setState(() {
-                      canContinue = false;
-                    });
-                  } else {
-                    setState(() {
-                      canContinue = true;
-                    });
-                  }
-                },
+                onChanged: _verifyTokenPattern,
                 maxLength: max,
               ),
               const VerticalGap.xxxs(),
@@ -80,6 +70,18 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
         );
       },
     );
+  }
+
+  Future<void> _verifyTokenPattern(String token) async {
+    if (token.isEmpty || token.length > max) {
+      setState(() {
+        canContinue = false;
+      });
+    } else {
+      setState(() {
+        canContinue = true;
+      });
+    }
   }
 
   Future<void> _validateToken() async {
