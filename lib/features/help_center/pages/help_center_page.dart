@@ -23,7 +23,7 @@ class HelpCenter extends StatelessWidget {
           title: Padding(
             padding: const EdgeInsets.only(left: kSpacingXXS),
             child: Text(
-              'Central de Ajuda',
+              S.current.help_title,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),
@@ -39,7 +39,7 @@ class HelpCenter extends StatelessWidget {
                 ),
                 const VerticalGap.nano(),
                 Text(
-                  'Como podemos ajudar',
+                  S.current.help_page_help_message, 
                   style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.justify,
                 ),
@@ -47,7 +47,8 @@ class HelpCenter extends StatelessWidget {
                 RealTime(
                 title: '',
                 icon: Icons.account_circle_outlined,
-                onTap: () => Navigator.push(context, CupertinoPageRoute(builder: (context) => const SupportPage()))
+                onTap: () => Navigator.of(context).pushNamed(
+                  AppRoutes.support)
                 ),
                 const VerticalGap.xxxl(),
                 Container(

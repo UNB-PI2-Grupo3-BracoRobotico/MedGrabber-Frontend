@@ -16,8 +16,8 @@ class SupportPage extends StatelessWidget {
         body: Tawk(
           directChatLink: 'https://tawk.to/chat/6498d81d94cf5d49dc5fcb73/1h3qgocv6',
           visitor: TawkVisitor(
-            name: 'Ayoub AMINE',
-            email: 'ayoubamine2a@gmail.com',
+            name: 'john Doe',
+            email: 'johndoe@gmail.com',
           ),
           placeholder: Center(
             child: BaseLoadingPage(

@@ -14,6 +14,7 @@ import 'package:grabber/features/settings/pages/settings_page.dart';
 import 'package:grabber/features/setup_machine/presentation/blocs/setup_status/setup_status_bloc.dart';
 import 'package:grabber/features/setup_machine/presentation/pages/step_final.dart';
 
+import '../../features/help_center/pages/support_page.dart';
 import '../../features/home/presentation/home_page.dart';
 import '../../features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import '../../features/settings/pages/name_option/blocs/name_page/name_page_cubit.dart';
@@ -27,6 +28,7 @@ abstract class AppRouter {
     return {
       AppRoutes.setup1: (_) => const Step1(),
       AppRoutes.setup2: (_) => const Step2(),
+      AppRoutes.support: (_) => const SupportPage(),
       AppRoutes.setupFinal: (_) => BlocProvider(
             create: (_) => SetupStatusBloc(),
             child: const StepFinal(),
@@ -115,7 +117,10 @@ abstract class AppRouter {
         animation = AnimationByRoute.instant;
         page = const  HelpCenter();
         break;
-
+      case AppRoutes.support:
+        animation = AnimationByRoute.instant;
+        page = const SupportPage();
+        break;
       default:
         throw UnimplementedError();
     }
