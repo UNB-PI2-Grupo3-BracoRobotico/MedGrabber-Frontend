@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/presentation/pages/widgets/item_card.dart';
 
@@ -30,7 +31,9 @@ class InventoryWithItems extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Navigator.of(context).pushNamed(
+          AppRoutes.addItem,
+        ),
         child: const DSIcon(
           icon: Icons.add,
         ),
