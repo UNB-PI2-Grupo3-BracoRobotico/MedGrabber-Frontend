@@ -49,7 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
           MessageLookupByLibrary.simpleMessage("Envia um email para:"),
         "help__email_contact":
-           MessageLookupByLibrary.simpleMessage("loremimpsum@gmail.com"),
+           MessageLookupByLibrary.simpleMessage("MedGrabber@gmail.com"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
         "home_page_welcome_again_title": m0,

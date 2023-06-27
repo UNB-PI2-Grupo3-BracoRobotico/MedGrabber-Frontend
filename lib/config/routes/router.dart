@@ -118,7 +118,6 @@ abstract class AppRouter {
         page = const  HelpCenter();
         break;
       case AppRoutes.support:
-        animation = AnimationByRoute.instant;
         page = const SupportPage();
         break;
       default:

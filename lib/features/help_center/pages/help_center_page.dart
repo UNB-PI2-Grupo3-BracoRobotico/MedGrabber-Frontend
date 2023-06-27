@@ -48,7 +48,7 @@ class HelpCenter extends StatelessWidget {
                 title:  S.current.help_page_buttom_label,
                 icon: Icons.account_circle_outlined,
                 onTap: () => Navigator.of(context).pushNamed(
-                  AppRoutes.support)
+                  AppRoutes.support),
                 ),
                 const VerticalGap.xxxl(),
                 Container(

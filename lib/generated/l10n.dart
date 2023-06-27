@@ -192,7 +192,7 @@ class S {
        /// `Help Email `
   String get  help__email_contact {
     return Intl.message(
-      'loremimpsum@gmail.com',
+      'MedGrabber@gmail.com',
       name: '  help__email_contact',
       desc: '',
       args: [],
