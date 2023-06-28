@@ -780,6 +780,26 @@ class S {
     );
   }
 
+  /// `Sign up error! `
+  String get default_invalid_signup_title {
+    return Intl.message(
+      'Sign up error! ',
+      name: 'default_invalid_signup_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pleas try again! If error persist, contact our team.`
+  String get default_invalid_signup_description {
+    return Intl.message(
+      'Pleas try again! If error persist, contact our team.',
+      name: 'default_invalid_signup_description',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get empty_string {
     return Intl.message(

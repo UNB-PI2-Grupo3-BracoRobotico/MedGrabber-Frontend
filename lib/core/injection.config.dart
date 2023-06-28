@@ -40,8 +40,10 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i5.UpdatePhoneNumber>(() => _i5.UpdatePhoneNumberImpl());
     gh.factory<_i6.UpdateStoreName>(() => _i6.UpdateStoreNameImpl());
     gh.factory<_i7.ValidateToken>(() => _i7.ValidateTokenImpl());
-    gh.singleton<_i8.SignupCubit>(
-        _i8.SignupCubit(validateToken: gh<_i7.ValidateToken>()));
+    gh.singleton<_i8.SignupCubit>(_i8.SignupCubit(
+      validateToken: gh<_i7.ValidateToken>(),
+      createUser: gh<_i3.CreateUser>(),
+    ));
     return this;
   }
 }

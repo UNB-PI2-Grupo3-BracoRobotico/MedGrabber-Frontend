@@ -18,6 +18,7 @@ class OnBoardingPasswordPage extends StatefulWidget {
 class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
   late final TextEditingController _passwordController;
   late final TextEditingController _passwordConfirmController;
+
   final SignupCubit _signupCubit = getIt.get();
   bool canContinuePassword = false;
   bool canContinueConfirmPassword = false;
@@ -113,6 +114,10 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
     } else {
       _showPasswordError();
     }
+  }
+
+  void _setFocusedInput(FocusNode focusNode) {
+    FocusScope.of(context).requestFocus(focusNode);
   }
 
   void _showPasswordError() {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/navigation/example_home_page.dart';
 import 'package:grabber/features/on_boarding/pages/onboarding_email_page.dart';
 import 'package:grabber/features/on_boarding/pages/onboarding_password_page.dart';
 import 'package:grabber/features/on_boarding/pages/onboarding_phone_page.dart';

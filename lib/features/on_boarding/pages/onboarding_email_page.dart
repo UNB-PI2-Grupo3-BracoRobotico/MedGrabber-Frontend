@@ -67,13 +67,13 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
           ),
           buttonEnabled: canContinue,
           buttonLabel: S.current.continue_button_label,
-          onPressed: _validateEmail,
+          onPressed: _saveEmail,
         );
       },
     );
   }
 
-  Future<void> _validateEmail() async {
+  Future<void> _saveEmail() async {
     final isValid = await _signupCubit.validateEmail(_emailController.text);
     if (!isValid) {
       _showEmailError();
@@ -81,7 +81,8 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
   }
 
   Future<void> _validateEmailPattern(String email) async {
-    if (RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$').hasMatch(email)) {
+    if (RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$')
+        .hasMatch(email)) {
       setState(() {
         canContinue = true;
       });

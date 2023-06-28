@@ -38,6 +38,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurações"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "default_invalid_signup_description": MessageLookupByLibrary.simpleMessage(
+            "Por favor tente novamente! Caso erro persista contate nossa equipe"),
+        "default_invalid_signup_title":
+            MessageLookupByLibrary.simpleMessage("Erro ao criar cadastro"),
         "default_invalid_token_label":
             MessageLookupByLibrary.simpleMessage("Token invalido"),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),

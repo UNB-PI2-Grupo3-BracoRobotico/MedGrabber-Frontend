@@ -27,7 +27,6 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
   );
   final SignupCubit _signupCubit = getIt.get();
   bool canContinue = false;
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   final int max = 15;
 
   @override
@@ -46,17 +45,19 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
   Widget build(BuildContext context) {
     return BlocConsumer<SignupCubit, SignupState>(
       bloc: _signupCubit,
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state.phoneIsValid) {
-          _auth.createUserWithEmailAndPassword(
-            email: state.email,
-            password: state.password,
-          );
-          _signupCubit.saveUser();
-          Navigator.pushReplacementNamed(
-            context,
-            AppRoutes.home,
-          );
+          if (await _signupCubit.createUser()) {
+            Navigator.pushReplacementNamed(
+              context,
+              AppRoutes.home,
+            );
+          } else {
+            showError(
+              S.current.phone_page_error_bottomsheet_title,
+              S.current.phone_page_error_bottomsheet_description,
+            );
+          }
         }
       },
       builder: (_, state) {
@@ -116,25 +117,32 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
     if (phoneIsValid) {
       _signupCubit.savePhone(rawPhoneNumber);
     } else {
-      showModalBottomSheet(
-        context: context,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(
-              kSpacingXXXS,
-            ),
-          ),
-        ),
-        builder: (context) {
-          return DSBottomSheet(
-            title: S.current.phone_page_error_bottomsheet_title,
-            description: S.current.phone_page_error_bottomsheet_description,
-            icon: Icons.error_outline_rounded,
-            buttonLabel: S.current.try_again,
-            onTap: Navigator.of(context).pop,
-          );
-        },
+      showError(
+        S.current.phone_page_error_bottomsheet_title,
+        S.current.phone_page_error_bottomsheet_description,
       );
     }
+  }
+
+  void showError(String title, String description) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(
+            kSpacingXXXS,
+          ),
+        ),
+      ),
+      builder: (context) {
+        return DSBottomSheet(
+          title: title,
+          description: description,
+          icon: Icons.error_outline_rounded,
+          buttonLabel: S.current.try_again,
+          onTap: Navigator.of(context).pop,
+        );
+      },
+    );
   }
 }

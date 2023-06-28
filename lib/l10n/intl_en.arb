@@ -83,6 +83,8 @@
     "on_boarding_description_title": "For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us.",
 
     "default_invalid_token_label": "Invalid Token",
+    "default_invalid_signup_title": "Sign up error! ",
+    "default_invalid_signup_description": "Pleas try again! If error persist, contact our team.",
     "empty_string": "",
     
     "home_page_welcome_again_title": "Welcome {name}",

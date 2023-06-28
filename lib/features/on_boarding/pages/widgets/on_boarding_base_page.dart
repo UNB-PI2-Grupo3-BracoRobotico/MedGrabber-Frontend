@@ -27,20 +27,22 @@ class BaseOnBoardingPage extends StatelessWidget {
           ),
           child: Column(
             children: [
-              const Image(
-                image: AssetImage('assets/images/mechanical-arm.png'),
-                fit: BoxFit.cover,
-              ),
-              const VerticalGap.xl(),
-              if (title != null)
-                Text(
-                  title!,
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-              if (title != null) const VerticalGap.xl(),
               Expanded(
                   child: ListView(
-                children: [content],
+                children: [
+                  const Image(
+                    image: AssetImage('assets/images/mechanical-arm.png'),
+                    fit: BoxFit.cover,
+                  ),
+                  const VerticalGap.xl(),
+                  if (title != null)
+                    Text(
+                      title!,
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
+                  if (title != null) const VerticalGap.xl(),
+                  content,
+                ],
               )),
               DSButton.primary(
                 onPressed: onPressed,

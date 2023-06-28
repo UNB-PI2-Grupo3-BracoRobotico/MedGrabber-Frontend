@@ -83,6 +83,8 @@
     "on_boarding_description_title": "Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência.",
 
     "default_invalid_token_label": "Token invalido",
+    "default_invalid_signup_title": "Erro ao criar cadastro",
+    "default_invalid_signup_description": "Por favor tente novamente! Caso erro persista contate nossa equipe",
     "empty_string": "",
 
     "home_page_welcome_again_title": "Bem-vindo {name}",
