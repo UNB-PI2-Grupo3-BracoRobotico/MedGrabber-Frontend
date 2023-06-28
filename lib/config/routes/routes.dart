@@ -11,4 +11,5 @@ abstract class AppRoutes {
   static const String dashboard = '/dashboard';
   static const String help = '/help';
   static const String inventory = '/inventory';
+  static const String support = '/support';
 }

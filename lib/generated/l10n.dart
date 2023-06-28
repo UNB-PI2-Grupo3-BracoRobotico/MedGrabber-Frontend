@@ -149,6 +149,59 @@ class S {
       args: [],
     );
   }
+   /// `Help App Title`
+  String get help_title {
+    return Intl.message(
+      'Help Center',
+      name: 'help_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+     /// `Help App message`
+  String get help_page_help_message {
+    return Intl.message(
+      'How can we help?',
+      name: 'help_page_help_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+       /// `Help App button`
+  String get  help_page_buttom_label {
+    return Intl.message(
+      'Initate Real Time Chat!',
+      name: '  help_page_buttom_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+       /// `Help Send Email `
+  String get  help_page_send_email {
+    return Intl.message(
+      'Send Email to:',
+      name: '  help_page_send_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+       /// `Help Email `
+  String get  help_email_contact {
+    return Intl.message(
+      'MedGrabber@gmail.com',
+      name: '  help_email_contact ',
+      desc: '',
+      args: [],
+    );
+  }
+
+
+
+
 
   /// `Setting up your machine...`
   String get setup_machine_loading_title {
@@ -305,6 +358,16 @@ class S {
     return Intl.message(
       'Updating your store\'s name...',
       name: 'name_loading_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Conecting to support page...`
+    String get supported_page_loading_tiltle {
+    return Intl.message(
+        'Aguarde um momento enquanto conectamos você ao nosso suporte...',
+      name: 'supported_page_loading_tiltle',
       desc: '',
       args: [],
     );
