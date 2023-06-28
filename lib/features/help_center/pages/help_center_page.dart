@@ -73,7 +73,7 @@ class HelpCenter extends StatelessWidget {
                 ),
                 const VerticalGap.nano(),
                 Text(
-                  S.current.help__email_contact,
+                  S.current.help_email_contact,
                   style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.justify,
                 ),

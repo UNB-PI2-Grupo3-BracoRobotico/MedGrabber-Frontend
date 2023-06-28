@@ -48,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
           MessageLookupByLibrary.simpleMessage("Iniciar chat em Tempo Real!"),
         "help_page_send_email":
           MessageLookupByLibrary.simpleMessage("Envia um email para:"),
-        "help__email_contact":
+        "help_email_contact ":
            MessageLookupByLibrary.simpleMessage("MedGrabber@gmail.com"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),

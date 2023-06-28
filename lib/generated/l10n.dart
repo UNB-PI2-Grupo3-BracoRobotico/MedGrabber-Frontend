@@ -190,10 +190,10 @@ class S {
   }
 
        /// `Help Email `
-  String get  help__email_contact {
+  String get  help_email_contact {
     return Intl.message(
       'MedGrabber@gmail.com',
-      name: '  help__email_contact',
+      name: '  help_email_contact ',
       desc: '',
       args: [],
     );

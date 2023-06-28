@@ -15,6 +15,7 @@ class SupportPage extends StatelessWidget {
       home: Scaffold(
         body: Tawk(
           directChatLink: 'https://tawk.to/chat/6498d81d94cf5d49dc5fcb73/1h3qgocv6',
+          //TODO add Real user information
           visitor: TawkVisitor(
             name: 'john Doe',
             email: 'johndoe@gmail.com',

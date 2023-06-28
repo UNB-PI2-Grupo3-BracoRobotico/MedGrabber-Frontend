@@ -50,7 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Manage inventory"),
         "help_page_send_email":
           MessageLookupByLibrary.simpleMessage("Send Email to:"),
-        "help__email_contact":
+        "help_email_contact ":
            MessageLookupByLibrary.simpleMessage("MedGrabber@gmail.com"),
         "home_page_welcome_again_title": m0,
         "inventory_amount_card_information": m1,
