@@ -440,6 +440,56 @@ class S {
     );
   }
 
+  /// `Help Center`
+  String get help_title {
+    return Intl.message(
+      'Help Center',
+      name: 'help_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How can we help?`
+  String get help_page_help_message {
+    return Intl.message(
+      'How can we help?',
+      name: 'help_page_help_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initiate Real Time Chat!`
+  String get help_page_buttom_label {
+    return Intl.message(
+      'Initiate Real Time Chat!',
+      name: 'help_page_buttom_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Email to:`
+  String get help_page_send_email {
+    return Intl.message(
+      'Send Email to:',
+      name: 'help_page_send_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MedGrabber@gmail.com`
+  String get help_email_contact {
+    return Intl.message(
+      'MedGrabber@gmail.com',
+      name: 'help_email_contact',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Inventory`
   String get inventory_page_title {
     return Intl.message(

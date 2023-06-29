@@ -75,6 +75,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Item edited!"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "help_email_contact":
+            MessageLookupByLibrary.simpleMessage("MedGrabber@gmail.com"),
+        "help_page_buttom_label":
+            MessageLookupByLibrary.simpleMessage("Initiate Real Time Chat!"),
+        "help_page_help_message":
+            MessageLookupByLibrary.simpleMessage("How can we help?"),
+        "help_page_send_email":
+            MessageLookupByLibrary.simpleMessage("Send Email to:"),
+        "help_title": MessageLookupByLibrary.simpleMessage("Help Center"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Manage inventory"),
         "home_page_welcome_again_title": m0,

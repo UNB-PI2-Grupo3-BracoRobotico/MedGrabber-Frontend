@@ -76,6 +76,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Item editado!"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
+        "help_email_contact":
+            MessageLookupByLibrary.simpleMessage("MedGrabber@gmail.com"),
+        "help_page_buttom_label":
+            MessageLookupByLibrary.simpleMessage("Iniciar chat em Tempo Real!"),
+        "help_page_help_message":
+            MessageLookupByLibrary.simpleMessage("Como podemos ajudar?"),
+        "help_page_send_email":
+            MessageLookupByLibrary.simpleMessage("Envia um email para:"),
+        "help_title": MessageLookupByLibrary.simpleMessage("Central de Ajuda"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
         "home_page_welcome_again_title": m0,

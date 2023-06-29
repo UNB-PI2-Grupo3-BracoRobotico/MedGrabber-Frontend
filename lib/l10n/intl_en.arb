@@ -45,6 +45,12 @@
     "home_page_welcome_again_title": "Welcome {name}",
     "home_page_manage_inventory_button_label": "Manage inventory",
 
+    "help_title" : "Help Center",
+    "help_page_help_message": "How can we help?",
+    "help_page_buttom_label": "Initiate Real Time Chat!",
+    "help_page_send_email": "Send Email to:",
+    "help_email_contact": "MedGrabber@gmail.com",
+    
     "inventory_page_title": "Inventory",
     "inventory_page_no_item_registered_description": "It seems like you haven'y registered any item yet. Register now and start managing your business the best way possible!",
     "inventory_page_no_item_registered_button_labek": "Add item",
