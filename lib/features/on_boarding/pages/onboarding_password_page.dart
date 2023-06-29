@@ -43,7 +43,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
     return BlocConsumer<SignupCubit, SignupState>(
       bloc: _signupCubit,
       listener: (context, state) {
-        if (state.passwordIsValid) {
+        if (state.passwordIsValid)  {
           Navigator.of(context).pushReplacementNamed(
             AppRoutes.onBoardingPhone,
           );
@@ -114,10 +114,6 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
     } else {
       _showPasswordError();
     }
-  }
-
-  void _setFocusedInput(FocusNode focusNode) {
-    FocusScope.of(context).requestFocus(focusNode);
   }
 
   void _showPasswordError() {

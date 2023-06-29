@@ -36,26 +36,22 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
   }
 
   @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignupCubit, SignupState>(
       bloc: _signupCubit,
       listener: (context, state) async {
         if (state.phoneIsValid) {
+          _signupCubit.validateEmail("jorge2@email.com");
+          _signupCubit.savePassword("1231231231");
           if (await _signupCubit.createUser()) {
             Navigator.pushReplacementNamed(
               context,
               AppRoutes.home,
             );
           } else {
-            showError(
-              S.current.phone_page_error_bottomsheet_title,
-              S.current.phone_page_error_bottomsheet_description,
+            _showError(
+              S.current.default_invalid_signup_title,
+              S.current.default_invalid_signup_description,
             );
           }
         }
@@ -117,14 +113,14 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
     if (phoneIsValid) {
       _signupCubit.savePhone(rawPhoneNumber);
     } else {
-      showError(
+      _showError(
         S.current.phone_page_error_bottomsheet_title,
         S.current.phone_page_error_bottomsheet_description,
       );
     }
   }
 
-  void showError(String title, String description) {
+  void _showError(String title, String description) {
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(

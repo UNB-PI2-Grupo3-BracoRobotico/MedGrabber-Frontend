@@ -14,7 +14,9 @@ class ValidateTokenImpl implements ValidateToken {
   ValidateTokenImpl();
 
   @override
-  Future<Option<Failure>> call(String token) async {
+  Future<Option<Failure>> call(
+    String token,
+  ) async {
     //TODO(Natanael): Integrate with onboarding repository
     return const None();
   }

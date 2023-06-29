@@ -14,7 +14,6 @@ abstract class CreateUser {
 
 @Injectable(as: CreateUser)
 class CreateUserImpl implements CreateUser {
-
   CreateUserImpl();
 
   @override
@@ -23,8 +22,8 @@ class CreateUserImpl implements CreateUser {
     String email,
     String password,
     String phoneNumber,
-  ) {
-    // TODO(Natanael): implement call
-    throw UnimplementedError();
+  ) async {
+    // TODO(Natanael): implement call create user
+    return const None();
   }
 }
