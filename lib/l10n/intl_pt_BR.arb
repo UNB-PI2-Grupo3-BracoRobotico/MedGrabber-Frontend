@@ -4,6 +4,7 @@
     "help": "Ajuda",
     "save": "Salvar",
     "got_it": "Entendi",
+    "something_went_wrong": "Algo deu errado",
 
     "bottom_navigation_help_option": "Ajuda",
     "bottom_navigation_settings_option": "Configurações",
@@ -49,5 +50,29 @@
     "inventory_amount_card_information": "Quantidade disponível: {amount}",
     "inventory_error_page_title": "Algo deu errado",
     "inventory_error_page_description": "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte.",
-    "inventory_page_loading": "Carregando seu estoque..."
+    "inventory_page_loading": "Carregando seu estoque...",
+
+    "add_item_page_title": "Adicionar item",
+    "add_item_position_option_label": "Posição",
+    "add_item_name_option_label": "Nome",
+    "add_item_amount_option_label": "Quantidade",
+    "add_item_description_option_label": "Descrição",
+    "add_item_button_label": "Adicionar",
+    "add_item_success_title": "Item criado!",
+    "add_item_loading_title": "Criando item...",
+    "add_item_generic_error_description": "Nós não conseguimos criar o item dessa vez.\nPor favor, tente novamente ou contate o suporte.",
+    "product_position_cannot_be_empty_error_text": "Posição não pode ser vazia",
+    "product_name_cannot_be_empty_error_text": "Nome não pode ser vazio",
+    "product_amount_cannot_be_empty_error_text": "Quantidade não pode ser vazia",
+    "product_description_cannot_be_empty_error_text": "Descrição não pode ser vazia",
+
+    "edit_item_page_title": "Editar item",
+    "edit_item_loading_title": "Editando item",
+    "edit_item_success_title": "Item editado!",
+    "edit_item_generic_error_description": "Nós não conseguimos editar o item dessa vez.\nPor favor, tente novamente ou contate o suporte.",
+    "edit_item_position_option_label": "Posição",
+    "edit_item_name_option_label": "Nome",
+    "edit_item_amount_option_label": "Quantidade",
+    "edit_item_description_option_label": "Descrição",
+    "edit_item_button_label": "Salvar alterações"
 }

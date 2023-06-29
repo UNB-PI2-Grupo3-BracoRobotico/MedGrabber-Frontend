@@ -26,6 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "add_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Adicionar"),
+        "add_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "add_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "We couldn\'t create your item.\nPlease try again or contact the suport team."),
+        "add_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Creating item..."),
+        "add_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Name"),
+        "add_item_page_title": MessageLookupByLibrary.simpleMessage("Add Item"),
+        "add_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Position"),
+        "add_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item created!"),
         "bottom_navigation_dashboard_option":
             MessageLookupByLibrary.simpleMessage("Dashboard"),
         "bottom_navigation_help_option":
@@ -38,6 +55,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Settings"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
+        "edit_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "edit_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Save changes"),
+        "edit_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "edit_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "We couldn\'t edit your item.\nPlease try again or contact the suport team."),
+        "edit_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Editing item"),
+        "edit_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Name"),
+        "edit_item_page_title":
+            MessageLookupByLibrary.simpleMessage("Edit item"),
+        "edit_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Position"),
+        "edit_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item edited!"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "home_page_manage_inventory_button_label":
@@ -93,6 +128,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number updated!"),
         "phone_page_title":
             MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "product_amount_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Amount cannot be empty"),
+        "product_description_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Description cannot be empty"),
+        "product_name_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Name cannot be empty"),
+        "product_position_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Position cannot be empty"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),
@@ -109,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Setting up your machine..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Arm configurated!"),
+        "something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "try_again": MessageLookupByLibrary.simpleMessage("Try again")
       };
 }

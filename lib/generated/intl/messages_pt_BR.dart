@@ -26,6 +26,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Quantidade"),
+        "add_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Adicionar"),
+        "add_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Descrição"),
+        "add_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos criar o item dessa vez.\nPor favor, tente novamente ou contate o suporte."),
+        "add_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Criando item..."),
+        "add_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Nome"),
+        "add_item_page_title":
+            MessageLookupByLibrary.simpleMessage("Adicionar item"),
+        "add_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Posição"),
+        "add_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item criado!"),
         "bottom_navigation_dashboard_option":
             MessageLookupByLibrary.simpleMessage("Dashboard"),
         "bottom_navigation_help_option":
@@ -38,6 +56,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurações"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "edit_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Quantidade"),
+        "edit_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Salvar alterações"),
+        "edit_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Descrição"),
+        "edit_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos editar o item dessa vez.\nPor favor, tente novamente ou contate o suporte."),
+        "edit_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Editando item"),
+        "edit_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Nome"),
+        "edit_item_page_title":
+            MessageLookupByLibrary.simpleMessage("Editar item"),
+        "edit_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Posição"),
+        "edit_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item editado!"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
         "home_page_manage_inventory_button_label":
@@ -90,6 +126,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_page_success_title": MessageLookupByLibrary.simpleMessage(
             "Número de telefone atualizado!"),
         "phone_page_title": MessageLookupByLibrary.simpleMessage("Telefone"),
+        "product_amount_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage(
+                "Quantidade não pode ser vazia"),
+        "product_description_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage(
+                "Descrição não pode ser vazia"),
+        "product_name_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Nome não pode ser vazio"),
+        "product_position_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Posição não pode ser vazia"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Endereço"),
@@ -106,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurando sua máquina..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Braço configurado!"),
+        "something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("Algo deu errado"),
         "try_again": MessageLookupByLibrary.simpleMessage("Tentar novamente")
       };
 }
