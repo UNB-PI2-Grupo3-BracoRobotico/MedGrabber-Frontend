@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/inventory/domain/entities/product.dart';
+import 'package:grabber/features/inventory/presentation/blocs/item_management/item_management_cubit.dart';
+import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
 import 'package:grabber/features/inventory/presentation/pages/add_item_page.dart';
+import 'package:grabber/features/inventory/presentation/pages/edit_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
@@ -12,7 +16,6 @@ import 'package:grabber/features/setup_machine/presentation/blocs/setup_status/s
 import 'package:grabber/features/setup_machine/presentation/pages/step_final.dart';
 
 import '../../features/home/presentation/home_page.dart';
-import '../../features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import '../../features/settings/pages/name_option/blocs/name_page/name_page_cubit.dart';
 import '../../features/settings/pages/phone_option/phone_page.dart';
 import '../../features/setup_machine/presentation/pages/step_1.dart';
@@ -103,15 +106,41 @@ abstract class AppRouter {
         );
         break;
       case AppRoutes.inventory:
-        page = BlocProvider(
-          create: (_) => HasItemCubit(
-            getProductsList: getIt.get(),
-          ),
-          child: const InventoryPage(),
-        );
+        page = const InventoryPage();
         break;
       case AppRoutes.addItem:
-        page = const AddItemPage();
+        page = MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (_) => ItemManagementCubit(),
+            ),
+            BlocProvider(
+              create: (_) =>
+                  PositionsAvailableCubit()..checkAvailablePositions(),
+            ),
+          ],
+          child: const AddItemPage(),
+        );
+        break;
+      case AppRoutes.editItem:
+        if (settings.arguments == null) {
+          throw Exception('Missing arguments');
+        }
+
+        page = MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (_) => ItemManagementCubit(),
+            ),
+            BlocProvider(
+              create: (_) =>
+                  PositionsAvailableCubit()..checkAvailablePositions(),
+            ),
+          ],
+          child: EditItemPage(
+            product: settings.arguments! as Product,
+          ),
+        );
         break;
       case AppRoutes.notifications:
       case AppRoutes.dashboard:
