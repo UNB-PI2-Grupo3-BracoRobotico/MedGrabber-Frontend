@@ -1,18 +1,33 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:grabber/config/routes/routes.dart';
+import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
+import 'package:grabber/features/inventory/domain/usecases/delete_item.dart';
 import 'package:grabber/features/inventory/presentation/pages/widgets/item_card.dart';
 
 import '../../../../generated/l10n.dart';
 
-class InventoryWithItems extends StatelessWidget {
+class InventoryWithItems extends StatefulWidget {
   const InventoryWithItems({
     super.key,
     required this.products,
   });
 
   final List<Product> products;
+
+  @override
+  State<InventoryWithItems> createState() => _InventoryWithItemsState();
+}
+
+class _InventoryWithItemsState extends State<InventoryWithItems> {
+  late List<Product> products;
+
+  @override
+  void initState() {
+    products = List.from(widget.products);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +66,9 @@ class InventoryWithItems extends StatelessWidget {
                   itemCount: products.length,
                   itemBuilder: (_, index) => ItemCard(
                     product: products.elementAt(index),
+                    onDeleteTap: () {
+                      _deleteProduct(index);
+                    },
                   ),
                   separatorBuilder: (_, __) => const VerticalGap.xxxs(),
                 ),
@@ -60,5 +78,12 @@ class InventoryWithItems extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _deleteProduct(int index) {
+    getIt.get<DeleteItem>().call();
+    setState(() {
+      products.removeAt(index);
+    });
   }
 }
