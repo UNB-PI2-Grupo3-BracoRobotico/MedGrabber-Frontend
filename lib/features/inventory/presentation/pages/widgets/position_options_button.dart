@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:grabber/generated/l10n.dart';
 
 class PositionOptionsButton extends StatefulWidget {
   const PositionOptionsButton({
@@ -8,45 +9,30 @@ class PositionOptionsButton extends StatefulWidget {
     this.currentPosition = '',
     required this.onChanged,
     this.errorText,
+    required this.options,
   });
 
   final String currentPosition;
   final ValueChanged<String> onChanged;
   final String? errorText;
+  final List<String> options;
 
   @override
   State<PositionOptionsButton> createState() => _PositionOptionsButtonState();
 }
 
 class _PositionOptionsButtonState extends State<PositionOptionsButton> {
-  //TODO(Mauricio): Remove mock data
-  final List<String> items = [
-    'A3',
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
-    'Item11',
-    'Item12',
-    'Item13',
-    'Item14',
-    'Item15',
-    'Item16',
-    'Item17',
-    'Item18',
-    'Item111',
-    'Item112',
-    'Item113',
-    'Item114',
-    'Item115',
-    'Item116',
-    'Item117',
-    'Item118',
-  ];
+  String get initialPosition => widget.currentPosition;
+
+  //TODO(Mauricio): MAybe arrange array here after adding it
+  List<String> get options {
+    List<String> listOptions = [];
+    listOptions.addAll(widget.options);
+    if (widget.currentPosition.isNotEmpty) {
+      listOptions.add(widget.currentPosition);
+    }
+    return listOptions;
+  }
 
   String? selectedValue;
 
@@ -70,7 +56,7 @@ class _PositionOptionsButtonState extends State<PositionOptionsButton> {
             left: kSpacingQuarck,
           ),
           child: Text(
-            'Cubiculo',
+            S.current.add_item_position_option_label,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
@@ -105,7 +91,7 @@ class _PositionOptionsButtonState extends State<PositionOptionsButton> {
               ),
             ),
           ),
-          items: items
+          items: options
               .map(
                 (item) => DropdownMenuItem(
                   value: item,
