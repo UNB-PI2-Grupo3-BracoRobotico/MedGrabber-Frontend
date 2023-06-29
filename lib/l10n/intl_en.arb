@@ -4,6 +4,7 @@
     "help": "Help",
     "save": "Save",
     "got_it": "Got it",
+    "something_went_wrong": "Something went wrong",
 
     "bottom_navigation_help_option": "Help",
     "bottom_navigation_settings_option": "Settings",
@@ -30,7 +31,8 @@
     "name_error_page_secondary_button_label": "Change name",
     "name_loading_page_title": "Updating your store's name...",
     "name_success_page_title": "Store name updated!",
-    "supported_page_loading_tiltle": "Aguarde um momento enquanto conectamos você ao nosso suporte..."
+    "supported_page_loading_tiltle": "Aguarde um momento enquanto conectamos você ao nosso suporte...",
+    
     "phone_page_title": "Phone Number",
     "phone_page_description": "Modify the number of your store to keep clients informed during their purchases.",
     "phone_page_error_bottomsheet_title": "Invalid number",
@@ -43,11 +45,41 @@
     "home_page_welcome_again_title": "Welcome {name}",
     "home_page_manage_inventory_button_label": "Manage inventory",
 
+    "help_title" : "Help Center",
+    "help_page_help_message": "How can we help?",
+    "help_page_buttom_label": "Initiate Real Time Chat!",
+    "help_page_send_email": "Send Email to:",
+    "help_email_contact": "MedGrabber@gmail.com",
+    
     "inventory_page_title": "Inventory",
     "inventory_page_no_item_registered_description": "It seems like you haven'y registered any item yet. Register now and start managing your business the best way possible!",
     "inventory_page_no_item_registered_button_labek": "Add item",
     "inventory_amount_card_information": "Amount available: {amount}",
     "inventory_error_page_title": "Something went wrong",
     "inventory_error_page_description": "We couldn't load your store itens.\nPlease try again or contact the suport team.",
-    "inventory_page_loading": "Loading your inventory..."
+    "inventory_page_loading": "Loading your inventory...",
+
+    "add_item_page_title": "Add Item",
+    "add_item_position_option_label": "Position",
+    "add_item_name_option_label": "Name",
+    "add_item_amount_option_label": "Amount",
+    "add_item_description_option_label": "Description",
+    "add_item_button_label": "Adicionar",
+    "add_item_success_title": "Item created!",
+    "add_item_loading_title": "Creating item...",
+    "add_item_generic_error_description": "We couldn't create your item.\nPlease try again or contact the suport team.",
+    "product_position_cannot_be_empty_error_text": "Position cannot be empty",
+    "product_name_cannot_be_empty_error_text": "Name cannot be empty",
+    "product_amount_cannot_be_empty_error_text": "Amount cannot be empty",
+    "product_description_cannot_be_empty_error_text": "Description cannot be empty",
+
+    "edit_item_page_title": "Edit item",
+    "edit_item_loading_title": "Editing item",
+    "edit_item_success_title": "Item edited!",
+    "edit_item_generic_error_description": "We couldn't edit your item.\nPlease try again or contact the suport team.",
+    "edit_item_position_option_label": "Position",
+    "edit_item_name_option_label": "Name",
+    "edit_item_amount_option_label": "Amount",
+    "edit_item_description_option_label": "Description",
+    "edit_item_button_label": "Save changes"
 }

@@ -1,5 +1,6 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/presentation/pages/widgets/card_button_options.dart';
 import 'package:grabber/generated/l10n.dart';
@@ -8,9 +9,11 @@ class ItemCard extends StatelessWidget {
   const ItemCard({
     super.key,
     required this.product,
+    required this.onDeleteTap,
   });
 
   final Product product;
+  final VoidCallback onDeleteTap;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,10 @@ class ItemCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(
         kSpacingXXXS,
       ),
-      onTap: () {},
+      onTap: () => Navigator.of(context).pushNamed(
+        AppRoutes.editItem,
+        arguments: product,
+      ),
       child: Ink(
         padding: const EdgeInsets.all(
           kSpacingXXXS,
@@ -84,14 +90,15 @@ class ItemCard extends StatelessWidget {
             ),
             const HorizontalGap.nano(),
             CardButtonOption(
-              //TODO(Mauricio): Implement on tap
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushNamed(
+                AppRoutes.editItem,
+                arguments: product,
+              ),
               icon: Icons.edit_outlined,
             ),
             const HorizontalGap.nano(),
             CardButtonOption(
-              //TODO(Mauricio): Implement on tap
-              onTap: () {},
+              onTap: onDeleteTap,
               icon: Icons.delete_outline_rounded,
             ),
           ],

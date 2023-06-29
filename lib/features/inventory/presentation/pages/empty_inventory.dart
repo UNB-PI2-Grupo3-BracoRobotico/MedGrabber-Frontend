@@ -1,6 +1,7 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../config/routes/routes.dart';
 import '../../../../generated/l10n.dart';
 
 class EmptyInventory extends StatelessWidget {
@@ -45,7 +46,9 @@ class EmptyInventory extends StatelessWidget {
               ),
               const VerticalGap.nano(),
               DSButton.primary(
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).pushNamed(
+                  AppRoutes.addItem,
+                ),
                 label: S.current.inventory_page_no_item_registered_button_labek,
               ),
             ],
