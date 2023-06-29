@@ -154,6 +154,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Arm configurated!"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "supported_page_loading_tiltle": MessageLookupByLibrary.simpleMessage(
+            "Aguarde um momento enquanto conectamos você ao nosso suporte..."),
         "try_again": MessageLookupByLibrary.simpleMessage("Try again")
       };
 }

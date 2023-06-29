@@ -154,6 +154,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Braço configurado!"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Algo deu errado"),
+        "supported_page_loading_tiltle": MessageLookupByLibrary.simpleMessage(
+            "Aguarde um momento enquanto conectamos você ao nosso suporte..."),
         "try_again": MessageLookupByLibrary.simpleMessage("Tentar novamente")
       };
 }

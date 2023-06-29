@@ -330,6 +330,16 @@ class S {
     );
   }
 
+  /// `Aguarde um momento enquanto conectamos você ao nosso suporte...`
+  String get supported_page_loading_tiltle {
+    return Intl.message(
+      'Aguarde um momento enquanto conectamos você ao nosso suporte...',
+      name: 'supported_page_loading_tiltle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Phone Number`
   String get phone_page_title {
     return Intl.message(

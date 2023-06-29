@@ -31,7 +31,8 @@
     "name_error_page_secondary_button_label": "Change name",
     "name_loading_page_title": "Updating your store's name...",
     "name_success_page_title": "Store name updated!",
-
+    "supported_page_loading_tiltle": "Aguarde um momento enquanto conectamos você ao nosso suporte...",
+    
     "phone_page_title": "Phone Number",
     "phone_page_description": "Modify the number of your store to keep clients informed during their purchases.",
     "phone_page_error_bottomsheet_title": "Invalid number",
