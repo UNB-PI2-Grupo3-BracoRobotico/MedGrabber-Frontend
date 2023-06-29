@@ -15,14 +15,18 @@ import 'package:grabber/features/shared/base_success_page.dart';
 
 import '../../../../generated/l10n.dart';
 
-class AddItemPage extends StatefulWidget {
-  const AddItemPage({super.key});
+class EditItemPage extends StatefulWidget {
+  const EditItemPage({
+    super.key,
+    required this.product,
+  });
+  final Product product;
 
   @override
-  State<AddItemPage> createState() => _AddItemPageState();
+  State<EditItemPage> createState() => _EditItemPageState();
 }
 
-class _AddItemPageState extends State<AddItemPage> {
+class _EditItemPageState extends State<EditItemPage> {
   late TextEditingController _nameController;
   late TextEditingController _amountController;
   late TextEditingController _descriptionController;
@@ -65,10 +69,10 @@ class _AddItemPageState extends State<AddItemPage> {
         return state.maybeWhen(
           success: () => BaseSuccessPage(
             canPop: false,
-            title: S.current.add_item_success_title,
+            title: S.current.edit_item_success_title,
           ),
           loading: () => BaseLoadingPage(
-            title: S.current.add_item_loading_title,
+            title: S.current.edit_item_loading_title,
           ),
           orElse: () {
             if (state.hasError) {
@@ -76,7 +80,7 @@ class _AddItemPageState extends State<AddItemPage> {
               if (errors.isEmpty) {
                 return BaseErrorPage(
                   title: S.current.something_went_wrong,
-                  description: S.current.add_item_generic_error_description,
+                  description: S.current.edit_item_generic_error_description,
                 );
               }
             }
@@ -95,7 +99,7 @@ class _AddItemPageState extends State<AddItemPage> {
                       ),
                       titleSpacing: 0,
                       title: Text(
-                        S.current.add_item_page_title,
+                        S.current.edit_item_page_title,
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
                     ),
@@ -118,20 +122,23 @@ class _AddItemPageState extends State<AddItemPage> {
                                         availablePositions: (options) =>
                                             options,
                                       ),
-                                      currentPosition: position,
+                                      currentPosition: widget.product.position,
                                       errorText: errors['position'],
                                       onChanged: _updatePosition,
                                     ),
                                     DSTextField(
+                                      initialValue: widget.product.name,
                                       label:
-                                          S.current.add_item_name_option_label,
+                                          S.current.edit_item_name_option_label,
                                       controller: _nameController,
                                       errorText: errors['name'],
                                     ),
                                     const VerticalGap.nano(),
                                     DSTextField(
-                                      label: S
-                                          .current.add_item_amount_option_label,
+                                      initialValue:
+                                          widget.product.amount.toString(),
+                                      label: S.current
+                                          .edit_item_amount_option_label,
                                       controller: _amountController,
                                       errorText: errors['amount'],
                                       keyboardType: TextInputType.number,
@@ -143,8 +150,9 @@ class _AddItemPageState extends State<AddItemPage> {
                                     ),
                                     const VerticalGap.nano(),
                                     DescriptionTextField(
+                                      initialValue: widget.product.description,
                                       label: S.current
-                                          .add_item_description_option_label,
+                                          .edit_item_description_option_label,
                                       controller: _descriptionController,
                                       maxLength: 300,
                                       errorText: errors['description'],
@@ -155,9 +163,7 @@ class _AddItemPageState extends State<AddItemPage> {
                               DSButton.primary(
                                 onPressed: () {
                                   removeFocus();
-                                  context
-                                      .read<ItemManagementCubit>()
-                                      .createItem(
+                                  context.read<ItemManagementCubit>().editItem(
                                         Product(
                                           name: _nameController.text,
                                           amount: int.tryParse(
@@ -165,11 +171,13 @@ class _AddItemPageState extends State<AddItemPage> {
                                               -1,
                                           description:
                                               _descriptionController.text,
-                                          position: position,
+                                          position: position.isEmpty
+                                              ? widget.product.position
+                                              : position,
                                         ),
                                       );
                                 },
-                                label: S.current.add_item_button_label,
+                                label: S.current.edit_item_button_label,
                               ),
                             ],
                           ),
