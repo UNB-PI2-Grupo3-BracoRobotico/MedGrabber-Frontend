@@ -10,12 +10,16 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
-import 'package:grabber/features/inventory/domain/usecases/get_products_list.dart'
+import 'package:grabber/features/inventory/domain/usecases/delete_item.dart'
     as _i3;
-import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
+import 'package:grabber/features/inventory/domain/usecases/get_products_list.dart'
     as _i4;
-import 'package:grabber/features/settings/domain/usecases/update_store_name.dart'
+import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart'
     as _i5;
+import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
+    as _i6;
+import 'package:grabber/features/settings/domain/usecases/update_store_name.dart'
+    as _i7;
 import 'package:injectable/injectable.dart' as _i2;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -29,9 +33,12 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.factory<_i3.GetProductsList>(() => _i3.GetProductsListImpl());
-    gh.factory<_i4.UpdatePhoneNumber>(() => _i4.UpdatePhoneNumberImpl());
-    gh.factory<_i5.UpdateStoreName>(() => _i5.UpdateStoreNameImpl());
+    gh.factory<_i3.DeleteItem>(() => _i3.DeleteItemImpl());
+    gh.factory<_i4.GetProductsList>(() => _i4.GetProductsListImpl());
+    gh.lazySingleton<_i5.HasItemCubit>(
+        () => _i5.HasItemCubit(getProductsList: gh<_i4.GetProductsList>()));
+    gh.factory<_i6.UpdatePhoneNumber>(() => _i6.UpdatePhoneNumberImpl());
+    gh.factory<_i7.UpdateStoreName>(() => _i7.UpdateStoreNameImpl());
     return this;
   }
 }
