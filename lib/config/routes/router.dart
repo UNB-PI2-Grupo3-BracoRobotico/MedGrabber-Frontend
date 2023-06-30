@@ -10,6 +10,8 @@ import 'package:grabber/features/inventory/presentation/pages/add_item_page.dart
 import 'package:grabber/features/inventory/presentation/pages/edit_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
+import 'package:grabber/features/settings/pages/mail_option/blocs/mail_page/mail_page_cubit.dart';
+import 'package:grabber/features/settings/pages/mail_option/mail_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
 import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_cubit/update_phone_cubit.dart';
 import 'package:grabber/features/settings/pages/settings_page.dart';
@@ -25,41 +27,6 @@ import '../../features/setup_machine/presentation/pages/step_2.dart';
 import 'navigator_helper.dart';
 
 abstract class AppRouter {
-  static Map<String, Widget Function(BuildContext)> mapRoutes() {
-    return {
-      AppRoutes.setup1: (_) => const Step1(),
-      AppRoutes.setup2: (_) => const Step2(),
-      AppRoutes.support: (_) => const SupportPage(),
-      AppRoutes.setupFinal: (_) => BlocProvider(
-            create: (_) => SetupStatusBloc(),
-            child: const StepFinal(),
-          ),
-      AppRoutes.home: (_) => const HomePage(),
-      AppRoutes.settings: (_) => const SettingsPage(),
-      AppRoutes.settingsName: (_) => BlocProvider(
-            create: (_) => NamePageCubit(
-              updateStoreName: getIt.get(),
-            ),
-            child: const NamePage(),
-          ),
-      AppRoutes.settingsPhone: (_) => BlocProvider(
-            create: (_) => UpdatePhoneCubit(
-              updatePhoneNumber: getIt.get(),
-            ),
-            child: const PhonePage(),
-          ),
-      AppRoutes.notifications: (_) {
-        //TODO(Mauricio): Implement route
-        throw UnimplementedError();
-      },
-      AppRoutes.dashboard: (_) {
-        //TODO(Mauricio): Implement route
-        throw UnimplementedError();
-      },
-      AppRoutes.help: (_) => const HelpCenter(),
-    };
-  }
-
   static Route routeFromSettings(RouteSettings settings) {
     late Widget page;
     AnimationByRoute animation = AnimationByRoute.defaultOption;
@@ -104,6 +71,14 @@ abstract class AppRouter {
           child: const PhonePage(),
         );
         break;
+      case AppRoutes.settingsMail:
+        page = BlocProvider(
+          create: (_) => MailPageCubit(
+            updateEmail: getIt.get(),
+          ),
+          child: const MailPage(),
+        );
+        break;
       case AppRoutes.inventory:
         page = const InventoryPage();
         break;
@@ -141,15 +116,18 @@ abstract class AppRouter {
           ),
         );
         break;
-      case AppRoutes.notifications:
-      case AppRoutes.dashboard:
       case AppRoutes.help:
         animation = AnimationByRoute.instant;
-        page = const HelpCenter();
+        bool navigatedViaNavBar = false;
+        if (settings.arguments != null) {
+          navigatedViaNavBar = settings.arguments! as bool;
+        }
+        page = HelpCenter(navigatedViaNavbar: navigatedViaNavBar);
         break;
       case AppRoutes.support:
         page = const SupportPage();
         break;
+      case AppRoutes.dashboard:
       default:
         throw UnimplementedError();
     }
