@@ -47,10 +47,11 @@ class SettingsPage extends StatelessWidget {
               ),
               const VerticalGap.xxs(),
               OptionTile(
-                title: S.current.settings_address_option_title,
-                icon: Icons.location_on_outlined,
-                //TODO(Mauricio): Implement onTap
-                onTap: () {},
+                title: S.current.settings_email_option_title,
+                icon: Icons.email_outlined,
+                onTap: () => Navigator.of(context).pushNamed(
+                  AppRoutes.settingsMail,
+                ),
               ),
             ],
           ),
