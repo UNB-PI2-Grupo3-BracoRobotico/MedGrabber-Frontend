@@ -27,10 +27,10 @@ class RealTime extends StatelessWidget {
       child: ListTile(
         onTap: onTap,
         title: Text(
-          S.current.help_page_buttom_label, 
+          S.current.help_page_buttom_label,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
-        leading: DSIcon(
+        leading: const DSIcon(
           icon: Icons.headphones,
           size: kIconSizeMD,
         ),
