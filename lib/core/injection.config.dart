@@ -16,10 +16,12 @@ import 'package:grabber/features/inventory/domain/usecases/get_products_list.dar
     as _i4;
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart'
     as _i5;
-import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
+import 'package:grabber/features/settings/domain/usecases/update_email.dart'
     as _i6;
-import 'package:grabber/features/settings/domain/usecases/update_store_name.dart'
+import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
     as _i7;
+import 'package:grabber/features/settings/domain/usecases/update_store_name.dart'
+    as _i8;
 import 'package:injectable/injectable.dart' as _i2;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -37,8 +39,9 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i4.GetProductsList>(() => _i4.GetProductsListImpl());
     gh.lazySingleton<_i5.HasItemCubit>(
         () => _i5.HasItemCubit(getProductsList: gh<_i4.GetProductsList>()));
-    gh.factory<_i6.UpdatePhoneNumber>(() => _i6.UpdatePhoneNumberImpl());
-    gh.factory<_i7.UpdateStoreName>(() => _i7.UpdateStoreNameImpl());
+    gh.factory<_i6.UpdateEmail>(() => _i6.UpdateEmailImpl());
+    gh.factory<_i7.UpdatePhoneNumber>(() => _i7.UpdatePhoneNumberImpl());
+    gh.factory<_i8.UpdateStoreName>(() => _i8.UpdateStoreNameImpl());
     return this;
   }
 }
