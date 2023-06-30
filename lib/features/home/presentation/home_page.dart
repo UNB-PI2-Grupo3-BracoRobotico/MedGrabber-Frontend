@@ -17,11 +17,13 @@ class HomePage extends StatelessWidget {
             horizontal: kSpacingXS,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 //TODO(Mauricio): remove mock message
                 S.current.home_page_welcome_again_title('example name'),
                 style: Theme.of(context).textTheme.headlineLarge,
+                textAlign: TextAlign.left,
               ),
               const VerticalGap.xxs(),
               DSButton.primary(
