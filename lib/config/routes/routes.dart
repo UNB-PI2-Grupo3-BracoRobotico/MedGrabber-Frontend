@@ -1,5 +1,6 @@
 abstract class AppRoutes {
   static const String initial = '/';
+  static const String login = '/login';
   static const String onBoarding = '/on-boarding';
   static const String onBoardingToken = '/on-boarding-token';
   static const String onBoardingEmail = '/on-boarding-email';

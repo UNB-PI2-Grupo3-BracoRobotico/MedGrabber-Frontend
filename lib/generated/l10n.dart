@@ -60,6 +60,36 @@ class S {
     );
   }
 
+  /// `Login`
+  String get login_button_label {
+    return Intl.message(
+      'Login',
+      name: 'login_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I've already had an account`
+  String get go_to_login_page_button_label {
+    return Intl.message(
+      'I\'ve already had an account',
+      name: 'go_to_login_page_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong email or passowrd`
+  String get login_error_message {
+    return Intl.message(
+      'Wrong email or passowrd',
+      name: 'login_error_message',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Get Started`
   String get start_button_label {
     return Intl.message(

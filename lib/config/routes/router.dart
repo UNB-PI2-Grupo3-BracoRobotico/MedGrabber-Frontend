@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/on_boarding/pages/onboarding_email_page.dart';
-import 'package:grabber/features/on_boarding/pages/onboarding_password_page.dart';
-import 'package:grabber/features/on_boarding/pages/onboarding_phone_page.dart';
-import 'package:grabber/features/on_boarding/pages/onboarding_start_page.dart';
-import 'package:grabber/features/on_boarding/pages/onboarding_token_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/base_auth/login_bloc/login_cubit.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/login_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_email_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_password_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_phone_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_start_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_token_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
@@ -27,6 +29,10 @@ abstract class AppRouter {
   static Map<String, Widget Function(BuildContext)> mapRoutes() {
     return {
       AppRoutes.onBoarding: (_) => const OnBoardingStartPage(),
+      AppRoutes.login: (_) => BlocProvider(
+            create: (_) => LoginCubit(),
+            child: const LoginPage(),
+          ),
       AppRoutes.onBoardingToken: (_) => const OnBoardingTokenPage(),
       AppRoutes.onBoardingEmail: (_) => const OnBoardingEmailPage(),
       AppRoutes.onBoardingPassword: (_) => const OnBoardingPasswordPage(),

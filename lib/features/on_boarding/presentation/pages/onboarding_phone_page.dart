@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/core/phone_region.dart';
-import 'package:grabber/features/on_boarding/pages/base_auth/bloc/signup_cubit.dart';
-import 'package:grabber/features/on_boarding/pages/widgets/on_boarding_base_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:phone_number/phone_number.dart';
@@ -41,8 +41,6 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
       bloc: _signupCubit,
       listener: (context, state) async {
         if (state.phoneIsValid) {
-          _signupCubit.validateEmail("jorge2@email.com");
-          _signupCubit.savePassword("1231231231");
           if (await _signupCubit.createUser()) {
             Navigator.pushReplacementNamed(
               context,
@@ -111,7 +109,7 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
     final rawPhoneNumber = maskFormatter.getUnmaskedText();
     final phoneIsValid = await _phoneNumberIsValid(rawPhoneNumber);
     if (phoneIsValid) {
-      _signupCubit.savePhone(rawPhoneNumber);
+      await _signupCubit.savePhone(rawPhoneNumber);
     } else {
       _showError(
         S.current.phone_page_error_bottomsheet_title,

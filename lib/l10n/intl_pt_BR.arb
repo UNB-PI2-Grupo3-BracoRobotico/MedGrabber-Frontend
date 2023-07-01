@@ -1,6 +1,9 @@
 {
     "continue_button_label": "Continuar",
     "start_button_label": "Iniciar",
+    "login_button_label": "Login",
+    "login_error_message": "Email ou senha inválidos",
+    "go_to_login_page_button_label": "Já tenho uma conta",
     "register_user_button_label": "Registrar usuário",
     "try_again": "Tentar novamente",
     "help": "Ajuda",

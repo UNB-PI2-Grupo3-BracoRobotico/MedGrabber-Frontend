@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:grabber/features/on_boarding/domain/repository/auth_repository.dart';
 import 'package:grabber/features/on_boarding/domain/usecases/create_user.dart';
 import 'package:grabber/features/on_boarding/domain/usecases/validate_token.dart';
 import 'package:grabber/generated/l10n.dart';
@@ -11,6 +12,7 @@ part 'signup_cubit.freezed.dart';
 
 @singleton
 class SignupCubit extends Cubit<SignupState> {
+  final AuthRepository _authRepository = AuthRepository();
   final ValidateToken _validateToken;
   final CreateUser _createUser;
 
@@ -47,27 +49,22 @@ class SignupCubit extends Cubit<SignupState> {
 
   Future<bool> validateEmail(String email) async {
     try {
-      final FirebaseAuth auth = FirebaseAuth.instance;
-      final signInMethods = await auth.fetchSignInMethodsForEmail(email);
-      final result = signInMethods.isEmpty;
-      if (result) {
-        emit(
-          state.copyWith(
-            email: email,
-            emailIsValid: true,
-          ),
-        );
-      }
-      return result;
+      await _authRepository.emailIsAlreadyInUse(email: email);
     } catch (e) {
       emit(
         state.copyWith(
-          email: S.current.empty_string,
+          email: email,
           emailIsValid: false,
         ),
       );
-      return false;
     }
+    emit(
+      state.copyWith(
+        email: email,
+        emailIsValid: true,
+      ),
+    );
+    return true;
   }
 
   Future<void> savePassword(String password) async {
@@ -89,7 +86,6 @@ class SignupCubit extends Cubit<SignupState> {
   }
 
   Future<bool> createUser() async {
-    final FirebaseAuth auth = FirebaseAuth.instance;
     final createUserValidOrFailure = await _createUser.call(
         state.token, state.email, state.password, state.phoneNumber);
     final errorText = createUserValidOrFailure.fold(
@@ -99,7 +95,7 @@ class SignupCubit extends Cubit<SignupState> {
       return false;
     }
     try {
-      auth.createUserWithEmailAndPassword(
+      await _authRepository.signUp(
         email: state.email,
         password: state.password,
       );

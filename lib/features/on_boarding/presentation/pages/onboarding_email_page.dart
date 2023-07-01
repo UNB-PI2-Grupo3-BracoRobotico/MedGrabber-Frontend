@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/on_boarding/pages/base_auth/bloc/signup_cubit.dart';
-import 'package:grabber/features/on_boarding/pages/widgets/on_boarding_base_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:styled_text/styled_text.dart';
 
@@ -52,9 +52,7 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
               DSTextField(
                 controller: _emailController,
                 label: S.current.on_boarding_email_page_title,
-                onChanged: (val) {
-                  _validateEmailPattern(val);
-                },
+                onChanged: _validateEmailPattern,
                 keyboardType: TextInputType.emailAddress,
               ),
               const VerticalGap.xxxs(),

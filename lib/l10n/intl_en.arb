@@ -1,28 +1,27 @@
 {
     "continue_button_label": "Continue",
+    "login_button_label": "Login",
+    "go_to_login_page_button_label": "I've already had an account",
+    "login_error_message": "Wrong email or passowrd",
     "start_button_label": "Get Started",
     "register_user_button_label": "Register user",
     "try_again": "Try again",
     "help": "Help",
     "save": "Save",
     "got_it": "Got it",
-
     "bottom_navigation_help_option": "Help",
     "bottom_navigation_settings_option": "Settings",
     "bottom_navigation_home_option": "Home",
     "bottom_navigation_dashboard_option": "Dashboard",
     "bottom_navigation_notifications_option": "Notifications",
-
     "setup_machine_loading_title": "Setting up your machine...",
     "setup_machine_success_title": "Arm configurated!",
     "setup_machine_error_title": "Something went wrong",
     "setup_machine_error_description": "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team.",
-
     "settings_title": "Settings",
     "settings_name_option_title": "Name",
     "settings_phone_option_title": "Phone",
     "settings_address_option_title": "Address",
-
     "name_page_title": "Store's Name",
     "name_page_description": "Modify your store's name so that clients can see the updated name.\nYour name must follow these <bold>rules:\n• Cannot start with numbers\n• Must be at max 25 characters long</bold>",
     "name_page_field_error_cannot_start_with_number": "The store name cannot start with number",
@@ -32,7 +31,6 @@
     "name_error_page_secondary_button_label": "Change name",
     "name_loading_page_title": "Updating your store's name...",
     "name_success_page_title": "Store name updated!",
-
     "phone_page_title": "Phone Number",
     "phone_page_description": "Modify the number of your store to keep clients informed during their purchases.",
     "phone_page_error_bottomsheet_title": "Invalid number",
@@ -41,7 +39,6 @@
     "phone_page_error_page_description": "It wasn't possible to update your phone number.\nTry again, if the error persists, contact our team.",
     "phone_page_success_title": "Phone number updated!",
     "phone_page_loading_title": "Updating your phone number...",
-
     "on_boarding_token_page_title": "Machine Code",
     "on_boarding_token_page_description": "Enter the token provided by the development team to connect with the machine.",
     "on_boarding_token_page_error_bottomsheet_title": "Invalid Code! Please try again",
@@ -50,7 +47,6 @@
     "on_boarding_token_page_error_page_description": "Code cannot be null.",
     "on_boarding_token_page_success_title": "Machine Code successfully linked!",
     "on_boarding_token_page_loading_title": "Linking machine code...",
-
     "on_boarding_email_page_title": "Email:",
     "on_boarding_email_page_description": "Enter your email to proceed with onboarding.",
     "on_boarding_email_page_error_bottomsheet_title": "Invalid Email! Please try again.",
@@ -59,7 +55,6 @@
     "on_boarding_email_page_error_page_description": "Email cannot be empty.",
     "on_boarding_email_page_success_title": "Email Successfully Added!",
     "on_boarding_email_page_loading_title": "Adding email...",
-
     "on_boarding_phone_page_title": "Phone Number:",
     "on_boarding_phone_page_description": "Enter your phone number to proceed with onboarding.",
     "on_boarding_phone_page_error_bottomsheet_title": "Invalid Phone Number! Please try again.",
@@ -68,7 +63,6 @@
     "on_boarding_phone_page_error_page_description": "Phone number cannot be empty.",
     "on_boarding_phone_page_success_title": "Phone Number Successfully Added!",
     "on_boarding_phone_page_loading_title": "Adding phone number...",
-
     "on_boarding_password_page_title": "Password:",
     "on_boarding_password_confirm_page_title": "Confirm Password:",
     "on_boarding_password_page_description": "Enter a password for your account with at least 8 characters.",
@@ -78,18 +72,14 @@
     "on_boarding_password_page_error_page_description": "Password cannot be empty.",
     "on_boarding_password_page_success_title": "Password Successfully Set!",
     "on_boarding_password_page_loading_title": "Setting password...",
-
     "on_boarding_initial_title": "Welcome to Grabber",
     "on_boarding_description_title": "For your first interaction with our product, we need you to complete the initial setup to link it with the Garra system.\n\nOn behalf of the Grabber team, we thank you for choosing us.",
-
     "default_invalid_token_label": "Invalid Token",
     "default_invalid_signup_title": "Sign up error! ",
     "default_invalid_signup_description": "Pleas try again! If error persist, contact our team.",
     "empty_string": "",
-    
     "home_page_welcome_again_title": "Welcome {name}",
     "home_page_manage_inventory_button_label": "Manage inventory",
-
     "inventory_page_title": "Inventory",
     "inventory_page_no_item_registered_description": "It seems like you haven'y registered any item yet. Register now and start managing your business the best way possible!",
     "inventory_page_no_item_registered_button_labek": "Add item",

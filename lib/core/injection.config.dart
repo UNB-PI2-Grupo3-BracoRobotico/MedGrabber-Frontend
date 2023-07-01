@@ -16,7 +16,7 @@ import 'package:grabber/features/on_boarding/domain/usecases/create_user.dart'
     as _i3;
 import 'package:grabber/features/on_boarding/domain/usecases/validate_token.dart'
     as _i7;
-import 'package:grabber/features/on_boarding/pages/base_auth/bloc/signup_cubit.dart'
+import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart'
     as _i8;
 import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
     as _i5;

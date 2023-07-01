@@ -45,6 +45,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "default_invalid_token_label":
             MessageLookupByLibrary.simpleMessage("Token invalido"),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),
+        "go_to_login_page_button_label":
+            MessageLookupByLibrary.simpleMessage("Já tenho uma conta"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
         "home_page_manage_inventory_button_label":
@@ -63,6 +65,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!"),
         "inventory_page_title": MessageLookupByLibrary.simpleMessage("Estoque"),
+        "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_error_message":
+            MessageLookupByLibrary.simpleMessage("Email ou senha inválidos"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o nome da sua loja.\nPor favor, tente novamente ou troque o nome inserido."),
         "name_error_page_primary_button_label":

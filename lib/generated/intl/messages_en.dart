@@ -46,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "default_invalid_token_label":
             MessageLookupByLibrary.simpleMessage("Invalid Token"),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),
+        "go_to_login_page_button_label": MessageLookupByLibrary.simpleMessage(
+            "I\'ve already had an account"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "home_page_manage_inventory_button_label":
@@ -65,6 +67,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!"),
         "inventory_page_title":
             MessageLookupByLibrary.simpleMessage("Inventory"),
+        "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_error_message":
+            MessageLookupByLibrary.simpleMessage("Wrong email or passowrd"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t update your store\'s name.\nPlease try again or change the inserted name."),
         "name_error_page_primary_button_label":
