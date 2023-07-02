@@ -92,5 +92,11 @@
     "edit_item_name_option_label": "Nome",
     "edit_item_amount_option_label": "Quantidade",
     "edit_item_description_option_label": "Descrição",
-    "edit_item_button_label": "Salvar alterações"
+    "edit_item_button_label": "Salvar alterações",
+
+    "positions_option_button_error": "Erro ao carregar posições. <bold>Clique aqui</bold> para tentar carregar as posições novamente.",
+    "informational_card_error_message": "Erro, clique aqui",
+
+    "home_available_positions_card": "Cubículos livres",
+    "home_available_itens_card": "Itens acabando"
 }

@@ -85,9 +85,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Envia um email para:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Central de Ajuda"),
+        "home_available_itens_card":
+            MessageLookupByLibrary.simpleMessage("Itens acabando"),
+        "home_available_positions_card":
+            MessageLookupByLibrary.simpleMessage("Cubículos livres"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
         "home_page_welcome_again_title": m0,
+        "informational_card_error_message":
+            MessageLookupByLibrary.simpleMessage("Erro, clique aqui"),
         "inventory_amount_card_information": m1,
         "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte."),
@@ -153,6 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_page_success_title": MessageLookupByLibrary.simpleMessage(
             "Número de telefone atualizado!"),
         "phone_page_title": MessageLookupByLibrary.simpleMessage("Telefone"),
+        "positions_option_button_error": MessageLookupByLibrary.simpleMessage(
+            "Erro ao carregar posições. <bold>Clique aqui</bold> para tentar carregar as posições novamente."),
         "product_amount_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage(
                 "Quantidade não pode ser vazia"),

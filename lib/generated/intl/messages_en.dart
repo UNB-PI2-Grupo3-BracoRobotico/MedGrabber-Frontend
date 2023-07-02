@@ -84,9 +84,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Send Email to:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Help Center"),
+        "home_available_itens_card":
+            MessageLookupByLibrary.simpleMessage("Items ending"),
+        "home_available_positions_card":
+            MessageLookupByLibrary.simpleMessage("Positions available"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Manage inventory"),
         "home_page_welcome_again_title": m0,
+        "informational_card_error_message":
+            MessageLookupByLibrary.simpleMessage("Error, tap here"),
         "inventory_amount_card_information": m1,
         "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t load your store itens.\nPlease try again or contact the suport team."),
@@ -155,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number updated!"),
         "phone_page_title":
             MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "positions_option_button_error": MessageLookupByLibrary.simpleMessage(
+            "Error loading available positions. <bold>Click here</bold> to try to load again."),
         "product_amount_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage("Amount cannot be empty"),
         "product_description_cannot_be_empty_error_text":

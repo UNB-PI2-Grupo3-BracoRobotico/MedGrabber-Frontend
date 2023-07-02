@@ -91,5 +91,11 @@
     "edit_item_name_option_label": "Name",
     "edit_item_amount_option_label": "Amount",
     "edit_item_description_option_label": "Description",
-    "edit_item_button_label": "Save changes"
+    "edit_item_button_label": "Save changes",
+
+    "positions_option_button_error": "Error loading available positions. <bold>Click here</bold> to try to load again.",
+    "informational_card_error_message": "Error, tap here",
+
+    "home_available_positions_card": "Positions available",
+    "home_available_itens_card": "Items ending"
 }

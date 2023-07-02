@@ -869,6 +869,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Error loading available positions. <bold>Click here</bold> to try to load again.`
+  String get positions_option_button_error {
+    return Intl.message(
+      'Error loading available positions. <bold>Click here</bold> to try to load again.',
+      name: 'positions_option_button_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error, tap here`
+  String get informational_card_error_message {
+    return Intl.message(
+      'Error, tap here',
+      name: 'informational_card_error_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Positions available`
+  String get home_available_positions_card {
+    return Intl.message(
+      'Positions available',
+      name: 'home_available_positions_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Items ending`
+  String get home_available_itens_card {
+    return Intl.message(
+      'Items ending',
+      name: 'home_available_itens_card',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
