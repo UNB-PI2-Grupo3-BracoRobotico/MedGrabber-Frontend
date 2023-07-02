@@ -230,11 +230,11 @@ class S {
     );
   }
 
-  /// `Address`
-  String get settings_address_option_title {
+  /// `Email`
+  String get settings_email_option_title {
     return Intl.message(
-      'Address',
-      name: 'settings_address_option_title',
+      'Email',
+      name: 'settings_email_option_title',
       desc: '',
       args: [],
     );
@@ -415,6 +415,96 @@ class S {
     return Intl.message(
       'Updating your phone number...',
       name: 'phone_page_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email address`
+  String get mail_page_title {
+    return Intl.message(
+      'Email address',
+      name: 'mail_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modify the email to keep clients informed during their purchases.`
+  String get mail_page_description {
+    return Intl.message(
+      'Modify the email to keep clients informed during their purchases.',
+      name: 'mail_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email address`
+  String get mail_page_field_error {
+    return Intl.message(
+      'Invalid email address',
+      name: 'mail_page_field_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get mail_error_page_title {
+    return Intl.message(
+      'Something went wrong',
+      name: 'mail_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It wasn't possible to update your email.\nTry again, if the error persists, contact our team.`
+  String get mail_error_page_description {
+    return Intl.message(
+      'It wasn\'t possible to update your email.\nTry again, if the error persists, contact our team.',
+      name: 'mail_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get mail_error_page_primary_button_label {
+    return Intl.message(
+      'Try again',
+      name: 'mail_error_page_primary_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change email`
+  String get mail_error_page_secondary_button_label {
+    return Intl.message(
+      'Change email',
+      name: 'mail_error_page_secondary_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating mail...`
+  String get mail_loading_page_title {
+    return Intl.message(
+      'Updating mail...',
+      name: 'mail_loading_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email updated!`
+  String get mail_success_page_title {
+    return Intl.message(
+      'Email updated!',
+      name: 'mail_success_page_title',
       desc: '',
       args: [],
     );

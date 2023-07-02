@@ -7,7 +7,7 @@ abstract class AppRoutes {
   static const String settings = '/settings';
   static const String settingsName = '/settings-name';
   static const String settingsPhone = '/settings-phone';
-  static const String notifications = '/notification';
+  static const String settingsMail = '/settings-mail';
   static const String dashboard = '/dashboard';
   static const String help = '/help';
   static const String inventory = '/inventory';

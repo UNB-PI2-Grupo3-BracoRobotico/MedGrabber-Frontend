@@ -20,7 +20,7 @@
     "settings_title": "Configurações",
     "settings_name_option_title": "Nome",
     "settings_phone_option_title": "Telefone",
-    "settings_address_option_title": "Endereço",
+    "settings_email_option_title": "E-mail",
 
     "name_page_title": "Nome da Loja",
     "name_page_description": "Modifique o nome da loja que seus clientes irão enxergar durante as compras.\nSeu nome deve seguir algumas <bold>regras:\n• Não pode começar com números\n• Deve ter ao máximo 25 caracteres</bold>",
@@ -40,6 +40,16 @@
     "phone_page_error_page_description": "Não foi possível atualizar seu número de telefone.\nTente novamente, caso o erro persista, contate nossa equipe.",
     "phone_page_success_title": "Número de telefone atualizado!",
     "phone_page_loading_title": "Atualizando o número do seu telefone...",
+
+    "mail_page_title": "Endereço de e-mail",
+    "mail_page_description": "Mofique o e-mail que seus clientes irão enxergar durante as compras.",
+    "mail_page_field_error": "Endereço de email inválido",
+    "mail_error_page_title": "Algo deu errado",
+    "mail_error_page_description": "Nós não conseguimos atualizar o endereço de e-mail.\nPor favor, tente novamente ou troque o nome inserido.",
+    "mail_error_page_primary_button_label": "Tentar novamente",
+    "mail_error_page_secondary_button_label": "Trocar e-mail",
+    "mail_loading_page_title": "Atualizando o endereço de e-mail...",
+    "mail_success_page_title": "Endereço de e-mail atulizado!",
 
     "supported_page_loading_tiltle": "Aguarde um momento enquanto conectamos você ao nosso suporte...",
 

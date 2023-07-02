@@ -101,6 +101,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!"),
         "inventory_page_title": MessageLookupByLibrary.simpleMessage("Estoque"),
+        "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos atualizar o endereço de e-mail.\nPor favor, tente novamente ou troque o nome inserido."),
+        "mail_error_page_primary_button_label":
+            MessageLookupByLibrary.simpleMessage("Tentar novamente"),
+        "mail_error_page_secondary_button_label":
+            MessageLookupByLibrary.simpleMessage("Trocar e-mail"),
+        "mail_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Algo deu errado"),
+        "mail_loading_page_title": MessageLookupByLibrary.simpleMessage(
+            "Atualizando o endereço de e-mail..."),
+        "mail_page_description": MessageLookupByLibrary.simpleMessage(
+            "Mofique o e-mail que seus clientes irão enxergar durante as compras."),
+        "mail_page_field_error":
+            MessageLookupByLibrary.simpleMessage("Endereço de email inválido"),
+        "mail_page_title":
+            MessageLookupByLibrary.simpleMessage("Endereço de e-mail"),
+        "mail_success_page_title": MessageLookupByLibrary.simpleMessage(
+            "Endereço de e-mail atulizado!"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o nome da sua loja.\nPor favor, tente novamente ou troque o nome inserido."),
         "name_error_page_primary_button_label":
@@ -146,8 +164,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "product_position_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage("Posição não pode ser vazia"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
-        "settings_address_option_title":
-            MessageLookupByLibrary.simpleMessage("Endereço"),
+        "settings_email_option_title":
+            MessageLookupByLibrary.simpleMessage("E-mail"),
         "settings_name_option_title":
             MessageLookupByLibrary.simpleMessage("Nome"),
         "settings_phone_option_title":

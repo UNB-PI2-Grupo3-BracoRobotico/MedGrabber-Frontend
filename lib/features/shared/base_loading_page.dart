@@ -14,19 +14,24 @@ class BaseLoadingPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const DSLoading(
-                size: kIconSizeXXXL,
-              ),
-              const VerticalGap.nano(),
-              Text(
-                title,
-                style: Theme.of(context).textTheme.titleLarge,
-                textAlign: TextAlign.center,
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: kSpacingXS,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const DSLoading(
+                  size: kIconSizeXXXL,
+                ),
+                const VerticalGap.nano(),
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
         ),
       ),

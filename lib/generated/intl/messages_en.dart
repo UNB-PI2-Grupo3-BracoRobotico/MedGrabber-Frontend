@@ -101,6 +101,24 @@ class MessageLookup extends MessageLookupByLibrary {
                 "It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!"),
         "inventory_page_title":
             MessageLookupByLibrary.simpleMessage("Inventory"),
+        "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "It wasn\'t possible to update your email.\nTry again, if the error persists, contact our team."),
+        "mail_error_page_primary_button_label":
+            MessageLookupByLibrary.simpleMessage("Try again"),
+        "mail_error_page_secondary_button_label":
+            MessageLookupByLibrary.simpleMessage("Change email"),
+        "mail_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "mail_loading_page_title":
+            MessageLookupByLibrary.simpleMessage("Updating mail..."),
+        "mail_page_description": MessageLookupByLibrary.simpleMessage(
+            "Modify the email to keep clients informed during their purchases."),
+        "mail_page_field_error":
+            MessageLookupByLibrary.simpleMessage("Invalid email address"),
+        "mail_page_title":
+            MessageLookupByLibrary.simpleMessage("Email address"),
+        "mail_success_page_title":
+            MessageLookupByLibrary.simpleMessage("Email updated!"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t update your store\'s name.\nPlease try again or change the inserted name."),
         "name_error_page_primary_button_label":
@@ -146,8 +164,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "product_position_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage("Position cannot be empty"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
-        "settings_address_option_title":
-            MessageLookupByLibrary.simpleMessage("Address"),
+        "settings_email_option_title":
+            MessageLookupByLibrary.simpleMessage("Email"),
         "settings_name_option_title":
             MessageLookupByLibrary.simpleMessage("Name"),
         "settings_phone_option_title":
