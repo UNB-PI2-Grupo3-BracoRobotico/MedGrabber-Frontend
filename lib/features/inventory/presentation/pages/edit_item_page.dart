@@ -117,6 +117,10 @@ class _EditItemPageState extends State<EditItemPage> {
                                 child: ListView(
                                   children: [
                                     PositionOptionsButton(
+                                      errorGetPositions: state.maybeWhen(
+                                        orElse: () => false,
+                                        error: () => true,
+                                      ),
                                       options: state.maybeWhen(
                                         orElse: () => [],
                                         availablePositions: (options) =>

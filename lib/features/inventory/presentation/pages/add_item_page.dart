@@ -113,6 +113,10 @@ class _AddItemPageState extends State<AddItemPage> {
                                 child: ListView(
                                   children: [
                                     PositionOptionsButton(
+                                      errorGetPositions: state.maybeWhen(
+                                        orElse: () => false,
+                                        error: () => true,
+                                      ),
                                       options: state.maybeWhen(
                                         orElse: () => [],
                                         availablePositions: (options) =>
