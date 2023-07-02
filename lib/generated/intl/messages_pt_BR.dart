@@ -24,6 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(amount) => "Quantidade disponível: ${amount}";
 
+  static String m2(id) => "#${id}";
+
+  static String m3(id) => "Pedido #${id}";
+
+  static String m4(amount) => "Quantidade comprada - ${amount}";
+
+  static String m5(price) => "Preço do produto - R\$ ${price}";
+
+  static String m6(value) => "Valor total - R\$ ${value}";
+
+  static String m7(status) => "Status - ${status}";
+
+  static String m8(value) => "Valor total - R\$ ${value}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_item_amount_option_label":
@@ -143,6 +157,23 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_page_title": MessageLookupByLibrary.simpleMessage("Nome da Loja"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Nome da loja atulizado!"),
+        "order_check_itens_button_label":
+            MessageLookupByLibrary.simpleMessage("Verificar itens"),
+        "order_id": m2,
+        "order_page_title": m3,
+        "order_product_amount_bought": m4,
+        "order_product_card_single_product_value": m5,
+        "order_product_card_total_value": m6,
+        "order_status": m7,
+        "order_status_awaiting_payment":
+            MessageLookupByLibrary.simpleMessage("Aguardando pagamento"),
+        "order_status_finished":
+            MessageLookupByLibrary.simpleMessage("Finalizado"),
+        "order_status_processing":
+            MessageLookupByLibrary.simpleMessage("Processando"),
+        "order_status_ready_to_get":
+            MessageLookupByLibrary.simpleMessage("Pronto para retirada"),
+        "order_value": m8,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras."),
         "phone_page_error_bottomsheet_description":

@@ -24,6 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(amount) => "Amount available: ${amount}";
 
+  static String m2(id) => "#${id}";
+
+  static String m3(id) => "Order #${id}";
+
+  static String m4(amount) => "Amount bought - ${amount}";
+
+  static String m5(price) => "Price of product - ${price} BRLC";
+
+  static String m6(value) => "Valor total - ${value} BRLC";
+
+  static String m7(status) => "Status - ${status}";
+
+  static String m8(value) => "Total value - ${value} BRLC";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_item_amount_option_label":
@@ -144,6 +158,23 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Store\'s Name"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Store name updated!"),
+        "order_check_itens_button_label":
+            MessageLookupByLibrary.simpleMessage("Verify items"),
+        "order_id": m2,
+        "order_page_title": m3,
+        "order_product_amount_bought": m4,
+        "order_product_card_single_product_value": m5,
+        "order_product_card_total_value": m6,
+        "order_status": m7,
+        "order_status_awaiting_payment":
+            MessageLookupByLibrary.simpleMessage("Awaiting payment"),
+        "order_status_finished":
+            MessageLookupByLibrary.simpleMessage("Finished"),
+        "order_status_processing":
+            MessageLookupByLibrary.simpleMessage("Processing"),
+        "order_status_ready_to_get":
+            MessageLookupByLibrary.simpleMessage("Ready to take out"),
+        "order_value": m8,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modify the number of your store to keep clients informed during their purchases."),
         "phone_page_error_bottomsheet_description":

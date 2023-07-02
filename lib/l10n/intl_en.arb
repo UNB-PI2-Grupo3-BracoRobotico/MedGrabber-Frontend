@@ -97,5 +97,19 @@
     "informational_card_error_message": "Error, tap here",
 
     "home_available_positions_card": "Positions available",
-    "home_available_itens_card": "Items ending"
+    "home_available_itens_card": "Items ending",
+
+    "order_id": "#{id}",
+    "order_status": "Status - {status}",
+    "order_status_awaiting_payment": "Awaiting payment",
+    "order_status_processing": "Processing",
+    "order_status_ready_to_get": "Ready to take out",
+    "order_status_finished": "Finished",
+    "order_value": "Total value - {value} BRLC",
+    "order_check_itens_button_label": "Verify items",
+
+    "order_page_title": "Order #{id}",
+    "order_product_card_single_product_value": "Price of product - {price} BRLC",
+    "order_product_card_total_value": "Valor total - {value} BRLC",
+    "order_product_amount_bought": "Amount bought - {amount}"
 }

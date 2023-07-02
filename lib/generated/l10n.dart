@@ -909,6 +909,126 @@ class S {
       args: [],
     );
   }
+
+  /// `#{id}`
+  String order_id(Object id) {
+    return Intl.message(
+      '#$id',
+      name: 'order_id',
+      desc: '',
+      args: [id],
+    );
+  }
+
+  /// `Status - {status}`
+  String order_status(Object status) {
+    return Intl.message(
+      'Status - $status',
+      name: 'order_status',
+      desc: '',
+      args: [status],
+    );
+  }
+
+  /// `Awaiting payment`
+  String get order_status_awaiting_payment {
+    return Intl.message(
+      'Awaiting payment',
+      name: 'order_status_awaiting_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processing`
+  String get order_status_processing {
+    return Intl.message(
+      'Processing',
+      name: 'order_status_processing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ready to take out`
+  String get order_status_ready_to_get {
+    return Intl.message(
+      'Ready to take out',
+      name: 'order_status_ready_to_get',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finished`
+  String get order_status_finished {
+    return Intl.message(
+      'Finished',
+      name: 'order_status_finished',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total value - {value} BRLC`
+  String order_value(Object value) {
+    return Intl.message(
+      'Total value - $value BRLC',
+      name: 'order_value',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Verify items`
+  String get order_check_itens_button_label {
+    return Intl.message(
+      'Verify items',
+      name: 'order_check_itens_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order #{id}`
+  String order_page_title(Object id) {
+    return Intl.message(
+      'Order #$id',
+      name: 'order_page_title',
+      desc: '',
+      args: [id],
+    );
+  }
+
+  /// `Price of product - {price} BRLC`
+  String order_product_card_single_product_value(Object price) {
+    return Intl.message(
+      'Price of product - $price BRLC',
+      name: 'order_product_card_single_product_value',
+      desc: '',
+      args: [price],
+    );
+  }
+
+  /// `Valor total - {value} BRLC`
+  String order_product_card_total_value(Object value) {
+    return Intl.message(
+      'Valor total - $value BRLC',
+      name: 'order_product_card_total_value',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Amount bought - {amount}`
+  String order_product_amount_bought(Object amount) {
+    return Intl.message(
+      'Amount bought - $amount',
+      name: 'order_product_amount_bought',
+      desc: '',
+      args: [amount],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

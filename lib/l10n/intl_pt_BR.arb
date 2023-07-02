@@ -98,5 +98,19 @@
     "informational_card_error_message": "Erro, clique aqui",
 
     "home_available_positions_card": "Cubículos livres",
-    "home_available_itens_card": "Itens acabando"
+    "home_available_itens_card": "Itens acabando",
+
+    "order_id": "#{id}",
+    "order_status": "Status - {status}",
+    "order_status_awaiting_payment": "Aguardando pagamento",
+    "order_status_processing": "Processando",
+    "order_status_ready_to_get": "Pronto para retirada",
+    "order_status_finished": "Finalizado",
+    "order_value": "Valor total - R$ {value}",
+    "order_check_itens_button_label": "Verificar itens",
+
+    "order_page_title": "Pedido #{id}",
+    "order_product_card_single_product_value": "Preço do produto - R$ {price}",
+    "order_product_card_total_value": "Valor total - R$ {value}",
+    "order_product_amount_bought": "Quantidade comprada - {amount}"
 }
