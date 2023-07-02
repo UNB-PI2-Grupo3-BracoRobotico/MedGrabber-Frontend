@@ -178,6 +178,8 @@ class _EditItemPageState extends State<EditItemPage> {
                                           position: position.isEmpty
                                               ? widget.product.position
                                               : position,
+                                          //TODO(Mauricio): Add textfield for price
+                                          price: 0.0,
                                         ),
                                       );
                                 },

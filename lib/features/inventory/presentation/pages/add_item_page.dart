@@ -170,6 +170,8 @@ class _AddItemPageState extends State<AddItemPage> {
                                           description:
                                               _descriptionController.text,
                                           position: position,
+                                          //TODO(Mauricio): Add textfield for price
+                                          price: 0.0,
                                         ),
                                       );
                                 },
