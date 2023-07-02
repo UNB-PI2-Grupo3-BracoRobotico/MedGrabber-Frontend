@@ -6,6 +6,8 @@ import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/home/presentation/widgets/informational_card.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
+import 'package:grabber/features/orders/domain/entities/order.dart';
+import 'package:grabber/features/orders/presentation/widgets/order_card.dart';
 import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 import 'package:grabber/generated/l10n.dart';
 
@@ -39,6 +41,31 @@ class HomePage extends StatelessWidget {
                   AppRoutes.inventory,
                 ),
                 label: S.current.home_page_manage_inventory_button_label,
+              ),
+              const VerticalGap.xl(),
+              //TODO(Mauricio): Remove mocked value here
+              const OrderCard(
+                order: Order(
+                  id: '1234',
+                  status: OrderStatus.awaitingPayment,
+                  products: [
+                    Product(
+                      name: 'Prod 1 fkjhf hfjkh fkjhfjkfhkjf hjkfhfjkhfjk',
+                      amount: 1,
+                      description: 'Description 1 example',
+                      position: 'A0',
+                      price: 10,
+                    ),
+                    Product(
+                      name: 'Prod 2',
+                      amount: 2,
+                      description: 'Description 1 example',
+                      position: 'A1',
+                      price: 10,
+                    ),
+                  ],
+                  totalOrderValue: 30,
+                ),
               ),
             ],
           ),
