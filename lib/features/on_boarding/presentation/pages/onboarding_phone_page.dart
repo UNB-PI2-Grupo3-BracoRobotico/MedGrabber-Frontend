@@ -103,8 +103,7 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
     final phoneIsValid = await _phoneNumberIsValid(rawPhoneNumber);
     if (phoneIsValid) {
       await _signupCubit.savePhone(rawPhoneNumber);
-
-      if (await _signupCubit.createUser()) {
+      if (!await _signupCubit.createUser()) {
         _showError(
           S.current.default_invalid_signup_title,
           S.current.default_invalid_signup_description,

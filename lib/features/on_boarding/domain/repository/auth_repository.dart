@@ -9,6 +9,8 @@ class AuthRepository {
     required String password,
   }) async {
     try {
+      print(email);
+      print(password);
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
@@ -40,13 +42,13 @@ class AuthRepository {
       final singInMethod =
           await _firebaseAuth.fetchSignInMethodsForEmail(email);
       if (singInMethod.isNotEmpty) {
-        return false;
+        return true;
       }
     } catch (e) {
       print(e.toString());
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 
   Future<void> resetPassword({

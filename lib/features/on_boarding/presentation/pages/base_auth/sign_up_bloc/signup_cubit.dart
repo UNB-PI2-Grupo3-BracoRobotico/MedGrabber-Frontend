@@ -48,7 +48,7 @@ class SignupCubit extends Cubit<SignupState> {
   }
 
   Future<bool> validateEmail(String email) async {
-    if (!await _authRepository.emailIsAlreadyInUse(email: email)) {
+    if (await _authRepository.emailIsAlreadyInUse(email: email)) {
       emit(
         state.copyWith(
           email: '',
@@ -90,7 +90,9 @@ class SignupCubit extends Cubit<SignupState> {
     final errorText = createUserValidOrFailure.fold(
         () => S.current.empty_string,
         (_) => S.current.default_invalid_signup_title);
-    if (errorText.isEmpty) {
+    print(state.email);
+    print(state.password);
+    if (errorText.isNotEmpty) {
       return false;
     }
     try {
