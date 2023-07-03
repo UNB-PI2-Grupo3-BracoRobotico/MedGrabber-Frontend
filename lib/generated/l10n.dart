@@ -220,11 +220,11 @@ class S {
     );
   }
 
-  /// `Help`
-  String get bottom_navigation_help_option {
+  /// `Something went wrong`
+  String get something_went_wrong {
     return Intl.message(
-      'Help',
-      name: 'bottom_navigation_help_option',
+      'Something went wrong',
+      name: 'something_went_wrong',
       desc: '',
       args: [],
     );
@@ -235,6 +235,16 @@ class S {
     return Intl.message(
       'Settings',
       name: 'bottom_navigation_settings_option',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help`
+  String get bottom_navigation_help_option {
+    return Intl.message(
+      'Help',
+      name: 'bottom_navigation_help_option',
       desc: '',
       args: [],
     );
@@ -350,6 +360,16 @@ class S {
     );
   }
 
+  /// `Email`
+  String get settings_email_option_title {
+    return Intl.message(
+      'Email',
+      name: 'settings_email_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Store's Name`
   String get name_page_title {
     return Intl.message(
@@ -435,6 +455,16 @@ class S {
     return Intl.message(
       'Store name updated!',
       name: 'name_success_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aguarde um momento enquanto conectamos você ao nosso suporte...`
+  String get supported_page_loading_tiltle {
+    return Intl.message(
+      'Aguarde um momento enquanto conectamos você ao nosso suporte...',
+      name: 'supported_page_loading_tiltle',
       desc: '',
       args: [],
     );
@@ -930,6 +960,146 @@ class S {
     );
   }
 
+  /// `Email address`
+  String get mail_page_title {
+    return Intl.message(
+      'Email address',
+      name: 'mail_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Modify the email to keep clients informed during their purchases.`
+  String get mail_page_description {
+    return Intl.message(
+      'Modify the email to keep clients informed during their purchases.',
+      name: 'mail_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email address`
+  String get mail_page_field_error {
+    return Intl.message(
+      'Invalid email address',
+      name: 'mail_page_field_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong`
+  String get mail_error_page_title {
+    return Intl.message(
+      'Something went wrong',
+      name: 'mail_error_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It wasn't possible to update your email.\nTry again, if the error persists, contact our team.`
+  String get mail_error_page_description {
+    return Intl.message(
+      'It wasn\'t possible to update your email.\nTry again, if the error persists, contact our team.',
+      name: 'mail_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get mail_error_page_primary_button_label {
+    return Intl.message(
+      'Try again',
+      name: 'mail_error_page_primary_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change email`
+  String get mail_error_page_secondary_button_label {
+    return Intl.message(
+      'Change email',
+      name: 'mail_error_page_secondary_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating mail...`
+  String get mail_loading_page_title {
+    return Intl.message(
+      'Updating mail...',
+      name: 'mail_loading_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email updated!`
+  String get mail_success_page_title {
+    return Intl.message(
+      'Email updated!',
+      name: 'mail_success_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help Center`
+  String get help_title {
+    return Intl.message(
+      'Help Center',
+      name: 'help_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How can we help?`
+  String get help_page_help_message {
+    return Intl.message(
+      'How can we help?',
+      name: 'help_page_help_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initiate Real Time Chat!`
+  String get help_page_buttom_label {
+    return Intl.message(
+      'Initiate Real Time Chat!',
+      name: 'help_page_buttom_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Email to:`
+  String get help_page_send_email {
+    return Intl.message(
+      'Send Email to:',
+      name: 'help_page_send_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MedGrabber@gmail.com`
+  String get help_email_contact {
+    return Intl.message(
+      'MedGrabber@gmail.com',
+      name: 'help_email_contact',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Inventory`
   String get inventory_page_title {
     return Intl.message(
@@ -995,6 +1165,226 @@ class S {
     return Intl.message(
       'Loading your inventory...',
       name: 'inventory_page_loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Item`
+  String get add_item_page_title {
+    return Intl.message(
+      'Add Item',
+      name: 'add_item_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Position`
+  String get add_item_position_option_label {
+    return Intl.message(
+      'Position',
+      name: 'add_item_position_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get add_item_name_option_label {
+    return Intl.message(
+      'Name',
+      name: 'add_item_name_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get add_item_amount_option_label {
+    return Intl.message(
+      'Amount',
+      name: 'add_item_amount_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get add_item_description_option_label {
+    return Intl.message(
+      'Description',
+      name: 'add_item_description_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Adicionar`
+  String get add_item_button_label {
+    return Intl.message(
+      'Adicionar',
+      name: 'add_item_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item created!`
+  String get add_item_success_title {
+    return Intl.message(
+      'Item created!',
+      name: 'add_item_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Creating item...`
+  String get add_item_loading_title {
+    return Intl.message(
+      'Creating item...',
+      name: 'add_item_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We couldn't create your item.\nPlease try again or contact the suport team.`
+  String get add_item_generic_error_description {
+    return Intl.message(
+      'We couldn\'t create your item.\nPlease try again or contact the suport team.',
+      name: 'add_item_generic_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Position cannot be empty`
+  String get product_position_cannot_be_empty_error_text {
+    return Intl.message(
+      'Position cannot be empty',
+      name: 'product_position_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name cannot be empty`
+  String get product_name_cannot_be_empty_error_text {
+    return Intl.message(
+      'Name cannot be empty',
+      name: 'product_name_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount cannot be empty`
+  String get product_amount_cannot_be_empty_error_text {
+    return Intl.message(
+      'Amount cannot be empty',
+      name: 'product_amount_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description cannot be empty`
+  String get product_description_cannot_be_empty_error_text {
+    return Intl.message(
+      'Description cannot be empty',
+      name: 'product_description_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit item`
+  String get edit_item_page_title {
+    return Intl.message(
+      'Edit item',
+      name: 'edit_item_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Editing item`
+  String get edit_item_loading_title {
+    return Intl.message(
+      'Editing item',
+      name: 'edit_item_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item edited!`
+  String get edit_item_success_title {
+    return Intl.message(
+      'Item edited!',
+      name: 'edit_item_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We couldn't edit your item.\nPlease try again or contact the suport team.`
+  String get edit_item_generic_error_description {
+    return Intl.message(
+      'We couldn\'t edit your item.\nPlease try again or contact the suport team.',
+      name: 'edit_item_generic_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Position`
+  String get edit_item_position_option_label {
+    return Intl.message(
+      'Position',
+      name: 'edit_item_position_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get edit_item_name_option_label {
+    return Intl.message(
+      'Name',
+      name: 'edit_item_name_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get edit_item_amount_option_label {
+    return Intl.message(
+      'Amount',
+      name: 'edit_item_amount_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get edit_item_description_option_label {
+    return Intl.message(
+      'Description',
+      name: 'edit_item_description_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save changes`
+  String get edit_item_button_label {
+    return Intl.message(
+      'Save changes',
+      name: 'edit_item_button_label',
       desc: '',
       args: [],
     );

@@ -48,15 +48,14 @@ class SignupCubit extends Cubit<SignupState> {
   }
 
   Future<bool> validateEmail(String email) async {
-    try {
-      await _authRepository.emailIsAlreadyInUse(email: email);
-    } catch (e) {
+    if (!await _authRepository.emailIsAlreadyInUse(email: email)) {
       emit(
         state.copyWith(
-          email: email,
+          email: '',
           emailIsValid: false,
         ),
       );
+      return false;
     }
     emit(
       state.copyWith(

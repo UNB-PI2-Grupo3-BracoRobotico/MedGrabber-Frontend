@@ -8,7 +8,7 @@ class NavigationCubit extends Cubit<NavigationState> {
   NavigationCubit()
       : super(
           NavigationState(
-            currentIndex: 2,
+            currentIndex: 1,
           ),
         );
 

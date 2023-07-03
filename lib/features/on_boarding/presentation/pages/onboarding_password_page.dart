@@ -44,7 +44,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
       bloc: _signupCubit,
       listener: (context, state) {
         if (state.passwordIsValid)  {
-          Navigator.of(context).pushReplacementNamed(
+          Navigator.of(context).pushNamed(
             AppRoutes.onBoardingPhone,
           );
         } else if (!state.passwordIsValid && state.password.isEmpty) {

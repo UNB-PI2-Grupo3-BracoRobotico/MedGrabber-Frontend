@@ -41,17 +41,10 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
       bloc: _signupCubit,
       listener: (context, state) async {
         if (state.phoneIsValid) {
-          if (await _signupCubit.createUser()) {
-            Navigator.pushReplacementNamed(
-              context,
-              AppRoutes.home,
-            );
-          } else {
-            _showError(
-              S.current.default_invalid_signup_title,
-              S.current.default_invalid_signup_description,
-            );
-          }
+          Navigator.pushReplacementNamed(
+            context,
+            AppRoutes.home,
+          );
         }
       },
       builder: (_, state) {
@@ -110,6 +103,13 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
     final phoneIsValid = await _phoneNumberIsValid(rawPhoneNumber);
     if (phoneIsValid) {
       await _signupCubit.savePhone(rawPhoneNumber);
+
+      if (await _signupCubit.createUser()) {
+        _showError(
+          S.current.default_invalid_signup_title,
+          S.current.default_invalid_signup_description,
+        );
+      }
     } else {
       _showError(
         S.current.phone_page_error_bottomsheet_title,

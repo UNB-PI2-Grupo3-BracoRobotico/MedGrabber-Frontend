@@ -26,6 +26,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Quantidade"),
+        "add_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Adicionar"),
+        "add_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Descrição"),
+        "add_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos criar o item dessa vez.\nPor favor, tente novamente ou contate o suporte."),
+        "add_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Criando item..."),
+        "add_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Nome"),
+        "add_item_page_title":
+            MessageLookupByLibrary.simpleMessage("Adicionar item"),
+        "add_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Posição"),
+        "add_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item criado!"),
         "bottom_navigation_dashboard_option":
             MessageLookupByLibrary.simpleMessage("Dashboard"),
         "bottom_navigation_help_option":
@@ -44,6 +62,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Erro ao criar cadastro"),
         "default_invalid_token_label":
             MessageLookupByLibrary.simpleMessage("Token invalido"),
+        "edit_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Quantidade"),
+        "edit_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Salvar alterações"),
+        "edit_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Descrição"),
+        "edit_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos editar o item dessa vez.\nPor favor, tente novamente ou contate o suporte."),
+        "edit_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Editando item"),
+        "edit_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Nome"),
+        "edit_item_page_title":
+            MessageLookupByLibrary.simpleMessage("Editar item"),
+        "edit_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Posição"),
+        "edit_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item editado!"),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),
         "forgotten_password_button_label":
             MessageLookupByLibrary.simpleMessage("Resetar senha"),
@@ -51,9 +87,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Insira seu email e enviaremos código para resetar sua senha."),
         "forgotten_password_email_not_found":
             MessageLookupByLibrary.simpleMessage("Email não encontrado!"),
-        "forgotten_password_email_sended_title":
+        "forgotten_password_email_sended_message":
             MessageLookupByLibrary.simpleMessage(
                 "Por favor verifique sua caixa de mensagem para alteração da senha"),
+        "forgotten_password_email_sended_title":
+            MessageLookupByLibrary.simpleMessage("Email enviado com sucesso!"),
         "forgotten_password_message":
             MessageLookupByLibrary.simpleMessage("Esqueceu sua senha?"),
         "forgotten_password_title":
@@ -62,6 +100,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Já tenho uma conta"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
+        "help_email_contact":
+            MessageLookupByLibrary.simpleMessage("MedGrabber@gmail.com"),
+        "help_page_buttom_label":
+            MessageLookupByLibrary.simpleMessage("Iniciar chat em Tempo Real!"),
+        "help_page_help_message":
+            MessageLookupByLibrary.simpleMessage("Como podemos ajudar?"),
+        "help_page_send_email":
+            MessageLookupByLibrary.simpleMessage("Envia um email para:"),
+        "help_title": MessageLookupByLibrary.simpleMessage("Central de Ajuda"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
         "home_page_welcome_again_title": m0,
@@ -81,6 +128,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_error_message":
             MessageLookupByLibrary.simpleMessage("Email ou senha inválidos"),
+        "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "Nós não conseguimos atualizar o endereço de e-mail.\nPor favor, tente novamente ou troque o nome inserido."),
+        "mail_error_page_primary_button_label":
+            MessageLookupByLibrary.simpleMessage("Tentar novamente"),
+        "mail_error_page_secondary_button_label":
+            MessageLookupByLibrary.simpleMessage("Trocar e-mail"),
+        "mail_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Algo deu errado"),
+        "mail_loading_page_title": MessageLookupByLibrary.simpleMessage(
+            "Atualizando o endereço de e-mail..."),
+        "mail_page_description": MessageLookupByLibrary.simpleMessage(
+            "Mofique o e-mail que seus clientes irão enxergar durante as compras."),
+        "mail_page_field_error":
+            MessageLookupByLibrary.simpleMessage("Endereço de email inválido"),
+        "mail_page_title":
+            MessageLookupByLibrary.simpleMessage("Endereço de e-mail"),
+        "mail_success_page_title": MessageLookupByLibrary.simpleMessage(
+            "Endereço de e-mail atulizado!"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o nome da sua loja.\nPor favor, tente novamente ou troque o nome inserido."),
         "name_error_page_primary_button_label":
@@ -207,11 +272,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_page_success_title": MessageLookupByLibrary.simpleMessage(
             "Número de telefone atualizado!"),
         "phone_page_title": MessageLookupByLibrary.simpleMessage("Telefone"),
+        "product_amount_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage(
+                "Quantidade não pode ser vazia"),
+        "product_description_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage(
+                "Descrição não pode ser vazia"),
+        "product_name_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Nome não pode ser vazio"),
+        "product_position_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Posição não pode ser vazia"),
         "register_user_button_label":
             MessageLookupByLibrary.simpleMessage("Registrar usuário"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
-        "settings_address_option_title":
-            MessageLookupByLibrary.simpleMessage("Endereço"),
+        "settings_email_option_title":
+            MessageLookupByLibrary.simpleMessage("E-mail"),
         "settings_name_option_title":
             MessageLookupByLibrary.simpleMessage("Nome"),
         "settings_phone_option_title":
@@ -225,7 +300,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurando sua máquina..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Braço configurado!"),
+        "something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("Algo deu errado"),
         "start_button_label": MessageLookupByLibrary.simpleMessage("Iniciar"),
+        "supported_page_loading_tiltle": MessageLookupByLibrary.simpleMessage(
+            "Aguarde um momento enquanto conectamos você ao nosso suporte..."),
         "try_again": MessageLookupByLibrary.simpleMessage("Tentar novamente")
       };
 }

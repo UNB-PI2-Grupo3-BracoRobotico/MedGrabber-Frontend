@@ -54,6 +54,8 @@ dependencies:
   phone_number: ^1.0.0
   firebase_core: ^2.14.0
   firebase_auth: ^4.6.3
+  dropdown_button2: ^2.1.4
+  flutter_tawk: ^0.1.0
 
 dev_dependencies:
   flutter_test:

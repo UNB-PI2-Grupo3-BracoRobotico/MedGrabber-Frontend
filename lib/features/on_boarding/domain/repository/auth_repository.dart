@@ -9,7 +9,7 @@ class AuthRepository {
     required String password,
   }) async {
     try {
-      _firebaseAuth.createUserWithEmailAndPassword(
+      await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
       if (e.code == "email-already-in-use") {
@@ -33,14 +33,20 @@ class AuthRepository {
     }
   }
 
-  Future<void> emailIsAlreadyInUse({
+  Future<bool> emailIsAlreadyInUse({
     required String email,
   }) async {
     try {
-      await _firebaseAuth.fetchSignInMethodsForEmail(email);
+      final singInMethod =
+          await _firebaseAuth.fetchSignInMethodsForEmail(email);
+      if (singInMethod.isNotEmpty) {
+        return false;
+      }
     } catch (e) {
-      throw Exception(e.toString());
+      print(e.toString());
+      return false;
     }
+    return true;
   }
 
   Future<void> resetPassword({

@@ -26,6 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "add_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "add_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Adicionar"),
+        "add_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "add_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "We couldn\'t create your item.\nPlease try again or contact the suport team."),
+        "add_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Creating item..."),
+        "add_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Name"),
+        "add_item_page_title": MessageLookupByLibrary.simpleMessage("Add Item"),
+        "add_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Position"),
+        "add_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item created!"),
         "bottom_navigation_dashboard_option":
             MessageLookupByLibrary.simpleMessage("Dashboard"),
         "bottom_navigation_help_option":
@@ -45,6 +62,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sign up error! "),
         "default_invalid_token_label":
             MessageLookupByLibrary.simpleMessage("Invalid Token"),
+        "edit_item_amount_option_label":
+            MessageLookupByLibrary.simpleMessage("Amount"),
+        "edit_item_button_label":
+            MessageLookupByLibrary.simpleMessage("Save changes"),
+        "edit_item_description_option_label":
+            MessageLookupByLibrary.simpleMessage("Description"),
+        "edit_item_generic_error_description": MessageLookupByLibrary.simpleMessage(
+            "We couldn\'t edit your item.\nPlease try again or contact the suport team."),
+        "edit_item_loading_title":
+            MessageLookupByLibrary.simpleMessage("Editing item"),
+        "edit_item_name_option_label":
+            MessageLookupByLibrary.simpleMessage("Name"),
+        "edit_item_page_title":
+            MessageLookupByLibrary.simpleMessage("Edit item"),
+        "edit_item_position_option_label":
+            MessageLookupByLibrary.simpleMessage("Position"),
+        "edit_item_success_title":
+            MessageLookupByLibrary.simpleMessage("Item edited!"),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),
         "forgotten_password_button_label":
             MessageLookupByLibrary.simpleMessage("Reset password"),
@@ -65,6 +100,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "I\'ve already had an account"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "help_email_contact":
+            MessageLookupByLibrary.simpleMessage("MedGrabber@gmail.com"),
+        "help_page_buttom_label":
+            MessageLookupByLibrary.simpleMessage("Initiate Real Time Chat!"),
+        "help_page_help_message":
+            MessageLookupByLibrary.simpleMessage("How can we help?"),
+        "help_page_send_email":
+            MessageLookupByLibrary.simpleMessage("Send Email to:"),
+        "help_title": MessageLookupByLibrary.simpleMessage("Help Center"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Manage inventory"),
         "home_page_welcome_again_title": m0,
@@ -85,6 +129,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_error_message":
             MessageLookupByLibrary.simpleMessage("Wrong email or password"),
+        "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
+            "It wasn\'t possible to update your email.\nTry again, if the error persists, contact our team."),
+        "mail_error_page_primary_button_label":
+            MessageLookupByLibrary.simpleMessage("Try again"),
+        "mail_error_page_secondary_button_label":
+            MessageLookupByLibrary.simpleMessage("Change email"),
+        "mail_error_page_title":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "mail_loading_page_title":
+            MessageLookupByLibrary.simpleMessage("Updating mail..."),
+        "mail_page_description": MessageLookupByLibrary.simpleMessage(
+            "Modify the email to keep clients informed during their purchases."),
+        "mail_page_field_error":
+            MessageLookupByLibrary.simpleMessage("Invalid email address"),
+        "mail_page_title":
+            MessageLookupByLibrary.simpleMessage("Email address"),
+        "mail_success_page_title":
+            MessageLookupByLibrary.simpleMessage("Email updated!"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t update your store\'s name.\nPlease try again or change the inserted name."),
         "name_error_page_primary_button_label":
@@ -209,11 +271,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number updated!"),
         "phone_page_title":
             MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "product_amount_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Amount cannot be empty"),
+        "product_description_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Description cannot be empty"),
+        "product_name_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Name cannot be empty"),
+        "product_position_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Position cannot be empty"),
         "register_user_button_label":
             MessageLookupByLibrary.simpleMessage("Register user"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),
+        "settings_email_option_title":
+            MessageLookupByLibrary.simpleMessage("Email"),
         "settings_name_option_title":
             MessageLookupByLibrary.simpleMessage("Name"),
         "settings_phone_option_title":
@@ -227,8 +299,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Setting up your machine..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Arm configurated!"),
+        "something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "start_button_label":
             MessageLookupByLibrary.simpleMessage("Get Started"),
+        "supported_page_loading_tiltle": MessageLookupByLibrary.simpleMessage(
+            "Aguarde um momento enquanto conectamos você ao nosso suporte..."),
         "try_again": MessageLookupByLibrary.simpleMessage("Try again")
       };
 }

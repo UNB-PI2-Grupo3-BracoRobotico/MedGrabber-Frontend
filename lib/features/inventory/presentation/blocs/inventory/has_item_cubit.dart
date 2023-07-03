@@ -1,12 +1,14 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:grabber/features/inventory/domain/usecases/get_products_list.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../domain/entities/product.dart';
 
 part 'has_item_cubit.freezed.dart';
 part 'has_item_state.dart';
 
+@lazySingleton
 class HasItemCubit extends Cubit<HasItemState> {
   final GetProductsList _getProdcutsList;
 
@@ -46,11 +48,11 @@ class HasItemCubit extends Cubit<HasItemState> {
         seconds: 2,
       ),
     );
-    emit(const HasItemState.error());
-    // emit(
-    //   HasItemState.hasItemRegisters(
-    //     products: _products,
-    //   ),
-    // );
+    // emit(const HasItemState.noItemRegistred());
+    emit(
+      HasItemState.hasItemRegisters(
+        products: _products,
+      ),
+    );
   }
 }

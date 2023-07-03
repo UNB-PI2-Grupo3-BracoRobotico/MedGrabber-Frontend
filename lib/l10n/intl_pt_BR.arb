@@ -7,7 +7,7 @@
     "forgotten_password_message": "Esqueceu sua senha?",
     "forgotten_password_title": "Esqueceu sua senha",
     "forgotten_password_email_sended_title": "Email enviado com sucesso!",
-    "forgotten_password_email_sended_title": "Por favor verifique sua caixa de mensagem para alteração da senha",
+    "forgotten_password_email_sended_message": "Por favor verifique sua caixa de mensagem para alteração da senha",
     "forgotten_password_desc": "Insira seu email e enviaremos código para resetar sua senha.",
     "forgotten_password_email_not_found": "Email não encontrado!",
     "go_to_login_page_button_label": "Já tenho uma conta",
@@ -16,6 +16,7 @@
     "help": "Ajuda",
     "save": "Salvar",
     "got_it": "Entendi",
+    "something_went_wrong": "Algo deu errado",
 
     "bottom_navigation_help_option": "Ajuda",
     "bottom_navigation_settings_option": "Configurações",
@@ -31,7 +32,7 @@
     "settings_title": "Configurações",
     "settings_name_option_title": "Nome",
     "settings_phone_option_title": "Telefone",
-    "settings_address_option_title": "Endereço",
+    "settings_email_option_title": "E-mail",
 
     "name_page_title": "Nome da Loja",
     "name_page_description": "Modifique o nome da loja que seus clientes irão enxergar durante as compras.\nSeu nome deve seguir algumas <bold>regras:\n• Não pode começar com números\n• Deve ter ao máximo 25 caracteres</bold>",
@@ -42,7 +43,7 @@
     "name_error_page_secondary_button_label": "Trocar nome",
     "name_loading_page_title": "Atualizando o nome da sua loja...",
     "name_success_page_title": "Nome da loja atulizado!",
-
+    
     "phone_page_title": "Telefone",
     "phone_page_description": "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras.",
     "phone_page_error_bottomsheet_title": "Número invalido",
@@ -97,14 +98,56 @@
     "default_invalid_signup_description": "Por favor tente novamente! Caso erro persista contate nossa equipe",
     "empty_string": "",
 
+    "mail_page_title": "Endereço de e-mail",
+    "mail_page_description": "Mofique o e-mail que seus clientes irão enxergar durante as compras.",
+    "mail_page_field_error": "Endereço de email inválido",
+    "mail_error_page_title": "Algo deu errado",
+    "mail_error_page_description": "Nós não conseguimos atualizar o endereço de e-mail.\nPor favor, tente novamente ou troque o nome inserido.",
+    "mail_error_page_primary_button_label": "Tentar novamente",
+    "mail_error_page_secondary_button_label": "Trocar e-mail",
+    "mail_loading_page_title": "Atualizando o endereço de e-mail...",
+    "mail_success_page_title": "Endereço de e-mail atulizado!",
+
+    "supported_page_loading_tiltle": "Aguarde um momento enquanto conectamos você ao nosso suporte...",
+
     "home_page_welcome_again_title": "Bem-vindo {name}",
     "home_page_manage_inventory_button_label": "Gerenciar estoque",
 
+    "help_title" : "Central de Ajuda",
+    "help_page_help_message":"Como podemos ajudar?",
+    "help_page_buttom_label": "Iniciar chat em Tempo Real!",
+    "help_page_send_email": "Envia um email para:",
+    "help_email_contact": "MedGrabber@gmail.com",
+    
     "inventory_page_title": "Estoque",
     "inventory_page_no_item_registered_description": "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!",
     "inventory_page_no_item_registered_button_labek": "Adicionar item",
     "inventory_amount_card_information": "Quantidade disponível: {amount}",
     "inventory_error_page_title": "Algo deu errado",
     "inventory_error_page_description": "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte.",
-    "inventory_page_loading": "Carregando seu estoque..."
+    "inventory_page_loading": "Carregando seu estoque...",
+
+    "add_item_page_title": "Adicionar item",
+    "add_item_position_option_label": "Posição",
+    "add_item_name_option_label": "Nome",
+    "add_item_amount_option_label": "Quantidade",
+    "add_item_description_option_label": "Descrição",
+    "add_item_button_label": "Adicionar",
+    "add_item_success_title": "Item criado!",
+    "add_item_loading_title": "Criando item...",
+    "add_item_generic_error_description": "Nós não conseguimos criar o item dessa vez.\nPor favor, tente novamente ou contate o suporte.",
+    "product_position_cannot_be_empty_error_text": "Posição não pode ser vazia",
+    "product_name_cannot_be_empty_error_text": "Nome não pode ser vazio",
+    "product_amount_cannot_be_empty_error_text": "Quantidade não pode ser vazia",
+    "product_description_cannot_be_empty_error_text": "Descrição não pode ser vazia",
+
+    "edit_item_page_title": "Editar item",
+    "edit_item_loading_title": "Editando item",
+    "edit_item_success_title": "Item editado!",
+    "edit_item_generic_error_description": "Nós não conseguimos editar o item dessa vez.\nPor favor, tente novamente ou contate o suporte.",
+    "edit_item_position_option_label": "Posição",
+    "edit_item_name_option_label": "Nome",
+    "edit_item_amount_option_label": "Quantidade",
+    "edit_item_description_option_label": "Descrição",
+    "edit_item_button_label": "Salvar alterações"
 }

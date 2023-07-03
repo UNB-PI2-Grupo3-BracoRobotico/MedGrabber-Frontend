@@ -37,12 +37,10 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
     return BlocConsumer<SignupCubit, SignupState>(
       bloc: _signupCubit,
       listener: (context, state) {
-        if (state.emailIsValid) {
+        if (state.emailIsValid && state.email.isNotEmpty) {
           Navigator.of(context).pushNamed(
             AppRoutes.onBoardingPassword,
           );
-        } else if (!state.tokenIsValid && state.tokenFailureText.isNotEmpty) {
-          _showEmailError();
         }
       },
       builder: (_, state) {
@@ -65,14 +63,17 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
           ),
           buttonEnabled: canContinue,
           buttonLabel: S.current.continue_button_label,
-          onPressed: _saveEmail,
+          onPressed: () async {
+            _saveEmail();
+          },
         );
       },
     );
   }
 
   Future<void> _saveEmail() async {
-    final isValid = await _signupCubit.validateEmail(_emailController.text);
+    final isValid =
+        await _signupCubit.validateEmail(_emailController.text.trim());
     if (!isValid) {
       _showEmailError();
     }
