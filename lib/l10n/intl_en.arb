@@ -111,5 +111,13 @@
     "order_page_title": "Order #{id}",
     "order_product_card_single_product_value": "Price of product - {price} BRLC",
     "order_product_card_total_value": "Valor total - {value} BRLC",
-    "order_product_amount_bought": "Amount bought - {amount}"
+    "order_product_amount_bought": "Amount bought - {amount}",
+
+    "home_order_section_title": "Orders",
+    "home_order_section_error_description": "Something went wrong. We couldn't load in progress orders, try again or contact our support team.",
+    "home_order_section_error_button_label": "Try again",
+    "home_order_section_loaded_button_label": "Orders history",
+    "home_order_section_loaded_orders_in_progress_title": "Orders in progress",
+    "home_order_section_loaded_orders_finished_title": "Finished orders",
+    "home_order_simulate_order_button_label": "Simulate a order"
 }

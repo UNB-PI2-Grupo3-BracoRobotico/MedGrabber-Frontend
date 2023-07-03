@@ -103,6 +103,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Itens acabando"),
         "home_available_positions_card":
             MessageLookupByLibrary.simpleMessage("Cubículos livres"),
+        "home_order_section_error_button_label":
+            MessageLookupByLibrary.simpleMessage("Tentar novamente"),
+        "home_order_section_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Algo deu errado. Não conseguimos carregar os pedidos em andamento, tente novament ou entre em contato com a equipe de suporte."),
+        "home_order_section_loaded_button_label":
+            MessageLookupByLibrary.simpleMessage("Histórico de pedidos"),
+        "home_order_section_loaded_orders_finished_title":
+            MessageLookupByLibrary.simpleMessage("Pedidos finalizados"),
+        "home_order_section_loaded_orders_in_progress_title":
+            MessageLookupByLibrary.simpleMessage("Pedidos em andamento"),
+        "home_order_section_title":
+            MessageLookupByLibrary.simpleMessage("Pedidos"),
+        "home_order_simulate_order_button_label":
+            MessageLookupByLibrary.simpleMessage("Simule um pedido"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
         "home_page_welcome_again_title": m0,

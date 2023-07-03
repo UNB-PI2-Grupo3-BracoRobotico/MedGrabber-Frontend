@@ -102,6 +102,21 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Items ending"),
         "home_available_positions_card":
             MessageLookupByLibrary.simpleMessage("Positions available"),
+        "home_order_section_error_button_label":
+            MessageLookupByLibrary.simpleMessage("Try again"),
+        "home_order_section_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Something went wrong. We couldn\'t load in progress orders, try again or contact our support team."),
+        "home_order_section_loaded_button_label":
+            MessageLookupByLibrary.simpleMessage("Orders history"),
+        "home_order_section_loaded_orders_finished_title":
+            MessageLookupByLibrary.simpleMessage("Finished orders"),
+        "home_order_section_loaded_orders_in_progress_title":
+            MessageLookupByLibrary.simpleMessage("Orders in progress"),
+        "home_order_section_title":
+            MessageLookupByLibrary.simpleMessage("Orders"),
+        "home_order_simulate_order_button_label":
+            MessageLookupByLibrary.simpleMessage("Simulate a order"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Manage inventory"),
         "home_page_welcome_again_title": m0,

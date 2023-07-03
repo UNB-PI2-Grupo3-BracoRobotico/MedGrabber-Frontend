@@ -1029,6 +1029,76 @@ class S {
       args: [amount],
     );
   }
+
+  /// `Orders`
+  String get home_order_section_title {
+    return Intl.message(
+      'Orders',
+      name: 'home_order_section_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong. We couldn't load in progress orders, try again or contact our support team.`
+  String get home_order_section_error_description {
+    return Intl.message(
+      'Something went wrong. We couldn\'t load in progress orders, try again or contact our support team.',
+      name: 'home_order_section_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get home_order_section_error_button_label {
+    return Intl.message(
+      'Try again',
+      name: 'home_order_section_error_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders history`
+  String get home_order_section_loaded_button_label {
+    return Intl.message(
+      'Orders history',
+      name: 'home_order_section_loaded_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders in progress`
+  String get home_order_section_loaded_orders_in_progress_title {
+    return Intl.message(
+      'Orders in progress',
+      name: 'home_order_section_loaded_orders_in_progress_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finished orders`
+  String get home_order_section_loaded_orders_finished_title {
+    return Intl.message(
+      'Finished orders',
+      name: 'home_order_section_loaded_orders_finished_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Simulate a order`
+  String get home_order_simulate_order_button_label {
+    return Intl.message(
+      'Simulate a order',
+      name: 'home_order_simulate_order_button_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
