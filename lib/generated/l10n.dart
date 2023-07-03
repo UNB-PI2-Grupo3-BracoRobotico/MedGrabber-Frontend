@@ -80,11 +80,81 @@ class S {
     );
   }
 
-  /// `Wrong email or passowrd`
+  /// `Wrong email or password`
   String get login_error_message {
     return Intl.message(
-      'Wrong email or passowrd',
+      'Wrong email or password',
       name: 'login_error_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgotten password?`
+  String get forgotten_password_message {
+    return Intl.message(
+      'Forgotten password?',
+      name: 'forgotten_password_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgotten password`
+  String get forgotten_password_title {
+    return Intl.message(
+      'Forgotten password',
+      name: 'forgotten_password_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get forgotten_password_button_label {
+    return Intl.message(
+      'Reset password',
+      name: 'forgotten_password_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email sent successfully!`
+  String get forgotten_password_email_sended_title {
+    return Intl.message(
+      'Email sent successfully!',
+      name: 'forgotten_password_email_sended_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your inbox for password reset instructions.`
+  String get forgotten_password_email_sended_message {
+    return Intl.message(
+      'Please check your inbox for password reset instructions.',
+      name: 'forgotten_password_email_sended_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email and we will send you a password reset link`
+  String get forgotten_password_desc {
+    return Intl.message(
+      'Enter your email and we will send you a password reset link',
+      name: 'forgotten_password_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Not founded!`
+  String get forgotten_password_email_not_found {
+    return Intl.message(
+      'Email Not founded!',
+      name: 'forgotten_password_email_not_found',
       desc: '',
       args: [],
     );

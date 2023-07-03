@@ -46,6 +46,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "default_invalid_token_label":
             MessageLookupByLibrary.simpleMessage("Invalid Token"),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),
+        "forgotten_password_button_label":
+            MessageLookupByLibrary.simpleMessage("Reset password"),
+        "forgotten_password_desc": MessageLookupByLibrary.simpleMessage(
+            "Enter your email and we will send you a password reset link"),
+        "forgotten_password_email_not_found":
+            MessageLookupByLibrary.simpleMessage("Email Not founded!"),
+        "forgotten_password_email_sended_message":
+            MessageLookupByLibrary.simpleMessage(
+                "Please check your inbox for password reset instructions."),
+        "forgotten_password_email_sended_title":
+            MessageLookupByLibrary.simpleMessage("Email sent successfully!"),
+        "forgotten_password_message":
+            MessageLookupByLibrary.simpleMessage("Forgotten password?"),
+        "forgotten_password_title":
+            MessageLookupByLibrary.simpleMessage("Forgotten password"),
         "go_to_login_page_button_label": MessageLookupByLibrary.simpleMessage(
             "I\'ve already had an account"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
@@ -69,7 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Inventory"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_error_message":
-            MessageLookupByLibrary.simpleMessage("Wrong email or passowrd"),
+            MessageLookupByLibrary.simpleMessage("Wrong email or password"),
         "name_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t update your store\'s name.\nPlease try again or change the inserted name."),
         "name_error_page_primary_button_label":

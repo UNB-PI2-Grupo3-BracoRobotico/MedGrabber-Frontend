@@ -42,4 +42,14 @@ class AuthRepository {
       throw Exception(e.toString());
     }
   }
+
+  Future<void> resetPassword({
+    required String email,
+  }) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
 }

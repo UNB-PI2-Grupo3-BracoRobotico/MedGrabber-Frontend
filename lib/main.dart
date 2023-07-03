@@ -28,25 +28,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => NavigationCubit(),
-      child: MaterialApp(
-        color: kWhite,
-        title: 'grabber',
-        theme: CustomTheme.getThemeData(),
-        //TODO(Mauricio): Define initial page later on
-        initialRoute: AppRoutes.settings,
-        onGenerateRoute: AppRouter.routeFromSettings,
-        supportedLocales: localizationsDelegate.supportedLocales,
-        localizationsDelegates: const [
-          localizationsDelegate,
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          DefaultCupertinoLocalizations.delegate,
-        ],
-      ),
+    return MaterialApp(
+      color: kWhite,
+      title: 'grabber',
+      theme: CustomTheme.getThemeData(),
+      //TODO(Mauricio): Define initial page later on
+      initialRoute: AppRoutes.onBoarding,
+      routes: AppRouter.mapRoutes(),
+      supportedLocales: localizationsDelegate.supportedLocales,
+      localizationsDelegates: const [
+        localizationsDelegate,
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        DefaultCupertinoLocalizations.delegate,
+      ],
     );
   }
 }

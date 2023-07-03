@@ -66,8 +66,28 @@ class _LoginState extends State<LoginPage> {
                 StyledText(
                   text: S.current.login_error_message,
                   textAlign: TextAlign.justify,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: TextStyle(foreground: Paint()..color = Colors.red),
                 ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushReplacementNamed(
+                          AppRoutes.forgottenPassword,
+                        );
+                      },
+                      child: Text(
+                        S.current.forgotten_password_message,
+                        style:
+                            TextStyle(foreground: Paint()..color = Colors.blue),
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
           buttonLabel: S.current.login_button_label,
@@ -84,10 +104,9 @@ class _LoginState extends State<LoginPage> {
 
   Future<void> _validateLogin(String email, String password) async {
     final loginCubit = context.read<LoginCubit>();
-    if (await loginCubit.login(email, password)) {
+    if (!await loginCubit.login(email, password)) {
       setState(() {
-        showErrorMessage:
-        true;
+        showErrorMessage = true;
       });
     }
   }

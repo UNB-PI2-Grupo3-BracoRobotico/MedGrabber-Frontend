@@ -45,6 +45,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "default_invalid_token_label":
             MessageLookupByLibrary.simpleMessage("Token invalido"),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),
+        "forgotten_password_button_label":
+            MessageLookupByLibrary.simpleMessage("Resetar senha"),
+        "forgotten_password_desc": MessageLookupByLibrary.simpleMessage(
+            "Insira seu email e enviaremos código para resetar sua senha."),
+        "forgotten_password_email_not_found":
+            MessageLookupByLibrary.simpleMessage("Email não encontrado!"),
+        "forgotten_password_email_sended_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Por favor verifique sua caixa de mensagem para alteração da senha"),
+        "forgotten_password_message":
+            MessageLookupByLibrary.simpleMessage("Esqueceu sua senha?"),
+        "forgotten_password_title":
+            MessageLookupByLibrary.simpleMessage("Esqueceu sua senha"),
         "go_to_login_page_button_label":
             MessageLookupByLibrary.simpleMessage("Já tenho uma conta"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
