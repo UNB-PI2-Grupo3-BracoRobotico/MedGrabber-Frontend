@@ -16,23 +16,26 @@ class OrderSection extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           loading: SizedBox.shrink,
-          error: () => Column(
-            children: [
-              Text(
-                S.current.home_order_section_title,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const VerticalGap.nano(),
-              Text(
-                S.current.home_order_section_error_description,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-              const VerticalGap.nano(),
-              DSButton.primary(
-                onPressed: () => context.read<GetOrdersCubit>().getOrders(),
-                label: S.current.home_order_section_error_button_label,
-              ),
-            ],
+          error: () => Animate(
+            effects: const [FadeEffect()],
+            child: Column(
+              children: [
+                Text(
+                  S.current.home_order_section_title,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const VerticalGap.nano(),
+                Text(
+                  S.current.home_order_section_error_description,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const VerticalGap.nano(),
+                DSButton.primary(
+                  onPressed: () => context.read<GetOrdersCubit>().getOrders(),
+                  label: S.current.home_order_section_error_button_label,
+                ),
+              ],
+            ),
           ),
           loaded: (ordersInProgress, orders) => Animate(
             effects: const [FadeEffect()],
