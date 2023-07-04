@@ -120,6 +120,7 @@
     "home_order_section_loaded_button_label": "Histórico de pedidos",
     "home_order_section_loaded_orders_in_progress_title": "Pedidos em andamento",
     "home_order_section_loaded_orders_finished_title": "Pedidos finalizados",
-    "home_order_simulate_order_button_label": "Simule um pedido"
+    "home_order_simulate_order_button_label": "Simule um pedido",
 
+    "home_low_storage_items_section_title": "Itens com baixo estoque"
 }

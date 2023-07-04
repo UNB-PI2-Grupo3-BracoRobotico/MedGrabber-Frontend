@@ -102,6 +102,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Items ending"),
         "home_available_positions_card":
             MessageLookupByLibrary.simpleMessage("Positions available"),
+        "home_low_storage_items_section_title":
+            MessageLookupByLibrary.simpleMessage("Low storage items"),
         "home_order_section_error_button_label":
             MessageLookupByLibrary.simpleMessage("Try again"),
         "home_order_section_error_description":

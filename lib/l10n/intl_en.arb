@@ -119,5 +119,7 @@
     "home_order_section_loaded_button_label": "Orders history",
     "home_order_section_loaded_orders_in_progress_title": "Orders in progress",
     "home_order_section_loaded_orders_finished_title": "Finished orders",
-    "home_order_simulate_order_button_label": "Simulate a order"
+    "home_order_simulate_order_button_label": "Simulate a order",
+
+    "home_low_storage_items_section_title": "Low storage items"
 }

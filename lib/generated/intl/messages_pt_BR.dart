@@ -103,6 +103,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Itens acabando"),
         "home_available_positions_card":
             MessageLookupByLibrary.simpleMessage("Cubículos livres"),
+        "home_low_storage_items_section_title":
+            MessageLookupByLibrary.simpleMessage("Itens com baixo estoque"),
         "home_order_section_error_button_label":
             MessageLookupByLibrary.simpleMessage("Tentar novamente"),
         "home_order_section_error_description":

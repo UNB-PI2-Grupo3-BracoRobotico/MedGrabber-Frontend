@@ -1099,6 +1099,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Low storage items`
+  String get home_low_storage_items_section_title {
+    return Intl.message(
+      'Low storage items',
+      name: 'home_low_storage_items_section_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
