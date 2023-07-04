@@ -140,6 +140,7 @@ abstract class AppRouter {
         break;
       case AppRoutes.dashboard:
       default:
+        print('Deu erro');
         throw UnimplementedError();
     }
 
