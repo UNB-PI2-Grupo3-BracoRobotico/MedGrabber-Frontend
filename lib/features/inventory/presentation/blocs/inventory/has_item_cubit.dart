@@ -40,6 +40,20 @@ class HasItemCubit extends Cubit<HasItemState> {
       position: 'A2',
       price: 15.50,
     ),
+    Product(
+      name: 'Prod 2',
+      amount: 1,
+      description: 'Description 1 example',
+      position: 'A1',
+      price: 15.50,
+    ),
+    Product(
+      name: 'Prod 3',
+      amount: 1,
+      description: 'Description 1 example',
+      position: 'A2',
+      price: 15.50,
+    ),
   ];
 
   Future<void> hasItemRegistered() async {
