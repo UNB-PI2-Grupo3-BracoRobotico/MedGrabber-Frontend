@@ -125,6 +125,10 @@
 
 
     "dashboard_title": "Dashboard",
-    "dashboard_section_reports_button_label": "Reports"
+    "dashboard_section_reports_button_label": "Reports",
+    "dashboard_total_items": "Number of Items in store:",
+    "dashboard_highest_item": "Most expensive item:",
+    "dashboard_cheapest_item": "Cheapest item out of stock:",
+    "dashboard_total_price": "Total Price of Products:"
 
 }

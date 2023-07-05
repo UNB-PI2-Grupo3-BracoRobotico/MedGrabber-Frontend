@@ -125,6 +125,10 @@
     "home_low_storage_items_section_title": "Itens com baixo estoque",
 
     "dashboard_title": "Dashboard",
-    "dashboard_section_reports_button_label": "Relatórios"
+    "dashboard_section_reports_button_label": "Relatórios",
+    "dashboard_total_items": "Total de Items em estoque:",
+    "dashboard_highest_item": "Item mais caro no estoque:",
+    "dashboard_cheapest_item": "Custo mais barato no esoque:",
+    "dashboard_total_price": "Preço total dos produtos:"
 
 }

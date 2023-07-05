@@ -70,9 +70,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurações"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "dashboard_cheapest_item": MessageLookupByLibrary.simpleMessage(
+            "Custo mais barato no esoque:"),
+        "dashboard_highest_item":
+            MessageLookupByLibrary.simpleMessage("Item mais caro no estoque:"),
         "dashboard_section_reports_button_label":
             MessageLookupByLibrary.simpleMessage("Relatórios"),
         "dashboard_title": MessageLookupByLibrary.simpleMessage("Dashboard"),
+        "dashboard_total_items":
+            MessageLookupByLibrary.simpleMessage("Total de Items em estoque:"),
+        "dashboard_total_price":
+            MessageLookupByLibrary.simpleMessage("Preço total dos produtos:"),
         "edit_item_amount_option_label":
             MessageLookupByLibrary.simpleMessage("Quantidade"),
         "edit_item_button_label":
