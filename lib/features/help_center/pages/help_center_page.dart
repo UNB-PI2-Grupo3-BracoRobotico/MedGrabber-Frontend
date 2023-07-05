@@ -17,80 +17,85 @@ class HelpCenter extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar:
           navigatedViaNavbar ? const GrabberBottomNavigationBar() : null,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        leading: navigatedViaNavbar
-            ? const SizedBox.shrink()
-            : DSIconButton(
+      appBar: navigatedViaNavbar
+          ? null
+          : AppBar(
+              automaticallyImplyLeading: false,
+              leading: DSIconButton(
                 icon: const DSIcon(
                   icon: Icons.chevron_left_rounded,
                 ),
                 onTap: Navigator.of(context).pop,
               ),
-        titleSpacing: 0,
-        title: Text(
-          S.current.help_title,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const VerticalGap.xl(),
-          const VerticalGap.sm(),
-          Center(
-            child: Column(
-              children: [
-                Image.asset(
-                  'assets/images/headphone.png',
-                  width: kSpacingXL,
-                  height: kSpacingXL,
-                ),
-                const VerticalGap.nano(),
-                Text(
-                  S.current.help_page_help_message,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                  textAlign: TextAlign.justify,
-                ),
-                const VerticalGap.nano(),
-                RealTime(
-                  title: S.current.help_page_buttom_label,
-                  icon: Icons.account_circle_outlined,
-                  onTap: () => Navigator.of(context).pushNamed(
-                    AppRoutes.support,
-                  ),
-                ),
-                const VerticalGap.xxxl(),
-                Container(
-                  width: kSpacingXL,
-                  height: kSpacingXL,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: kPrimary,
-                  ),
-                  child: const ClipOval(
-                    child: DSIcon(
-                      icon: Icons.email,
-                      size: kIconSizeSM,
-                    ),
-                  ),
-                ),
-                const VerticalGap.nano(),
-                Text(
-                  S.current.help_page_send_email,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                  textAlign: TextAlign.justify,
-                ),
-                const VerticalGap.nano(),
-                Text(
-                  S.current.help_email_contact,
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.justify,
-                ),
-              ],
+              titleSpacing: 0,
+              title: Text(
+                S.current.help_title,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
             ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: kSpacingXS,
           ),
-        ],
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  S.current.help_title,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                  textAlign: TextAlign.start,
+                ),
+              ),
+              const VerticalGap.xl(),
+              Image.asset(
+                'assets/images/headphone.png',
+                width: kSpacingXL,
+                height: kSpacingXL,
+              ),
+              const VerticalGap.nano(),
+              Text(
+                S.current.help_page_help_message,
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.justify,
+              ),
+              const VerticalGap.nano(),
+              ChatTile(
+                title: S.current.help_page_buttom_label,
+                icon: Icons.headphones,
+                onTap: () => Navigator.of(context).pushNamed(
+                  AppRoutes.support,
+                ),
+              ),
+              const VerticalGap.xxxl(),
+              Container(
+                width: kSpacingXL,
+                height: kSpacingXL,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: kPrimary,
+                ),
+                child: const DSIcon(
+                  icon: Icons.email,
+                  size: kIconSizeSM,
+                ),
+              ),
+              const VerticalGap.nano(),
+              Text(
+                S.current.help_page_send_email,
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.justify,
+              ),
+              const VerticalGap.nano(),
+              Text(
+                S.current.help_email_contact,
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.justify,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -14,4 +14,5 @@ abstract class AppRoutes {
   static const String addItem = '/add_item';
   static const String editItem = '/edit_item';
   static const String support = '/support';
+  static const String orderReview = '/order-review';
 }

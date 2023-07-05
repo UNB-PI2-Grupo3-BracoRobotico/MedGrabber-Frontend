@@ -91,5 +91,35 @@
     "edit_item_name_option_label": "Name",
     "edit_item_amount_option_label": "Amount",
     "edit_item_description_option_label": "Description",
-    "edit_item_button_label": "Save changes"
+    "edit_item_button_label": "Save changes",
+
+    "positions_option_button_error": "Error loading available positions. <bold>Click here</bold> to try to load again.",
+    "informational_card_error_message": "Error, tap here",
+
+    "home_available_positions_card": "Positions available",
+    "home_available_itens_card": "Items ending",
+
+    "order_id": "#{id}",
+    "order_status": "Status - {status}",
+    "order_status_awaiting_payment": "Awaiting payment",
+    "order_status_processing": "Processing",
+    "order_status_ready_to_get": "Ready to take out",
+    "order_status_finished": "Finished",
+    "order_value": "Total value - {value} BRLC",
+    "order_check_itens_button_label": "Verify items",
+
+    "order_page_title": "Order #{id}",
+    "order_product_card_single_product_value": "Price of product - {price} BRLC",
+    "order_product_card_total_value": "Valor total - {value} BRLC",
+    "order_product_amount_bought": "Amount bought - {amount}",
+
+    "home_order_section_title": "Orders",
+    "home_order_section_error_description": "Something went wrong. We couldn't load in progress orders, try again or contact our support team.",
+    "home_order_section_error_button_label": "Try again",
+    "home_order_section_loaded_button_label": "Orders history",
+    "home_order_section_loaded_orders_in_progress_title": "Orders in progress",
+    "home_order_section_loaded_orders_finished_title": "Finished orders",
+    "home_order_simulate_order_button_label": "Simulate a order",
+
+    "home_low_storage_items_section_title": "Low storage items"
 }

@@ -24,6 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(amount) => "Amount available: ${amount}";
 
+  static String m2(id) => "#${id}";
+
+  static String m3(id) => "Order #${id}";
+
+  static String m4(amount) => "Amount bought - ${amount}";
+
+  static String m5(price) => "Price of product - ${price} BRLC";
+
+  static String m6(value) => "Valor total - ${value} BRLC";
+
+  static String m7(status) => "Status - ${status}";
+
+  static String m8(value) => "Total value - ${value} BRLC";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_item_amount_option_label":
@@ -84,9 +98,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Send Email to:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Help Center"),
+        "home_available_itens_card":
+            MessageLookupByLibrary.simpleMessage("Items ending"),
+        "home_available_positions_card":
+            MessageLookupByLibrary.simpleMessage("Positions available"),
+        "home_low_storage_items_section_title":
+            MessageLookupByLibrary.simpleMessage("Low storage items"),
+        "home_order_section_error_button_label":
+            MessageLookupByLibrary.simpleMessage("Try again"),
+        "home_order_section_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Something went wrong. We couldn\'t load in progress orders, try again or contact our support team."),
+        "home_order_section_loaded_button_label":
+            MessageLookupByLibrary.simpleMessage("Orders history"),
+        "home_order_section_loaded_orders_finished_title":
+            MessageLookupByLibrary.simpleMessage("Finished orders"),
+        "home_order_section_loaded_orders_in_progress_title":
+            MessageLookupByLibrary.simpleMessage("Orders in progress"),
+        "home_order_section_title":
+            MessageLookupByLibrary.simpleMessage("Orders"),
+        "home_order_simulate_order_button_label":
+            MessageLookupByLibrary.simpleMessage("Simulate a order"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Manage inventory"),
         "home_page_welcome_again_title": m0,
+        "informational_card_error_message":
+            MessageLookupByLibrary.simpleMessage("Error, tap here"),
         "inventory_amount_card_information": m1,
         "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t load your store itens.\nPlease try again or contact the suport team."),
@@ -138,6 +175,23 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Store\'s Name"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Store name updated!"),
+        "order_check_itens_button_label":
+            MessageLookupByLibrary.simpleMessage("Verify items"),
+        "order_id": m2,
+        "order_page_title": m3,
+        "order_product_amount_bought": m4,
+        "order_product_card_single_product_value": m5,
+        "order_product_card_total_value": m6,
+        "order_status": m7,
+        "order_status_awaiting_payment":
+            MessageLookupByLibrary.simpleMessage("Awaiting payment"),
+        "order_status_finished":
+            MessageLookupByLibrary.simpleMessage("Finished"),
+        "order_status_processing":
+            MessageLookupByLibrary.simpleMessage("Processing"),
+        "order_status_ready_to_get":
+            MessageLookupByLibrary.simpleMessage("Ready to take out"),
+        "order_value": m8,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modify the number of your store to keep clients informed during their purchases."),
         "phone_page_error_bottomsheet_description":
@@ -155,6 +209,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number updated!"),
         "phone_page_title":
             MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "positions_option_button_error": MessageLookupByLibrary.simpleMessage(
+            "Error loading available positions. <bold>Click here</bold> to try to load again."),
         "product_amount_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage("Amount cannot be empty"),
         "product_description_cannot_be_empty_error_text":

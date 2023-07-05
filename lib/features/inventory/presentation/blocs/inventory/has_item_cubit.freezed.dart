@@ -43,7 +43,7 @@ mixin _$HasItemState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_NoItemRegistered value) noItemRegistred,
     required TResult Function(_hasItemRegistered value) hasItemRegisters,
     required TResult Function(_Error value) error,
@@ -51,7 +51,7 @@ mixin _$HasItemState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(_NoItemRegistered value)? noItemRegistred,
     TResult? Function(_hasItemRegistered value)? hasItemRegisters,
     TResult? Function(_Error value)? error,
@@ -59,7 +59,7 @@ mixin _$HasItemState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(_NoItemRegistered value)? noItemRegistred,
     TResult Function(_hasItemRegistered value)? hasItemRegisters,
     TResult Function(_Error value)? error,
@@ -87,24 +87,24 @@ class _$HasItemStateCopyWithImpl<$Res, $Val extends HasItemState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$HasItemStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$HasItemStateCopyWithImpl<$Res, _$_Loading>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_Loading implements _Loading {
+  const _$_Loading();
 
   @override
   String toString() {
@@ -114,7 +114,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$_Loading);
   }
 
   @override
@@ -160,7 +160,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_NoItemRegistered value) noItemRegistred,
     required TResult Function(_hasItemRegistered value) hasItemRegisters,
     required TResult Function(_Error value) error,
@@ -171,7 +171,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(_NoItemRegistered value)? noItemRegistred,
     TResult? Function(_hasItemRegistered value)? hasItemRegisters,
     TResult? Function(_Error value)? error,
@@ -182,7 +182,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(_NoItemRegistered value)? noItemRegistred,
     TResult Function(_hasItemRegistered value)? hasItemRegisters,
     TResult Function(_Error value)? error,
@@ -195,8 +195,8 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements HasItemState {
-  const factory _Initial() = _$_Initial;
+abstract class _Loading implements HasItemState {
+  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
@@ -274,7 +274,7 @@ class _$_NoItemRegistered implements _NoItemRegistered {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_NoItemRegistered value) noItemRegistred,
     required TResult Function(_hasItemRegistered value) hasItemRegisters,
     required TResult Function(_Error value) error,
@@ -285,7 +285,7 @@ class _$_NoItemRegistered implements _NoItemRegistered {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(_NoItemRegistered value)? noItemRegistred,
     TResult? Function(_hasItemRegistered value)? hasItemRegisters,
     TResult? Function(_Error value)? error,
@@ -296,7 +296,7 @@ class _$_NoItemRegistered implements _NoItemRegistered {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(_NoItemRegistered value)? noItemRegistred,
     TResult Function(_hasItemRegistered value)? hasItemRegisters,
     TResult Function(_Error value)? error,
@@ -422,7 +422,7 @@ class _$_hasItemRegistered implements _hasItemRegistered {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_NoItemRegistered value) noItemRegistred,
     required TResult Function(_hasItemRegistered value) hasItemRegisters,
     required TResult Function(_Error value) error,
@@ -433,7 +433,7 @@ class _$_hasItemRegistered implements _hasItemRegistered {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(_NoItemRegistered value)? noItemRegistred,
     TResult? Function(_hasItemRegistered value)? hasItemRegisters,
     TResult? Function(_Error value)? error,
@@ -444,7 +444,7 @@ class _$_hasItemRegistered implements _hasItemRegistered {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(_NoItemRegistered value)? noItemRegistred,
     TResult Function(_hasItemRegistered value)? hasItemRegisters,
     TResult Function(_Error value)? error,
@@ -540,7 +540,7 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_NoItemRegistered value) noItemRegistred,
     required TResult Function(_hasItemRegistered value) hasItemRegisters,
     required TResult Function(_Error value) error,
@@ -551,7 +551,7 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(_NoItemRegistered value)? noItemRegistred,
     TResult? Function(_hasItemRegistered value)? hasItemRegisters,
     TResult? Function(_Error value)? error,
@@ -562,7 +562,7 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(_NoItemRegistered value)? noItemRegistred,
     TResult Function(_hasItemRegistered value)? hasItemRegisters,
     TResult Function(_Error value)? error,

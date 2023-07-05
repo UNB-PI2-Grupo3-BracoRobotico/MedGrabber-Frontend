@@ -869,6 +869,246 @@ class S {
       args: [],
     );
   }
+
+  /// `Error loading available positions. <bold>Click here</bold> to try to load again.`
+  String get positions_option_button_error {
+    return Intl.message(
+      'Error loading available positions. <bold>Click here</bold> to try to load again.',
+      name: 'positions_option_button_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error, tap here`
+  String get informational_card_error_message {
+    return Intl.message(
+      'Error, tap here',
+      name: 'informational_card_error_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Positions available`
+  String get home_available_positions_card {
+    return Intl.message(
+      'Positions available',
+      name: 'home_available_positions_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Items ending`
+  String get home_available_itens_card {
+    return Intl.message(
+      'Items ending',
+      name: 'home_available_itens_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `#{id}`
+  String order_id(Object id) {
+    return Intl.message(
+      '#$id',
+      name: 'order_id',
+      desc: '',
+      args: [id],
+    );
+  }
+
+  /// `Status - {status}`
+  String order_status(Object status) {
+    return Intl.message(
+      'Status - $status',
+      name: 'order_status',
+      desc: '',
+      args: [status],
+    );
+  }
+
+  /// `Awaiting payment`
+  String get order_status_awaiting_payment {
+    return Intl.message(
+      'Awaiting payment',
+      name: 'order_status_awaiting_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processing`
+  String get order_status_processing {
+    return Intl.message(
+      'Processing',
+      name: 'order_status_processing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ready to take out`
+  String get order_status_ready_to_get {
+    return Intl.message(
+      'Ready to take out',
+      name: 'order_status_ready_to_get',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finished`
+  String get order_status_finished {
+    return Intl.message(
+      'Finished',
+      name: 'order_status_finished',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total value - {value} BRLC`
+  String order_value(Object value) {
+    return Intl.message(
+      'Total value - $value BRLC',
+      name: 'order_value',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Verify items`
+  String get order_check_itens_button_label {
+    return Intl.message(
+      'Verify items',
+      name: 'order_check_itens_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order #{id}`
+  String order_page_title(Object id) {
+    return Intl.message(
+      'Order #$id',
+      name: 'order_page_title',
+      desc: '',
+      args: [id],
+    );
+  }
+
+  /// `Price of product - {price} BRLC`
+  String order_product_card_single_product_value(Object price) {
+    return Intl.message(
+      'Price of product - $price BRLC',
+      name: 'order_product_card_single_product_value',
+      desc: '',
+      args: [price],
+    );
+  }
+
+  /// `Valor total - {value} BRLC`
+  String order_product_card_total_value(Object value) {
+    return Intl.message(
+      'Valor total - $value BRLC',
+      name: 'order_product_card_total_value',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Amount bought - {amount}`
+  String order_product_amount_bought(Object amount) {
+    return Intl.message(
+      'Amount bought - $amount',
+      name: 'order_product_amount_bought',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `Orders`
+  String get home_order_section_title {
+    return Intl.message(
+      'Orders',
+      name: 'home_order_section_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong. We couldn't load in progress orders, try again or contact our support team.`
+  String get home_order_section_error_description {
+    return Intl.message(
+      'Something went wrong. We couldn\'t load in progress orders, try again or contact our support team.',
+      name: 'home_order_section_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try again`
+  String get home_order_section_error_button_label {
+    return Intl.message(
+      'Try again',
+      name: 'home_order_section_error_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders history`
+  String get home_order_section_loaded_button_label {
+    return Intl.message(
+      'Orders history',
+      name: 'home_order_section_loaded_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders in progress`
+  String get home_order_section_loaded_orders_in_progress_title {
+    return Intl.message(
+      'Orders in progress',
+      name: 'home_order_section_loaded_orders_in_progress_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finished orders`
+  String get home_order_section_loaded_orders_finished_title {
+    return Intl.message(
+      'Finished orders',
+      name: 'home_order_section_loaded_orders_finished_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Simulate a order`
+  String get home_order_simulate_order_button_label {
+    return Intl.message(
+      'Simulate a order',
+      name: 'home_order_simulate_order_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Low storage items`
+  String get home_low_storage_items_section_title {
+    return Intl.message(
+      'Low storage items',
+      name: 'home_low_storage_items_section_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
