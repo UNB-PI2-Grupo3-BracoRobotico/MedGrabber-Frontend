@@ -1109,6 +1109,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Dashboard`
+  String get dashboard_title {
+    return Intl.message(
+      'Dashboard',
+      name: 'dashboard_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reports`
+  String get dashboard_section_reports_button_label {
+    return Intl.message(
+      'Reports',
+      name: 'dashboard_section_reports_button_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

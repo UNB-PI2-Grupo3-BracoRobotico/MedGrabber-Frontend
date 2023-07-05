@@ -69,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Settings"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
+        "dashboard_section_reports_button_label":
+            MessageLookupByLibrary.simpleMessage("Reports"),
+        "dashboard_title": MessageLookupByLibrary.simpleMessage("Dashboard"),
         "edit_item_amount_option_label":
             MessageLookupByLibrary.simpleMessage("Amount"),
         "edit_item_button_label":
