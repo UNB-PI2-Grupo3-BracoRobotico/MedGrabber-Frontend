@@ -24,6 +24,7 @@ class CustomTheme {
         ),
       ),
       appBarTheme: const AppBarTheme(
+        scrolledUnderElevation: 0,
         backgroundColor: kWhite,
         elevation: 0,
         centerTitle: false,
