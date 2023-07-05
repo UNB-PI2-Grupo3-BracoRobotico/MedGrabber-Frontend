@@ -41,14 +41,14 @@ class HasItemCubit extends Cubit<HasItemState> {
       price: 15.50,
     ),
     Product(
-      name: 'Prod 2',
+      name: 'Prod 4',
       amount: 1,
       description: 'Description 1 example',
       position: 'A1',
       price: 15.50,
     ),
     Product(
-      name: 'Prod 3',
+      name: 'Prod 5',
       amount: 1,
       description: 'Description 1 example',
       position: 'A2',

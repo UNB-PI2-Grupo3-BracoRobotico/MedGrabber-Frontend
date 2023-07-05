@@ -11,6 +11,7 @@ import 'package:grabber/features/inventory/presentation/pages/edit_item_page.dar
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
 import 'package:grabber/features/orders/domain/entities/order.dart';
+import 'package:grabber/features/orders/presentation/simulate_order_page.dart';
 import 'package:grabber/features/orders/presentation/single_order_page.dart';
 import 'package:grabber/features/settings/pages/mail_option/blocs/mail_page/mail_page_cubit.dart';
 import 'package:grabber/features/settings/pages/mail_option/mail_page.dart';
@@ -128,6 +129,9 @@ abstract class AppRouter {
         break;
       case AppRoutes.support:
         page = const SupportPage();
+        break;
+      case AppRoutes.simulateOrder:
+        page = const SimulateOrderPage();
         break;
       case AppRoutes.orderReview:
         if (settings.arguments != null) {
