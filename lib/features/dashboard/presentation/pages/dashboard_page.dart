@@ -68,7 +68,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 onPressed: () {},
                 label: S.current.dashboard_section_reports_button_label,
               ),
-              const VerticalGap.xxl(),
+              const VerticalGap.sm(),
               MultiBlocProvider(
                 providers: [
                   BlocProvider.value(
@@ -80,6 +80,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 ],
                 child: const _FirstRowInformationCards(),
               ),
+              const VerticalGap.sm(),
                 BlocProvider(
                 create: (context) => GetOrdersCubit()..getOrders(),
                 child: const HistorySection(),

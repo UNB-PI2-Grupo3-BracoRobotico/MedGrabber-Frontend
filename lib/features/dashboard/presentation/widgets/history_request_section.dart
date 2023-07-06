@@ -29,7 +29,7 @@ class _HistorySectionState extends State<HistorySection> {
             child: Column(
               children: [
                 Text(
-                  S.current.home_order_section_title,
+                  S.current.history_title,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
                 const VerticalGap.nano(),
@@ -51,7 +51,7 @@ class _HistorySectionState extends State<HistorySection> {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      S.current.home_order_section_title,
+                      S.current.history_title,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                   ),
@@ -65,6 +65,7 @@ class _HistorySectionState extends State<HistorySection> {
                     separatorBuilder: (_, __) => const VerticalGap.xxxs(),
                     itemCount: displayedOrders.length,
                   ),
+                  const VerticalGap.nano(),
                   if (!showAllItems)
                     DSButton.outlined(
                       onPressed: () {
@@ -72,7 +73,7 @@ class _HistorySectionState extends State<HistorySection> {
                           showAllItems = true;
                         });
                       },
-                      label: S.current.add_item_amount_option_label,
+                      label: S.current.history_loud_orders,
                     ),
                 ],
               ),

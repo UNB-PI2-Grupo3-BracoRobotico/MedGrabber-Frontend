@@ -47,16 +47,4 @@ class HistoryCard extends StatelessWidget {
     );
   }
 
-  String _statusMappedToUI(OrderStatus status) {
-    switch (status) {
-      case OrderStatus.awaitingPayment:
-        return S.current.order_status_awaiting_payment;
-      case OrderStatus.finished:
-        return S.current.order_status_finished;
-      case OrderStatus.processing:
-        return S.current.order_status_processing;
-      case OrderStatus.readyToGet:
-        return S.current.order_status_ready_to_get;
-    }
-  }
 }
