@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/dashboard/presentation/widgets/dashboard_information.dart';
+import 'package:grabber/features/dashboard/presentation/widgets/history_request_section.dart';
 import 'package:grabber/features/home/presentation/widgets/informational_card.dart';
 import 'package:grabber/features/home/presentation/widgets/low_storage_items_section.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
@@ -54,10 +55,13 @@ class _DashboardPageState extends State<DashboardPage> {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
+      
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kSpacingXS),
-          child: Column(
+          child: ListView(
+            children: [
+            Column(
             children: [
               const VerticalGap.sm(),
               DSButton.primary(
@@ -76,10 +80,16 @@ class _DashboardPageState extends State<DashboardPage> {
                 ],
                 child: const _FirstRowInformationCards(),
               ),
+                BlocProvider(
+                create: (context) => GetOrdersCubit()..getOrders(),
+                child: const HistorySection(),
+              ),
             ],
           ),
+            ],
         ),
       ),
+      )
     );
   }
 }
