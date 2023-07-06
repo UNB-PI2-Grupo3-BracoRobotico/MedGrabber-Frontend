@@ -129,6 +129,8 @@
     "dashboard_total_items": "Number of Items in store:",
     "dashboard_highest_item": "Most expensive item:",
     "dashboard_cheapest_item": "Cheapest item out of stock:",
-    "dashboard_total_price": "Total Price of Products:"
+    "dashboard_total_price": "Total Price of Products:",
+    "history_title": "Order History",
+    "history_loud_orders": "Load more..."
 
 }

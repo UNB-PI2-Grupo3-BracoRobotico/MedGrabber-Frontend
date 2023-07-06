@@ -129,6 +129,8 @@
     "dashboard_total_items": "Total de Items em estoque:",
     "dashboard_highest_item": "Item mais caro no estoque:",
     "dashboard_cheapest_item": "Custo mais barato no esoque:",
-    "dashboard_total_price": "Preço total dos produtos:"
+    "dashboard_total_price": "Preço total dos produtos:",
+    "history_title": "Histórico de Pedidos",
+    "history_loud_orders": "Carrear mais..."
 
 }

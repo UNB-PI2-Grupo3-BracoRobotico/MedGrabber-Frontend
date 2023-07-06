@@ -110,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Envia um email para:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Central de Ajuda"),
+        "history_loud_orders":
+            MessageLookupByLibrary.simpleMessage("Carrear mais..."),
+        "history_title":
+            MessageLookupByLibrary.simpleMessage("Histórico de Pedidos"),
         "home_available_itens_card":
             MessageLookupByLibrary.simpleMessage("Itens acabando"),
         "home_available_positions_card":

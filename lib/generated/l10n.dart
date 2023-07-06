@@ -1169,6 +1169,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Order History`
+  String get history_title {
+    return Intl.message(
+      'Order History',
+      name: 'history_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Load more...`
+  String get history_loud_orders {
+    return Intl.message(
+      'Load more...',
+      name: 'history_loud_orders',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
