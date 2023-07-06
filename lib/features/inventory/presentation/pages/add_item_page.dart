@@ -113,6 +113,10 @@ class _AddItemPageState extends State<AddItemPage> {
                                 child: ListView(
                                   children: [
                                     PositionOptionsButton(
+                                      errorGetPositions: state.maybeWhen(
+                                        orElse: () => false,
+                                        error: () => true,
+                                      ),
                                       options: state.maybeWhen(
                                         orElse: () => [],
                                         availablePositions: (options) =>
@@ -166,6 +170,8 @@ class _AddItemPageState extends State<AddItemPage> {
                                           description:
                                               _descriptionController.text,
                                           position: position,
+                                          //TODO(Mauricio): Add textfield for price
+                                          price: 0.0,
                                         ),
                                       );
                                 },

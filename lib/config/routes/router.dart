@@ -19,6 +19,8 @@ import 'package:grabber/features/on_boarding/presentation/pages/onboarding_passw
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_phone_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_start_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_token_page.dart';
+import 'package:grabber/features/orders/domain/entities/order.dart';
+import 'package:grabber/features/orders/presentation/single_order_page.dart';
 import 'package:grabber/features/settings/pages/mail_option/blocs/mail_page/mail_page_cubit.dart';
 import 'package:grabber/features/settings/pages/mail_option/mail_page.dart';
 import 'package:grabber/features/settings/pages/name_option/name_page.dart';
@@ -91,6 +93,34 @@ abstract class AppRouter {
     AnimationByRoute animation = AnimationByRoute.defaultOption;
 
     switch (settings.name) {
+      case AppRoutes.onBoarding:
+        page = const OnBoardingStartPage();
+        break;
+
+      case AppRoutes.forgottenPassword:
+        page = BlocProvider(
+          create: (_) => ForgottenPasswordCubit(),
+          child: const ForgottenPasswordPage(),
+        );
+        break;
+      case AppRoutes.login:
+        page = BlocProvider(
+          create: (_) => LoginCubit(),
+          child: const LoginPage(),
+        );
+        break;
+      case AppRoutes.onBoardingToken:
+        page = const OnBoardingTokenPage();
+        break;
+      case AppRoutes.onBoardingEmail:
+        page = const OnBoardingEmailPage();
+        break;
+      case AppRoutes.onBoardingPassword:
+        page = const OnBoardingPasswordPage();
+        break;
+      case AppRoutes.onBoardingPhone:
+        page = const OnBoardingPhonePage();
+        break;
       case AppRoutes.initial:
         page = const TemplatePage();
         break;
@@ -186,8 +216,18 @@ abstract class AppRouter {
       case AppRoutes.support:
         page = const SupportPage();
         break;
+      case AppRoutes.orderReview:
+        if (settings.arguments != null) {
+          page = SingleOrderPage(
+            order: settings.arguments! as Order,
+          );
+        } else {
+          throw Exception('Missing arguments');
+        }
+        break;
       case AppRoutes.dashboard:
       default:
+        print('Deu erro');
         throw UnimplementedError();
     }
 

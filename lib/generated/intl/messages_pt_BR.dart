@@ -24,6 +24,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(amount) => "Quantidade disponível: ${amount}";
 
+  static String m2(id) => "#${id}";
+
+  static String m3(id) => "Pedido #${id}";
+
+  static String m4(amount) => "Quantidade comprada - ${amount}";
+
+  static String m5(price) => "Preço do produto - R\$ ${price}";
+
+  static String m6(value) => "Valor total - R\$ ${value}";
+
+  static String m7(status) => "Status - ${status}";
+
+  static String m8(value) => "Valor total - R\$ ${value}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add_item_amount_option_label":
@@ -109,9 +123,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Envia um email para:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Central de Ajuda"),
+        "home_available_itens_card":
+            MessageLookupByLibrary.simpleMessage("Itens acabando"),
+        "home_available_positions_card":
+            MessageLookupByLibrary.simpleMessage("Cubículos livres"),
+        "home_low_storage_items_section_title":
+            MessageLookupByLibrary.simpleMessage("Itens com baixo estoque"),
+        "home_order_section_error_button_label":
+            MessageLookupByLibrary.simpleMessage("Tentar novamente"),
+        "home_order_section_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Algo deu errado. Não conseguimos carregar os pedidos em andamento, tente novament ou entre em contato com a equipe de suporte."),
+        "home_order_section_loaded_button_label":
+            MessageLookupByLibrary.simpleMessage("Histórico de pedidos"),
+        "home_order_section_loaded_orders_finished_title":
+            MessageLookupByLibrary.simpleMessage("Pedidos finalizados"),
+        "home_order_section_loaded_orders_in_progress_title":
+            MessageLookupByLibrary.simpleMessage("Pedidos em andamento"),
+        "home_order_section_title":
+            MessageLookupByLibrary.simpleMessage("Pedidos"),
+        "home_order_simulate_order_button_label":
+            MessageLookupByLibrary.simpleMessage("Simule um pedido"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
         "home_page_welcome_again_title": m0,
+        "informational_card_error_message":
+            MessageLookupByLibrary.simpleMessage("Erro, clique aqui"),
         "inventory_amount_card_information": m1,
         "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte."),
@@ -256,6 +293,23 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Código da máquina vinculado com sucesso!"),
         "on_boarding_token_page_title":
             MessageLookupByLibrary.simpleMessage("Código da máquina: "),
+        "order_check_itens_button_label":
+            MessageLookupByLibrary.simpleMessage("Verificar itens"),
+        "order_id": m2,
+        "order_page_title": m3,
+        "order_product_amount_bought": m4,
+        "order_product_card_single_product_value": m5,
+        "order_product_card_total_value": m6,
+        "order_status": m7,
+        "order_status_awaiting_payment":
+            MessageLookupByLibrary.simpleMessage("Aguardando pagamento"),
+        "order_status_finished":
+            MessageLookupByLibrary.simpleMessage("Finalizado"),
+        "order_status_processing":
+            MessageLookupByLibrary.simpleMessage("Processando"),
+        "order_status_ready_to_get":
+            MessageLookupByLibrary.simpleMessage("Pronto para retirada"),
+        "order_value": m8,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras."),
         "phone_page_error_bottomsheet_description":
@@ -272,6 +326,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_page_success_title": MessageLookupByLibrary.simpleMessage(
             "Número de telefone atualizado!"),
         "phone_page_title": MessageLookupByLibrary.simpleMessage("Telefone"),
+        "positions_option_button_error": MessageLookupByLibrary.simpleMessage(
+            "Erro ao carregar posições. <bold>Clique aqui</bold> para tentar carregar as posições novamente."),
         "product_amount_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage(
                 "Quantidade não pode ser vazia"),

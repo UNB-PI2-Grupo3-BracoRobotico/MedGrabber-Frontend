@@ -117,6 +117,10 @@ class _EditItemPageState extends State<EditItemPage> {
                                 child: ListView(
                                   children: [
                                     PositionOptionsButton(
+                                      errorGetPositions: state.maybeWhen(
+                                        orElse: () => false,
+                                        error: () => true,
+                                      ),
                                       options: state.maybeWhen(
                                         orElse: () => [],
                                         availablePositions: (options) =>
@@ -174,6 +178,8 @@ class _EditItemPageState extends State<EditItemPage> {
                                           position: position.isEmpty
                                               ? widget.product.position
                                               : position,
+                                          //TODO(Mauricio): Add textfield for price
+                                          price: 0.0,
                                         ),
                                       );
                                 },

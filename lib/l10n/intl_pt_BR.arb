@@ -149,5 +149,35 @@
     "edit_item_name_option_label": "Nome",
     "edit_item_amount_option_label": "Quantidade",
     "edit_item_description_option_label": "Descrição",
-    "edit_item_button_label": "Salvar alterações"
+    "edit_item_button_label": "Salvar alterações",
+
+    "positions_option_button_error": "Erro ao carregar posições. <bold>Clique aqui</bold> para tentar carregar as posições novamente.",
+    "informational_card_error_message": "Erro, clique aqui",
+
+    "home_available_positions_card": "Cubículos livres",
+    "home_available_itens_card": "Itens acabando",
+
+    "order_id": "#{id}",
+    "order_status": "Status - {status}",
+    "order_status_awaiting_payment": "Aguardando pagamento",
+    "order_status_processing": "Processando",
+    "order_status_ready_to_get": "Pronto para retirada",
+    "order_status_finished": "Finalizado",
+    "order_value": "Valor total - R$ {value}",
+    "order_check_itens_button_label": "Verificar itens",
+
+    "order_page_title": "Pedido #{id}",
+    "order_product_card_single_product_value": "Preço do produto - R$ {price}",
+    "order_product_card_total_value": "Valor total - R$ {value}",
+    "order_product_amount_bought": "Quantidade comprada - {amount}",
+
+    "home_order_section_title": "Pedidos",
+    "home_order_section_error_description": "Algo deu errado. Não conseguimos carregar os pedidos em andamento, tente novament ou entre em contato com a equipe de suporte.",
+    "home_order_section_error_button_label": "Tentar novamente",
+    "home_order_section_loaded_button_label": "Histórico de pedidos",
+    "home_order_section_loaded_orders_in_progress_title": "Pedidos em andamento",
+    "home_order_section_loaded_orders_finished_title": "Pedidos finalizados",
+    "home_order_simulate_order_button_label": "Simule um pedido",
+
+    "home_low_storage_items_section_title": "Itens com baixo estoque"
 }

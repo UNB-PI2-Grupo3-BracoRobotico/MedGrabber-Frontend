@@ -18,7 +18,6 @@ class RealTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: kSpacingXXS),
       decoration: BoxDecoration(
         color: kPrimary,
         borderRadius: BorderRadius.circular(kSpacingNano),
@@ -37,6 +36,45 @@ class RealTime extends StatelessWidget {
         trailing: const DSIcon(
           icon: Icons.chevron_right_rounded,
         ),
+      ),
+    );
+  }
+}
+
+class ChatTile extends StatelessWidget {
+  const ChatTile({
+    super.key,
+    required this.title,
+    required this.icon,
+    required this.onTap,
+  });
+
+  final String title;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      tileColor: kPrimary,
+      onTap: onTap,
+      contentPadding: const EdgeInsets.all(8),
+      dense: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(16),
+        ),
+      ),
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.bodyMedium,
+      ),
+      leading: DSIcon(
+        icon: icon,
+        size: kIconSizeSM,
+      ),
+      trailing: const DSIcon(
+        icon: Icons.chevron_right_rounded,
       ),
     );
   }
