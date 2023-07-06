@@ -1,93 +1,85 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:grabber/config/routes/routes.dart';
-import 'package:grabber/features/orders/domain/entities/order.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grabber/features/dashboard/presentation/widgets/order_history_cards.dart';
+import 'package:grabber/features/home/presentation/widgets/informational_card.dart';
+import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart';
+import 'package:grabber/features/orders/presentation/widgets/order_card.dart';
 import 'package:grabber/generated/l10n.dart';
 
-class OrderCard extends StatelessWidget {
-  const OrderCard({
-    super.key,
-    required this.order,
-  });
-  final Order order;
+class HistorySection extends StatefulWidget {
+  const HistorySection({Key? key});
+
+  @override
+  _HistorySectionState createState() => _HistorySectionState();
+}
+
+class _HistorySectionState extends State<HistorySection> {
+  bool showAllItems = false;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(
-        kSpacingXXXS,
-      ),
-      decoration: BoxDecoration(
-        color: kPrimary,
-        borderRadius: BorderRadius.circular(
-          kSpacingNano,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: kBlack.withOpacity(0.25),
-            blurRadius: 4,
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            S.current.order_id(order.id),
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-          const VerticalGap.nano(),
-          Text(
-            S.current.order_status(
-              _statusMappedToUI(
-                order.status,
-              ),
+    return BlocBuilder<GetOrdersCubit, GetOrdersState>(
+      builder: (context, state) {
+        return state.when(
+          loading: SizedBox.shrink,
+          error: () => Animate(
+            effects: const [FadeEffect()],
+            child: Column(
+              children: [
+                Text(
+                  S.current.home_order_section_title,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const VerticalGap.nano(),
+                Text(
+                  S.current.home_order_section_error_description,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const VerticalGap.nano(),
+              ],
             ),
           ),
-          const VerticalGap.nano(),
-          Text(
-            S.current.order_value(order.totalOrderValue.toString()),
-          ),
-          const VerticalGap.nano(),
-          const Divider(thickness: 1, color: kDarkPrimary),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: GestureDetector(
-              onTap: () => Navigator.of(context).pushNamed(
-                AppRoutes.orderReview,
-                arguments: order,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: kSpacingXL,
-                  right: kSpacingXL,
-                  top: kSpacingNano,
-                ),
-                child: Text(
-                  S.current.order_check_itens_button_label,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: kWhite,
-                      ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
+          loaded: (ordersInProgress, orders) {
+            final displayedOrders = showAllItems ? orders : orders.take(2).toList();
 
-  String _statusMappedToUI(OrderStatus status) {
-    switch (status) {
-      case OrderStatus.awaitingPayment:
-        return S.current.order_status_awaiting_payment;
-      case OrderStatus.finished:
-        return S.current.order_status_finished;
-      case OrderStatus.processing:
-        return S.current.order_status_processing;
-      case OrderStatus.readyToGet:
-        return S.current.order_status_ready_to_get;
-    }
+            return Animate(
+              effects: const [FadeEffect()],
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      S.current.home_order_section_title,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  ),
+                  const VerticalGap.xxs(),
+                  ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (_, index) => HistoryCard(
+                      order: displayedOrders.elementAt(index),
+                    ),
+                    separatorBuilder: (_, __) => const VerticalGap.xxxs(),
+                    itemCount: displayedOrders.length,
+                  ),
+                  if (!showAllItems)
+                    DSButton.outlined(
+                      onPressed: () {
+                        setState(() {
+                          showAllItems = true;
+                        });
+                      },
+                      label: S.current.add_item_amount_option_label,
+                    ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
   }
 }
