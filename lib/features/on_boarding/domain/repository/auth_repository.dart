@@ -1,16 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:grabber/generated/l10n.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class AuthRepository {
   final _firebaseAuth = FirebaseAuth.instance;
+
+  
 
   Future<void> signUp({
     required String email,
     required String password,
   }) async {
     try {
-      print(email);
-      print(password);
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {

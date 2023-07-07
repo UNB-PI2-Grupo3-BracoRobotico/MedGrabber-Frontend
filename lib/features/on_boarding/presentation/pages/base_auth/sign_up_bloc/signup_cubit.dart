@@ -90,8 +90,6 @@ class SignupCubit extends Cubit<SignupState> {
     final errorText = createUserValidOrFailure.fold(
         () => S.current.empty_string,
         (_) => S.current.default_invalid_signup_title);
-    print(state.email);
-    print(state.password);
     if (errorText.isNotEmpty) {
       return false;
     }
