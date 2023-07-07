@@ -38,7 +38,7 @@ class _LoginState extends State<LoginPage> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state.isAuthenticated) {
-          Navigator.of(context).pushReplacementNamed(
+          Navigator.of(context).popAndPushNamed(
             AppRoutes.home,
           );
         }
@@ -69,13 +69,13 @@ class _LoginState extends State<LoginPage> {
                   style: TextStyle(foreground: Paint()..color = Colors.red),
                 ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: kIconSizeXS),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushReplacementNamed(
+                        Navigator.of(context).popAndPushNamed(
                           AppRoutes.forgottenPassword,
                         );
                       },

@@ -41,9 +41,9 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
       bloc: _signupCubit,
       listener: (context, state) async {
         if (state.phoneIsValid) {
-          Navigator.pushReplacementNamed(
-            context,
-            AppRoutes.home,
+          Navigator.of(context).pushNamedAndRemoveUntil(
+            AppRoutes.login,
+            (route) => route.settings.name == AppRoutes.onBoardingToken,
           );
         }
       },
