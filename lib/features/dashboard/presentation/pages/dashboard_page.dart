@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/dashboard/presentation/widgets/dashboard_information.dart';
 import 'package:grabber/features/dashboard/presentation/widgets/history_request_section.dart';
-import 'package:grabber/features/home/presentation/widgets/informational_card.dart';
 import 'package:grabber/features/home/presentation/widgets/low_storage_items_section.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
@@ -16,6 +14,7 @@ import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 import 'package:grabber/generated/l10n.dart';
 
 import '../../../inventory/domain/entities/product.dart';
+import '../../../shared/information_card.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -119,16 +118,16 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                   child: BlocBuilder<HasItemCubit, HasItemState>(
                   builder: (context, state) {
                     return state.maybeWhen(
-                      loading: () => const DashboardCard(
+                      loading: () => const InformationCard(
                         message: '',
                         informationValue: 0,
                         isLoading: true,
                       ),
-                      error: () => DashboardCard(
+                      error: () => InformationCard(
                         message: S.current.informational_card_error_message,
                         onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
                       ),
-                      orElse: () => DashboardCard(
+                      orElse: () => InformationCard(
                         message: S.current.dashboard_total_price,
                         informationValue: state.maybeWhen(
                           orElse: () => 0,
@@ -144,16 +143,16 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                 child: BlocBuilder<HasItemCubit, HasItemState>(
                   builder: (context, state) {
                     return state.maybeWhen(
-                      loading: () => const DashboardCard(
+                      loading: () => const InformationCard(
                         message: '',
                         informationValue: 0,
                         isLoading: true,
                       ),
-                      error: () => DashboardCard(
+                      error: () => InformationCard(
                         message: S.current.informational_card_error_message,
                         onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
                       ),
-                      orElse: () => DashboardCard(
+                      orElse: () => InformationCard(
                         message: S.current.dashboard_total_items,
                         informationValue: state.maybeWhen(
                           orElse: () => 0,
@@ -174,16 +173,16 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                   child: BlocBuilder<HasItemCubit, HasItemState>(
                   builder: (context, state) {
                     return state.maybeWhen(
-                      loading: () => const DashboardCard(
+                      loading: () => const InformationCard(
                         message: '',
                         informationValue: 0,
                         isLoading: true,
                       ),
-                      error: () => DashboardCard(
+                      error: () => InformationCard(
                         message: S.current.informational_card_error_message,
                         onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
                       ),
-                      orElse: () => DashboardCard(
+                      orElse: () => InformationCard(
                         message: S.current.dashboard_cheapest_item,
                         informationValue: state.maybeWhen(
                           orElse: () => 0,
@@ -199,16 +198,16 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                 child: BlocBuilder<HasItemCubit, HasItemState>(
                   builder: (context, state) {
                     return state.maybeWhen(
-                      loading: () => const DashboardCard(
+                      loading: () => const InformationCard(
                         message: '',
                         informationValue: 0,
                         isLoading: true,
                       ),
-                      error: () => DashboardCard(
+                      error: () => InformationCard(
                         message: S.current.informational_card_error_message,
                         onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
                       ),
-                      orElse: () => DashboardCard(
+                      orElse: () => InformationCard(
                         message: S.current.dashboard_highest_item,
                         informationValue: state.maybeWhen(
                           orElse: () => 0,
