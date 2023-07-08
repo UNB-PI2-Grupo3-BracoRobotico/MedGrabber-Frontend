@@ -51,13 +51,17 @@ abstract class AppRouter {
 
       case AppRoutes.forgottenPassword:
         page = BlocProvider(
-          create: (_) => ForgottenPasswordCubit(),
+          create: (_) => ForgottenPasswordCubit(
+            resetPasswordUsecase: getIt.get(),
+          ),
           child: const ForgottenPasswordPage(),
         );
         break;
       case AppRoutes.login:
         page = BlocProvider(
-          create: (_) => LoginCubit(),
+          create: (_) => LoginCubit(
+            signIn: getIt.get(),
+          ),
           child: const LoginPage(),
         );
         break;
