@@ -17,18 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SignupState {
   String get token => throw _privateConstructorUsedError;
-  String get tokenFailureText => throw _privateConstructorUsedError;
   String get emailFailureText => throw _privateConstructorUsedError;
   String get passwordFailureText => throw _privateConstructorUsedError;
   String get phoneFailureText => throw _privateConstructorUsedError;
-  bool get tokenIsValid => throw _privateConstructorUsedError;
-  bool get emailIsValid => throw _privateConstructorUsedError;
   bool get phoneIsValid => throw _privateConstructorUsedError;
-  bool get passwordIsValid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   bool get isSubmiting => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
+  Stockist? get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignupStateCopyWith<SignupState> get copyWith =>
@@ -43,18 +40,15 @@ abstract class $SignupStateCopyWith<$Res> {
   @useResult
   $Res call(
       {String token,
-      String tokenFailureText,
       String emailFailureText,
       String passwordFailureText,
       String phoneFailureText,
-      bool tokenIsValid,
-      bool emailIsValid,
       bool phoneIsValid,
-      bool passwordIsValid,
       String email,
       String password,
       bool isSubmiting,
-      String phoneNumber});
+      String phoneNumber,
+      Stockist? user});
 }
 
 /// @nodoc
@@ -71,27 +65,20 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
   @override
   $Res call({
     Object? token = null,
-    Object? tokenFailureText = null,
     Object? emailFailureText = null,
     Object? passwordFailureText = null,
     Object? phoneFailureText = null,
-    Object? tokenIsValid = null,
-    Object? emailIsValid = null,
     Object? phoneIsValid = null,
-    Object? passwordIsValid = null,
     Object? email = null,
     Object? password = null,
     Object? isSubmiting = null,
     Object? phoneNumber = null,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      tokenFailureText: null == tokenFailureText
-          ? _value.tokenFailureText
-          : tokenFailureText // ignore: cast_nullable_to_non_nullable
               as String,
       emailFailureText: null == emailFailureText
           ? _value.emailFailureText
@@ -105,21 +92,9 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
           ? _value.phoneFailureText
           : phoneFailureText // ignore: cast_nullable_to_non_nullable
               as String,
-      tokenIsValid: null == tokenIsValid
-          ? _value.tokenIsValid
-          : tokenIsValid // ignore: cast_nullable_to_non_nullable
-              as bool,
-      emailIsValid: null == emailIsValid
-          ? _value.emailIsValid
-          : emailIsValid // ignore: cast_nullable_to_non_nullable
-              as bool,
       phoneIsValid: null == phoneIsValid
           ? _value.phoneIsValid
           : phoneIsValid // ignore: cast_nullable_to_non_nullable
-              as bool,
-      passwordIsValid: null == passwordIsValid
-          ? _value.passwordIsValid
-          : passwordIsValid // ignore: cast_nullable_to_non_nullable
               as bool,
       email: null == email
           ? _value.email
@@ -137,6 +112,10 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as Stockist?,
     ) as $Val);
   }
 }
@@ -151,18 +130,15 @@ abstract class _$$_SignupStateCopyWith<$Res>
   @useResult
   $Res call(
       {String token,
-      String tokenFailureText,
       String emailFailureText,
       String passwordFailureText,
       String phoneFailureText,
-      bool tokenIsValid,
-      bool emailIsValid,
       bool phoneIsValid,
-      bool passwordIsValid,
       String email,
       String password,
       bool isSubmiting,
-      String phoneNumber});
+      String phoneNumber,
+      Stockist? user});
 }
 
 /// @nodoc
@@ -177,27 +153,20 @@ class __$$_SignupStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? token = null,
-    Object? tokenFailureText = null,
     Object? emailFailureText = null,
     Object? passwordFailureText = null,
     Object? phoneFailureText = null,
-    Object? tokenIsValid = null,
-    Object? emailIsValid = null,
     Object? phoneIsValid = null,
-    Object? passwordIsValid = null,
     Object? email = null,
     Object? password = null,
     Object? isSubmiting = null,
     Object? phoneNumber = null,
+    Object? user = freezed,
   }) {
     return _then(_$_SignupState(
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      tokenFailureText: null == tokenFailureText
-          ? _value.tokenFailureText
-          : tokenFailureText // ignore: cast_nullable_to_non_nullable
               as String,
       emailFailureText: null == emailFailureText
           ? _value.emailFailureText
@@ -211,21 +180,9 @@ class __$$_SignupStateCopyWithImpl<$Res>
           ? _value.phoneFailureText
           : phoneFailureText // ignore: cast_nullable_to_non_nullable
               as String,
-      tokenIsValid: null == tokenIsValid
-          ? _value.tokenIsValid
-          : tokenIsValid // ignore: cast_nullable_to_non_nullable
-              as bool,
-      emailIsValid: null == emailIsValid
-          ? _value.emailIsValid
-          : emailIsValid // ignore: cast_nullable_to_non_nullable
-              as bool,
       phoneIsValid: null == phoneIsValid
           ? _value.phoneIsValid
           : phoneIsValid // ignore: cast_nullable_to_non_nullable
-              as bool,
-      passwordIsValid: null == passwordIsValid
-          ? _value.passwordIsValid
-          : passwordIsValid // ignore: cast_nullable_to_non_nullable
               as bool,
       email: null == email
           ? _value.email
@@ -243,6 +200,10 @@ class __$$_SignupStateCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as Stockist?,
     ));
   }
 }
@@ -252,23 +213,18 @@ class __$$_SignupStateCopyWithImpl<$Res>
 class _$_SignupState implements _SignupState {
   const _$_SignupState(
       {required this.token,
-      required this.tokenFailureText,
       required this.emailFailureText,
       required this.passwordFailureText,
       required this.phoneFailureText,
-      required this.tokenIsValid,
-      required this.emailIsValid,
       required this.phoneIsValid,
-      required this.passwordIsValid,
       required this.email,
       required this.password,
       required this.isSubmiting,
-      required this.phoneNumber});
+      required this.phoneNumber,
+      required this.user});
 
   @override
   final String token;
-  @override
-  final String tokenFailureText;
   @override
   final String emailFailureText;
   @override
@@ -276,13 +232,7 @@ class _$_SignupState implements _SignupState {
   @override
   final String phoneFailureText;
   @override
-  final bool tokenIsValid;
-  @override
-  final bool emailIsValid;
-  @override
   final bool phoneIsValid;
-  @override
-  final bool passwordIsValid;
   @override
   final String email;
   @override
@@ -291,10 +241,12 @@ class _$_SignupState implements _SignupState {
   final bool isSubmiting;
   @override
   final String phoneNumber;
+  @override
+  final Stockist? user;
 
   @override
   String toString() {
-    return 'SignupState(token: $token, tokenFailureText: $tokenFailureText, emailFailureText: $emailFailureText, passwordFailureText: $passwordFailureText, phoneFailureText: $phoneFailureText, tokenIsValid: $tokenIsValid, emailIsValid: $emailIsValid, phoneIsValid: $phoneIsValid, passwordIsValid: $passwordIsValid, email: $email, password: $password, isSubmiting: $isSubmiting, phoneNumber: $phoneNumber)';
+    return 'SignupState(token: $token, emailFailureText: $emailFailureText, passwordFailureText: $passwordFailureText, phoneFailureText: $phoneFailureText, phoneIsValid: $phoneIsValid, email: $email, password: $password, isSubmiting: $isSubmiting, phoneNumber: $phoneNumber, user: $user)';
   }
 
   @override
@@ -303,47 +255,37 @@ class _$_SignupState implements _SignupState {
         (other.runtimeType == runtimeType &&
             other is _$_SignupState &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.tokenFailureText, tokenFailureText) ||
-                other.tokenFailureText == tokenFailureText) &&
             (identical(other.emailFailureText, emailFailureText) ||
                 other.emailFailureText == emailFailureText) &&
             (identical(other.passwordFailureText, passwordFailureText) ||
                 other.passwordFailureText == passwordFailureText) &&
             (identical(other.phoneFailureText, phoneFailureText) ||
                 other.phoneFailureText == phoneFailureText) &&
-            (identical(other.tokenIsValid, tokenIsValid) ||
-                other.tokenIsValid == tokenIsValid) &&
-            (identical(other.emailIsValid, emailIsValid) ||
-                other.emailIsValid == emailIsValid) &&
             (identical(other.phoneIsValid, phoneIsValid) ||
                 other.phoneIsValid == phoneIsValid) &&
-            (identical(other.passwordIsValid, passwordIsValid) ||
-                other.passwordIsValid == passwordIsValid) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.isSubmiting, isSubmiting) ||
                 other.isSubmiting == isSubmiting) &&
             (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       token,
-      tokenFailureText,
       emailFailureText,
       passwordFailureText,
       phoneFailureText,
-      tokenIsValid,
-      emailIsValid,
       phoneIsValid,
-      passwordIsValid,
       email,
       password,
       isSubmiting,
-      phoneNumber);
+      phoneNumber,
+      user);
 
   @JsonKey(ignore: true)
   @override
@@ -355,23 +297,18 @@ class _$_SignupState implements _SignupState {
 abstract class _SignupState implements SignupState {
   const factory _SignupState(
       {required final String token,
-      required final String tokenFailureText,
       required final String emailFailureText,
       required final String passwordFailureText,
       required final String phoneFailureText,
-      required final bool tokenIsValid,
-      required final bool emailIsValid,
       required final bool phoneIsValid,
-      required final bool passwordIsValid,
       required final String email,
       required final String password,
       required final bool isSubmiting,
-      required final String phoneNumber}) = _$_SignupState;
+      required final String phoneNumber,
+      required final Stockist? user}) = _$_SignupState;
 
   @override
   String get token;
-  @override
-  String get tokenFailureText;
   @override
   String get emailFailureText;
   @override
@@ -379,13 +316,7 @@ abstract class _SignupState implements SignupState {
   @override
   String get phoneFailureText;
   @override
-  bool get tokenIsValid;
-  @override
-  bool get emailIsValid;
-  @override
   bool get phoneIsValid;
-  @override
-  bool get passwordIsValid;
   @override
   String get email;
   @override
@@ -394,6 +325,8 @@ abstract class _SignupState implements SignupState {
   bool get isSubmiting;
   @override
   String get phoneNumber;
+  @override
+  Stockist? get user;
   @override
   @JsonKey(ignore: true)
   _$$_SignupStateCopyWith<_$_SignupState> get copyWith =>
