@@ -78,9 +78,8 @@ class _DashboardPageState extends State<DashboardPage> {
                       child: const _FirstRowInformationCards(),
                     ),
                     const VerticalGap.sm(),
-                    BlocProvider(
-                      create: (context) =>
-                          getIt.get<GetOrdersCubit>()..getOrders(),
+                    BlocProvider.value(
+                      value: getIt.get<GetOrdersCubit>()..getOrders(),
                       child: const HistorySection(),
                     ),
                   ],
