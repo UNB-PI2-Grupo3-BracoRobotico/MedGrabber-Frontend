@@ -40,56 +40,6 @@ import '../../features/setup_machine/presentation/pages/step_2.dart';
 import 'navigator_helper.dart';
 
 abstract class AppRouter {
-  static Map<String, Widget Function(BuildContext)> mapRoutes() {
-    return {
-      AppRoutes.onBoarding: (_) => const OnBoardingStartPage(),
-      AppRoutes.forgottenPassword: (_) => BlocProvider(
-            create: (_) => ForgottenPasswordCubit(),
-            child: const ForgottenPasswordPage(),
-          ),
-      AppRoutes.login: (_) => BlocProvider(
-            create: (_) => LoginCubit(),
-            child: const LoginPage(),
-          ),
-      AppRoutes.onBoardingToken: (_) => const OnBoardingTokenPage(),
-      AppRoutes.onBoardingEmail: (_) => const OnBoardingEmailPage(),
-      AppRoutes.onBoardingPassword: (_) => const OnBoardingPasswordPage(),
-      AppRoutes.onBoardingPhone: (_) => const OnBoardingPhonePage(),
-      AppRoutes.setup1: (_) => const Step1(),
-      AppRoutes.setup2: (_) => const Step2(),
-      AppRoutes.setupFinal: (_) => BlocProvider(
-            create: (_) => SetupStatusBloc(),
-            child: const StepFinal(),
-          ),
-      AppRoutes.home: (_) => const HomePage(),
-      AppRoutes.settings: (_) => const SettingsPage(),
-      AppRoutes.settingsName: (_) => BlocProvider(
-            create: (_) => NamePageCubit(
-              updateStoreName: getIt.get(),
-            ),
-            child: const NamePage(),
-          ),
-      AppRoutes.settingsPhone: (_) => BlocProvider(
-            create: (_) => UpdatePhoneCubit(
-              updatePhoneNumber: getIt.get(),
-            ),
-            child: const PhonePage(),
-          ),
-      AppRoutes.notifications: (_) {
-        //TODO(Mauricio): Implement route
-        throw UnimplementedError();
-      },
-      AppRoutes.dashboard: (_) {
-        //TODO(Mauricio): Implement route
-        throw UnimplementedError();
-      },
-      AppRoutes.help: (_) {
-        //TODO(Mauricio): Implement route
-        throw UnimplementedError();
-      },
-    };
-  }
-
   static Route routeFromSettings(RouteSettings settings) {
     late Widget page;
     AnimationByRoute animation = AnimationByRoute.defaultOption;
