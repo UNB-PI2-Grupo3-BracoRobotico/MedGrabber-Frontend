@@ -8,6 +8,7 @@ import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item
 import 'package:grabber/features/orders/domain/entities/dummy_product.dart';
 import 'package:grabber/features/orders/presentation/widgets/available_product_card.dart';
 import 'package:grabber/features/orders/presentation/widgets/available_product_card_button.dart';
+import 'package:grabber/features/orders/presentation/widgets/selected_product_card.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
 
@@ -148,7 +149,7 @@ class __SimulateOrderContentState extends State<_SimulateOrderContent> {
   @override
   void initState() {
     super.initState();
-    availableProducts = widget.productsAvailable;
+    availableProducts = List.from(widget.productsAvailable);
   }
 
   @override
@@ -160,6 +161,7 @@ class __SimulateOrderContentState extends State<_SimulateOrderContent> {
             physics: const AlwaysScrollableScrollPhysics(),
             child: Column(
               children: [
+                const VerticalGap.xs(),
                 ListView.separated(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -167,20 +169,26 @@ class __SimulateOrderContentState extends State<_SimulateOrderContent> {
                     onAddItemTap: () {
                       _onAddItem(index);
                     },
-                    onRemoveItemTap: () {},
+                    onRemoveItemTap: () {
+                      _onRemoveItem(index);
+                    },
                     product: availableProducts.elementAt(index),
                     hasProductOnCart: _checkIfHasntProductOnCart(index),
                   ),
                   separatorBuilder: (_, __) => const VerticalGap.xxxs(),
                   itemCount: availableProducts.length,
                 ),
+                const VerticalGap.xs(),
                 ListView.separated(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (_, index) => SizedBox.shrink(),
+                  itemBuilder: (_, index) => SelectedProductCard(
+                    product: selectedProducts.elementAt(index),
+                  ),
                   separatorBuilder: (_, __) => const VerticalGap.xxxs(),
-                  itemCount: 15,
+                  itemCount: selectedProducts.length,
                 ),
+                const VerticalGap.xs(),
               ],
             ),
           ),
@@ -218,8 +226,36 @@ class __SimulateOrderContentState extends State<_SimulateOrderContent> {
       selectedProducts.remove(productOnCart);
       productOnCart = productOnCart.copyWith(amount: productOnCart.amount + 1);
     }
+    availableProducts[index] = productSelected.copyWith(
+      amount: productSelected.amount - 1,
+    );
     setState(() {
       selectedProducts.add(productOnCart!);
     });
+  }
+
+  void _onRemoveItem(int index) {
+    final productSelected = availableProducts.elementAt(index);
+    late DummyProduct? productOnCart;
+    late int? productPosition;
+    for (int i = 0; i < selectedProducts.length; i++) {
+      if (productSelected.name == selectedProducts.elementAt(i).name) {
+        productPosition = i;
+        productOnCart = selectedProducts.elementAt(i);
+        break;
+      }
+    }
+    if (productOnCart == null || productPosition == null) {
+      return;
+    }
+    if (productOnCart.amount == 1) {
+      selectedProducts.removeAt(productPosition);
+    } else {
+      productOnCart = productOnCart.copyWith(amount: productOnCart.amount - 1);
+      selectedProducts[productPosition] = productOnCart;
+    }
+    availableProducts[index] =
+        productSelected.copyWith(amount: productSelected.amount + 1);
+    setState(() {});
   }
 }

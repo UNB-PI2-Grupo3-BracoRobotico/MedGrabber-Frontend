@@ -1,22 +1,14 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:grabber/features/inventory/domain/entities/product.dart';
+import 'package:grabber/features/orders/domain/entities/dummy_product.dart';
 
-import 'available_product_card_button.dart';
-
-class AvailableProductCard extends StatelessWidget {
-  const AvailableProductCard({
+class SelectedProductCard extends StatelessWidget {
+  const SelectedProductCard({
     super.key,
-    required this.onAddItemTap,
-    required this.onRemoveItemTap,
     required this.product,
-    required this.hasProductOnCart,
   });
 
-  final VoidCallback onAddItemTap;
-  final VoidCallback onRemoveItemTap;
-  final Product product;
-  final bool hasProductOnCart;
+  final DummyProduct product;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +18,7 @@ class AvailableProductCard extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(kSpacingNano),
       decoration: BoxDecoration(
-        color: kWhite,
+        color: kPrimary,
         borderRadius: BorderRadius.circular(
           kSpacingNano,
         ),
@@ -74,18 +66,6 @@ class AvailableProductCard extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          const HorizontalGap.nano(),
-          AvailableProductCardButton(
-            onTap: onRemoveItemTap,
-            icon: Icons.arrow_downward_rounded,
-            isDisabled: hasProductOnCart,
-          ),
-          const HorizontalGap.nano(),
-          AvailableProductCardButton(
-            onTap: onAddItemTap,
-            icon: Icons.arrow_upward_rounded,
-            isDisabled: product.amount < 1,
           ),
         ],
       ),
