@@ -1,6 +1,5 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
@@ -24,6 +23,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
   bool canContinuePassword = false;
   bool canContinueConfirmPassword = false;
   final int max = 15;
+  bool passwordIsValid = false;
 
   @override
   void initState() {
@@ -41,60 +41,46 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignupCubit, SignupState>(
-      bloc: _signupCubit,
-      listener: (context, state) {
-        if (state.passwordIsValid) {
-          Navigator.of(context).pushNamed(
-            AppRoutes.onBoardingPhone,
-          );
-        } else if (!state.passwordIsValid && state.password.isEmpty) {
-          _showPasswordError();
-        }
-      },
-      builder: (_, state) {
-        return BaseOnBoardingPage(
-          content: Column(
-            children: [
-              DSTextField(
-                controller: _passwordController,
-                label: S.current.on_boarding_password_page_title,
-                obscureText: true,
-                onChanged: (val) {
-                  setState(() {
-                    canContinuePassword = _passwordIsEmpty(val);
-                  });
-                },
-                maxLength: max,
-              ),
-              const VerticalGap.xxxs(),
-              DSTextField(
-                controller: _passwordConfirmController,
-                obscureText: true,
-                label: S.current.on_boarding_password_confirm_page_title,
-                onChanged: (val) {
-                  setState(() {
-                    canContinueConfirmPassword = _passwordIsEmpty(val);
-                  });
-                },
-                maxLength: max,
-              ),
-              const VerticalGap.xxxs(),
-              StyledText(
-                text: S.current.on_boarding_password_page_description,
-                textAlign: TextAlign.justify,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ],
+    return BaseOnBoardingPage(
+      content: Column(
+        children: [
+          DSTextField(
+            controller: _passwordController,
+            label: S.current.on_boarding_password_page_title,
+            obscureText: true,
+            onChanged: (val) {
+              setState(() {
+                canContinuePassword = _passwordIsEmpty(val);
+              });
+            },
+            maxLength: max,
           ),
-          buttonEnabled: canContinuePassword && canContinueConfirmPassword,
-          buttonLabel: S.current.continue_button_label,
-          onPressed: () {
-            _validatePassword(
-              _passwordController.text,
-              _passwordConfirmController.text,
-            );
-          },
+          const VerticalGap.xxxs(),
+          DSTextField(
+            controller: _passwordConfirmController,
+            obscureText: true,
+            label: S.current.on_boarding_password_confirm_page_title,
+            onChanged: (val) {
+              setState(() {
+                canContinueConfirmPassword = _passwordIsEmpty(val);
+              });
+            },
+            maxLength: max,
+          ),
+          const VerticalGap.xxxs(),
+          StyledText(
+            text: S.current.on_boarding_password_page_description,
+            textAlign: TextAlign.justify,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ],
+      ),
+      buttonEnabled: canContinuePassword && canContinueConfirmPassword,
+      buttonLabel: S.current.continue_button_label,
+      onPressed: () {
+        _validatePassword(
+          _passwordController.text,
+          _passwordConfirmController.text,
         );
       },
     );
@@ -109,6 +95,9 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
     if (password == confirmPassword &&
         password.isNotEmpty &&
         password.length > 8) {
+      Navigator.of(context).pushNamed(
+        AppRoutes.onBoardingPhone,
+      );
       _signupCubit.savePassword(
         _passwordController.text,
       );

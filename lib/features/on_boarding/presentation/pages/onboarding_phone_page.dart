@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/core/phone_region.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -40,10 +41,10 @@ class _OnBoardingPhoneState extends State<OnBoardingPhonePage> {
     return BlocConsumer<SignupCubit, SignupState>(
       bloc: _signupCubit,
       listener: (context, state) async {
-        if (state.phoneIsValid) {
-          Navigator.of(context).pushNamedAndRemoveUntil(
-            AppRoutes.login,
-            (route) => route.settings.name == AppRoutes.onBoardingToken,
+        if (state.user != null) {
+          getIt.get<SessionManagerCubit>().authenticateSession(state.user!);
+          Navigator.of(context).pushNamed(
+            AppRoutes.onBoardingSuccessAccountCreation,
           );
         }
       },

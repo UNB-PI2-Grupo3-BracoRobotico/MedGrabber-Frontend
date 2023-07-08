@@ -1,6 +1,5 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
@@ -36,40 +35,26 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignupCubit, SignupState>(
-      bloc: _signupCubit,
-      listener: (context, state) {
-        if (state.tokenIsValid) {
-          Navigator.of(context).pushNamed(
-            AppRoutes.onBoardingEmail,
-          );
-        } else if (!state.tokenIsValid && state.tokenFailureText.isNotEmpty) {
-          _showTokenError();
-        }
-      },
-      builder: (_, state) {
-        return BaseOnBoardingPage(
-          content: Column(
-            children: [
-              DSTextField(
-                controller: _controller,
-                label: S.current.on_boarding_token_page_title,
-                onChanged: _verifyTokenPattern,
-                maxLength: max,
-              ),
-              const VerticalGap.xxxs(),
-              StyledText(
-                text: S.current.on_boarding_token_page_description,
-                textAlign: TextAlign.justify,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ],
+    return BaseOnBoardingPage(
+      content: Column(
+        children: [
+          DSTextField(
+            controller: _controller,
+            label: S.current.on_boarding_token_page_title,
+            onChanged: _verifyTokenPattern,
+            maxLength: max,
           ),
-          buttonEnabled: canContinue,
-          buttonLabel: S.current.continue_button_label,
-          onPressed: _validateToken,
-        );
-      },
+          const VerticalGap.xxxs(),
+          StyledText(
+            text: S.current.on_boarding_token_page_description,
+            textAlign: TextAlign.justify,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ],
+      ),
+      buttonEnabled: canContinue,
+      buttonLabel: S.current.continue_button_label,
+      onPressed: _validateToken,
     );
   }
 
@@ -86,8 +71,13 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
   }
 
   Future<void> _validateToken() async {
+    final navigator = Navigator.of(context);
     bool tokenValid = await _signupCubit.validateToken(_controller.text);
-    if (!tokenValid) {
+    if (tokenValid) {
+      navigator.pushNamed(
+        AppRoutes.onBoardingEmail,
+      );
+    } else {
       _showTokenError();
     }
   }
@@ -109,10 +99,7 @@ class _OnBoardingTokenState extends State<OnBoardingTokenPage> {
               S.current.on_boarding_token_page_error_bottomsheet_description,
           icon: Icons.error_outline_rounded,
           buttonLabel: S.current.try_again,
-          onTap: () {
-            _signupCubit.cleanTokenFailure();
-            Navigator.of(context).pop();
-          },
+          onTap: Navigator.of(context).pop,
         );
       },
     );

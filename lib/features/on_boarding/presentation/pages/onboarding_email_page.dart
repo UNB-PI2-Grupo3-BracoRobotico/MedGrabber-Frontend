@@ -1,6 +1,5 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
@@ -35,47 +34,41 @@ class _OnBoardingEmailState extends State<OnBoardingEmailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignupCubit, SignupState>(
-      bloc: _signupCubit,
-      listener: (context, state) {
-        if (state.emailIsValid && state.email.isNotEmpty) {
-          Navigator.of(context).pushNamed(
-            AppRoutes.onBoardingPassword,
-          );
-        }
-      },
-      builder: (_, state) {
-        return BaseOnBoardingPage(
-          content: Column(
-            children: [
-              DSTextField(
-                controller: _emailController,
-                label: S.current.on_boarding_email_page_title,
-                onChanged: _validateEmailPattern,
-                keyboardType: TextInputType.emailAddress,
-              ),
-              const VerticalGap.xxxs(),
-              StyledText(
-                text: S.current.on_boarding_email_page_description,
-                textAlign: TextAlign.justify,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-            ],
+    return BaseOnBoardingPage(
+      content: Column(
+        children: [
+          DSTextField(
+            controller: _emailController,
+            label: S.current.on_boarding_email_page_title,
+            onChanged: _validateEmailPattern,
+            keyboardType: TextInputType.emailAddress,
           ),
-          buttonEnabled: canContinue,
-          buttonLabel: S.current.continue_button_label,
-          onPressed: () async {
-            _saveEmail();
-          },
-        );
+          const VerticalGap.xxxs(),
+          StyledText(
+            text: S.current.on_boarding_email_page_description,
+            textAlign: TextAlign.justify,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+        ],
+      ),
+      buttonEnabled: canContinue,
+      buttonLabel: S.current.continue_button_label,
+      onPressed: () async {
+        _saveEmail();
       },
     );
   }
 
   Future<void> _saveEmail() async {
-    final isValid =
-        await _signupCubit.validateEmail(_emailController.text.trim());
-    if (!isValid) {
+    final navigator = Navigator.of(context);
+    final isValid = await _signupCubit.validateEmail(
+      _emailController.text.trim(),
+    );
+    if (isValid) {
+      navigator.pushNamed(
+        AppRoutes.onBoardingPassword,
+      );
+    } else {
       _showEmailError();
     }
   }
