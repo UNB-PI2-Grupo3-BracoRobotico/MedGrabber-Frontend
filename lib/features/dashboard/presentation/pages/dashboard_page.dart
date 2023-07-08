@@ -236,13 +236,13 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
     return productsEnding;
   }
 
-  int _getTotalPrice(List<Product> products) {
-    double totalPrice = 0;
-    for (final product in products) {
-      totalPrice += product.price;
-    }
-    return totalPrice.toInt();
+int _getTotalPrice(List<Product> products) {
+  double totalPrice = 0;
+  for (final product in products) {
+    totalPrice += product.price;
   }
+  return totalPrice.round(); // Round the total price to the nearest integer
+}
 
   int _getHighestPrice(List<Product> products) {
     double highestPrice = 0;
@@ -253,7 +253,7 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
       }
     }
 
-    return highestPrice.toInt();
+    return highestPrice.round();
   }
 
   int _getLowestPrice(List<Product> products) {
@@ -265,6 +265,6 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
     }
   }
 
-  return lowestPrice.toInt();
+  return lowestPrice.round();
 }
 }
