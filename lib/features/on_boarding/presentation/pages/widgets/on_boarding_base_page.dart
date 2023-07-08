@@ -9,6 +9,7 @@ class BaseOnBoardingPage extends StatelessWidget {
     required this.onPressed,
     required this.buttonLabel,
     this.buttonEnabled = true,
+    this.imageEnabled = true,
   });
 
   final String? title;
@@ -16,6 +17,7 @@ class BaseOnBoardingPage extends StatelessWidget {
   final VoidCallback onPressed;
   final String buttonLabel;
   final bool buttonEnabled;
+  final bool imageEnabled;
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +32,11 @@ class BaseOnBoardingPage extends StatelessWidget {
               Expanded(
                   child: ListView(
                 children: [
-                  const Image(
-                    image: AssetImage('assets/images/mechanical-arm.png'),
-                    fit: BoxFit.cover,
-                  ),
+                  if (imageEnabled)
+                    const Image(
+                      image: AssetImage('assets/images/mechanical-arm.png'),
+                      fit: BoxFit.cover,
+                    ),
                   const VerticalGap.xl(),
                   if (title != null)
                     Text(

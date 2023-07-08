@@ -106,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Por favor verifique sua caixa de mensagem para alteração da senha"),
         "forgotten_password_email_sended_title":
             MessageLookupByLibrary.simpleMessage("Email enviado com sucesso!"),
+        "forgotten_password_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "We did not find an account linked to this email address in our database"),
         "forgotten_password_message":
             MessageLookupByLibrary.simpleMessage("Esqueceu sua senha?"),
         "forgotten_password_title":
@@ -163,8 +166,10 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!"),
         "inventory_page_title": MessageLookupByLibrary.simpleMessage("Estoque"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
-        "login_error_message":
-            MessageLookupByLibrary.simpleMessage("Email ou senha inválidos"),
+        "login_error_title":
+            MessageLookupByLibrary.simpleMessage("Login falhou!"),
+        "login_success_message": MessageLookupByLibrary.simpleMessage(
+            "Você está sendo redirecionado para a tela inicial"),
         "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o endereço de e-mail.\nPor favor, tente novamente ou troque o nome inserido."),
         "mail_error_page_primary_button_label":

@@ -80,11 +80,31 @@ class S {
     );
   }
 
-  /// `Wrong email or password`
-  String get login_error_message {
+  /// `Login failed!`
+  String get login_error_title {
     return Intl.message(
-      'Wrong email or password',
-      name: 'login_error_message',
+      'Login failed!',
+      name: 'login_error_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect e-mail address or password`
+  String get login_error_description {
+    return Intl.message(
+      'Incorrect e-mail address or password',
+      name: 'login_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are being redirected to the home screen`
+  String get login_success_message {
+    return Intl.message(
+      'You are being redirected to the home screen',
+      name: 'login_success_message',
       desc: '',
       args: [],
     );
@@ -155,6 +175,26 @@ class S {
     return Intl.message(
       'Email Not founded!',
       name: 'forgotten_password_email_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We did not find an account linked to this email address in our database`
+  String get forgotten_password_error_page_description {
+    return Intl.message(
+      'We did not find an account linked to this email address in our database',
+      name: 'forgotten_password_error_page_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checking your email...`
+  String get email_page_loading_title {
+    return Intl.message(
+      'Checking your email...',
+      name: 'email_page_loading_title',
       desc: '',
       args: [],
     );

@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/base_auth/forgotten_password_bloc/forgotten_password_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/widgets/page_error.dart';
+import 'package:grabber/features/shared/base_error_page.dart';
+import 'package:grabber/features/shared/base_loading_page.dart';
+import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:grabber/generated/l10n.dart';
-import 'package:styled_text/styled_text.dart';
-
-import '../../../../config/routes/routes.dart';
 
 class ForgottenPasswordPage extends StatefulWidget {
   const ForgottenPasswordPage({super.key});
@@ -34,75 +35,62 @@ class _ForgottenState extends State<ForgottenPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ForgottenPasswordCubit, ForgottenPasswordState>(
-      listener: (context, state) async {
-        if (state.isValidEmail) {
-          await _showMessage();
-
-          Navigator.of(context).pushReplacementNamed(
-            AppRoutes.login,
-          );
-        }
-      },
+      listener: (context, state) => state.whenOrNull(
+        success: () async {
+          final navigator = Navigator.of(context);
+          navigator.pop();
+        },
+      ),
       builder: (_, state) {
-        return BaseOnBoardingPage(
-          content: Column(
-            children: [
-              Text(
-                S.current.forgotten_password_title,
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
-              DSTextField(
-                controller: _emailController,
-                label: S.current.on_boarding_email_page_title,
-              ),
-              if (showErrorMessage)
-                StyledText(
-                  text: S.current.forgotten_password_email_not_found,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(foreground: Paint()..color = Colors.red),
-                ),
-            ],
+        return state.when(
+          loading: () => BaseLoadingPage(
+            title: S.current.email_page_loading_title,
           ),
-          buttonLabel: S.current.forgotten_password_button_label,
-          onPressed: () async {
-            await _passwordReset(
-              _emailController.text.trim(),
-            );
-          },
+          success: () => BaseSuccessPage(
+            title: S.current.forgotten_password_email_sended_title,
+            canPop: false,
+          ),
+          error: () => BaseErrorPage(
+            title: S.current.forgotten_password_email_not_found,
+            description: S.current.forgotten_password_error_page_description,
+            footer: ErrorFooter(
+              primaryLabel: S.current.try_again,
+              primaryOnTap: _resetPage,
+            ),
+          ),
+          initial: () => BaseOnBoardingPage(
+            content: Column(
+              children: [
+                Text(
+                  S.current.forgotten_password_title,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+                DSTextField(
+                  controller: _emailController,
+                  label: S.current.on_boarding_email_page_title,
+                ),
+              ],
+            ),
+            buttonLabel: S.current.forgotten_password_button_label,
+            onPressed: () async {
+              await _passwordReset(
+                _emailController.text.trim(),
+              );
+            },
+          ),
         );
       },
     );
   }
 
-  Future<void> _showMessage() async{
-    await showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(
-            kSpacingXXXS,
-          ),
-        ),
-      ),
-      builder: (context) {
-        return DSBottomSheet(
-          title: S.current.forgotten_password_email_sended_title,
-          description: S.current.forgotten_password_email_sended_message,
-          icon: Icons.info_rounded,
-          buttonLabel: S.current.continue_button_label,
-          onTap: Navigator.of(context).pop,
-        );
-      },
-    );
+  void _resetPage() {
+    context.read<ForgottenPasswordCubit>().reset();
   }
 
   Future<void> _passwordReset(
     String email,
   ) async {
     final forgottenPasswordCubit = context.read<ForgottenPasswordCubit>();
-    if (!await forgottenPasswordCubit.resetPassword(email))
-      setState(() {
-        showErrorMessage = true;
-      });
+    await forgottenPasswordCubit.resetPassword(email);
   }
 }

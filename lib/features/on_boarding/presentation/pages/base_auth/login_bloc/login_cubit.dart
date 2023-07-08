@@ -7,22 +7,23 @@ part 'login_cubit.freezed.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final AuthRepository _authRepository = AuthRepository();
-  LoginCubit() : super(LoginState.initial());
+  LoginCubit() : super(const LoginState.initial());
 
-  Future<bool> login(String email, String password) async {
-    try {
-      await _authRepository.signIn(
-        email: email,
-        password: password,
-      );
-      emit(
-        state.copyWith(
-          isAuthenticated: true,
-        ),
-      );
-    } catch (e) {
-      return false;
-    }
-    return true;
+  Future<void> login(String email, String password) async {
+    emit(const LoginState.loading());
+    final successOrFailure = await _authRepository.signIn(
+      email: email,
+      password: password,
+    );
+    emit(
+      successOrFailure.fold(
+        LoginState.success,
+        (_) => const LoginState.error(),
+      ),
+    );
+  }
+
+  Future<void> reset() async {
+    emit(const LoginState.initial());
   }
 }

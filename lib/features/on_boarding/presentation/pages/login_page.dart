@@ -4,8 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/base_auth/login_bloc/login_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/widgets/page_error.dart';
+import 'package:grabber/features/shared/base_error_page.dart';
+import 'package:grabber/features/shared/base_loading_page.dart';
+import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:grabber/generated/l10n.dart';
-import 'package:styled_text/styled_text.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,7 +20,6 @@ class LoginPage extends StatefulWidget {
 class _LoginState extends State<LoginPage> {
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
-  bool showErrorMessage = false;
 
   @override
   void initState() {
@@ -36,67 +38,82 @@ class _LoginState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
-        if (state.isAuthenticated) {
-          Navigator.of(context).popAndPushNamed(
+      listener: (context, state) => state.whenOrNull(
+        success: () async {
+          final navigator = Navigator.of(context);
+          await Future.delayed(
+            const Duration(milliseconds: 1500),
+          );
+          navigator.popAndPushNamed(
             AppRoutes.home,
           );
-        }
-      },
+        },
+      ),
       builder: (_, state) {
-        return BaseOnBoardingPage(
-          content: Column(
-            children: [
-              Text(
-                S.current.login_button_label,
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
-              DSTextField(
-                controller: _emailController,
-                label: S.current.on_boarding_email_page_title,
-              ),
-              const VerticalGap.xxxs(),
-              DSTextField(
-                controller: _passwordController,
-                obscureText: true,
-                label: S.current.on_boarding_password_page_title,
-              ),
-              const VerticalGap.xxxs(),
-              if (showErrorMessage)
-                StyledText(
-                  text: S.current.login_error_message,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(foreground: Paint()..color = Colors.red),
-                ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: kIconSizeXS),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).popAndPushNamed(
-                          AppRoutes.forgottenPassword,
-                        );
-                      },
-                      child: Text(
-                        S.current.forgotten_password_message,
-                        style:
-                            TextStyle(foreground: Paint()..color = Colors.blue),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
+        return state.when(
+          loading: () => BaseLoadingPage(
+            title: S.current.email_page_loading_title,
           ),
-          buttonLabel: S.current.login_button_label,
-          onPressed: () async {
-            await _validateLogin(
-              _emailController.text.trim(),
-              _passwordController.text.trim(),
-            );
-          },
+          success: () => BaseSuccessPage(
+            title: S.current.login_success_message,
+            canPop: false,
+          ),
+          error: () => BaseErrorPage(
+            title: S.current.login_error_title,
+            description: S.current.login_error_description,
+            footer: ErrorFooter(
+              primaryLabel: S.current.try_again,
+              primaryOnTap: _resetPage,
+            ),
+          ),
+          initial: () => BaseOnBoardingPage(
+            content: Column(
+              children: [
+                Text(
+                  S.current.login_button_label,
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+                DSTextField(
+                  controller: _emailController,
+                  label: S.current.on_boarding_email_page_title,
+                ),
+                const VerticalGap.xxxs(),
+                DSTextField(
+                  controller: _passwordController,
+                  obscureText: true,
+                  label: S.current.on_boarding_password_page_title,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: kIconSizeXS),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).popAndPushNamed(
+                            AppRoutes.forgottenPassword,
+                          );
+                        },
+                        child: Text(
+                          S.current.forgotten_password_message,
+                          style: TextStyle(
+                              foreground: Paint()..color = Colors.blue),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            buttonLabel: S.current.login_button_label,
+            imageEnabled: false,
+            onPressed: () async {
+              await _validateLogin(
+                _emailController.text.trim(),
+                _passwordController.text.trim(),
+              );
+            },
+          ),
         );
       },
     );
@@ -104,10 +121,10 @@ class _LoginState extends State<LoginPage> {
 
   Future<void> _validateLogin(String email, String password) async {
     final loginCubit = context.read<LoginCubit>();
-    if (!await loginCubit.login(email, password)) {
-      setState(() {
-        showErrorMessage = true;
-      });
-    }
+    await loginCubit.login(email, password);
+  }
+
+  void _resetPage() {
+    context.read<LoginCubit>().reset();
   }
 }

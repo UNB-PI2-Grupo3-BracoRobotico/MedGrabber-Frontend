@@ -1,12 +1,10 @@
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:grabber/core/failures.dart';
 import 'package:grabber/generated/l10n.dart';
-import 'package:injectable/injectable.dart';
 
-@singleton
 class AuthRepository {
   final _firebaseAuth = FirebaseAuth.instance;
-
-  
 
   Future<void> signUp({
     required String email,
@@ -25,7 +23,7 @@ class AuthRepository {
     }
   }
 
-  Future<void> signIn({
+  Future<Option<Failure>> signIn({
     required String email,
     required String password,
   }) async {
@@ -33,8 +31,9 @@ class AuthRepository {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
     } catch (e) {
-      throw Exception(e.toString());
+      return some(const UnhandledFailure());
     }
+    return none();
   }
 
   Future<bool> emailIsAlreadyInUse({
@@ -47,19 +46,19 @@ class AuthRepository {
         return true;
       }
     } catch (e) {
-      print(e.toString());
       return true;
     }
     return false;
   }
 
-  Future<void> resetPassword({
+  Future<Option<Failure>> resetPassword({
     required String email,
   }) async {
     try {
       await _firebaseAuth.sendPasswordResetEmail(email: email);
     } catch (e) {
-      throw Exception(e.toString());
+      return some(const UnhandledFailure());
     }
+    return none();
   }
 }

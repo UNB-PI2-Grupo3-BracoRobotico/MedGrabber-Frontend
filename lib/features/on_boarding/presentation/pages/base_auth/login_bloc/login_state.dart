@@ -2,13 +2,8 @@ part of 'login_cubit.dart';
 
 @freezed
 class LoginState with _$LoginState {
-  const factory LoginState({
-    required bool isAuthenticated,
-  }) = _LoginState;
-
-  factory LoginState.initial() {
-    return LoginState(
-      isAuthenticated: false,
-    );
-  }
+  const factory LoginState.initial() = _Initial;
+  const factory LoginState.loading() = _Loading;
+  const factory LoginState.success() = _Success;
+  const factory LoginState.error() = _Error;
 }

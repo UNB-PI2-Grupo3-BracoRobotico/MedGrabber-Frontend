@@ -7,21 +7,22 @@ part 'forgotten_password_cubit.freezed.dart';
 
 class ForgottenPasswordCubit extends Cubit<ForgottenPasswordState> {
   final AuthRepository _authRepository = AuthRepository();
-  ForgottenPasswordCubit() : super(ForgottenPasswordState.initial());
+  ForgottenPasswordCubit() : super(const ForgottenPasswordState.initial());
 
-  Future<bool> resetPassword(String email) async {
-    try {
-      await _authRepository.resetPassword(
-        email: email,
-      );
-      emit(
-        state.copyWith(
-          isValidEmail: true,
-        ),
-      );
-    } catch (e) {
-      return false;
-    }
-    return true;
+  Future<void> resetPassword(String email) async {
+    emit(const ForgottenPasswordState.loading());
+    final successOrFailure = await _authRepository.resetPassword(
+      email: email,
+    );
+    emit(
+      successOrFailure.fold(
+        ForgottenPasswordState.success,
+        (_) => const ForgottenPasswordState.error(),
+      ),
+    );
+  }
+
+  Future<void> reset() async {
+    emit(const ForgottenPasswordState.initial());
   }
 }

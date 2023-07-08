@@ -94,6 +94,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Position"),
         "edit_item_success_title":
             MessageLookupByLibrary.simpleMessage("Item edited!"),
+        "email_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Checking your email..."),
         "empty_string": MessageLookupByLibrary.simpleMessage(""),
         "forgotten_password_button_label":
             MessageLookupByLibrary.simpleMessage("Reset password"),
@@ -106,6 +108,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Please check your inbox for password reset instructions."),
         "forgotten_password_email_sended_title":
             MessageLookupByLibrary.simpleMessage("Email sent successfully!"),
+        "forgotten_password_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "We did not find an account linked to this email address in our database"),
         "forgotten_password_message":
             MessageLookupByLibrary.simpleMessage("Forgotten password?"),
         "forgotten_password_title":
@@ -164,8 +169,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "inventory_page_title":
             MessageLookupByLibrary.simpleMessage("Inventory"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
-        "login_error_message":
-            MessageLookupByLibrary.simpleMessage("Wrong email or password"),
+        "login_error_description": MessageLookupByLibrary.simpleMessage(
+            "Incorrect e-mail address or password"),
+        "login_error_title":
+            MessageLookupByLibrary.simpleMessage("Login failed!"),
+        "login_success_message": MessageLookupByLibrary.simpleMessage(
+            "You are being redirected to the home screen"),
         "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
             "It wasn\'t possible to update your email.\nTry again, if the error persists, contact our team."),
         "mail_error_page_primary_button_label":
