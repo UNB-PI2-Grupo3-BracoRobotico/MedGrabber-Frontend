@@ -43,17 +43,14 @@ class _DashboardPageState extends State<DashboardPage> {
       bottomNavigationBar: const GrabberBottomNavigationBar(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: DSIconButton(
-          icon: const DSIcon(
-            icon: Icons.chevron_left_rounded,
-          ),
-          onTap: Navigator.of(context).pop,
-        ),
         titleSpacing: 0,
-        title: Text(
+         title: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: kSpacingXS), // Adjust the value as needed
+        child: Text(
           S.current.dashboard_title,
           style: Theme.of(context).textTheme.headlineMedium,
         ),
+      ),
       ),
       
       body: SafeArea(
@@ -64,6 +61,7 @@ class _DashboardPageState extends State<DashboardPage> {
             Column(
             children: [
               const VerticalGap.sm(),
+              //TODO: Add Reports Page and Logic
               DSButton.primary(
                 onPressed: () {},
                 label: S.current.dashboard_section_reports_button_label,
