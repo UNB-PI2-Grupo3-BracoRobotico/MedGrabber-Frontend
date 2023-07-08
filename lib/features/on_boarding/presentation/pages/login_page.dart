@@ -2,7 +2,6 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/login_bloc/login_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/page_error.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
@@ -10,6 +9,8 @@ import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:grabber/utils/email_utils.dart';
+
+import '../blocs/login_bloc/login_cubit.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

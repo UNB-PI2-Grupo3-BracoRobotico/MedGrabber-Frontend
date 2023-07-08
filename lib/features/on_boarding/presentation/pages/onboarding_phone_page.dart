@@ -1,17 +1,17 @@
 import 'package:design_system/design_system.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/core/phone_region.dart';
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:phone_number/phone_number.dart';
 import 'package:styled_text/styled_text.dart';
+
+import '../blocs/sign_up_bloc/signup_cubit.dart';
 
 class OnBoardingPhonePage extends StatefulWidget {
   const OnBoardingPhonePage({super.key});

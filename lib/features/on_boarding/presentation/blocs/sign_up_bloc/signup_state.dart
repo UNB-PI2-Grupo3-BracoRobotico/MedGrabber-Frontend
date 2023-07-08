@@ -19,7 +19,7 @@ class SignupState with _$SignupState {
   }) = _SignupState;
 
   factory SignupState.initial() {
-    return SignupState(
+    return const SignupState(
       token: '',
       tokenFailureText: '',
       emailFailureText: '',

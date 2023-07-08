@@ -1,13 +1,14 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/forgotten_password_bloc/forgotten_password_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/page_error.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:grabber/generated/l10n.dart';
+
+import '../blocs/forgotten_password_bloc/forgotten_password_cubit.dart';
 
 class ForgottenPasswordPage extends StatefulWidget {
   const ForgottenPasswordPage({super.key});

@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:styled_text/styled_text.dart';
+
+import '../blocs/sign_up_bloc/signup_cubit.dart';
 
 class OnBoardingPasswordPage extends StatefulWidget {
   const OnBoardingPasswordPage({super.key});
@@ -43,7 +44,7 @@ class _OnBoardingPasswordState extends State<OnBoardingPasswordPage> {
     return BlocConsumer<SignupCubit, SignupState>(
       bloc: _signupCubit,
       listener: (context, state) {
-        if (state.passwordIsValid)  {
+        if (state.passwordIsValid) {
           Navigator.of(context).pushNamed(
             AppRoutes.onBoardingPhone,
           );

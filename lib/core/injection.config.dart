@@ -32,7 +32,7 @@ import 'package:grabber/features/on_boarding/domain/usecases/validate_token.dart
     as _i16;
 import 'package:grabber/features/on_boarding/domain/usecases/verify_if_email_is_in_use.dart'
     as _i17;
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart'
+import 'package:grabber/features/on_boarding/presentation/blocs/sign_up_bloc/signup_cubit.dart'
     as _i18;
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart'
     as _i7;
