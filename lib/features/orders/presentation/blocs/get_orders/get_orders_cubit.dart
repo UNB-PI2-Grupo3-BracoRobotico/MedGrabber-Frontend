@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../../../inventory/domain/entities/product.dart';
 import '../../../domain/entities/order.dart';
@@ -7,11 +8,12 @@ import '../../../domain/entities/order.dart';
 part 'get_orders_cubit.freezed.dart';
 part 'get_orders_state.dart';
 
+@lazySingleton
 class GetOrdersCubit extends Cubit<GetOrdersState> {
   GetOrdersCubit() : super(const GetOrdersState.loading());
 
-  static const List<Order> orders = [
-    Order(
+  static const List<OrderEntity> orders = [
+    OrderEntity(
       id: '1234',
       status: OrderStatus.finished,
       products: [
@@ -32,7 +34,7 @@ class GetOrdersCubit extends Cubit<GetOrdersState> {
       ],
       totalOrderValue: 30,
     ),
-    Order(
+    OrderEntity(
       id: '1235',
       status: OrderStatus.processing,
       products: [
@@ -53,7 +55,7 @@ class GetOrdersCubit extends Cubit<GetOrdersState> {
       ],
       totalOrderValue: 30,
     ),
-    Order(
+    OrderEntity(
       id: '1236',
       status: OrderStatus.processing,
       products: [

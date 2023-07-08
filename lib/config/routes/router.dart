@@ -137,14 +137,14 @@ abstract class AppRouter {
       case AppRoutes.orderReview:
         if (settings.arguments != null) {
           page = SingleOrderPage(
-            order: settings.arguments! as Order,
+            order: settings.arguments! as OrderEntity,
           );
         } else {
           throw Exception('Missing arguments');
         }
         break;
-      case AppRoutes.dashboard:     
-      animation = AnimationByRoute.instant;
+      case AppRoutes.dashboard:
+        animation = AnimationByRoute.instant;
         page = const DashboardPage();
         break;
       default:

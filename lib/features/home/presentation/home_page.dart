@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               BlocProvider(
-                create: (context) => GetOrdersCubit()..getOrders(),
+                create: (context) => getIt.get<GetOrdersCubit>()..getOrders(),
                 child: const OrderSection(),
               ),
             ],

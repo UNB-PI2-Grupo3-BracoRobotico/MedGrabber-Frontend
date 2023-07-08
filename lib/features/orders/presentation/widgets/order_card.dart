@@ -9,7 +9,7 @@ class OrderCard extends StatelessWidget {
     super.key,
     required this.order,
   });
-  final Order order;
+  final OrderEntity order;
 
   @override
   Widget build(BuildContext context) {
