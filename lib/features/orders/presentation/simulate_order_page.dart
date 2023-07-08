@@ -3,14 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
-import 'package:grabber/features/orders/domain/entities/dummy_product.dart';
-import 'package:grabber/features/orders/presentation/widgets/available_product_card.dart';
-import 'package:grabber/features/orders/presentation/widgets/available_product_card_button.dart';
-import 'package:grabber/features/orders/presentation/widgets/selected_product_card.dart';
+import 'package:grabber/features/orders/presentation/simulate_orders_with_products.dart';
+import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/generated/l10n.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../../config/routes/routes.dart';
 
@@ -32,36 +28,32 @@ class _SimulateOrderPageState extends State<SimulateOrderPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: DSIconButton(
-          icon: const DSIcon(
-            icon: Icons.chevron_left_rounded,
-          ),
-          onTap: Navigator.of(context).pop,
-        ),
-        titleSpacing: 0,
-        title: Text(
-          'Simular pedido',
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-      ),
-      body: SafeArea(
-        child: BlocBuilder<HasItemCubit, HasItemState>(
-          bloc: _hasItemCubit,
-          builder: (context, state) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: kSpacingXS,
-              ),
-              child: state.when(
-                loading: () => const Center(
-                  child: DSLoading(
-                    size: kIconSizeXXL,
-                  ),
+    return BlocBuilder<HasItemCubit, HasItemState>(
+      bloc: _hasItemCubit,
+      builder: (context, state) {
+        return state.when(
+          loading: () => const BaseLoadingPage(),
+          noItemRegistred: () => Scaffold(
+            appBar: AppBar(
+              leading: DSIconButton(
+                icon: const DSIcon(
+                  icon: Icons.chevron_left_rounded,
                 ),
-                noItemRegistred: () => Animate(
-                  effects: const [FadeEffect()],
+                onTap: Navigator.of(context).pop,
+              ),
+              titleSpacing: 0,
+              title: Text(
+                S.current.simulate_order_page_title,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+            ),
+            body: SafeArea(
+              child: Animate(
+                effects: const [FadeEffect()],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: kSpacingXS,
+                  ),
                   child: Column(
                     children: [
                       const VerticalGap.xl(),
@@ -89,11 +81,33 @@ class _SimulateOrderPageState extends State<SimulateOrderPage> {
                     ],
                   ),
                 ),
-                hasItemRegisters: (products) => _SimulateOrderContent(
-                  productsAvailable: products,
+              ),
+            ),
+          ),
+          hasItemRegisters: (products) => SimulateOrderWithProducts(
+            productsAvailable: products,
+          ),
+          error: () => Scaffold(
+            appBar: AppBar(
+              leading: DSIconButton(
+                icon: const DSIcon(
+                  icon: Icons.chevron_left_rounded,
                 ),
-                error: () => Animate(
-                  effects: const [FadeEffect()],
+                onTap: Navigator.of(context).pop,
+              ),
+              titleSpacing: 0,
+              title: Text(
+                S.current.simulate_order_page_title,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+            ),
+            body: SafeArea(
+              child: Animate(
+                effects: const [FadeEffect()],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: kSpacingXS,
+                  ),
                   child: Column(
                     children: [
                       const Spacer(),
@@ -108,7 +122,7 @@ class _SimulateOrderPageState extends State<SimulateOrderPage> {
                       ),
                       const VerticalGap.nano(),
                       Text(
-                        'Não é possível realizar um pedido agora. Clique aqui para tentar novamente ou contate a equipe de suporte.',
+                        S.current.simulate_order_page_error_description,
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
@@ -122,140 +136,10 @@ class _SimulateOrderPageState extends State<SimulateOrderPage> {
                   ),
                 ),
               ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class _SimulateOrderContent extends StatefulWidget {
-  const _SimulateOrderContent({
-    required this.productsAvailable,
-  });
-
-  final List<Product> productsAvailable;
-
-  @override
-  State<_SimulateOrderContent> createState() => __SimulateOrderContentState();
-}
-
-class __SimulateOrderContentState extends State<_SimulateOrderContent> {
-  List<DummyProduct> selectedProducts = [];
-
-  late List<Product> availableProducts;
-
-  @override
-  void initState() {
-    super.initState();
-    availableProducts = List.from(widget.productsAvailable);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            child: Column(
-              children: [
-                const VerticalGap.xs(),
-                ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (_, index) => AvailableProductCard(
-                    onAddItemTap: () {
-                      _onAddItem(index);
-                    },
-                    onRemoveItemTap: () {
-                      _onRemoveItem(index);
-                    },
-                    product: availableProducts.elementAt(index),
-                    hasProductOnCart: _checkIfHasntProductOnCart(index),
-                  ),
-                  separatorBuilder: (_, __) => const VerticalGap.xxxs(),
-                  itemCount: availableProducts.length,
-                ),
-                const VerticalGap.xs(),
-                ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (_, index) => SelectedProductCard(
-                    product: selectedProducts.elementAt(index),
-                  ),
-                  separatorBuilder: (_, __) => const VerticalGap.xxxs(),
-                  itemCount: selectedProducts.length,
-                ),
-                const VerticalGap.xs(),
-              ],
             ),
           ),
-        ),
-        DSButton.primary(onPressed: () {}, label: 'Finalizar pedido,'),
-        const VerticalGap.xxxs(),
-      ],
+        );
+      },
     );
-  }
-
-  bool _checkIfHasntProductOnCart(int index) {
-    final int position = selectedProducts.indexWhere(
-      (product) => product.name == availableProducts.elementAt(index).name,
-    );
-    if (position != -1) return false;
-    return true;
-  }
-
-  void _onAddItem(int index) {
-    final productSelected = availableProducts.elementAt(index);
-    late DummyProduct? productOnCart;
-    try {
-      productOnCart = selectedProducts.firstWhere(
-        (product) => product.name == productSelected.name,
-      );
-    } catch (_) {
-      productOnCart = null;
-    }
-    if (productOnCart == null) {
-      productOnCart = DummyProduct(
-        name: productSelected.name,
-        amount: 1,
-      );
-    } else {
-      selectedProducts.remove(productOnCart);
-      productOnCart = productOnCart.copyWith(amount: productOnCart.amount + 1);
-    }
-    availableProducts[index] = productSelected.copyWith(
-      amount: productSelected.amount - 1,
-    );
-    setState(() {
-      selectedProducts.add(productOnCart!);
-    });
-  }
-
-  void _onRemoveItem(int index) {
-    final productSelected = availableProducts.elementAt(index);
-    late DummyProduct? productOnCart;
-    late int? productPosition;
-    for (int i = 0; i < selectedProducts.length; i++) {
-      if (productSelected.name == selectedProducts.elementAt(i).name) {
-        productPosition = i;
-        productOnCart = selectedProducts.elementAt(i);
-        break;
-      }
-    }
-    if (productOnCart == null || productPosition == null) {
-      return;
-    }
-    if (productOnCart.amount == 1) {
-      selectedProducts.removeAt(productPosition);
-    } else {
-      productOnCart = productOnCart.copyWith(amount: productOnCart.amount - 1);
-      selectedProducts[productPosition] = productOnCart;
-    }
-    availableProducts[index] =
-        productSelected.copyWith(amount: productSelected.amount + 1);
-    setState(() {});
   }
 }
