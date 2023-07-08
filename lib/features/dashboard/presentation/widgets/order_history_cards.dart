@@ -41,7 +41,7 @@ class HistoryCard extends StatelessWidget {
             S.current.order_value(order.totalOrderValue.toString()),
           ),
           const VerticalGap.nano(),
-          const Divider(thickness: 1, color: kDarkPrimary),
+          const Divider(thickness: 1, color: kDarkPrimary,),
         ],
       ),
     );
