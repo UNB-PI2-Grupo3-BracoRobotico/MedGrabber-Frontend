@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:grabber/features/help_center/pages/help_center_page.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/presentation/blocs/item_management/item_management_cubit.dart';
@@ -138,7 +139,10 @@ abstract class AppRouter {
           throw Exception('Missing arguments');
         }
         break;
-      case AppRoutes.dashboard:
+      case AppRoutes.dashboard:     
+      animation = AnimationByRoute.instant;
+        page = const DashboardPage();
+        break;
       default:
         print('Deu erro');
         throw UnimplementedError();

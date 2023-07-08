@@ -122,5 +122,15 @@
     "home_order_section_loaded_orders_finished_title": "Pedidos finalizados",
     "home_order_simulate_order_button_label": "Simule um pedido",
 
-    "home_low_storage_items_section_title": "Itens com baixo estoque"
+    "home_low_storage_items_section_title": "Itens com baixo estoque",
+
+    "dashboard_title": "Dashboard",
+    "dashboard_section_reports_button_label": "Relatórios",
+    "dashboard_total_items": "Total de Items em estoque:",
+    "dashboard_highest_item": "Item mais caro no estoque:",
+    "dashboard_cheapest_item": "Custo mais barato no esoque:",
+    "dashboard_total_price": "Preço total dos produtos:",
+    "history_title": "Histórico de Pedidos",
+    "history_loud_orders": "Carrear mais..."
+
 }
