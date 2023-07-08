@@ -13,21 +13,23 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:grabber/features/inventory/domain/usecases/delete_item.dart'
     as _i4;
 import 'package:grabber/features/inventory/domain/usecases/get_products_list.dart'
-    as _i5;
-import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart'
     as _i6;
+import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart'
+    as _i7;
 import 'package:grabber/features/on_boarding/domain/usecases/create_user.dart'
     as _i3;
 import 'package:grabber/features/on_boarding/domain/usecases/validate_token.dart'
-    as _i10;
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart'
     as _i11;
+import 'package:grabber/features/on_boarding/presentation/pages/base_auth/sign_up_bloc/signup_cubit.dart'
+    as _i12;
+import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart'
+    as _i5;
 import 'package:grabber/features/settings/domain/usecases/update_email.dart'
-    as _i7;
-import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
     as _i8;
-import 'package:grabber/features/settings/domain/usecases/update_store_name.dart'
+import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
     as _i9;
+import 'package:grabber/features/settings/domain/usecases/update_store_name.dart'
+    as _i10;
 import 'package:injectable/injectable.dart' as _i2;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -43,15 +45,16 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.factory<_i3.CreateUser>(() => _i3.CreateUserImpl());
     gh.factory<_i4.DeleteItem>(() => _i4.DeleteItemImpl());
-    gh.factory<_i5.GetProductsList>(() => _i5.GetProductsListImpl());
-    gh.lazySingleton<_i6.HasItemCubit>(
-        () => _i6.HasItemCubit(getProductsList: gh<_i5.GetProductsList>()));
-    gh.factory<_i7.UpdateEmail>(() => _i7.UpdateEmailImpl());
-    gh.factory<_i8.UpdatePhoneNumber>(() => _i8.UpdatePhoneNumberImpl());
-    gh.factory<_i9.UpdateStoreName>(() => _i9.UpdateStoreNameImpl());
-    gh.factory<_i10.ValidateToken>(() => _i10.ValidateTokenImpl());
-    gh.singleton<_i11.SignupCubit>(_i11.SignupCubit(
-      validateToken: gh<_i10.ValidateToken>(),
+    gh.lazySingleton<_i5.GetOrdersCubit>(() => _i5.GetOrdersCubit());
+    gh.factory<_i6.GetProductsList>(() => _i6.GetProductsListImpl());
+    gh.lazySingleton<_i7.HasItemCubit>(
+        () => _i7.HasItemCubit(getProductsList: gh<_i6.GetProductsList>()));
+    gh.factory<_i8.UpdateEmail>(() => _i8.UpdateEmailImpl());
+    gh.factory<_i9.UpdatePhoneNumber>(() => _i9.UpdatePhoneNumberImpl());
+    gh.factory<_i10.UpdateStoreName>(() => _i10.UpdateStoreNameImpl());
+    gh.factory<_i11.ValidateToken>(() => _i11.ValidateTokenImpl());
+    gh.singleton<_i12.SignupCubit>(_i12.SignupCubit(
+      validateToken: gh<_i11.ValidateToken>(),
       createUser: gh<_i3.CreateUser>(),
     ));
     return this;

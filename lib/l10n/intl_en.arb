@@ -190,5 +190,24 @@
     "home_order_section_loaded_orders_finished_title": "Finished orders",
     "home_order_simulate_order_button_label": "Simulate a order",
 
-    "home_low_storage_items_section_title": "Low storage items"
+    "home_low_storage_items_section_title": "Low storage items",
+
+
+    "dashboard_title": "Dashboard",
+    "dashboard_section_reports_button_label": "Reports",
+    "dashboard_total_items": "Number of Items in store:",
+    "dashboard_highest_item": "Most expensive item:",
+    "dashboard_cheapest_item": "Cheapest item out of stock:",
+    "dashboard_total_price": "Total Price of Products:",
+    "history_title": "Order History",
+    "history_loud_orders": "Load more...",
+
+    "simulate_order_page_title": "Simulate order",
+    "simulate_order_page_error_description": "It's not possible to create orders now. Click here to try again or contact the support team.",
+    "simulate_order_available_products_title": "Available products",
+    "simulate_order_selected_products_title": "Selected products",
+    "simulate_order_finish_order_button_title": "Finish order",
+    "simulate_order_create_order_loading_title": "Creating order...",
+    "simulate_order_create_order_success_title": "Order created!",
+    "simulate_order_create_order_error_description": "Something went wrong. We couldn't create your order, try again or contact our support team."
 }

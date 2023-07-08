@@ -1679,6 +1679,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Dashboard`
+  String get dashboard_title {
+    return Intl.message(
+      'Dashboard',
+      name: 'dashboard_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reports`
+  String get dashboard_section_reports_button_label {
+    return Intl.message(
+      'Reports',
+      name: 'dashboard_section_reports_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Items in store:`
+  String get dashboard_total_items {
+    return Intl.message(
+      'Number of Items in store:',
+      name: 'dashboard_total_items',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most expensive item:`
+  String get dashboard_highest_item {
+    return Intl.message(
+      'Most expensive item:',
+      name: 'dashboard_highest_item',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cheapest item out of stock:`
+  String get dashboard_cheapest_item {
+    return Intl.message(
+      'Cheapest item out of stock:',
+      name: 'dashboard_cheapest_item',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Price of Products:`
+  String get dashboard_total_price {
+    return Intl.message(
+      'Total Price of Products:',
+      name: 'dashboard_total_price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order History`
+  String get history_title {
+    return Intl.message(
+      'Order History',
+      name: 'history_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Load more...`
+  String get history_loud_orders {
+    return Intl.message(
+      'Load more...',
+      name: 'history_loud_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Simulate order`
+  String get simulate_order_page_title {
+    return Intl.message(
+      'Simulate order',
+      name: 'simulate_order_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It's not possible to create orders now. Click here to try again or contact the support team.`
+  String get simulate_order_page_error_description {
+    return Intl.message(
+      'It\'s not possible to create orders now. Click here to try again or contact the support team.',
+      name: 'simulate_order_page_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available products`
+  String get simulate_order_available_products_title {
+    return Intl.message(
+      'Available products',
+      name: 'simulate_order_available_products_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected products`
+  String get simulate_order_selected_products_title {
+    return Intl.message(
+      'Selected products',
+      name: 'simulate_order_selected_products_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish order`
+  String get simulate_order_finish_order_button_title {
+    return Intl.message(
+      'Finish order',
+      name: 'simulate_order_finish_order_button_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Creating order...`
+  String get simulate_order_create_order_loading_title {
+    return Intl.message(
+      'Creating order...',
+      name: 'simulate_order_create_order_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order created!`
+  String get simulate_order_create_order_success_title {
+    return Intl.message(
+      'Order created!',
+      name: 'simulate_order_create_order_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong. We couldn't create your order, try again or contact our support team.`
+  String get simulate_order_create_order_error_description {
+    return Intl.message(
+      'Something went wrong. We couldn\'t create your order, try again or contact our support team.',
+      name: 'simulate_order_create_order_error_description',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

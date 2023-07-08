@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:grabber/features/help_center/pages/help_center_page.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/presentation/blocs/item_management/item_management_cubit.dart';
@@ -20,6 +21,7 @@ import 'package:grabber/features/on_boarding/presentation/pages/onboarding_phone
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_start_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_token_page.dart';
 import 'package:grabber/features/orders/domain/entities/order.dart';
+import 'package:grabber/features/orders/presentation/simulate_order_page.dart';
 import 'package:grabber/features/orders/presentation/single_order_page.dart';
 import 'package:grabber/features/settings/pages/mail_option/blocs/mail_page/mail_page_cubit.dart';
 import 'package:grabber/features/settings/pages/mail_option/mail_page.dart';
@@ -216,16 +218,22 @@ abstract class AppRouter {
       case AppRoutes.support:
         page = const SupportPage();
         break;
+      case AppRoutes.simulateOrder:
+        page = const SimulateOrderPage();
+        break;
       case AppRoutes.orderReview:
         if (settings.arguments != null) {
           page = SingleOrderPage(
-            order: settings.arguments! as Order,
+            order: settings.arguments! as OrderEntity,
           );
         } else {
           throw Exception('Missing arguments');
         }
         break;
       case AppRoutes.dashboard:
+        animation = AnimationByRoute.instant;
+        page = const DashboardPage();
+        break;
       default:
         print('Deu erro');
         throw UnimplementedError();

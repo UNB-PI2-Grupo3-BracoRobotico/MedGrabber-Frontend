@@ -70,6 +70,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurações"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "dashboard_cheapest_item": MessageLookupByLibrary.simpleMessage(
+            "Custo mais barato no esoque:"),
+        "dashboard_highest_item":
+            MessageLookupByLibrary.simpleMessage("Item mais caro no estoque:"),
+        "dashboard_section_reports_button_label":
+            MessageLookupByLibrary.simpleMessage("Relatórios"),
+        "dashboard_title": MessageLookupByLibrary.simpleMessage("Dashboard"),
+        "dashboard_total_items":
+            MessageLookupByLibrary.simpleMessage("Total de Items em estoque:"),
+        "dashboard_total_price":
+            MessageLookupByLibrary.simpleMessage("Preço total dos produtos:"),
         "default_invalid_signup_description": MessageLookupByLibrary.simpleMessage(
             "Por favor tente novamente! Caso erro persista contate nossa equipe"),
         "default_invalid_signup_title":
@@ -126,6 +137,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Envia um email para:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Central de Ajuda"),
+        "history_loud_orders":
+            MessageLookupByLibrary.simpleMessage("Carrear mais..."),
+        "history_title":
+            MessageLookupByLibrary.simpleMessage("Histórico de Pedidos"),
         "home_available_itens_card":
             MessageLookupByLibrary.simpleMessage("Itens acabando"),
         "home_available_positions_card":
@@ -364,6 +379,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurando sua máquina..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Braço configurado!"),
+        "simulate_order_available_products_title":
+            MessageLookupByLibrary.simpleMessage("Produtos disponíveis"),
+        "simulate_order_create_order_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Algo deu errado. Não conseguimos criar o pedido, tente novament ou entre em contato com a equipe de suporte."),
+        "simulate_order_create_order_loading_title":
+            MessageLookupByLibrary.simpleMessage("Criando pedido..."),
+        "simulate_order_create_order_success_title":
+            MessageLookupByLibrary.simpleMessage("Pedido criado!"),
+        "simulate_order_finish_order_button_title":
+            MessageLookupByLibrary.simpleMessage("Finalizar pedido"),
+        "simulate_order_page_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Não é possível realizar um pedido agora. Clique aqui para tentar novamente ou contate a equipe de suporte."),
+        "simulate_order_page_title":
+            MessageLookupByLibrary.simpleMessage("Simular pedido"),
+        "simulate_order_selected_products_title":
+            MessageLookupByLibrary.simpleMessage("Produtos selecionados"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Algo deu errado"),
         "start_button_label": MessageLookupByLibrary.simpleMessage("Iniciar"),

@@ -69,6 +69,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Settings"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
+        "dashboard_cheapest_item":
+            MessageLookupByLibrary.simpleMessage("Cheapest item out of stock:"),
+        "dashboard_highest_item":
+            MessageLookupByLibrary.simpleMessage("Most expensive item:"),
+        "dashboard_section_reports_button_label":
+            MessageLookupByLibrary.simpleMessage("Reports"),
+        "dashboard_title": MessageLookupByLibrary.simpleMessage("Dashboard"),
+        "dashboard_total_items":
+            MessageLookupByLibrary.simpleMessage("Number of Items in store:"),
+        "dashboard_total_price":
+            MessageLookupByLibrary.simpleMessage("Total Price of Products:"),
         "default_invalid_signup_description":
             MessageLookupByLibrary.simpleMessage(
                 "Pleas try again! If error persist, contact our team."),
@@ -128,6 +139,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Send Email to:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Help Center"),
+        "history_loud_orders":
+            MessageLookupByLibrary.simpleMessage("Load more..."),
+        "history_title": MessageLookupByLibrary.simpleMessage("Order History"),
         "home_available_itens_card":
             MessageLookupByLibrary.simpleMessage("Items ending"),
         "home_available_positions_card":
@@ -366,6 +380,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Setting up your machine..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Arm configurated!"),
+        "simulate_order_available_products_title":
+            MessageLookupByLibrary.simpleMessage("Available products"),
+        "simulate_order_create_order_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Something went wrong. We couldn\'t create your order, try again or contact our support team."),
+        "simulate_order_create_order_loading_title":
+            MessageLookupByLibrary.simpleMessage("Creating order..."),
+        "simulate_order_create_order_success_title":
+            MessageLookupByLibrary.simpleMessage("Order created!"),
+        "simulate_order_finish_order_button_title":
+            MessageLookupByLibrary.simpleMessage("Finish order"),
+        "simulate_order_page_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "It\'s not possible to create orders now. Click here to try again or contact the support team."),
+        "simulate_order_page_title":
+            MessageLookupByLibrary.simpleMessage("Simulate order"),
+        "simulate_order_selected_products_title":
+            MessageLookupByLibrary.simpleMessage("Selected products"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "start_button_label":

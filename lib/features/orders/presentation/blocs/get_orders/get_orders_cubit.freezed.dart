@@ -19,7 +19,8 @@ mixin _$GetOrdersState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> ordersInProgress, List<Order> orders)
+    required TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)
         loaded,
     required TResult Function() error,
   }) =>
@@ -27,14 +28,18 @@ mixin _$GetOrdersState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult? Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -119,7 +124,8 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> ordersInProgress, List<Order> orders)
+    required TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)
         loaded,
     required TResult Function() error,
   }) {
@@ -130,7 +136,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult? Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -140,7 +148,9 @@ class _$_Loading implements _Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -194,7 +204,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Order> ordersInProgress, List<Order> orders});
+  $Res call({List<OrderEntity> ordersInProgress, List<OrderEntity> orders});
 }
 
 /// @nodoc
@@ -214,11 +224,11 @@ class __$$_LoadedCopyWithImpl<$Res>
       ordersInProgress: null == ordersInProgress
           ? _value._ordersInProgress
           : ordersInProgress // ignore: cast_nullable_to_non_nullable
-              as List<Order>,
+              as List<OrderEntity>,
       orders: null == orders
           ? _value._orders
           : orders // ignore: cast_nullable_to_non_nullable
-              as List<Order>,
+              as List<OrderEntity>,
     ));
   }
 }
@@ -227,23 +237,23 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 class _$_Loaded implements _Loaded {
   const _$_Loaded(
-      {required final List<Order> ordersInProgress,
-      required final List<Order> orders})
+      {required final List<OrderEntity> ordersInProgress,
+      required final List<OrderEntity> orders})
       : _ordersInProgress = ordersInProgress,
         _orders = orders;
 
-  final List<Order> _ordersInProgress;
+  final List<OrderEntity> _ordersInProgress;
   @override
-  List<Order> get ordersInProgress {
+  List<OrderEntity> get ordersInProgress {
     if (_ordersInProgress is EqualUnmodifiableListView)
       return _ordersInProgress;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_ordersInProgress);
   }
 
-  final List<Order> _orders;
+  final List<OrderEntity> _orders;
   @override
-  List<Order> get orders {
+  List<OrderEntity> get orders {
     if (_orders is EqualUnmodifiableListView) return _orders;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_orders);
@@ -280,7 +290,8 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> ordersInProgress, List<Order> orders)
+    required TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)
         loaded,
     required TResult Function() error,
   }) {
@@ -291,7 +302,9 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult? Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult? Function()? error,
   }) {
     return loaded?.call(ordersInProgress, orders);
@@ -301,7 +314,9 @@ class _$_Loaded implements _Loaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -348,11 +363,11 @@ class _$_Loaded implements _Loaded {
 
 abstract class _Loaded implements GetOrdersState {
   const factory _Loaded(
-      {required final List<Order> ordersInProgress,
-      required final List<Order> orders}) = _$_Loaded;
+      {required final List<OrderEntity> ordersInProgress,
+      required final List<OrderEntity> orders}) = _$_Loaded;
 
-  List<Order> get ordersInProgress;
-  List<Order> get orders;
+  List<OrderEntity> get ordersInProgress;
+  List<OrderEntity> get orders;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -395,7 +410,8 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Order> ordersInProgress, List<Order> orders)
+    required TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)
         loaded,
     required TResult Function() error,
   }) {
@@ -406,7 +422,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult? Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -416,7 +434,9 @@ class _$_Error implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Order> ordersInProgress, List<Order> orders)? loaded,
+    TResult Function(
+            List<OrderEntity> ordersInProgress, List<OrderEntity> orders)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
-import 'package:grabber/features/home/presentation/widgets/informational_card.dart';
 import 'package:grabber/features/home/presentation/widgets/low_storage_items_section.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
@@ -13,6 +12,7 @@ import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 import 'package:grabber/generated/l10n.dart';
 
 import '../../inventory/domain/entities/product.dart';
+import '../../shared/information_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               BlocProvider(
-                create: (context) => GetOrdersCubit()..getOrders(),
+                create: (context) => getIt.get<GetOrdersCubit>()..getOrders(),
                 child: const OrderSection(),
               ),
             ],

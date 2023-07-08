@@ -14,7 +14,7 @@ class SingleOrderPage extends StatelessWidget {
     required this.order,
   });
 
-  final Order order;
+  final OrderEntity order;
 
   @override
   Widget build(BuildContext context) {
