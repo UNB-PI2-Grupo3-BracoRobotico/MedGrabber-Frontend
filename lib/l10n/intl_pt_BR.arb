@@ -99,6 +99,7 @@
     "on_boarding_password_page_error_page_description": "A senha não pode estar vazia.",
     "on_boarding_password_page_success_title": "Senha definida com sucesso!",
     "on_boarding_password_page_loading_title": "Definindo senha...",
+    "on_boarding_success_account_creation_title": "Conta criada!",
 
     "on_boarding_initial_title": "Bem vindo ao Grabber",
     "on_boarding_description_title": "Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência.",

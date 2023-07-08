@@ -295,6 +295,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Número de telefone adicionado com sucesso!"),
         "on_boarding_phone_page_title":
             MessageLookupByLibrary.simpleMessage("Número de telefone:"),
+        "on_boarding_success_account_creation_title":
+            MessageLookupByLibrary.simpleMessage("Conta criada!"),
         "on_boarding_token_page_description": MessageLookupByLibrary.simpleMessage(
             "Insira o token fornecido pela equipe de desenvolvimento para conectar com máquina."),
         "on_boarding_token_page_error_bottomsheet_description":

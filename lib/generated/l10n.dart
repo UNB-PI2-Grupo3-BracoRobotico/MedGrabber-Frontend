@@ -940,6 +940,16 @@ class S {
     );
   }
 
+  /// `Account created!`
+  String get on_boarding_success_account_creation_title {
+    return Intl.message(
+      'Account created!',
+      name: 'on_boarding_success_account_creation_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to Grabber`
   String get on_boarding_initial_title {
     return Intl.message(
