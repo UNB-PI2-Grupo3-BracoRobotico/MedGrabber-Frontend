@@ -4,7 +4,7 @@ import 'package:grabber/features/on_boarding/domain/entities/stockist.dart';
 import '../../../../core/failures.dart';
 
 abstract class AuthRepository {
-  Future<Option<Failure>> signUp({
+  Future<Either<Failure, Stockist>> signUp({
     required String email,
     required String password,
   });

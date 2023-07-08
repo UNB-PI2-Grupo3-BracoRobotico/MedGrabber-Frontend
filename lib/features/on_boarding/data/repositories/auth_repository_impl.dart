@@ -12,17 +12,24 @@ class AuthRepositoryImpl implements AuthRepository {
   final _firebaseAuth = FirebaseAuth.instance;
 
   @override
-  Future<Option<Failure>> signUp({
+  Future<Either<Failure, Stockist>> signUp({
     required String email,
     required String password,
   }) async {
     try {
-      await _firebaseAuth.createUserWithEmailAndPassword(
+      final firebaseUser = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
-      return const None();
+      if (firebaseUser.user == null) {
+        return const Left(UnhandledFailure());
+      }
+      return Right(
+        Stockist(
+          id: firebaseUser.user?.uid ?? '',
+        ),
+      );
     } on FirebaseAuthException catch (e) {
       if (e.code == "email-already-in-use") {
-        return Some(
+        return Left(
           UnhandledFailure(
             message:
                 S.current.on_boarding_email_page_error_bottomsheet_description,
@@ -31,7 +38,7 @@ class AuthRepositoryImpl implements AuthRepository {
       }
       rethrow;
     } catch (e) {
-      return Some(
+      return Left(
         UnhandledFailure(
           message: e.toString(),
         ),
