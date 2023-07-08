@@ -7,9 +7,11 @@ class DSLoading extends StatelessWidget {
   const DSLoading({
     super.key,
     this.size = kIconSizeDefault,
+    this.color,
   });
 
   final double size;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,9 @@ class DSLoading extends StatelessWidget {
       child: SizedBox(
         height: size,
         width: size,
-        child: const CircularProgressIndicator(),
+        child: CircularProgressIndicator(
+          color: color,
+        ),
       ),
     );
   }
