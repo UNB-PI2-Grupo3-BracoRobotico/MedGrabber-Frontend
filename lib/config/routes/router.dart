@@ -11,8 +11,6 @@ import 'package:grabber/features/inventory/presentation/pages/add_item_page.dart
 import 'package:grabber/features/inventory/presentation/pages/edit_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
 import 'package:grabber/features/navigation/template_page.dart';
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/forgotten_password_bloc/forgotten_password_cubit.dart';
-import 'package:grabber/features/on_boarding/presentation/pages/base_auth/login_bloc/login_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/forgotten_password_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/login_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_email_page.dart';
@@ -33,6 +31,8 @@ import 'package:grabber/features/setup_machine/presentation/pages/step_final.dar
 
 import '../../features/help_center/pages/support_page.dart';
 import '../../features/home/presentation/home_page.dart';
+import '../../features/on_boarding/presentation/blocs/forgotten_password_bloc/forgotten_password_cubit.dart';
+import '../../features/on_boarding/presentation/blocs/login_bloc/login_cubit.dart';
 import '../../features/settings/pages/name_option/blocs/name_page/name_page_cubit.dart';
 import '../../features/settings/pages/phone_option/phone_page.dart';
 import '../../features/setup_machine/presentation/pages/step_1.dart';
