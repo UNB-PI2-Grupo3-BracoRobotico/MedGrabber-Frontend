@@ -370,6 +370,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nome"),
         "settings_phone_option_title":
             MessageLookupByLibrary.simpleMessage("Telefone"),
+        "settings_signout_option_title":
+            MessageLookupByLibrary.simpleMessage("Deslogar"),
         "settings_title": MessageLookupByLibrary.simpleMessage("Configurações"),
         "setup_machine_error_description": MessageLookupByLibrary.simpleMessage(
             "Não foi possível configurar sua máquina.\nTente novamente. Caso o erro persista,\ncontate nossa equipe."),

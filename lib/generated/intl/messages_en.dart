@@ -126,8 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgotten password?"),
         "forgotten_password_title":
             MessageLookupByLibrary.simpleMessage("Forgotten password"),
-        "go_to_login_page_button_label": MessageLookupByLibrary.simpleMessage(
-            "I\'ve already had an account"),
+        "go_to_login_page_button_label":
+            MessageLookupByLibrary.simpleMessage("I have an account"),
         "got_it": MessageLookupByLibrary.simpleMessage("Got it"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "help_email_contact":
@@ -371,6 +371,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Name"),
         "settings_phone_option_title":
             MessageLookupByLibrary.simpleMessage("Phone"),
+        "settings_signout_option_title":
+            MessageLookupByLibrary.simpleMessage("Sign out"),
         "settings_title": MessageLookupByLibrary.simpleMessage("Settings"),
         "setup_machine_error_description": MessageLookupByLibrary.simpleMessage(
             "It was not possible to set up your machine.\nTry again, if the error persists\ncontact our team."),

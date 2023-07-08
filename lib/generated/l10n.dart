@@ -70,10 +70,10 @@ class S {
     );
   }
 
-  /// `I've already had an account`
+  /// `I have an account`
   String get go_to_login_page_button_label {
     return Intl.message(
-      'I\'ve already had an account',
+      'I have an account',
       name: 'go_to_login_page_button_label',
       desc: '',
       args: [],
@@ -405,6 +405,16 @@ class S {
     return Intl.message(
       'Address',
       name: 'settings_address_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out`
+  String get settings_signout_option_title {
+    return Intl.message(
+      'Sign out',
+      name: 'settings_signout_option_title',
       desc: '',
       args: [],
     );

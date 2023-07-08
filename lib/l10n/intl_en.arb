@@ -2,7 +2,7 @@
     "continue_button_label": "Continue",
 
     "login_button_label": "Login",
-    "go_to_login_page_button_label": "I've already had an account",
+    "go_to_login_page_button_label": "I have an account",
     "login_error_title": "Login failed!",
     "login_error_description": "Unable to login! Incorrect e-mail address or password.",
     "login_email_pattern_error_description": "Incorrect e-mail format!",
@@ -43,6 +43,7 @@
     "settings_name_option_title": "Name",
     "settings_phone_option_title": "Phone",
     "settings_address_option_title": "Address",
+    "settings_signout_option_title": "Sign out",
 
     "settings_email_option_title": "Email",
 
