@@ -17,6 +17,7 @@ import 'package:grabber/features/on_boarding/presentation/pages/onboarding_email
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_password_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_phone_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_start_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_success_account_creation.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_token_page.dart';
 import 'package:grabber/features/orders/domain/entities/order.dart';
 import 'package:grabber/features/orders/presentation/simulate_order_page.dart';
@@ -81,6 +82,9 @@ abstract class AppRouter {
         break;
       case AppRoutes.onBoardingPhone:
         page = const OnBoardingPhonePage();
+        break;
+      case AppRoutes.onBoardingSuccessAccountCreation:
+        page = const OnboardinSuccessAccountCreationPage();
         break;
       case AppRoutes.setup1:
         page = const Step1();
