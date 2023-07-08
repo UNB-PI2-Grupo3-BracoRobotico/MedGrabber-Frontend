@@ -16,11 +16,11 @@ class CreateOrderCubit extends Cubit<CreateOrderState> {
         seconds: 2,
       ),
     );
-    // emit(
-    //   CreateOrderState.error(products: products),
-    // );
     emit(
-      const CreateOrderState.success(),
+      CreateOrderState.error(products: products),
     );
+    // emit(
+    //   const CreateOrderState.success(),
+    // );
   }
 }
