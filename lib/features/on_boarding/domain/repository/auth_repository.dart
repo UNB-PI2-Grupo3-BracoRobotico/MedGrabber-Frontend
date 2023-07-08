@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:grabber/features/on_boarding/domain/entities/stockist.dart';
 
 import '../../../../core/failures.dart';
 
@@ -20,4 +21,8 @@ abstract class AuthRepository {
   Future<Option<Failure>> resetPassword({
     required String email,
   });
+
+  Option<Stockist> getSignedUser();
+
+  Future<void> signOutUser();
 }

@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:grabber/core/failures.dart';
 import 'package:grabber/failures/auth_failures.dart';
+import 'package:grabber/features/on_boarding/domain/entities/stockist.dart';
 import 'package:grabber/features/on_boarding/domain/repository/auth_repository.dart';
 import 'package:grabber/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
@@ -78,5 +79,23 @@ class AuthRepositoryImpl implements AuthRepository {
       return some(FirebaseUserNotFoundedFailure());
     }
     return none();
+  }
+
+  @override
+  Option<Stockist> getSignedUser() {
+    final firebaseUser = _firebaseAuth.currentUser;
+    if (firebaseUser != null) {
+      return Some(
+        Stockist(
+          id: firebaseUser.uid,
+        ),
+      );
+    }
+    return const None();
+  }
+
+  @override
+  Future<void> signOutUser() async {
+    await _firebaseAuth.signOut();
   }
 }
