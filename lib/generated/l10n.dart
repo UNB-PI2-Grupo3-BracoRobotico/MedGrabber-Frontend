@@ -1109,6 +1109,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Dashboard`
+  String get dashboard_title {
+    return Intl.message(
+      'Dashboard',
+      name: 'dashboard_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reports`
+  String get dashboard_section_reports_button_label {
+    return Intl.message(
+      'Reports',
+      name: 'dashboard_section_reports_button_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Items in store:`
+  String get dashboard_total_items {
+    return Intl.message(
+      'Number of Items in store:',
+      name: 'dashboard_total_items',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most expensive item:`
+  String get dashboard_highest_item {
+    return Intl.message(
+      'Most expensive item:',
+      name: 'dashboard_highest_item',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cheapest item out of stock:`
+  String get dashboard_cheapest_item {
+    return Intl.message(
+      'Cheapest item out of stock:',
+      name: 'dashboard_cheapest_item',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Price of Products:`
+  String get dashboard_total_price {
+    return Intl.message(
+      'Total Price of Products:',
+      name: 'dashboard_total_price',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order History`
+  String get history_title {
+    return Intl.message(
+      'Order History',
+      name: 'history_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Load more...`
+  String get history_loud_orders {
+    return Intl.message(
+      'Load more...',
+      name: 'history_loud_orders',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

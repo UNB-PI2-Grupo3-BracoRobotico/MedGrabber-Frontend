@@ -1,5 +1,7 @@
+
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+
 
 class InformationCard extends StatelessWidget {
   const InformationCard({
@@ -64,3 +66,5 @@ class InformationCard extends StatelessWidget {
     );
   }
 }
+
+

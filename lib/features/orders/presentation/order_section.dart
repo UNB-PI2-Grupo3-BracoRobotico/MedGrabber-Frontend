@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
-import 'package:grabber/features/home/presentation/widgets/informational_card.dart';
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart';
 import 'package:grabber/features/orders/presentation/widgets/order_card.dart';
 import 'package:grabber/generated/l10n.dart';
+
+import '../../shared/information_card.dart';
 
 class OrderSection extends StatelessWidget {
   const OrderSection({super.key});

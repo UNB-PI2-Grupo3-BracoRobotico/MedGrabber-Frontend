@@ -69,6 +69,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Settings"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continue"),
+        "dashboard_cheapest_item":
+            MessageLookupByLibrary.simpleMessage("Cheapest item out of stock:"),
+        "dashboard_highest_item":
+            MessageLookupByLibrary.simpleMessage("Most expensive item:"),
+        "dashboard_section_reports_button_label":
+            MessageLookupByLibrary.simpleMessage("Reports"),
+        "dashboard_title": MessageLookupByLibrary.simpleMessage("Dashboard"),
+        "dashboard_total_items":
+            MessageLookupByLibrary.simpleMessage("Number of Items in store:"),
+        "dashboard_total_price":
+            MessageLookupByLibrary.simpleMessage("Total Price of Products:"),
         "edit_item_amount_option_label":
             MessageLookupByLibrary.simpleMessage("Amount"),
         "edit_item_button_label":
@@ -98,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Send Email to:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Help Center"),
+        "history_loud_orders":
+            MessageLookupByLibrary.simpleMessage("Load more..."),
+        "history_title": MessageLookupByLibrary.simpleMessage("Order History"),
         "home_available_itens_card":
             MessageLookupByLibrary.simpleMessage("Items ending"),
         "home_available_positions_card":

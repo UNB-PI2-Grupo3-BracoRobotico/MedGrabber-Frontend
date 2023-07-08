@@ -70,6 +70,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurações"),
         "continue_button_label":
             MessageLookupByLibrary.simpleMessage("Continuar"),
+        "dashboard_cheapest_item": MessageLookupByLibrary.simpleMessage(
+            "Custo mais barato no esoque:"),
+        "dashboard_highest_item":
+            MessageLookupByLibrary.simpleMessage("Item mais caro no estoque:"),
+        "dashboard_section_reports_button_label":
+            MessageLookupByLibrary.simpleMessage("Relatórios"),
+        "dashboard_title": MessageLookupByLibrary.simpleMessage("Dashboard"),
+        "dashboard_total_items":
+            MessageLookupByLibrary.simpleMessage("Total de Items em estoque:"),
+        "dashboard_total_price":
+            MessageLookupByLibrary.simpleMessage("Preço total dos produtos:"),
         "edit_item_amount_option_label":
             MessageLookupByLibrary.simpleMessage("Quantidade"),
         "edit_item_button_label":
@@ -99,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "help_page_send_email":
             MessageLookupByLibrary.simpleMessage("Envia um email para:"),
         "help_title": MessageLookupByLibrary.simpleMessage("Central de Ajuda"),
+        "history_loud_orders":
+            MessageLookupByLibrary.simpleMessage("Carrear mais..."),
+        "history_title":
+            MessageLookupByLibrary.simpleMessage("Histórico de Pedidos"),
         "home_available_itens_card":
             MessageLookupByLibrary.simpleMessage("Itens acabando"),
         "home_available_positions_card":
