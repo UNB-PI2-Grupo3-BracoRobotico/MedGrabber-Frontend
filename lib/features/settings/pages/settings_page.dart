@@ -1,6 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:grabber/config/routes/routes.dart';
+import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/settings/widgets/option_tile.dart';
 import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 
@@ -52,6 +54,12 @@ class SettingsPage extends StatelessWidget {
                 onTap: () => Navigator.of(context).pushNamed(
                   AppRoutes.settingsMail,
                 ),
+              ),
+              const VerticalGap.xxs(),
+              OptionTile(
+                title: S.current.settings_signout_option_title,
+                icon: Icons.logout_rounded,
+                onTap: () => getIt.get<SessionManagerCubit>().signOutUser(),
               ),
             ],
           ),
