@@ -1189,6 +1189,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Simulate order`
+  String get simulate_order_page_title {
+    return Intl.message(
+      'Simulate order',
+      name: 'simulate_order_page_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It's not possible to create orders now. Click here to try again or contact the support team.`
+  String get simulate_order_page_error_description {
+    return Intl.message(
+      'It\'s not possible to create orders now. Click here to try again or contact the support team.',
+      name: 'simulate_order_page_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available products`
+  String get simulate_order_available_products_title {
+    return Intl.message(
+      'Available products',
+      name: 'simulate_order_available_products_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected products`
+  String get simulate_order_selected_products_title {
+    return Intl.message(
+      'Selected products',
+      name: 'simulate_order_selected_products_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish order`
+  String get simulate_order_finish_order_button_title {
+    return Intl.message(
+      'Finish order',
+      name: 'simulate_order_finish_order_button_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Creating order...`
+  String get simulate_order_create_order_loading_title {
+    return Intl.message(
+      'Creating order...',
+      name: 'simulate_order_create_order_loading_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order created!`
+  String get simulate_order_create_order_success_title {
+    return Intl.message(
+      'Order created!',
+      name: 'simulate_order_create_order_success_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong. We couldn't create your order, try again or contact our support team.`
+  String get simulate_order_create_order_error_description {
+    return Intl.message(
+      'Something went wrong. We couldn\'t create your order, try again or contact our support team.',
+      name: 'simulate_order_create_order_error_description',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
