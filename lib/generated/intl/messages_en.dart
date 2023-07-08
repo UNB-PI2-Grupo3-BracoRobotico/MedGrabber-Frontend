@@ -169,12 +169,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "inventory_page_title":
             MessageLookupByLibrary.simpleMessage("Inventory"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_email_pattern_error_description":
+            MessageLookupByLibrary.simpleMessage("Incorrect e-mail format!"),
         "login_error_description": MessageLookupByLibrary.simpleMessage(
-            "Incorrect e-mail address or password"),
+            "Unable to login! Incorrect e-mail address or password."),
         "login_error_title":
             MessageLookupByLibrary.simpleMessage("Login failed!"),
         "login_success_message": MessageLookupByLibrary.simpleMessage(
-            "You are being redirected to the home screen"),
+            "You are being redirected to the home screen..."),
         "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
             "It wasn\'t possible to update your email.\nTry again, if the error persists, contact our team."),
         "mail_error_page_primary_button_label":

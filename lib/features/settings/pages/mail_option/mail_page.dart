@@ -7,6 +7,7 @@ import 'package:grabber/features/settings/widgets/base_option_page.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
+import 'package:grabber/utils/email_utils.dart';
 import 'package:styled_text/styled_text.dart';
 
 import '../../../../generated/l10n.dart';
@@ -124,10 +125,7 @@ class _MailPageState extends State<MailPage> {
   }
 
   bool _isValidEmail(String email) {
-    RegExp emailRegex = RegExp(
-      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-    );
-    bool isValid = emailRegex.hasMatch(email);
+    bool isValid = EmailValidator.isValidEmail(email);
     setState(() {
       errorText = isValid ? '' : S.current.mail_page_field_error;
       canContinue = false;

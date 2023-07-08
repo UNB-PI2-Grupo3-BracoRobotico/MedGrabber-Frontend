@@ -9,6 +9,7 @@ import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:grabber/generated/l10n.dart';
+import 'package:grabber/utils/email_utils.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -110,7 +111,7 @@ class _LoginState extends State<LoginPage> {
             onPressed: () async {
               await _validateLogin(
                 _emailController.text.trim(),
-                _passwordController.text.trim(),
+                _passwordController.text,
               );
             },
           ),
@@ -121,7 +122,30 @@ class _LoginState extends State<LoginPage> {
 
   Future<void> _validateLogin(String email, String password) async {
     final loginCubit = context.read<LoginCubit>();
-    await loginCubit.login(email, password);
+    final isValidEmail = EmailValidator.isValidEmail(email);
+    if (isValidEmail) {
+      await loginCubit.login(email, password);
+    } else {
+      showModalBottomSheet(
+        context: context,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(
+              kSpacingXXXS,
+            ),
+          ),
+        ),
+        builder: (context) {
+          return DSBottomSheet(
+            title: S.current.login_error_title,
+            description: S.current.login_email_pattern_error_description,
+            icon: Icons.error_outline_rounded,
+            buttonLabel: S.current.try_again,
+            onTap: Navigator.of(context).pop,
+          );
+        },
+      );
+    }
   }
 
   void _resetPage() {

@@ -5,8 +5,10 @@
     "login_button_label": "Login",
     "forgotten_password_button_label": "Resetar senha",
     "login_error_title": "Login falhou!",
-    "login_error_message": "E-mail ou senha incorreta",
+    "login_error_message": "Não foi possível fazer login! E-mail ou senha incorreta.",
     "login_success_message": "Você está sendo redirecionado para a tela de home...",
+    "login_email_pattern_error_description": "Formatação do e-mail está incorreta!",
+
     
     "forgotten_password_message": "Esqueceu sua senha?",
     "forgotten_password_title": "Esqueceu sua senha",

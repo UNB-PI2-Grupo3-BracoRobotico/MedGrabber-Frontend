@@ -90,20 +90,30 @@ class S {
     );
   }
 
-  /// `Incorrect e-mail address or password`
+  /// `Unable to login! Incorrect e-mail address or password.`
   String get login_error_description {
     return Intl.message(
-      'Incorrect e-mail address or password',
+      'Unable to login! Incorrect e-mail address or password.',
       name: 'login_error_description',
       desc: '',
       args: [],
     );
   }
 
-  /// `You are being redirected to the home screen`
+  /// `Incorrect e-mail format!`
+  String get login_email_pattern_error_description {
+    return Intl.message(
+      'Incorrect e-mail format!',
+      name: 'login_email_pattern_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are being redirected to the home screen...`
   String get login_success_message {
     return Intl.message(
-      'You are being redirected to the home screen',
+      'You are being redirected to the home screen...',
       name: 'login_success_message',
       desc: '',
       args: [],

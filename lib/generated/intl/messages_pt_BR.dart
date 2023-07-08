@@ -166,10 +166,13 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!"),
         "inventory_page_title": MessageLookupByLibrary.simpleMessage("Estoque"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_email_pattern_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Formatação do e-mail está incorreta!"),
         "login_error_title":
             MessageLookupByLibrary.simpleMessage("Login falhou!"),
         "login_success_message": MessageLookupByLibrary.simpleMessage(
-            "Você está sendo redirecionado para a tela inicial"),
+            "Você está sendo redirecionado para a tela de home..."),
         "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o endereço de e-mail.\nPor favor, tente novamente ou troque o nome inserido."),
         "mail_error_page_primary_button_label":

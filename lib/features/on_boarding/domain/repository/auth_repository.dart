@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:grabber/core/failures.dart';
+import 'package:grabber/failures/auth_failures.dart';
 import 'package:grabber/generated/l10n.dart';
 
 class AuthRepository {
@@ -31,7 +32,7 @@ class AuthRepository {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
     } catch (e) {
-      return some(const UnhandledFailure());
+      return some(FirebaseUserNotFoundedFailure());
     }
     return none();
   }
@@ -57,7 +58,7 @@ class AuthRepository {
     try {
       await _firebaseAuth.sendPasswordResetEmail(email: email);
     } catch (e) {
-      return some(const UnhandledFailure());
+      return some(FirebaseUserNotFoundedFailure());
     }
     return none();
   }
