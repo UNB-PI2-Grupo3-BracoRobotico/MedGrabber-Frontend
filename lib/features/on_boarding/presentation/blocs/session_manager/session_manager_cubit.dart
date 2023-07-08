@@ -35,6 +35,14 @@ class SessionManagerCubit extends Cubit<SessionManagerState> {
     );
   }
 
+  void authenticateSession(Stockist user) {
+    emit(
+      SessionManagerState.authenticated(
+        user,
+      ),
+    );
+  }
+
   Future<void> signOutUser() async {
     emit(const SessionManagerState.loading());
     await _signOut();
