@@ -10,7 +10,7 @@ import 'package:grabber/features/inventory/presentation/blocs/positions_availabl
 import 'package:grabber/features/inventory/presentation/pages/add_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/edit_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
-import 'package:grabber/features/navigation/template_page.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/forgotten_password_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/login_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/onboarding_email_page.dart';
@@ -28,6 +28,7 @@ import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_
 import 'package:grabber/features/settings/pages/settings_page.dart';
 import 'package:grabber/features/setup_machine/presentation/blocs/setup_status/setup_status_bloc.dart';
 import 'package:grabber/features/setup_machine/presentation/pages/step_final.dart';
+import 'package:grabber/features/splash/splash_page.dart';
 
 import '../../features/help_center/pages/support_page.dart';
 import '../../features/home/presentation/home_page.dart';
@@ -45,10 +46,14 @@ abstract class AppRouter {
     AnimationByRoute animation = AnimationByRoute.defaultOption;
 
     switch (settings.name) {
+      case AppRoutes.initial:
+        final SessionManagerCubit sessionManagerCubit = getIt.get();
+        sessionManagerCubit.checkAuthenticationStatus();
+        page = const SplashPage();
+        break;
       case AppRoutes.onBoarding:
         page = const OnBoardingStartPage();
         break;
-
       case AppRoutes.forgottenPassword:
         page = BlocProvider(
           create: (_) => ForgottenPasswordCubit(
@@ -76,9 +81,6 @@ abstract class AppRouter {
         break;
       case AppRoutes.onBoardingPhone:
         page = const OnBoardingPhonePage();
-        break;
-      case AppRoutes.initial:
-        page = const TemplatePage();
         break;
       case AppRoutes.setup1:
         page = const Step1();
@@ -189,7 +191,6 @@ abstract class AppRouter {
         page = const DashboardPage();
         break;
       default:
-        print('Deu erro');
         throw UnimplementedError();
     }
 

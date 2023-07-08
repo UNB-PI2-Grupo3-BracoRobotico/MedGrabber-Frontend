@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:grabber/config/routes/router.dart';
-import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/home/presentation/blocs/navigation_cubit.dart';
 
@@ -34,8 +33,6 @@ class MyApp extends StatelessWidget {
         color: kWhite,
         title: 'grabber',
         theme: CustomTheme.getThemeData(),
-        //TODO(Mauricio): Define initial page later on
-        initialRoute: AppRoutes.onBoarding,
         onGenerateRoute: AppRouter.routeFromSettings,
         supportedLocales: localizationsDelegate.supportedLocales,
         localizationsDelegates: const [
