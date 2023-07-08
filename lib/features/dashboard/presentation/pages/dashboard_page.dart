@@ -39,59 +39,58 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const GrabberBottomNavigationBar(),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        titleSpacing: 0,
-         title: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kSpacingXS), // Adjust the value as needed
-        child: Text(
-          S.current.dashboard_title,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-      ),
-      ),
-      
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kSpacingXS),
-          child: ListView(
-            children: [
-            Column(
-            children: [
-              const VerticalGap.sm(),
-              //TODO: Add Reports Page and Logic
-              DSButton.primary(
-                onPressed: () {},
-                label: S.current.dashboard_section_reports_button_label,
-              ),
-              const VerticalGap.sm(),
-              MultiBlocProvider(
-                providers: [
-                  BlocProvider.value(
-                    value: _hasItemCubit,
-                  ),
-                  BlocProvider.value(
-                    value: _positionsAvailableCubit,
-                  ),
-                ],
-                child: const _FirstRowInformationCards(),
-              ),
-              const VerticalGap.sm(),
-                BlocProvider(
-                create: (context) => GetOrdersCubit()..getOrders(),
-                child: const HistorySection(),
-              ),
-            ],
+        bottomNavigationBar: const GrabberBottomNavigationBar(),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          titleSpacing: 0,
+          title: Padding(
+            padding: const EdgeInsets.symmetric(
+                horizontal: kSpacingXS), // Adjust the value as needed
+            child: Text(
+              S.current.dashboard_title,
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
           ),
-            ],
         ),
-      ),
-      )
-    );
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kSpacingXS),
+            child: ListView(
+              children: [
+                Column(
+                  children: [
+                    const VerticalGap.sm(),
+                    //TODO: Add Reports Page and Logic
+                    DSButton.primary(
+                      onPressed: () {},
+                      label: S.current.dashboard_section_reports_button_label,
+                    ),
+                    const VerticalGap.sm(),
+                    MultiBlocProvider(
+                      providers: [
+                        BlocProvider.value(
+                          value: _hasItemCubit,
+                        ),
+                        BlocProvider.value(
+                          value: _positionsAvailableCubit,
+                        ),
+                      ],
+                      child: const _FirstRowInformationCards(),
+                    ),
+                    const VerticalGap.sm(),
+                    BlocProvider(
+                      create: (context) =>
+                          getIt.get<GetOrdersCubit>()..getOrders(),
+                      child: const HistorySection(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
-
 
 class _FirstRowInformationCards extends StatefulWidget {
   const _FirstRowInformationCards();
@@ -115,7 +114,7 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                  child: BlocBuilder<HasItemCubit, HasItemState>(
+                child: BlocBuilder<HasItemCubit, HasItemState>(
                   builder: (context, state) {
                     return state.maybeWhen(
                       loading: () => const InformationCard(
@@ -125,14 +124,13 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                       ),
                       error: () => InformationCard(
                         message: S.current.informational_card_error_message,
-                        onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
+                        onTap: () =>
+                            context.read<HasItemCubit>().hasItemRegistered(),
                       ),
                       orElse: () => InformationCard(
                         message: S.current.dashboard_total_price,
                         informationValue: state.maybeWhen(
-                          orElse: () => 0,
-                          hasItemRegisters: _getTotalPrice
-                        ),
+                            orElse: () => 0, hasItemRegisters: _getTotalPrice),
                       ),
                     );
                   },
@@ -150,13 +148,15 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                       ),
                       error: () => InformationCard(
                         message: S.current.informational_card_error_message,
-                        onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
+                        onTap: () =>
+                            context.read<HasItemCubit>().hasItemRegistered(),
                       ),
                       orElse: () => InformationCard(
                         message: S.current.dashboard_total_items,
                         informationValue: state.maybeWhen(
                           orElse: () => 0,
-                          hasItemRegisters: (products) => _getLowAmountItens(products).length,
+                          hasItemRegisters: (products) =>
+                              _getLowAmountItens(products).length,
                         ),
                       ),
                     );
@@ -166,11 +166,11 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
             ],
           ),
           const VerticalGap.xxxs(),
-             Row(
+          Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                  child: BlocBuilder<HasItemCubit, HasItemState>(
+                child: BlocBuilder<HasItemCubit, HasItemState>(
                   builder: (context, state) {
                     return state.maybeWhen(
                       loading: () => const InformationCard(
@@ -180,7 +180,8 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                       ),
                       error: () => InformationCard(
                         message: S.current.informational_card_error_message,
-                        onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
+                        onTap: () =>
+                            context.read<HasItemCubit>().hasItemRegistered(),
                       ),
                       orElse: () => InformationCard(
                         message: S.current.dashboard_cheapest_item,
@@ -205,14 +206,14 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
                       ),
                       error: () => InformationCard(
                         message: S.current.informational_card_error_message,
-                        onTap: () => context.read<HasItemCubit>().hasItemRegistered(),
+                        onTap: () =>
+                            context.read<HasItemCubit>().hasItemRegistered(),
                       ),
                       orElse: () => InformationCard(
                         message: S.current.dashboard_highest_item,
                         informationValue: state.maybeWhen(
                           orElse: () => 0,
                           hasItemRegisters: _getHighestPrice,
-
                         ),
                       ),
                     );
@@ -229,20 +230,18 @@ class _FirstRowInformationCardsState extends State<_FirstRowInformationCards> {
   List<Product> _getLowAmountItens(List<Product> products) {
     List<Product> productsEnding = [];
     for (final product in products) {
-  
-        productsEnding.add(product);
-    
+      productsEnding.add(product);
     }
     return productsEnding;
   }
 
-int _getTotalPrice(List<Product> products) {
-  double totalPrice = 0;
-  for (final product in products) {
-    totalPrice += product.price;
+  int _getTotalPrice(List<Product> products) {
+    double totalPrice = 0;
+    for (final product in products) {
+      totalPrice += product.price;
+    }
+    return totalPrice.round(); // Round the total price to the nearest integer
   }
-  return totalPrice.round(); // Round the total price to the nearest integer
-}
 
   int _getHighestPrice(List<Product> products) {
     double highestPrice = 0;
@@ -257,14 +256,14 @@ int _getTotalPrice(List<Product> products) {
   }
 
   int _getLowestPrice(List<Product> products) {
-  double lowestPrice = double.infinity;
+    double lowestPrice = double.infinity;
 
-  for (final product in products) {
-    if (product.price < lowestPrice) {
-      lowestPrice = product.price;
+    for (final product in products) {
+      if (product.price < lowestPrice) {
+        lowestPrice = product.price;
+      }
     }
-  }
 
-  return lowestPrice.round();
-}
+    return lowestPrice.round();
+  }
 }

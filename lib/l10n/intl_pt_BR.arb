@@ -131,6 +131,14 @@
     "dashboard_cheapest_item": "Custo mais barato no esoque:",
     "dashboard_total_price": "Preço total dos produtos:",
     "history_title": "Histórico de Pedidos",
-    "history_loud_orders": "Carrear mais..."
+    "history_loud_orders": "Carrear mais...",
 
+    "simulate_order_page_title": "Simular pedido",
+    "simulate_order_page_error_description": "Não é possível realizar um pedido agora. Clique aqui para tentar novamente ou contate a equipe de suporte.",
+    "simulate_order_available_products_title": "Produtos disponíveis",
+    "simulate_order_selected_products_title": "Produtos selecionados",
+    "simulate_order_finish_order_button_title": "Finalizar pedido",
+    "simulate_order_create_order_loading_title": "Criando pedido...",
+    "simulate_order_create_order_success_title": "Pedido criado!",
+    "simulate_order_create_order_error_description": "Algo deu errado. Não conseguimos criar o pedido, tente novament ou entre em contato com a equipe de suporte."
 }

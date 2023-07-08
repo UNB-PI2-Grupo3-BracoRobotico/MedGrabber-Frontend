@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart';
 import 'package:grabber/features/orders/presentation/widgets/order_card.dart';
 import 'package:grabber/generated/l10n.dart';
@@ -82,8 +83,9 @@ class OrderSection extends StatelessWidget {
                 ),
                 const VerticalGap.nano(),
                 DSButton.outlined(
-                  //TODO(Mauricio): Implement method
-                  onPressed: () {},
+                  onPressed: () => Navigator.of(context).pushNamed(
+                    AppRoutes.simulateOrder,
+                  ),
                   label: S.current.home_order_simulate_order_button_label,
                 ),
                 const VerticalGap.quarck(),

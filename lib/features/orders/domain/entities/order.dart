@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 
-class Order extends Equatable {
+class OrderEntity extends Equatable {
   final String id;
   final OrderStatus status;
   final List<Product> products;
   final double totalOrderValue;
 
-  const Order({
+  const OrderEntity({
     required this.id,
     required this.status,
     required this.products,

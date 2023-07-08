@@ -249,6 +249,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Setting up your machine..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Arm configurated!"),
+        "simulate_order_available_products_title":
+            MessageLookupByLibrary.simpleMessage("Available products"),
+        "simulate_order_create_order_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Something went wrong. We couldn\'t create your order, try again or contact our support team."),
+        "simulate_order_create_order_loading_title":
+            MessageLookupByLibrary.simpleMessage("Creating order..."),
+        "simulate_order_create_order_success_title":
+            MessageLookupByLibrary.simpleMessage("Order created!"),
+        "simulate_order_finish_order_button_title":
+            MessageLookupByLibrary.simpleMessage("Finish order"),
+        "simulate_order_page_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "It\'s not possible to create orders now. Click here to try again or contact the support team."),
+        "simulate_order_page_title":
+            MessageLookupByLibrary.simpleMessage("Simulate order"),
+        "simulate_order_selected_products_title":
+            MessageLookupByLibrary.simpleMessage("Selected products"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong"),
         "supported_page_loading_tiltle": MessageLookupByLibrary.simpleMessage(

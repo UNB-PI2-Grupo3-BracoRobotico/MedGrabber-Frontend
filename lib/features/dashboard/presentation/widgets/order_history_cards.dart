@@ -1,6 +1,5 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/features/orders/domain/entities/order.dart';
 import 'package:grabber/generated/l10n.dart';
 
@@ -9,7 +8,7 @@ class HistoryCard extends StatelessWidget {
     super.key,
     required this.order,
   });
-  final Order order;
+  final OrderEntity order;
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +35,18 @@ class HistoryCard extends StatelessWidget {
           Text(
             S.current.order_id(order.id),
             style: Theme.of(context).textTheme.bodyLarge,
-          ),          const VerticalGap.nano(),
+          ),
+          const VerticalGap.nano(),
           Text(
             S.current.order_value(order.totalOrderValue.toString()),
           ),
           const VerticalGap.nano(),
-          const Divider(thickness: 1, color: kDarkPrimary,),
+          const Divider(
+            thickness: 1,
+            color: kDarkPrimary,
+          ),
         ],
       ),
     );
   }
-
 }

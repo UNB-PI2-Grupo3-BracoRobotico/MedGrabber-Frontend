@@ -250,6 +250,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Configurando sua máquina..."),
         "setup_machine_success_title":
             MessageLookupByLibrary.simpleMessage("Braço configurado!"),
+        "simulate_order_available_products_title":
+            MessageLookupByLibrary.simpleMessage("Produtos disponíveis"),
+        "simulate_order_create_order_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Algo deu errado. Não conseguimos criar o pedido, tente novament ou entre em contato com a equipe de suporte."),
+        "simulate_order_create_order_loading_title":
+            MessageLookupByLibrary.simpleMessage("Criando pedido..."),
+        "simulate_order_create_order_success_title":
+            MessageLookupByLibrary.simpleMessage("Pedido criado!"),
+        "simulate_order_finish_order_button_title":
+            MessageLookupByLibrary.simpleMessage("Finalizar pedido"),
+        "simulate_order_page_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Não é possível realizar um pedido agora. Clique aqui para tentar novamente ou contate a equipe de suporte."),
+        "simulate_order_page_title":
+            MessageLookupByLibrary.simpleMessage("Simular pedido"),
+        "simulate_order_selected_products_title":
+            MessageLookupByLibrary.simpleMessage("Produtos selecionados"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Algo deu errado"),
         "supported_page_loading_tiltle": MessageLookupByLibrary.simpleMessage(
