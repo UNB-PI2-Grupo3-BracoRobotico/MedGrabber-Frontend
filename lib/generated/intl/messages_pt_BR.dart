@@ -20,23 +20,26 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt_BR';
 
-  static String m0(name) => "Bem-vindo ${name}";
+  static String m0(email) =>
+      "Nós enviamos um email com as orientações para redefinir sua senha. Por favor cheque a caixa de entrada e spam do email de endereço: ${email}";
 
-  static String m1(amount) => "Quantidade disponível: ${amount}";
+  static String m1(name) => "Bem-vindo ${name}";
 
-  static String m2(id) => "#${id}";
+  static String m2(amount) => "Quantidade disponível: ${amount}";
 
-  static String m3(id) => "Pedido #${id}";
+  static String m3(id) => "#${id}";
 
-  static String m4(amount) => "Quantidade comprada - ${amount}";
+  static String m4(id) => "Pedido #${id}";
 
-  static String m5(price) => "Preço do produto - R\$ ${price}";
+  static String m5(amount) => "Quantidade comprada - ${amount}";
 
-  static String m6(value) => "Valor total - R\$ ${value}";
+  static String m6(price) => "Preço do produto - R\$ ${price}";
 
-  static String m7(status) => "Status - ${status}";
+  static String m7(value) => "Valor total - R\$ ${value}";
 
-  static String m8(value) => "Valor total - R\$ ${value}";
+  static String m8(status) => "Status - ${status}";
+
+  static String m9(value) => "Valor total - R\$ ${value}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -81,6 +84,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Total de Items em estoque:"),
         "dashboard_total_price":
             MessageLookupByLibrary.simpleMessage("Preço total dos produtos:"),
+        "default_invalid_signup_description": MessageLookupByLibrary.simpleMessage(
+            "Por favor tente novamente! Caso erro persista contate nossa equipe"),
+        "default_invalid_signup_title":
+            MessageLookupByLibrary.simpleMessage("Erro ao criar cadastro"),
+        "default_invalid_token_label":
+            MessageLookupByLibrary.simpleMessage("Token invalido"),
         "edit_item_amount_option_label":
             MessageLookupByLibrary.simpleMessage("Quantidade"),
         "edit_item_button_label":
@@ -99,6 +108,28 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Posição"),
         "edit_item_success_title":
             MessageLookupByLibrary.simpleMessage("Item editado!"),
+        "empty_string": MessageLookupByLibrary.simpleMessage(""),
+        "forgotten_password_button_label":
+            MessageLookupByLibrary.simpleMessage("Resetar senha"),
+        "forgotten_password_desc": MessageLookupByLibrary.simpleMessage(
+            "Insira seu email e enviaremos código para resetar sua senha."),
+        "forgotten_password_email_not_found":
+            MessageLookupByLibrary.simpleMessage("Email não encontrado!"),
+        "forgotten_password_email_sended_description": m0,
+        "forgotten_password_email_sended_message":
+            MessageLookupByLibrary.simpleMessage(
+                "Por favor verifique sua caixa de mensagem para alteração da senha"),
+        "forgotten_password_email_sended_title":
+            MessageLookupByLibrary.simpleMessage("Email enviado com sucesso!"),
+        "forgotten_password_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "We did not find an account linked to this email address in our database"),
+        "forgotten_password_message":
+            MessageLookupByLibrary.simpleMessage("Esqueceu sua senha?"),
+        "forgotten_password_title":
+            MessageLookupByLibrary.simpleMessage("Esqueceu sua senha"),
+        "go_to_login_page_button_label":
+            MessageLookupByLibrary.simpleMessage("Já tenho uma conta"),
         "got_it": MessageLookupByLibrary.simpleMessage("Entendi"),
         "help": MessageLookupByLibrary.simpleMessage("Ajuda"),
         "help_email_contact":
@@ -137,10 +168,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Simule um pedido"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
-        "home_page_welcome_again_title": m0,
+        "home_page_welcome_again_title": m1,
         "informational_card_error_message":
             MessageLookupByLibrary.simpleMessage("Erro, clique aqui"),
-        "inventory_amount_card_information": m1,
+        "inventory_amount_card_information": m2,
         "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte."),
         "inventory_error_page_title":
@@ -153,6 +184,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!"),
         "inventory_page_title": MessageLookupByLibrary.simpleMessage("Estoque"),
+        "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
+        "login_email_pattern_error_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Formatação do e-mail está incorreta!"),
+        "login_error_title":
+            MessageLookupByLibrary.simpleMessage("Login falhou!"),
+        "login_success_message": MessageLookupByLibrary.simpleMessage(
+            "Você está sendo redirecionado para a tela de home..."),
         "mail_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos atualizar o endereço de e-mail.\nPor favor, tente novamente ou troque o nome inserido."),
         "mail_error_page_primary_button_label":
@@ -189,14 +228,108 @@ class MessageLookup extends MessageLookupByLibrary {
         "name_page_title": MessageLookupByLibrary.simpleMessage("Nome da Loja"),
         "name_success_page_title":
             MessageLookupByLibrary.simpleMessage("Nome da loja atulizado!"),
+        "on_boarding_description_title": MessageLookupByLibrary.simpleMessage(
+            "Para seu primeiro contato com nosso produto precisamos que você faça as configurações iniciais para vincular com o sistema da Garra.\n\nEm nome da equipe do Grabber agradecemos pela preferência."),
+        "on_boarding_email_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Insira o seu email para prosseguir com o onboarding."),
+        "on_boarding_email_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Email já cadastrado anteriormente ou com formatação incorreta!"),
+        "on_boarding_email_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Email inválido! Por favor, tente novamente."),
+        "on_boarding_email_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "O email não pode estar vazio."),
+        "on_boarding_email_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda."),
+        "on_boarding_email_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Adicionando email..."),
+        "on_boarding_email_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Email adicionado com sucesso!"),
+        "on_boarding_email_page_title":
+            MessageLookupByLibrary.simpleMessage("Email:"),
+        "on_boarding_initial_title":
+            MessageLookupByLibrary.simpleMessage("Bem vindo ao Grabber"),
+        "on_boarding_password_confirm_page_title":
+            MessageLookupByLibrary.simpleMessage("Confirmar Senha:"),
+        "on_boarding_password_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Digite uma senha para sua conta com pelo menos 8 caracteres."),
+        "on_boarding_password_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Senha não estão iguais ou possuem menos que 8 caracteres"),
+        "on_boarding_password_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Senha inválida! Por favor, tente novamente."),
+        "on_boarding_password_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "A senha não pode estar vazia."),
+        "on_boarding_password_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda."),
+        "on_boarding_password_page_loading_title":
+            MessageLookupByLibrary.simpleMessage("Definindo senha..."),
+        "on_boarding_password_page_success_title":
+            MessageLookupByLibrary.simpleMessage("Senha definida com sucesso!"),
+        "on_boarding_password_page_title":
+            MessageLookupByLibrary.simpleMessage("Senha:"),
+        "on_boarding_phone_page_description": MessageLookupByLibrary.simpleMessage(
+            "Insira o seu número de telefone para prosseguir com o onboarding."),
+        "on_boarding_phone_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Se o problema persistir, verifique o número de telefone e tente novamente."),
+        "on_boarding_phone_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Número de telefone inválido! Por favor, tente novamente."),
+        "on_boarding_phone_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage(
+                "O número de telefone não pode estar vazio."),
+        "on_boarding_phone_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Por favor, tente novamente mais tarde ou entre em contato com o suporte para obter ajuda."),
+        "on_boarding_phone_page_loading_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Adicionando número de telefone..."),
+        "on_boarding_phone_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Número de telefone adicionado com sucesso!"),
+        "on_boarding_phone_page_title":
+            MessageLookupByLibrary.simpleMessage("Número de telefone:"),
+        "on_boarding_success_account_creation_title":
+            MessageLookupByLibrary.simpleMessage("Conta criada!"),
+        "on_boarding_token_page_description": MessageLookupByLibrary.simpleMessage(
+            "Insira o token fornecido pela equipe de desenvolvimento para conectar com máquina."),
+        "on_boarding_token_page_error_bottomsheet_description":
+            MessageLookupByLibrary.simpleMessage(
+                "Caso problema persista entre em contato com equipe de desenvolvimento"),
+        "on_boarding_token_page_error_bottomsheet_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Código inválido! Tente novamente"),
+        "on_boarding_token_page_error_page_description":
+            MessageLookupByLibrary.simpleMessage("Código não pode ser nulo."),
+        "on_boarding_token_page_error_page_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Erro inesperado! Entre em contato com equipe de desenvolvimento para providenciarmos novo Código"),
+        "on_boarding_token_page_loading_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Vinculando código da máquina..."),
+        "on_boarding_token_page_success_title":
+            MessageLookupByLibrary.simpleMessage(
+                "Código da máquina vinculado com sucesso!"),
+        "on_boarding_token_page_title":
+            MessageLookupByLibrary.simpleMessage("Código da máquina: "),
         "order_check_itens_button_label":
             MessageLookupByLibrary.simpleMessage("Verificar itens"),
-        "order_id": m2,
-        "order_page_title": m3,
-        "order_product_amount_bought": m4,
-        "order_product_card_single_product_value": m5,
-        "order_product_card_total_value": m6,
-        "order_status": m7,
+        "order_id": m3,
+        "order_page_title": m4,
+        "order_product_amount_bought": m5,
+        "order_product_card_single_product_value": m6,
+        "order_product_card_total_value": m7,
+        "order_status": m8,
         "order_status_awaiting_payment":
             MessageLookupByLibrary.simpleMessage("Aguardando pagamento"),
         "order_status_finished":
@@ -205,7 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Processando"),
         "order_status_ready_to_get":
             MessageLookupByLibrary.simpleMessage("Pronto para retirada"),
-        "order_value": m8,
+        "order_value": m9,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras."),
         "phone_page_error_bottomsheet_description":
@@ -234,6 +367,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nome não pode ser vazio"),
         "product_position_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage("Posição não pode ser vazia"),
+        "register_user_button_label":
+            MessageLookupByLibrary.simpleMessage("Registrar usuário"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
         "settings_email_option_title":
             MessageLookupByLibrary.simpleMessage("E-mail"),
@@ -241,6 +376,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nome"),
         "settings_phone_option_title":
             MessageLookupByLibrary.simpleMessage("Telefone"),
+        "settings_signout_option_title":
+            MessageLookupByLibrary.simpleMessage("Deslogar"),
         "settings_title": MessageLookupByLibrary.simpleMessage("Configurações"),
         "setup_machine_error_description": MessageLookupByLibrary.simpleMessage(
             "Não foi possível configurar sua máquina.\nTente novamente. Caso o erro persista,\ncontate nossa equipe."),
@@ -270,6 +407,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Produtos selecionados"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Algo deu errado"),
+        "start_button_label": MessageLookupByLibrary.simpleMessage("Iniciar"),
         "supported_page_loading_tiltle": MessageLookupByLibrary.simpleMessage(
             "Aguarde um momento enquanto conectamos você ao nosso suporte..."),
         "try_again": MessageLookupByLibrary.simpleMessage("Tentar novamente")

@@ -10,7 +10,15 @@ import 'package:grabber/features/inventory/presentation/blocs/positions_availabl
 import 'package:grabber/features/inventory/presentation/pages/add_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/edit_item_page.dart';
 import 'package:grabber/features/inventory/presentation/pages/inventory_page.dart';
-import 'package:grabber/features/navigation/template_page.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/forgotten_password_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/login_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_email_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_password_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_phone_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_start_page.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_success_account_creation.dart';
+import 'package:grabber/features/on_boarding/presentation/pages/onboarding_token_page.dart';
 import 'package:grabber/features/orders/domain/entities/order.dart';
 import 'package:grabber/features/orders/presentation/simulate_order_page.dart';
 import 'package:grabber/features/orders/presentation/single_order_page.dart';
@@ -21,9 +29,12 @@ import 'package:grabber/features/settings/pages/phone_option/blocs/update_phone_
 import 'package:grabber/features/settings/pages/settings_page.dart';
 import 'package:grabber/features/setup_machine/presentation/blocs/setup_status/setup_status_bloc.dart';
 import 'package:grabber/features/setup_machine/presentation/pages/step_final.dart';
+import 'package:grabber/features/splash/splash_page.dart';
 
 import '../../features/help_center/pages/support_page.dart';
 import '../../features/home/presentation/home_page.dart';
+import '../../features/on_boarding/presentation/blocs/forgotten_password_bloc/forgotten_password_cubit.dart';
+import '../../features/on_boarding/presentation/blocs/login_bloc/login_cubit.dart';
 import '../../features/settings/pages/name_option/blocs/name_page/name_page_cubit.dart';
 import '../../features/settings/pages/phone_option/phone_page.dart';
 import '../../features/setup_machine/presentation/pages/step_1.dart';
@@ -37,7 +48,43 @@ abstract class AppRouter {
 
     switch (settings.name) {
       case AppRoutes.initial:
-        page = const TemplatePage();
+        final SessionManagerCubit sessionManagerCubit = getIt.get();
+        sessionManagerCubit.checkAuthenticationStatus();
+        page = const SplashPage();
+        break;
+      case AppRoutes.onBoarding:
+        page = const OnBoardingStartPage();
+        break;
+      case AppRoutes.forgottenPassword:
+        page = BlocProvider(
+          create: (_) => ForgottenPasswordCubit(
+            resetPasswordUsecase: getIt.get(),
+          ),
+          child: const ForgottenPasswordPage(),
+        );
+        break;
+      case AppRoutes.login:
+        page = BlocProvider(
+          create: (_) => LoginCubit(
+            signIn: getIt.get(),
+          ),
+          child: const LoginPage(),
+        );
+        break;
+      case AppRoutes.onBoardingToken:
+        page = const OnBoardingTokenPage();
+        break;
+      case AppRoutes.onBoardingEmail:
+        page = const OnBoardingEmailPage();
+        break;
+      case AppRoutes.onBoardingPassword:
+        page = const OnBoardingPasswordPage();
+        break;
+      case AppRoutes.onBoardingPhone:
+        page = const OnBoardingPhonePage();
+        break;
+      case AppRoutes.onBoardingSuccessAccountCreation:
+        page = const OnboardinSuccessAccountCreationPage();
         break;
       case AppRoutes.setup1:
         page = const Step1();
@@ -148,7 +195,6 @@ abstract class AppRouter {
         page = const DashboardPage();
         break;
       default:
-        print('Deu erro');
         throw UnimplementedError();
     }
 
