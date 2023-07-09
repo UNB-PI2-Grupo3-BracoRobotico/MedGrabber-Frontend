@@ -20,23 +20,26 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt_BR';
 
-  static String m0(name) => "Bem-vindo ${name}";
+  static String m0(email) =>
+      "Nós enviamos um email com as orientações para redefinir sua senha. Por favor cheque a caixa de entrada e spam do email de endereço: ${email}";
 
-  static String m1(amount) => "Quantidade disponível: ${amount}";
+  static String m1(name) => "Bem-vindo ${name}";
 
-  static String m2(id) => "#${id}";
+  static String m2(amount) => "Quantidade disponível: ${amount}";
 
-  static String m3(id) => "Pedido #${id}";
+  static String m3(id) => "#${id}";
 
-  static String m4(amount) => "Quantidade comprada - ${amount}";
+  static String m4(id) => "Pedido #${id}";
 
-  static String m5(price) => "Preço do produto - R\$ ${price}";
+  static String m5(amount) => "Quantidade comprada - ${amount}";
 
-  static String m6(value) => "Valor total - R\$ ${value}";
+  static String m6(price) => "Preço do produto - R\$ ${price}";
 
-  static String m7(status) => "Status - ${status}";
+  static String m7(value) => "Valor total - R\$ ${value}";
 
-  static String m8(value) => "Valor total - R\$ ${value}";
+  static String m8(status) => "Status - ${status}";
+
+  static String m9(value) => "Valor total - R\$ ${value}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -112,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Insira seu email e enviaremos código para resetar sua senha."),
         "forgotten_password_email_not_found":
             MessageLookupByLibrary.simpleMessage("Email não encontrado!"),
+        "forgotten_password_email_sended_description": m0,
         "forgotten_password_email_sended_message":
             MessageLookupByLibrary.simpleMessage(
                 "Por favor verifique sua caixa de mensagem para alteração da senha"),
@@ -164,10 +168,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Simule um pedido"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Gerenciar estoque"),
-        "home_page_welcome_again_title": m0,
+        "home_page_welcome_again_title": m1,
         "informational_card_error_message":
             MessageLookupByLibrary.simpleMessage("Erro, clique aqui"),
-        "inventory_amount_card_information": m1,
+        "inventory_amount_card_information": m2,
         "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
             "Nós não conseguimos carregar o seu inventário.\nPor favor, tente novamente ou contate o suporte."),
         "inventory_error_page_title":
@@ -320,12 +324,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Código da máquina: "),
         "order_check_itens_button_label":
             MessageLookupByLibrary.simpleMessage("Verificar itens"),
-        "order_id": m2,
-        "order_page_title": m3,
-        "order_product_amount_bought": m4,
-        "order_product_card_single_product_value": m5,
-        "order_product_card_total_value": m6,
-        "order_status": m7,
+        "order_id": m3,
+        "order_page_title": m4,
+        "order_product_amount_bought": m5,
+        "order_product_card_single_product_value": m6,
+        "order_product_card_total_value": m7,
+        "order_status": m8,
         "order_status_awaiting_payment":
             MessageLookupByLibrary.simpleMessage("Aguardando pagamento"),
         "order_status_finished":
@@ -334,7 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Processando"),
         "order_status_ready_to_get":
             MessageLookupByLibrary.simpleMessage("Pronto para retirada"),
-        "order_value": m8,
+        "order_value": m9,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modifique o número de telefone/celular da sua sua loja para manter seus clientes informados durante as compras."),
         "phone_page_error_bottomsheet_description":

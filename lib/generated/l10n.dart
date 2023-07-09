@@ -160,6 +160,16 @@ class S {
     );
   }
 
+  /// `We have sended a email with the steps to reset your password. Please check your inbox account on the following email: {email}`
+  String forgotten_password_email_sended_description(Object email) {
+    return Intl.message(
+      'We have sended a email with the steps to reset your password. Please check your inbox account on the following email: $email',
+      name: 'forgotten_password_email_sended_description',
+      desc: '',
+      args: [email],
+    );
+  }
+
   /// `Please check your inbox for password reset instructions.`
   String get forgotten_password_email_sended_message {
     return Intl.message(

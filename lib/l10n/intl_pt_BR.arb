@@ -13,6 +13,7 @@
     "forgotten_password_message": "Esqueceu sua senha?",
     "forgotten_password_title": "Esqueceu sua senha",
     "forgotten_password_email_sended_title": "Email enviado com sucesso!",
+    "forgotten_password_email_sended_description": "Nós enviamos um email com as orientações para redefinir sua senha. Por favor cheque a caixa de entrada e spam do email de endereço: {email}",
     "forgotten_password_email_sended_message": "Por favor verifique sua caixa de mensagem para alteração da senha",
     "forgotten_password_desc": "Insira seu email e enviaremos código para resetar sua senha.",
     "forgotten_password_email_not_found": "Email não encontrado!",

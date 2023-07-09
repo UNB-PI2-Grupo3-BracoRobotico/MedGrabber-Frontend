@@ -12,6 +12,7 @@
     "forgotten_password_title": "Forgotten password",
     "forgotten_password_button_label": "Reset password",
     "forgotten_password_email_sended_title": "Email sent successfully!",
+    "forgotten_password_email_sended_description": "We have sended a email with the steps to reset your password. Please check your inbox account on the following email: {email}",
     "forgotten_password_email_sended_message": "Please check your inbox for password reset instructions.",
     "forgotten_password_desc": "Enter your email and we will send you a password reset link",
     "forgotten_password_email_not_found": "Email Not founded!",

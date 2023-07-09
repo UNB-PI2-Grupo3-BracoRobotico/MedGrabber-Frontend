@@ -20,23 +20,26 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(name) => "Welcome ${name}";
+  static String m0(email) =>
+      "We have sended a email with the steps to reset your password. Please check your inbox account on the following email: ${email}";
 
-  static String m1(amount) => "Amount available: ${amount}";
+  static String m1(name) => "Welcome ${name}";
 
-  static String m2(id) => "#${id}";
+  static String m2(amount) => "Amount available: ${amount}";
 
-  static String m3(id) => "Order #${id}";
+  static String m3(id) => "#${id}";
 
-  static String m4(amount) => "Amount bought - ${amount}";
+  static String m4(id) => "Order #${id}";
 
-  static String m5(price) => "Price of product - ${price} BRLC";
+  static String m5(amount) => "Amount bought - ${amount}";
 
-  static String m6(value) => "Valor total - ${value} BRLC";
+  static String m6(price) => "Price of product - ${price} BRLC";
 
-  static String m7(status) => "Status - ${status}";
+  static String m7(value) => "Valor total - ${value} BRLC";
 
-  static String m8(value) => "Total value - ${value} BRLC";
+  static String m8(status) => "Status - ${status}";
+
+  static String m9(value) => "Total value - ${value} BRLC";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -114,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Enter your email and we will send you a password reset link"),
         "forgotten_password_email_not_found":
             MessageLookupByLibrary.simpleMessage("Email Not founded!"),
+        "forgotten_password_email_sended_description": m0,
         "forgotten_password_email_sended_message":
             MessageLookupByLibrary.simpleMessage(
                 "Please check your inbox for password reset instructions."),
@@ -165,10 +169,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Simulate a order"),
         "home_page_manage_inventory_button_label":
             MessageLookupByLibrary.simpleMessage("Manage inventory"),
-        "home_page_welcome_again_title": m0,
+        "home_page_welcome_again_title": m1,
         "informational_card_error_message":
             MessageLookupByLibrary.simpleMessage("Error, tap here"),
-        "inventory_amount_card_information": m1,
+        "inventory_amount_card_information": m2,
         "inventory_error_page_description": MessageLookupByLibrary.simpleMessage(
             "We couldn\'t load your store itens.\nPlease try again or contact the suport team."),
         "inventory_error_page_title":
@@ -320,12 +324,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Machine Code"),
         "order_check_itens_button_label":
             MessageLookupByLibrary.simpleMessage("Verify items"),
-        "order_id": m2,
-        "order_page_title": m3,
-        "order_product_amount_bought": m4,
-        "order_product_card_single_product_value": m5,
-        "order_product_card_total_value": m6,
-        "order_status": m7,
+        "order_id": m3,
+        "order_page_title": m4,
+        "order_product_amount_bought": m5,
+        "order_product_card_single_product_value": m6,
+        "order_product_card_total_value": m7,
+        "order_status": m8,
         "order_status_awaiting_payment":
             MessageLookupByLibrary.simpleMessage("Awaiting payment"),
         "order_status_finished":
@@ -334,7 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Processing"),
         "order_status_ready_to_get":
             MessageLookupByLibrary.simpleMessage("Ready to take out"),
-        "order_value": m8,
+        "order_value": m9,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modify the number of your store to keep clients informed during their purchases."),
         "phone_page_error_bottomsheet_description":
