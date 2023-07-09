@@ -7,10 +7,12 @@ class BaseSuccessPage extends StatelessWidget {
     super.key,
     this.canPop = true,
     required this.title,
+    this.description = '',
   });
 
   final bool canPop;
   final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -31,20 +33,33 @@ class BaseSuccessPage extends StatelessWidget {
           child: Animate(
             effects: const [FadeEffect()],
             child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const DSIcon(
-                    icon: Icons.check_circle_outline_rounded,
-                    size: kIconSizeXXXL,
-                  ),
-                  const VerticalGap.xxs(),
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.titleLarge,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: kSpacingXS,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const DSIcon(
+                      icon: Icons.check_circle_outline_rounded,
+                      size: kIconSizeXXXL,
+                    ),
+                    const VerticalGap.xxs(),
+                    Text(
+                      title,
+                      style: Theme.of(context).textTheme.titleLarge,
+                      textAlign: TextAlign.center,
+                    ),
+                    if (description.isNotEmpty) ...[
+                      const VerticalGap.xxxs(),
+                      Text(
+                        description,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                        textAlign: TextAlign.center,
+                      ),
+                    ]
+                  ],
+                ),
               ),
             ),
           ),
