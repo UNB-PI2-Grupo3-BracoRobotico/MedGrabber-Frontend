@@ -91,11 +91,9 @@ class _LoginState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).popAndPushNamed(
-                            AppRoutes.forgottenPassword,
-                          );
-                        },
+                        onTap: () => Navigator.of(context).pushNamed(
+                          AppRoutes.forgottenPassword,
+                        ),
                         child: Text(
                           S.current.forgotten_password_message,
                           style: TextStyle(

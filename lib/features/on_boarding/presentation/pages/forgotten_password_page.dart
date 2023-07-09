@@ -19,7 +19,6 @@ class ForgottenPasswordPage extends StatefulWidget {
 
 class _ForgottenState extends State<ForgottenPasswordPage> {
   late final TextEditingController _emailController;
-  bool showErrorMessage = false;
 
   @override
   void initState() {
@@ -35,13 +34,7 @@ class _ForgottenState extends State<ForgottenPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ForgottenPasswordCubit, ForgottenPasswordState>(
-      listener: (context, state) => state.whenOrNull(
-        success: () async {
-          final navigator = Navigator.of(context);
-          navigator.pop();
-        },
-      ),
+    return BlocBuilder<ForgottenPasswordCubit, ForgottenPasswordState>(
       builder: (_, state) {
         return state.when(
           loading: () => BaseLoadingPage(
@@ -49,7 +42,9 @@ class _ForgottenState extends State<ForgottenPasswordPage> {
           ),
           success: () => BaseSuccessPage(
             title: S.current.forgotten_password_email_sended_title,
-            canPop: false,
+            description: S.current.forgotten_password_email_sended_description(
+              _emailController.text,
+            ),
           ),
           error: () => BaseErrorPage(
             title: S.current.forgotten_password_email_not_found,
@@ -61,11 +56,13 @@ class _ForgottenState extends State<ForgottenPasswordPage> {
           ),
           initial: () => BaseOnBoardingPage(
             content: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   S.current.forgotten_password_title,
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
+                const VerticalGap.xxxs(),
                 DSTextField(
                   controller: _emailController,
                   label: S.current.on_boarding_email_page_title,
