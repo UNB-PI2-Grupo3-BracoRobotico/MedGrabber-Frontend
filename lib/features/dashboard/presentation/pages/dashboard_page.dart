@@ -45,7 +45,8 @@ class _DashboardPageState extends State<DashboardPage> {
           titleSpacing: 0,
           title: Padding(
             padding: const EdgeInsets.symmetric(
-                horizontal: kSpacingXS), // Adjust the value as needed
+              horizontal: kSpacingXS,
+            ),
             child: Text(
               S.current.dashboard_title,
               style: Theme.of(context).textTheme.headlineMedium,
