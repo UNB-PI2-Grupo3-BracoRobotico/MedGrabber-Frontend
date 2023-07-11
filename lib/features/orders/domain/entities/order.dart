@@ -18,4 +18,11 @@ class OrderEntity extends Equatable {
   List<Object?> get props => [id, status, products, totalOrderValue];
 }
 
-enum OrderStatus { awaitingPayment, processing, readyToGet, finished }
+enum OrderStatus {
+  awaitingPayment,
+  pending,
+  processing,
+  readyToGet,
+  finished,
+  unkown,
+}
