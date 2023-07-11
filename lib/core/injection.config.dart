@@ -43,26 +43,28 @@ import 'package:grabber/features/on_boarding/infra/auth_api_service.dart'
 import 'package:grabber/features/on_boarding/infra/datasources/auth_datasource_impl.dart'
     as _i15;
 import 'package:grabber/features/on_boarding/infra/modules/auth_api_service_module.dart'
-    as _i33;
+    as _i34;
 import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart'
-    as _i30;
-import 'package:grabber/features/on_boarding/presentation/blocs/sign_up_bloc/signup_cubit.dart'
     as _i31;
+import 'package:grabber/features/on_boarding/presentation/blocs/sign_up_bloc/signup_cubit.dart'
+    as _i32;
 import 'package:grabber/features/orders/data/datasources/order_datasource.dart'
     as _i19;
 import 'package:grabber/features/orders/data/repositories/order_repository_impl.dart'
     as _i22;
 import 'package:grabber/features/orders/domain/repositories/order_repository.dart'
     as _i21;
-import 'package:grabber/features/orders/domain/usecases/get_orders.dart'
+import 'package:grabber/features/orders/domain/usecases/create_order.dart'
     as _i28;
+import 'package:grabber/features/orders/domain/usecases/get_orders.dart'
+    as _i29;
 import 'package:grabber/features/orders/infra/datasources/order_datasource_impl.dart'
     as _i20;
 import 'package:grabber/features/orders/infra/modules/order_api_service_module.dart'
-    as _i32;
+    as _i33;
 import 'package:grabber/features/orders/infra/orders_api_service.dart' as _i8;
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart'
-    as _i29;
+    as _i30;
 import 'package:grabber/features/settings/domain/usecases/update_email.dart'
     as _i9;
 import 'package:grabber/features/settings/domain/usecases/update_phone_number.dart'
@@ -122,15 +124,17 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i26.SignUpImpl(authRepository: gh<_i16.AuthRepository>()));
     gh.factory<_i27.VerifyIfEmailIsInUse>(() => _i27.VerifyIfEmailIsInUseImpl(
         authRepository: gh<_i16.AuthRepository>()));
-    gh.factory<_i28.GetOrders>(
-        () => _i28.GetOrdersImpl(repository: gh<_i21.OrderRepository>()));
-    gh.lazySingleton<_i29.GetOrdersCubit>(
-        () => _i29.GetOrdersCubit(getOrdersUsecase: gh<_i28.GetOrders>()));
-    gh.lazySingleton<_i30.SessionManagerCubit>(() => _i30.SessionManagerCubit(
+    gh.factory<_i28.CreateOrder>(
+        () => _i28.CreateOrderImpl(repository: gh<_i21.OrderRepository>()));
+    gh.factory<_i29.GetOrders>(
+        () => _i29.GetOrdersImpl(repository: gh<_i21.OrderRepository>()));
+    gh.lazySingleton<_i30.GetOrdersCubit>(
+        () => _i30.GetOrdersCubit(getOrdersUsecase: gh<_i29.GetOrders>()));
+    gh.lazySingleton<_i31.SessionManagerCubit>(() => _i31.SessionManagerCubit(
           getSignedUser: gh<_i18.GetSignedUser>(),
           signOut: gh<_i25.SignOut>(),
         ));
-    gh.singleton<_i31.SignupCubit>(_i31.SignupCubit(
+    gh.singleton<_i32.SignupCubit>(_i32.SignupCubit(
       signUp: gh<_i26.SignUp>(),
       validateToken: gh<_i12.ValidateToken>(),
       verifyIfEmailIsInUse: gh<_i27.VerifyIfEmailIsInUse>(),
@@ -141,6 +145,6 @@ extension GetItInjectableX on _i1.GetIt {
 
 class _$DioInstance extends _i3.DioInstance {}
 
-class _$OrderApiServiceModule extends _i32.OrderApiServiceModule {}
+class _$OrderApiServiceModule extends _i33.OrderApiServiceModule {}
 
-class _$AuthApiServiceModule extends _i33.AuthApiServiceModule {}
+class _$AuthApiServiceModule extends _i34.AuthApiServiceModule {}
