@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import 'injection.dart';
+
 @singleton
 class ApiClient {
   final BaseOptions _baseOptions = BaseOptions(
@@ -18,4 +20,10 @@ class ApiClient {
   void _onBaseOptionsUpdate() {
     dioInstance.options = _baseOptions;
   }
+}
+
+@module
+abstract class DioInstance {
+  @Named('dioInstance')
+  Dio get dioInstance => getIt.get<ApiClient>().dioInstance;
 }
