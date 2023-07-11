@@ -169,6 +169,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                   removeFocus();
                                   context.read<ItemManagementCubit>().editItem(
                                         Product(
+                                          id: widget.product.id,
                                           name: _nameController.text,
                                           amount: int.tryParse(
                                                   _amountController.text) ??

@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Product extends Equatable {
+  final String id;
   final String name;
   final int amount;
   final String description;
@@ -9,6 +10,7 @@ class Product extends Equatable {
   final double price;
 
   const Product({
+    required this.id,
     required this.name,
     required this.amount,
     required this.description,
@@ -17,6 +19,7 @@ class Product extends Equatable {
   });
 
   Product copyWith({
+    String? id,
     String? name,
     int? amount,
     String? description,
@@ -24,6 +27,7 @@ class Product extends Equatable {
     double? price,
   }) {
     return Product(
+      id: id ?? this.id,
       name: name ?? this.name,
       amount: amount ?? this.amount,
       description: description ?? this.description,

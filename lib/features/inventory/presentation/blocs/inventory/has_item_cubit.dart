@@ -20,6 +20,7 @@ class HasItemCubit extends Cubit<HasItemState> {
   //TODO(Mauricio): Remove this mock information
   final List<Product> _products = const [
     Product(
+      id: '11111111111111',
       name: 'Prod 1 fkjhf hfjkh fkjhfjkfhkjf hjkfhfjkhfjk',
       amount: 238875975,
       description: 'Description 1 example',
@@ -27,6 +28,7 @@ class HasItemCubit extends Cubit<HasItemState> {
       price: 15.50,
     ),
     Product(
+      id: '111111111111112',
       name: 'Prod 2',
       amount: 24,
       description: 'Description 1 example',
@@ -34,6 +36,7 @@ class HasItemCubit extends Cubit<HasItemState> {
       price: 15.50,
     ),
     Product(
+      id: '1111111111111123',
       name: 'Prod 3',
       amount: 23,
       description: 'Description 1 example',
@@ -41,6 +44,7 @@ class HasItemCubit extends Cubit<HasItemState> {
       price: 15.50,
     ),
     Product(
+      id: '1111111111111124',
       name: 'Prod 4',
       amount: 1,
       description: 'Description 1 example',
@@ -48,6 +52,7 @@ class HasItemCubit extends Cubit<HasItemState> {
       price: 15.50,
     ),
     Product(
+      id: '1111111111111125',
       name: 'Prod 5',
       amount: 1,
       description: 'Description 1 example',

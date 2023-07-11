@@ -16,3 +16,15 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) => ProductModel(
       size: json['size'] as String,
       weight: (json['weight'] as num).toDouble(),
     );
+
+Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'price': instance.price,
+      'quantity': instance.quantity,
+      'position_x': instance.positionX,
+      'position_y': instance.positionY,
+      'size': instance.size,
+      'weight': instance.weight,
+    };

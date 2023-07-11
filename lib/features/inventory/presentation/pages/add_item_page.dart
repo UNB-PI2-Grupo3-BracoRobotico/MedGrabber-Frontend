@@ -12,6 +12,7 @@ import 'package:grabber/features/inventory/presentation/pages/widgets/position_o
 import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
+import 'package:random_string/random_string.dart';
 
 import '../../../../generated/l10n.dart';
 
@@ -163,6 +164,7 @@ class _AddItemPageState extends State<AddItemPage> {
                                       .read<ItemManagementCubit>()
                                       .createItem(
                                         Product(
+                                          id: randomNumeric(15),
                                           name: _nameController.text,
                                           amount: int.tryParse(
                                                   _amountController.text) ??

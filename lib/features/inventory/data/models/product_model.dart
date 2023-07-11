@@ -4,7 +4,6 @@ import 'package:grabber/features/inventory/domain/entities/product.dart';
 part 'product_model.g.dart';
 
 @JsonSerializable(
-  createToJson: false,
   fieldRename: FieldRename.snake,
 )
 class ProductModel {
@@ -31,8 +30,11 @@ class ProductModel {
   factory ProductModel.fromJson(Map<String, dynamic> json) =>
       _$ProductModelFromJson(json);
 
+  Map<String, dynamic> toJson() => _$ProductModelToJson(this);
+
   Product toEntity(ProductModel model) {
     return Product(
+      id: model.id.toString(),
       name: name,
       amount: quantity,
       //TODO(Mauricio): Check with backend
