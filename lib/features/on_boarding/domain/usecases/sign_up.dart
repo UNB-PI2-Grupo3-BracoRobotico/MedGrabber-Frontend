@@ -32,6 +32,8 @@ class SignUpImpl implements SignUp {
     return await _authRepository.signUp(
       email: email,
       password: password,
+      token: token,
+      phoneNumber: phoneNumber,
     );
   }
 }
