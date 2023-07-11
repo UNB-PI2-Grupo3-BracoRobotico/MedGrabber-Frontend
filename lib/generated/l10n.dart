@@ -1570,6 +1570,26 @@ class S {
     );
   }
 
+  /// `Unknown`
+  String get order_status_unknown {
+    return Intl.message(
+      'Unknown',
+      name: 'order_status_unknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get order_status_pending {
+    return Intl.message(
+      'Pending',
+      name: 'order_status_pending',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Total value - {value} BRLC`
   String order_value(Object value) {
     return Intl.message(

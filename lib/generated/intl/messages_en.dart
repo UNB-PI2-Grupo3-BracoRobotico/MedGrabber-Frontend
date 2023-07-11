@@ -334,10 +334,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Awaiting payment"),
         "order_status_finished":
             MessageLookupByLibrary.simpleMessage("Finished"),
+        "order_status_pending": MessageLookupByLibrary.simpleMessage("Pending"),
         "order_status_processing":
             MessageLookupByLibrary.simpleMessage("Processing"),
         "order_status_ready_to_get":
             MessageLookupByLibrary.simpleMessage("Ready to take out"),
+        "order_status_unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "order_value": m9,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modify the number of your store to keep clients informed during their purchases."),

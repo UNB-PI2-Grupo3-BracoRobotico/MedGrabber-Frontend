@@ -177,6 +177,8 @@
     "order_status_processing": "Processing",
     "order_status_ready_to_get": "Ready to take out",
     "order_status_finished": "Finished",
+    "order_status_unknown": "Unknown",
+    "order_status_pending": "Pending",
     "order_value": "Total value - {value} BRLC",
     "order_check_itens_button_label": "Verify items",
 

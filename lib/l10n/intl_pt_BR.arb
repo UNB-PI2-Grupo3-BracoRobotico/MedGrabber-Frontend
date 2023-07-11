@@ -175,6 +175,8 @@
     "order_status_processing": "Processando",
     "order_status_ready_to_get": "Pronto para retirada",
     "order_status_finished": "Finalizado",
+    "order_status_unknown": "Desconhecido",
+    "order_status_pending": "Pendente",
     "order_value": "Valor total - R$ {value}",
     "order_check_itens_button_label": "Verificar itens",
 
