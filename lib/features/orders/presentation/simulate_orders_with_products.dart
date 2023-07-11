@@ -39,7 +39,9 @@ class _SimulateOrderWithProductsState extends State<SimulateOrderWithProducts> {
   void initState() {
     super.initState();
     availableProducts = List.from(widget.productsAvailable);
-    _createOrderCubit = CreateOrderCubit();
+    _createOrderCubit = CreateOrderCubit(
+      createOrderUsecase: getIt.get(),
+    );
   }
 
   @override
@@ -201,8 +203,10 @@ class _SimulateOrderWithProductsState extends State<SimulateOrderWithProducts> {
     }
     if (productOnCart == null) {
       productOnCart = DummyProduct(
+        id: productSelected.id,
         name: productSelected.name,
         amount: 1,
+        price: productSelected.price,
       );
     } else {
       selectedProducts.remove(productOnCart);
