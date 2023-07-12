@@ -6,8 +6,11 @@ import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/home/presentation/widgets/low_storage_items_section.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
+import 'package:grabber/features/on_boarding/domain/usecases/sign_up.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart';
 import 'package:grabber/features/orders/presentation/order_section.dart';
+import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 import 'package:grabber/generated/l10n.dart';
 
@@ -28,7 +31,9 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _positionsAvailableCubit = PositionsAvailableCubit();
+    _positionsAvailableCubit = PositionsAvailableCubit(
+      getAvailablePositions: getIt.get(),
+    );
     _hasItemCubit = getIt.get();
     _positionsAvailableCubit.checkAvailablePositions();
     _hasItemCubit.hasItemRegistered();
@@ -42,60 +47,68 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const GrabberBottomNavigationBar(),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: kSpacingXS,
-          ),
-          child: ListView(
-            children: [
-              Text(
-                //TODO(Mauricio): remove mock message
-                S.current.home_page_welcome_again_title('example name'),
-                style: Theme.of(context).textTheme.headlineLarge,
-                textAlign: TextAlign.left,
-              ),
-              const VerticalGap.xl(),
-              MultiBlocProvider(
-                providers: [
-                  BlocProvider.value(
-                    value: _hasItemCubit,
-                  ),
-                  BlocProvider.value(
-                    value: _positionsAvailableCubit,
-                  ),
-                ],
-                child: const _FirstRowInformationCards(),
-              ),
-              const VerticalGap.xxs(),
-              DSButton.primary(
-                onPressed: () => Navigator.of(context).pushNamed(
-                  AppRoutes.inventory,
+    return BlocBuilder<SessionManagerCubit, SessionManagerState>(
+      bloc: getIt.get(),
+      builder: (context, state) {
+        return state.maybeWhen(
+          orElse: BaseLoadingPage.new,
+          authenticated: (user) => Scaffold(
+            bottomNavigationBar: const GrabberBottomNavigationBar(),
+            body: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: kSpacingXS,
                 ),
-                label: S.current.home_page_manage_inventory_button_label,
-              ),
-              const VerticalGap.xl(),
-              BlocBuilder<HasItemCubit, HasItemState>(
-                bloc: _hasItemCubit,
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    orElse: () => const SizedBox.shrink(),
-                    hasItemRegisters: (products) => LowStorageItemsSection(
-                      products: _getLowAmountItens(products),
+                child: ListView(
+                  children: [
+                    Text(
+                      S.current.home_page_welcome_again_title(user.storeName),
+                      style: Theme.of(context).textTheme.headlineLarge,
+                      textAlign: TextAlign.left,
                     ),
-                  );
-                },
+                    const VerticalGap.xl(),
+                    MultiBlocProvider(
+                      providers: [
+                        BlocProvider.value(
+                          value: _hasItemCubit,
+                        ),
+                        BlocProvider.value(
+                          value: _positionsAvailableCubit,
+                        ),
+                      ],
+                      child: const _FirstRowInformationCards(),
+                    ),
+                    const VerticalGap.xxs(),
+                    DSButton.primary(
+                      onPressed: () => Navigator.of(context).pushNamed(
+                        AppRoutes.inventory,
+                      ),
+                      label: S.current.home_page_manage_inventory_button_label,
+                    ),
+                    const VerticalGap.xl(),
+                    BlocBuilder<HasItemCubit, HasItemState>(
+                      bloc: _hasItemCubit,
+                      builder: (context, state) {
+                        return state.maybeWhen(
+                          orElse: () => const SizedBox.shrink(),
+                          hasItemRegisters: (products) =>
+                              LowStorageItemsSection(
+                            products: _getLowAmountItens(products),
+                          ),
+                        );
+                      },
+                    ),
+                    BlocProvider.value(
+                      value: getIt.get<GetOrdersCubit>()..getOrders(),
+                      child: const OrderSection(),
+                    ),
+                  ],
+                ),
               ),
-              BlocProvider.value(
-                value: getIt.get<GetOrdersCubit>()..getOrders(),
-                child: const OrderSection(),
-              ),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 
