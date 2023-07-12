@@ -107,27 +107,42 @@ abstract class AppRouter {
         page = const SettingsPage();
         break;
       case AppRoutes.settingsName:
+        if (settings.arguments == null) {
+          throw Exception('Missing arguments');
+        }
         page = BlocProvider(
           create: (_) => NamePageCubit(
             updateStoreName: getIt.get(),
           ),
-          child: const NamePage(),
+          child: NamePage(
+            storeName: settings.arguments! as String,
+          ),
         );
         break;
       case AppRoutes.settingsPhone:
+        if (settings.arguments == null) {
+          throw Exception('Missing arguments');
+        }
         page = BlocProvider(
           create: (_) => UpdatePhoneCubit(
             updatePhoneNumber: getIt.get(),
           ),
-          child: const PhonePage(),
+          child: PhonePage(
+            phoneNumber: settings.arguments! as String,
+          ),
         );
         break;
       case AppRoutes.settingsMail:
+        if (settings.arguments == null) {
+          throw Exception('Missing arguments');
+        }
         page = BlocProvider(
           create: (_) => MailPageCubit(
             updateEmail: getIt.get(),
           ),
-          child: const MailPage(),
+          child: MailPage(
+            email: settings.arguments! as String,
+          ),
         );
         break;
       case AppRoutes.inventory:
@@ -137,11 +152,15 @@ abstract class AppRouter {
         page = MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (_) => ItemManagementCubit(),
+              create: (_) => ItemManagementCubit(
+                editProduct: getIt.get(),
+                createItemUsecase: getIt.get(),
+              ),
             ),
             BlocProvider(
-              create: (_) =>
-                  PositionsAvailableCubit()..checkAvailablePositions(),
+              create: (_) => PositionsAvailableCubit(
+                getAvailablePositions: getIt.get(),
+              )..checkAvailablePositions(),
             ),
           ],
           child: const AddItemPage(),
@@ -155,11 +174,15 @@ abstract class AppRouter {
         page = MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (_) => ItemManagementCubit(),
+              create: (_) => ItemManagementCubit(
+                editProduct: getIt.get(),
+                createItemUsecase: getIt.get(),
+              ),
             ),
             BlocProvider(
-              create: (_) =>
-                  PositionsAvailableCubit()..checkAvailablePositions(),
+              create: (_) => PositionsAvailableCubit(
+                getAvailablePositions: getIt.get(),
+              )..checkAvailablePositions(),
             ),
           ],
           child: EditItemPage(
