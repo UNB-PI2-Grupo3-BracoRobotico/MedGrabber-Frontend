@@ -1290,6 +1290,36 @@ class S {
     );
   }
 
+  /// `Price`
+  String get add_item_price_option_label {
+    return Intl.message(
+      'Price',
+      name: 'add_item_price_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size`
+  String get add_item_size_option_label {
+    return Intl.message(
+      'Size',
+      name: 'add_item_size_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight in kg`
+  String get add_item_weight_option_label {
+    return Intl.message(
+      'Weight in kg',
+      name: 'add_item_weight_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Description`
   String get add_item_description_option_label {
     return Intl.message(
@@ -1375,6 +1405,36 @@ class S {
     return Intl.message(
       'Description cannot be empty',
       name: 'product_description_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight cannot be empty`
+  String get product_weight_cannot_be_empty_error_text {
+    return Intl.message(
+      'Weight cannot be empty',
+      name: 'product_weight_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size cannot be empty`
+  String get product_size_cannot_be_empty_error_text {
+    return Intl.message(
+      'Size cannot be empty',
+      name: 'product_size_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price cannot be empty`
+  String get product_price_cannot_be_empty_error_text {
+    return Intl.message(
+      'Price cannot be empty',
+      name: 'product_price_cannot_be_empty_error_text',
       desc: '',
       args: [],
     );

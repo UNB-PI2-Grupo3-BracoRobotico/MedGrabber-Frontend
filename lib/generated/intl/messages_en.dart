@@ -58,8 +58,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_item_page_title": MessageLookupByLibrary.simpleMessage("Add Item"),
         "add_item_position_option_label":
             MessageLookupByLibrary.simpleMessage("Position"),
+        "add_item_price_option_label":
+            MessageLookupByLibrary.simpleMessage("Price"),
+        "add_item_size_option_label":
+            MessageLookupByLibrary.simpleMessage("Size"),
         "add_item_success_title":
             MessageLookupByLibrary.simpleMessage("Item created!"),
+        "add_item_weight_option_label":
+            MessageLookupByLibrary.simpleMessage("Weight in kg"),
         "bottom_navigation_dashboard_option":
             MessageLookupByLibrary.simpleMessage("Dashboard"),
         "bottom_navigation_help_option":
@@ -368,6 +374,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Name cannot be empty"),
         "product_position_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage("Position cannot be empty"),
+        "product_price_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Price cannot be empty"),
+        "product_size_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Size cannot be empty"),
+        "product_weight_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Weight cannot be empty"),
         "register_user_button_label":
             MessageLookupByLibrary.simpleMessage("Register user"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
