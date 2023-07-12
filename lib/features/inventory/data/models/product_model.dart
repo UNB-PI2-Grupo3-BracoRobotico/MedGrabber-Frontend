@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:grabber/features/inventory/data/mappers/product_size_mapper.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 
 part 'product_model.g.dart';
@@ -7,24 +8,28 @@ part 'product_model.g.dart';
   fieldRename: FieldRename.snake,
 )
 class ProductModel {
-  final int id;
-  final String name;
-  final double price;
-  final int quantity;
+  final int productId;
+  final String productName;
+  final double productPrice;
+  final String productDescription;
+  final int amount;
   final int positionX;
   final int positionY;
   final String size;
-  final double weight;
+  final double peso;
+  final String modifiedByUser;
 
   const ProductModel({
-    required this.id,
-    required this.name,
-    required this.price,
-    required this.quantity,
+    required this.productId,
+    required this.productName,
+    required this.productPrice,
+    required this.productDescription,
+    required this.amount,
     required this.positionX,
     required this.positionY,
     required this.size,
-    required this.weight,
+    required this.peso,
+    required this.modifiedByUser,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) =>
@@ -32,15 +37,17 @@ class ProductModel {
 
   Map<String, dynamic> toJson() => _$ProductModelToJson(this);
 
-  Product toEntity(ProductModel model) {
+  Product toEntity() {
     return Product(
-      id: model.id.toString(),
-      name: name,
-      amount: quantity,
-      //TODO(Mauricio): Check with backend
-      description: 'Sem descrição',
+      id: productId.toString(),
+      name: productName,
+      amount: amount,
+      description: productDescription,
       position: '${positionX.toString()}${positionY.toString()}',
-      price: price,
+      price: productPrice,
+      weigth: peso,
+      size: ProductSizeMapper.toEntity(size),
+      modifiedByUser: modifiedByUser,
     );
   }
 }

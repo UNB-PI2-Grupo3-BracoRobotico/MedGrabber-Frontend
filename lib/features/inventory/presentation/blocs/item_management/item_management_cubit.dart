@@ -1,5 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:grabber/features/inventory/data/mappers/product_size_mapper.dart';
+import 'package:grabber/features/inventory/domain/usecases/create_item.dart';
+import 'package:grabber/features/inventory/domain/usecases/edit_item.dart';
 import 'package:grabber/generated/l10n.dart';
 
 import '../../../domain/entities/product.dart';
@@ -8,8 +11,12 @@ part 'item_management_cubit.freezed.dart';
 part 'item_management_state.dart';
 
 class ItemManagementCubit extends Cubit<ItemManagementState> {
-  ItemManagementCubit()
-      : super(
+  final EditProduct editProduct;
+  final CreateItem createItemUsecase;
+  ItemManagementCubit({
+    required this.editProduct,
+    required this.createItemUsecase,
+  }) : super(
           const ItemManagementState.initial(),
         );
 
@@ -20,16 +27,16 @@ class ItemManagementCubit extends Cubit<ItemManagementState> {
       emit(ItemManagementState.error(errors: errors));
       return;
     }
-
-    //TODO(Mauricio): Add usecases here
-    // create item
-    await Future.delayed(
-      const Duration(
-        seconds: 2,
-      ),
+    final failureOrProductCreated = await createItemUsecase(
+      product: product,
     );
     emit(
-      const ItemManagementState.success(),
+      failureOrProductCreated.fold(
+        ItemManagementState.success,
+        (_) => ItemManagementState.error(
+          errors: errors,
+        ),
+      ),
     );
   }
 
@@ -40,16 +47,14 @@ class ItemManagementCubit extends Cubit<ItemManagementState> {
       emit(ItemManagementState.error(errors: errors));
       return;
     }
-
-    //TODO(Mauricio): Add usecases here
-    // create item
-    await Future.delayed(
-      const Duration(
-        seconds: 2,
-      ),
-    );
+    final failureOrSuccess = await editProduct(product: product);
     emit(
-      const ItemManagementState.success(),
+      failureOrSuccess.fold(
+        ItemManagementState.success,
+        (_) => ItemManagementState.error(
+          errors: errors,
+        ),
+      ),
     );
   }
 
@@ -68,6 +73,15 @@ class ItemManagementCubit extends Cubit<ItemManagementState> {
     if (product.description.isEmpty) {
       errors['description'] =
           S.current.product_description_cannot_be_empty_error_text;
+    }
+    if (product.price == -1) {
+      errors['price'] = S.current.product_weight_cannot_be_empty_error_text;
+    }
+    if (product.weigth == -1) {
+      errors['weight'] = S.current.product_weight_cannot_be_empty_error_text;
+    }
+    if (ProductSizeMapper.toModel(product.size).isEmpty) {
+      errors['size'] = S.current.product_size_cannot_be_empty_error_text;
     }
     return errors;
   }

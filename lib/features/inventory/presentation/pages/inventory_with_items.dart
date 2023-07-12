@@ -64,12 +64,18 @@ class _InventoryWithItemsState extends State<InventoryWithItems> {
               Expanded(
                 child: ListView.separated(
                   itemCount: products.length,
-                  itemBuilder: (_, index) => ItemCard(
-                    product: products.elementAt(index),
-                    onDeleteTap: () {
-                      _deleteProduct(index);
-                    },
-                  ),
+                  itemBuilder: (_, index) {
+                    final product = products.elementAt(index);
+                    return ItemCard(
+                      product: product,
+                      onDeleteTap: () {
+                        _deleteProduct(
+                          index,
+                          product.id,
+                        );
+                      },
+                    );
+                  },
                   separatorBuilder: (_, __) => const VerticalGap.xxxs(),
                 ),
               ),
@@ -80,10 +86,15 @@ class _InventoryWithItemsState extends State<InventoryWithItems> {
     );
   }
 
-  void _deleteProduct(int index) {
-    getIt.get<DeleteItem>().call();
-    setState(() {
-      products.removeAt(index);
-    });
+  Future<void> _deleteProduct(int index, String productid) async {
+    final productDeletedOrFailure = await getIt.get<DeleteItem>().call(
+          productId: productid,
+        );
+    productDeletedOrFailure.fold(
+      () => setState(() {
+        products.removeAt(index);
+      }),
+      (_) => null,
+    );
   }
 }
