@@ -14,39 +14,37 @@ class SupportPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: BlocBuilder<SessionManagerCubit, SessionManagerState>(
-        bloc: getIt.get(),
-        builder: (context, state) {
-          return state.maybeWhen(
-            orElse: BaseLoadingPage.new,
-            authenticated: (user) => Scaffold(
-              appBar: AppBar(
-                backgroundColor: kPrimary,
-                leading: DSIconButton(
-                  icon: const DSIcon(
-                    icon: Icons.chevron_left_rounded,
-                  ),
-                  onTap: Navigator.of(context).pop,
+    return BlocBuilder<SessionManagerCubit, SessionManagerState>(
+      bloc: getIt.get(),
+      builder: (context, state) {
+        return state.maybeWhen(
+          orElse: BaseLoadingPage.new,
+          authenticated: (user) => Scaffold(
+            appBar: AppBar(
+              backgroundColor: kPrimary,
+              leading: DSIconButton(
+                icon: const DSIcon(
+                  icon: Icons.chevron_left_rounded,
                 ),
+                onTap: Navigator.of(context).pop,
               ),
-              body: SafeArea(
-                child: Tawk(
-                  directChatLink:
-                      'https://tawk.to/chat/6498d81d94cf5d49dc5fcb73/1h3qgocv6',
-                  visitor: TawkVisitor(
-                    name: user.storeName,
-                    email: user.email,
-                  ),
-                  placeholder: BaseLoadingPage(
-                    title: S.current.supported_page_loading_tiltle,
-                  ),
+            ),
+            body: SafeArea(
+              child: Tawk(
+                directChatLink:
+                    'https://tawk.to/chat/6498d81d94cf5d49dc5fcb73/1h3qgocv6',
+                visitor: TawkVisitor(
+                  name: user.storeName,
+                  email: user.email,
+                ),
+                placeholder: BaseLoadingPage(
+                  title: S.current.supported_page_loading_tiltle,
                 ),
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }
