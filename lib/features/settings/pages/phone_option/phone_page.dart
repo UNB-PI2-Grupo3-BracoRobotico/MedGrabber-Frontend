@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,10 +13,16 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:phone_number/phone_number.dart';
 import 'package:styled_text/styled_text.dart';
 
+import '../../../../core/injection.dart';
 import '../../../../generated/l10n.dart';
+import '../../../on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 
 class PhonePage extends StatefulWidget {
-  const PhonePage({super.key});
+  const PhonePage({
+    super.key,
+    required this.phoneNumber,
+  });
+  final String phoneNumber;
 
   @override
   State<PhonePage> createState() => _PhonePageState();
@@ -78,6 +82,7 @@ class _PhonePageState extends State<PhonePage> {
             content: Column(
               children: [
                 DSTextField(
+                  initialValue: widget.phoneNumber,
                   controller: _controller,
                   label: S.current.phone_page_title,
                   onChanged: (val) {
@@ -125,7 +130,11 @@ class _PhonePageState extends State<PhonePage> {
     final updatePhoneCubit = context.read<UpdatePhoneCubit>();
     final phoneIsValid = await _phoneNumberIsValid(rawPhoneNumber);
     if (phoneIsValid) {
-      updatePhoneCubit.updatePhoneNumber(rawPhoneNumber);
+      final userId = getIt.get<SessionManagerCubit>().state.maybeWhen(
+            orElse: () => '',
+            authenticated: (user) => user.id,
+          );
+      updatePhoneCubit.updatePhoneNumber(rawPhoneNumber, userId);
     } else {
       showModalBottomSheet(
         context: context,

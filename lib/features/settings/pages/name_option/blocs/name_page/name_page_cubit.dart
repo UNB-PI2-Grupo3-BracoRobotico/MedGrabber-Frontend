@@ -12,9 +12,15 @@ class NamePageCubit extends Cubit<NamePageState> {
   })  : _updateStoreName = updateStoreName,
         super(const NamePageState.initial());
 
-  Future<void> updateStoreName(String newStoreName) async {
+  Future<void> updateStoreName(
+    String newStoreName,
+    String userId,
+  ) async {
     emit(const NamePageState.loading());
-    final sucessOrFailureUpdate = await _updateStoreName.call(newStoreName);
+    final sucessOrFailureUpdate = await _updateStoreName.call(
+      newStoreName,
+      userId,
+    );
     emit(sucessOrFailureUpdate.fold(
       NamePageState.success,
       (_) => const NamePageState.error(),
