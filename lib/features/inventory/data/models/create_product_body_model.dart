@@ -14,7 +14,7 @@ class CreateProductBodyModel {
   final String size;
   final int positionX;
   final int positionY;
-  final int productAmount;
+  final int amount;
   final String modifiedByUser;
 
   const CreateProductBodyModel({
@@ -25,7 +25,7 @@ class CreateProductBodyModel {
     required this.size,
     required this.positionX,
     required this.positionY,
-    required this.productAmount,
+    required this.amount,
     required this.modifiedByUser,
   });
 

@@ -203,6 +203,7 @@ class _AddItemPageState extends State<AddItemPage> {
                                   ],
                                 ),
                               ),
+                              const VerticalGap.nano(),
                               DSButton.primary(
                                 onPressed: () {
                                   removeFocus();
@@ -239,6 +240,7 @@ class _AddItemPageState extends State<AddItemPage> {
                                 },
                                 label: S.current.add_item_button_label,
                               ),
+                              const VerticalGap.xxxs(),
                             ],
                           ),
                         ),

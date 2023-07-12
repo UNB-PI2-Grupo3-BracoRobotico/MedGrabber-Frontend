@@ -91,7 +91,7 @@ class InventoryRepositoryImpl implements InventoryRepository {
       ),
       positionX: int.parse(product.position[0]),
       positionY: int.parse(product.position[1]),
-      productAmount: product.amount,
+      amount: product.amount,
       modifiedByUser: product.modifiedByUser,
     );
   }

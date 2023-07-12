@@ -16,7 +16,7 @@ CreateProductBodyModel _$CreateProductBodyModelFromJson(
       size: json['size'] as String,
       positionX: json['position_x'] as int,
       positionY: json['position_y'] as int,
-      productAmount: json['product_amount'] as int,
+      amount: json['amount'] as int,
       modifiedByUser: json['modified_by_user'] as String,
     );
 
@@ -30,6 +30,6 @@ Map<String, dynamic> _$CreateProductBodyModelToJson(
       'size': instance.size,
       'position_x': instance.positionX,
       'position_y': instance.positionY,
-      'product_amount': instance.productAmount,
+      'amount': instance.amount,
       'modified_by_user': instance.modifiedByUser,
     };

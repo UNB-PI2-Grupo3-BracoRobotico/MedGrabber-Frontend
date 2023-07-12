@@ -60,7 +60,7 @@ class _InventoryWithItemsState extends State<InventoryWithItems> {
           ),
           child: Column(
             children: [
-              const VerticalGap.xl(),
+              const VerticalGap.xxxs(),
               Expanded(
                 child: ListView.separated(
                   itemCount: products.length,

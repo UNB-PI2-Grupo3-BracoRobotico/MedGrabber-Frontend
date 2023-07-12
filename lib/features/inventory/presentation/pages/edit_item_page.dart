@@ -164,6 +164,8 @@ class _EditItemPageState extends State<EditItemPage> {
                                     ),
                                     const VerticalGap.nano(),
                                     DSTextField(
+                                      initialValue:
+                                          widget.product.price.toString(),
                                       label:
                                           S.current.add_item_price_option_label,
                                       controller: _priceController,
@@ -187,6 +189,8 @@ class _EditItemPageState extends State<EditItemPage> {
                                     ),
                                     const VerticalGap.nano(),
                                     DSTextField(
+                                      initialValue:
+                                          widget.product.weigth.toString(),
                                       label: S
                                           .current.add_item_weight_option_label,
                                       controller: _weightController,
@@ -212,6 +216,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                   ],
                                 ),
                               ),
+                              const VerticalGap.nano(),
                               DSButton.primary(
                                 onPressed: () {
                                   removeFocus();
@@ -248,6 +253,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                 },
                                 label: S.current.edit_item_button_label,
                               ),
+                              const VerticalGap.xxxs(),
                             ],
                           ),
                         ),
