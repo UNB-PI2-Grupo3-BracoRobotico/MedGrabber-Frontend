@@ -11,7 +11,7 @@ abstract class AuthRepository {
     required String phoneNumber,
   });
 
-  Future<Option<Failure>> signIn({
+  Future<Either<Failure, Stockist>> signIn({
     required String email,
     required String password,
   });
@@ -24,7 +24,7 @@ abstract class AuthRepository {
     required String email,
   });
 
-  Option<Stockist> getSignedUser();
+  Future<Either<Failure, Stockist>> getSignedUser();
 
   Future<void> signOutUser();
 }

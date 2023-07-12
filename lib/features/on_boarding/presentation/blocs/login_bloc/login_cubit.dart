@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:grabber/features/on_boarding/domain/entities/stockist.dart';
 import 'package:grabber/features/on_boarding/domain/usecases/sign_in.dart';
 
 part 'login_state.dart';
@@ -20,8 +21,10 @@ class LoginCubit extends Cubit<LoginState> {
     );
     emit(
       successOrFailure.fold(
-        LoginState.success,
         (_) => const LoginState.error(),
+        (user) => LoginState.success(
+          user: user,
+        ),
       ),
     );
   }

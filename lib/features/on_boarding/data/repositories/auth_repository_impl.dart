@@ -36,14 +36,11 @@ class AuthRepositoryImpl implements AuthRepository {
       //TODO(Mauricio): Check with backend to stop mocking this informations
       await datasource.createUser(
         user: UserCreationBodyModel(
-          username: 'Usuário teste $randomInt',
-          passwordHash: password,
+          firebaseUid: firebaseUser.user!.uid,
           email: email,
-          storeName: 'Nome de loja mockado',
-          personalName: 'Nome próprio mockado',
+          storeName: 'Nome de loja mockado $randomInt',
           machineSerialNumber: token,
           phoneNumber: phoneNumber,
-          userRole: 'stock_manager',
         ),
       );
       return Right(
@@ -56,37 +53,34 @@ class AuthRepositoryImpl implements AuthRepository {
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == "email-already-in-use") {
-        //TODO(Mauricio): Check if user is created at backend - If not try to create it
-        final stockist = getSignedUser();
-        final Stockist user = stockist.fold(
-          Stockist.createEmptyInstance,
-          (user) => user,
-        );
-        if (user.id.isNotEmpty) {
-          final userId = stockist.fold(
-            () => '',
-            (user) => user.id,
-          );
-          await datasource.createUser(
-            user: UserCreationBodyModel(
-              username: 'Usuário teste $randomInt',
-              passwordHash: password,
-              email: email,
-              storeName: 'Nome de loja mockado',
-              personalName: 'Nome próprio mockado',
-              machineSerialNumber: token,
-              phoneNumber: phoneNumber,
-              userRole: 'stock_manager',
-            ),
-          );
-          return Right(
-            Stockist(
-              id: userId,
-              email: email,
-              phoneNumber: phoneNumber,
-              storeName: 'Nome de loja mockado $randomInt',
-            ),
-          );
+        final user = _firebaseAuth.currentUser;
+        if (user != null) {
+          try {
+            await datasource.createUser(
+              user: UserCreationBodyModel(
+                firebaseUid: user.uid,
+                email: email,
+                storeName: 'Nome de loja $randomInt',
+                machineSerialNumber: token,
+                phoneNumber: phoneNumber,
+              ),
+            );
+            return Right(
+              Stockist(
+                id: user.uid,
+                email: email,
+                phoneNumber: phoneNumber,
+                storeName: 'Nome de loja $randomInt',
+              ),
+            );
+          } catch (_) {
+            return Left(
+              UnhandledFailure(
+                message: S.current
+                    .on_boarding_email_page_error_bottomsheet_description,
+              ),
+            );
+          }
         }
         return Left(
           UnhandledFailure(
@@ -106,17 +100,21 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Option<Failure>> signIn({
+  Future<Either<Failure, Stockist>> signIn({
     required String email,
     required String password,
   }) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
+      final userOrFailure = await getSignedUser();
+      return userOrFailure.fold(
+        (_) => const Left(UnhandledFailure()),
+        Right.new,
+      );
     } catch (e) {
-      return some(FirebaseUserNotFoundedFailure());
+      return Left(FirebaseUserNotFoundedFailure());
     }
-    return none();
   }
 
   @override
@@ -148,20 +146,27 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Option<Stockist> getSignedUser() {
-    final firebaseUser = _firebaseAuth.currentUser;
-    if (firebaseUser != null) {
-      //TODO(Mauricio): get user info on db and populate here
-      return Some(
-        Stockist(
+  Future<Either<Failure, Stockist>> getSignedUser() async {
+    try {
+      final firebaseUser = _firebaseAuth.currentUser;
+      if (firebaseUser != null) {
+        final userModel = await datasource.getSignedUser(
+          userId: firebaseUser.uid,
+        );
+        final user = Stockist(
           id: firebaseUser.uid,
-          email: '',
-          storeName: '',
-          phoneNumber: '',
-        ),
+          email: userModel.email,
+          storeName: userModel.storeName,
+          phoneNumber: userModel.phoneNumber,
+        );
+        return Right(user);
+      }
+      return const Left(
+        UnhandledFailure(message: "User not authorized,"),
       );
+    } catch (e) {
+      return Left(UnhandledFailure(message: e.toString()));
     }
-    return const None();
   }
 
   @override

@@ -1,11 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:grabber/core/failures.dart';
+import 'package:grabber/features/on_boarding/domain/entities/stockist.dart';
 import 'package:injectable/injectable.dart';
 
 import '../repository/auth_repository.dart';
 
 abstract class SignIn {
-  Future<Option<Failure>> call({
+  Future<Either<Failure, Stockist>> call({
     required String email,
     required String password,
   });
@@ -20,7 +21,7 @@ class SignInImpl implements SignIn {
   }) : _authRepository = authRepository;
 
   @override
-  Future<Option<Failure>> call({
+  Future<Either<Failure, Stockist>> call({
     required String email,
     required String password,
   }) async {

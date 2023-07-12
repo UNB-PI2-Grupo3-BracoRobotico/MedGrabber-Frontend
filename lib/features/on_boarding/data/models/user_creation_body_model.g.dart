@@ -9,25 +9,19 @@ part of 'user_creation_body_model.dart';
 UserCreationBodyModel _$UserCreationBodyModelFromJson(
         Map<String, dynamic> json) =>
     UserCreationBodyModel(
-      username: json['username'] as String,
-      passwordHash: json['password_hash'] as String,
+      firebaseUid: json['firebase_uid'] as String,
       email: json['email'] as String,
       storeName: json['store_name'] as String,
-      personalName: json['personal_name'] as String,
       machineSerialNumber: json['machine_serial_number'] as String,
       phoneNumber: json['phone_number'] as String,
-      userRole: json['user_role'] as String,
     );
 
 Map<String, dynamic> _$UserCreationBodyModelToJson(
         UserCreationBodyModel instance) =>
     <String, dynamic>{
-      'username': instance.username,
-      'password_hash': instance.passwordHash,
+      'firebase_uid': instance.firebaseUid,
       'email': instance.email,
       'store_name': instance.storeName,
-      'personal_name': instance.personalName,
       'machine_serial_number': instance.machineSerialNumber,
       'phone_number': instance.phoneNumber,
-      'user_role': instance.userRole,
     };

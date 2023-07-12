@@ -2,6 +2,8 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
+import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/on_boarding_base_page.dart';
 import 'package:grabber/features/on_boarding/presentation/pages/widgets/page_error.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
@@ -41,8 +43,11 @@ class _LoginState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) => state.whenOrNull(
-        success: () async {
+        success: (user) async {
           final navigator = Navigator.of(context);
+          getIt.get<SessionManagerCubit>().authenticateSession(
+                user,
+              );
           await Future.delayed(
             const Duration(milliseconds: 1500),
           );
@@ -56,7 +61,7 @@ class _LoginState extends State<LoginPage> {
           loading: () => BaseLoadingPage(
             title: S.current.email_page_loading_title,
           ),
-          success: () => BaseSuccessPage(
+          success: (_) => BaseSuccessPage(
             title: S.current.login_success_message,
             canPop: false,
           ),
