@@ -23,6 +23,7 @@ class OrderDatasourceImpl implements OrderDatasource {
   @override
   Future<void> createOrder({required CreateOrderBodyModel body}) async {
     try {
+      print(body.toJson().toString());
       await apiService.createOrder(
         model: body,
       );

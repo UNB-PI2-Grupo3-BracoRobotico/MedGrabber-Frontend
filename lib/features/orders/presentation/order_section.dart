@@ -88,12 +88,6 @@ class OrderSection extends StatelessWidget {
                   ),
                   label: S.current.home_order_simulate_order_button_label,
                 ),
-                const VerticalGap.quarck(),
-                DSButton.primary(
-                  //TODO(Mauricio): Implement method
-                  onPressed: () {},
-                  label: S.current.home_order_section_loaded_button_label,
-                ),
                 const VerticalGap.xxxs(),
               ],
             ),

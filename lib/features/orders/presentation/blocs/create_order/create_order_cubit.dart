@@ -14,10 +14,14 @@ class CreateOrderCubit extends Cubit<CreateOrderState> {
           const CreateOrderState.initial(),
         );
 
-  Future<void> createOrder(List<DummyProduct> products) async {
+  Future<void> createOrder(
+    List<DummyProduct> products,
+    String userId,
+  ) async {
     emit(const CreateOrderState.loading());
     final orderCreatedOrFailure = await createOrderUsecase(
       products: products,
+      userId: userId,
     );
 
     emit(

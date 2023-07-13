@@ -8,6 +8,7 @@ import '../repositories/order_repository.dart';
 abstract class CreateOrder {
   Future<Option<Failure>> call({
     required List<DummyProduct> products,
+    required String userId,
   });
 }
 
@@ -22,9 +23,11 @@ class CreateOrderImpl implements CreateOrder {
   @override
   Future<Option<Failure>> call({
     required List<DummyProduct> products,
+    required String userId,
   }) async {
     return await repository.createOrder(
       products: products,
+      userId: userId,
     );
   }
 }

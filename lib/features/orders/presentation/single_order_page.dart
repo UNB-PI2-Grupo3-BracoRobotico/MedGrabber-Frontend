@@ -1,9 +1,9 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
+import 'package:grabber/features/orders/domain/entities/dummy_product.dart';
 import 'package:grabber/features/orders/domain/entities/order.dart';
 
 import '../../../generated/l10n.dart';
-import '../../inventory/domain/entities/product.dart';
 
 part 'widgets/order_overview_card.dart';
 part 'widgets/order_product_card.dart';

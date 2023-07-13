@@ -1,8 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:grabber/features/orders/data/models/order_product_model.dart';
+import 'package:grabber/features/orders/domain/entities/dummy_product.dart';
 import 'package:grabber/features/orders/domain/entities/order.dart';
-
-import '../../../inventory/data/models/product_model.dart';
-import '../../../inventory/domain/entities/product.dart';
 
 part 'order_model.g.dart';
 
@@ -11,16 +10,22 @@ part 'order_model.g.dart';
   fieldRename: FieldRename.snake,
 )
 class OrderModel {
-  final int id;
-  final double totalPrice;
-  final String status;
-  final List<ProductModel> orderItems;
+  final int customerOrderId;
+  final String userId;
+  final String email;
+  final String orderDate;
+  final double totalCost;
+  final String orderStatus;
+  final List<OrderProductModel> products;
 
   const OrderModel({
-    required this.id,
-    required this.totalPrice,
-    required this.status,
-    required this.orderItems,
+    required this.customerOrderId,
+    required this.userId,
+    required this.email,
+    required this.orderDate,
+    required this.totalCost,
+    required this.orderStatus,
+    required this.products,
   });
 
   factory OrderModel.fromJson(Map<String, dynamic> json) =>
@@ -28,10 +33,10 @@ class OrderModel {
 
   OrderEntity toEntity(OrderModel model) {
     return OrderEntity(
-      id: id.toString(),
-      status: _mapOrderStatus(status),
-      products: _mapProducts(model.orderItems),
-      totalOrderValue: model.totalPrice,
+      id: customerOrderId.toString(),
+      status: _mapOrderStatus(orderStatus),
+      products: _mapProducts(model.products),
+      totalOrderValue: model.totalCost,
     );
   }
 
@@ -52,12 +57,15 @@ class OrderModel {
     }
   }
 
-  List<Product> _mapProducts(List<ProductModel> model) {
-    List<Product> products = [];
+  List<DummyProduct> _mapProducts(List<OrderProductModel> model) {
+    List<DummyProduct> products = [];
     for (final productModel in model) {
       products.add(
-        productModel.toEntity(
-          productModel,
+        DummyProduct(
+          id: productModel.productId.toString(),
+          name: productModel.productName,
+          price: productModel.productPrice,
+          amount: productModel.productAmount,
         ),
       );
     }
