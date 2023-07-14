@@ -6,7 +6,7 @@ import 'injection.dart';
 @singleton
 class ApiClient {
   final BaseOptions _baseOptions = BaseOptions(
-    baseUrl: "http://localhost:8000",
+    baseUrl: "http://192.168.149.68:8000",
     connectTimeout: const Duration(milliseconds: 10000),
     receiveTimeout: const Duration(milliseconds: 10000),
   );
