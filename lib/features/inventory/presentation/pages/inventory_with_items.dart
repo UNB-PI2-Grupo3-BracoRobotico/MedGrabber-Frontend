@@ -4,7 +4,9 @@ import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/domain/usecases/delete_item.dart';
+import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/pages/widgets/item_card.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 
 import '../../../../generated/l10n.dart';
 
@@ -89,11 +91,18 @@ class _InventoryWithItemsState extends State<InventoryWithItems> {
   Future<void> _deleteProduct(int index, String productid) async {
     final productDeletedOrFailure = await getIt.get<DeleteItem>().call(
           productId: productid,
+          userId: getIt.get<SessionManagerCubit>().state.maybeWhen(
+                orElse: () => '',
+                authenticated: (user) => user.id,
+              ),
         );
     productDeletedOrFailure.fold(
-      () => setState(() {
-        products.removeAt(index);
-      }),
+      () {
+        getIt.get<HasItemCubit>().hasItemRegistered();
+        setState(() {
+          products.removeAt(index);
+        });
+      },
       (_) => null,
     );
   }

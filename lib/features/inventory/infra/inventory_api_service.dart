@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart' hide Headers;
 import 'package:grabber/features/inventory/data/models/available_positions_response_model.dart';
 import 'package:grabber/features/inventory/data/models/create_product_body_model.dart';
+import 'package:grabber/features/inventory/data/models/delete_item_body_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../data/models/get_products_response_model.dart';
@@ -35,6 +36,7 @@ abstract class InventoryApiService {
   @Headers({'Content-type': 'application/json'})
   Future<void> deleteProduct({
     @Path("productId") required String productId,
+    @Body() required DeleteItemBodyModel body,
   });
 
   @GET("/availablePositions")

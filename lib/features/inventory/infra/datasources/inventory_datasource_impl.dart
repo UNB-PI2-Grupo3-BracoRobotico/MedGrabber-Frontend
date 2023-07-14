@@ -1,5 +1,6 @@
 import 'package:grabber/features/inventory/data/datasources/inventory_datasource.dart';
 import 'package:grabber/features/inventory/data/models/create_product_body_model.dart';
+import 'package:grabber/features/inventory/data/models/delete_item_body_model.dart';
 import 'package:grabber/features/inventory/data/models/product_model.dart';
 import 'package:grabber/features/inventory/infra/inventory_api_service.dart';
 import 'package:injectable/injectable.dart';
@@ -55,10 +56,12 @@ class InventoryDatasourceImpl implements InventoryDatasource {
   @override
   Future<void> deleteProduct({
     required String productId,
+    required DeleteItemBodyModel userId,
   }) async {
     try {
       await apiService.deleteProduct(
         productId: productId,
+        body: userId,
       );
     } catch (_) {
       rethrow;

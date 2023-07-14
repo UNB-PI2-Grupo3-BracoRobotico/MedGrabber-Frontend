@@ -33,7 +33,7 @@ import 'package:grabber/features/inventory/infra/datasources/inventory_datasourc
 import 'package:grabber/features/inventory/infra/inventory_api_service.dart'
     as _i5;
 import 'package:grabber/features/inventory/infra/modules/inventory_api_service_modules.dart'
-    as _i49;
+    as _i47;
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart'
     as _i31;
 import 'package:grabber/features/on_boarding/data/datasources/auth_datasource.dart'
@@ -61,7 +61,7 @@ import 'package:grabber/features/on_boarding/infra/auth_api_service.dart'
 import 'package:grabber/features/on_boarding/infra/datasources/auth_datasource_impl.dart'
     as _i22;
 import 'package:grabber/features/on_boarding/infra/modules/auth_api_service_module.dart'
-    as _i48;
+    as _i49;
 import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart'
     as _i44;
 import 'package:grabber/features/on_boarding/presentation/blocs/sign_up_bloc/signup_cubit.dart'
@@ -79,7 +79,7 @@ import 'package:grabber/features/orders/domain/usecases/get_orders.dart'
 import 'package:grabber/features/orders/infra/datasources/order_datasource_impl.dart'
     as _i33;
 import 'package:grabber/features/orders/infra/modules/order_api_service_module.dart'
-    as _i47;
+    as _i48;
 import 'package:grabber/features/orders/infra/orders_api_service.dart' as _i10;
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart'
     as _i43;
@@ -202,8 +202,8 @@ class _$DioInstance extends _i3.DioInstance {}
 
 class _$SettingsApiServiceModule extends _i46.SettingsApiServiceModule {}
 
-class _$OrderApiServiceModule extends _i47.OrderApiServiceModule {}
+class _$InventoryApiServiceModule extends _i47.InventoryApiServiceModule {}
 
-class _$AuthApiServiceModule extends _i48.AuthApiServiceModule {}
+class _$OrderApiServiceModule extends _i48.OrderApiServiceModule {}
 
-class _$InventoryApiServiceModule extends _i49.InventoryApiServiceModule {}
+class _$AuthApiServiceModule extends _i49.AuthApiServiceModule {}

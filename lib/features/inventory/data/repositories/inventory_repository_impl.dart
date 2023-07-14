@@ -3,6 +3,7 @@ import 'package:grabber/core/failures.dart';
 import 'package:grabber/features/inventory/data/datasources/inventory_datasource.dart';
 import 'package:grabber/features/inventory/data/mappers/product_size_mapper.dart';
 import 'package:grabber/features/inventory/data/models/create_product_body_model.dart';
+import 'package:grabber/features/inventory/data/models/delete_item_body_model.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/domain/repositories/inventory_repository.dart';
 import 'package:injectable/injectable.dart';
@@ -59,10 +60,14 @@ class InventoryRepositoryImpl implements InventoryRepository {
   @override
   Future<Option<Failure>> deleteProduct({
     required String productId,
+    required String userId,
   }) async {
     try {
       await datasource.deleteProduct(
         productId: productId,
+        userId: DeleteItemBodyModel(
+          modifiedByUser: userId,
+        ),
       );
       return const None();
     } catch (e) {

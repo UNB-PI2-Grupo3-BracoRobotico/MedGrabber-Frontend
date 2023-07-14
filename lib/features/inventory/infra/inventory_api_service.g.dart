@@ -93,12 +93,16 @@ class _InventoryApiService implements InventoryApiService {
   }
 
   @override
-  Future<void> deleteProduct({required String productId}) async {
+  Future<void> deleteProduct({
+    required String productId,
+    required DeleteItemBodyModel body,
+  }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Content-type': 'application/json'};
     _headers.removeWhere((k, v) => v == null);
-    final Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'DELETE',
       headers: _headers,

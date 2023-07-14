@@ -1,4 +1,5 @@
 import 'package:grabber/features/inventory/data/models/create_product_body_model.dart';
+import 'package:grabber/features/inventory/data/models/delete_item_body_model.dart';
 
 import '../models/product_model.dart';
 
@@ -16,6 +17,7 @@ abstract class InventoryDatasource {
 
   Future<void> deleteProduct({
     required String productId,
+    required DeleteItemBodyModel userId,
   });
 
   Future<List<String>> getAvailablePositions();

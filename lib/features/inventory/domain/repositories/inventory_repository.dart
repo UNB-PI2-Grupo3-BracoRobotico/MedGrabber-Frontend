@@ -16,6 +16,7 @@ abstract class InventoryRepository {
 
   Future<Option<Failure>> deleteProduct({
     required String productId,
+    required String userId,
   });
 
   Future<Either<Failure, List<String>>> getAvailablePositions();
