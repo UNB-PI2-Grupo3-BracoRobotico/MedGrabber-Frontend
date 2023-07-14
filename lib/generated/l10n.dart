@@ -430,6 +430,16 @@ class S {
     );
   }
 
+  /// `IP connection`
+  String get settings_connection_option_title {
+    return Intl.message(
+      'IP connection',
+      name: 'settings_connection_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get settings_email_option_title {
     return Intl.message(

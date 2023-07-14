@@ -67,6 +67,14 @@ class SettingsPage extends StatelessWidget {
                     ),
                     const VerticalGap.xxs(),
                     OptionTile(
+                      title: S.current.settings_connection_option_title,
+                      icon: Icons.admin_panel_settings_rounded,
+                      onTap: () => Navigator.of(context).pushNamed(
+                        AppRoutes.editConnection,
+                      ),
+                    ),
+                    const VerticalGap.xxs(),
+                    OptionTile(
                       title: S.current.settings_signout_option_title,
                       icon: Icons.logout_rounded,
                       onTap: () =>

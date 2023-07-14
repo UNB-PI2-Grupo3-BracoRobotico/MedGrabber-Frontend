@@ -44,6 +44,7 @@
     "settings_phone_option_title": "Telefone",
     "settings_email_option_title": "E-mail",
     "settings_signout_option_title": "Deslogar",
+    "settings_connection_option_title": "Conexão IP",
 
     "name_page_title": "Nome da Loja",
     "name_page_description": "Modifique o nome da loja que seus clientes irão enxergar durante as compras.\nSeu nome deve seguir algumas <bold>regras:\n• Não pode começar com números\n• Deve ter ao máximo 25 caracteres</bold>",

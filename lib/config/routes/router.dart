@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/address_connection/address_connection_page.dart';
 import 'package:grabber/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:grabber/features/help_center/pages/help_center_page.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
@@ -216,6 +217,9 @@ abstract class AppRouter {
       case AppRoutes.dashboard:
         animation = AnimationByRoute.instant;
         page = const DashboardPage();
+        break;
+      case AppRoutes.editConnection:
+        page = const AddressConnectionPage();
         break;
       default:
         throw UnimplementedError();

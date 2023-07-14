@@ -386,6 +386,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_user_button_label":
             MessageLookupByLibrary.simpleMessage("Registrar usuário"),
         "save": MessageLookupByLibrary.simpleMessage("Salvar"),
+        "settings_connection_option_title":
+            MessageLookupByLibrary.simpleMessage("Conexão IP"),
         "settings_email_option_title":
             MessageLookupByLibrary.simpleMessage("E-mail"),
         "settings_name_option_title":

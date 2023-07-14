@@ -385,6 +385,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),
+        "settings_connection_option_title":
+            MessageLookupByLibrary.simpleMessage("IP connection"),
         "settings_email_option_title":
             MessageLookupByLibrary.simpleMessage("Email"),
         "settings_name_option_title":

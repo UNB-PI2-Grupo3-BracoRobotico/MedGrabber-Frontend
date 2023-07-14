@@ -5,8 +5,9 @@ import 'injection.dart';
 
 @singleton
 class ApiClient {
+  String ipAddress = 'filipe.local';
   final BaseOptions _baseOptions = BaseOptions(
-    baseUrl: "http://192.168.149.68:8000",
+    baseUrl: "http://filipe.local:8000",
     connectTimeout: const Duration(milliseconds: 10000),
     receiveTimeout: const Duration(milliseconds: 10000),
   );
@@ -14,10 +15,11 @@ class ApiClient {
   final Dio dioInstance = Dio();
 
   ApiClient() {
-    _onBaseOptionsUpdate();
+    onBaseOptionsUpdate(ipAddress);
   }
 
-  void _onBaseOptionsUpdate() {
+  void onBaseOptionsUpdate(String ipAddress) {
+    _baseOptions.baseUrl = "http://$ipAddress:8000";
     dioInstance.options = _baseOptions;
   }
 }

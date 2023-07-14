@@ -6,7 +6,6 @@ import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/home/presentation/widgets/low_storage_items_section.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
-import 'package:grabber/features/on_boarding/domain/usecases/sign_up.dart';
 import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart';
 import 'package:grabber/features/orders/presentation/order_section.dart';

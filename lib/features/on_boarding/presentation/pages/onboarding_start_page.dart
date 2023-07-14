@@ -11,6 +11,14 @@ class OnBoardingStartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context).pushNamed(
+          AppRoutes.editConnection,
+        ),
+        child: const DSIcon(
+          icon: Icons.admin_panel_settings_rounded,
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
