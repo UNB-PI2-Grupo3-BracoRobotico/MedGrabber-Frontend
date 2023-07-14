@@ -12,8 +12,6 @@ class OrderProductModel {
   final String productDescription;
   final double productPrice;
   final int productAmount;
-  final int positionX;
-  final int positionY;
 
   const OrderProductModel({
     required this.productId,
@@ -21,8 +19,6 @@ class OrderProductModel {
     required this.productDescription,
     required this.productPrice,
     required this.productAmount,
-    required this.positionX,
-    required this.positionY,
   });
 
   factory OrderProductModel.fromJson(Map<String, dynamic> json) =>

@@ -13,6 +13,4 @@ OrderProductModel _$OrderProductModelFromJson(Map<String, dynamic> json) =>
       productDescription: json['product_description'] as String,
       productPrice: (json['product_price'] as num).toDouble(),
       productAmount: json['product_amount'] as int,
-      positionX: json['position_x'] as int,
-      positionY: json['position_y'] as int,
     );
