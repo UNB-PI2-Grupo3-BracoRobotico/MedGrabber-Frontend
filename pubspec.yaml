@@ -60,6 +60,8 @@ dependencies:
   dio: ^5.2.1+1
   retrofit: ^4.0.1
   random_string: ^2.3.1
+  path_provider: ^2.0.15
+  share_extend: ^2.0.0
 
 dev_dependencies:
   flutter_test:
