@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:grabber/core/api_client.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/settings/widgets/base_option_page.dart';
-import 'package:styled_text/styled_text.dart';
 
 import '../../../../generated/l10n.dart';
 
@@ -36,32 +35,21 @@ class _AddressConnectionPageState extends State<AddressConnectionPage> {
   @override
   Widget build(BuildContext context) {
     return BaseOptionPage(
-      title: S.current.name_page_title,
+      title: S.current.settings_connection_option_title,
       content: Column(
         children: [
           DSTextField(
             controller: _controller,
             errorText: errorText,
-            label: S.current.name_page_title,
+            label: S.current.ip_connection_label,
             onChanged: (val) {
               final result = val.isNotEmpty;
               if (result) {
                 _activateOrDeactivateButton(val);
               }
             },
-            maxLength: 25,
           ),
           const VerticalGap.xxxs(),
-          StyledText(
-            text: S.current.name_page_description,
-            textAlign: TextAlign.justify,
-            style: Theme.of(context).textTheme.bodyMedium,
-            tags: {
-              "bold": StyledTextTag(
-                style: Theme.of(context).textTheme.bodyLarge,
-              )
-            },
-          ),
         ],
       ),
       buttonEnabled: canContinue,
