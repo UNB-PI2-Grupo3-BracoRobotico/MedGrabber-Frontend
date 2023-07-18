@@ -61,6 +61,10 @@ class OrderOverviewCard extends StatelessWidget {
         return S.current.order_status_processing;
       case OrderStatus.readyToGet:
         return S.current.order_status_ready_to_get;
+      case OrderStatus.unkown:
+        return S.current.order_status_unknown;
+      case OrderStatus.pending:
+        return S.current.order_status_pending;
     }
   }
 }

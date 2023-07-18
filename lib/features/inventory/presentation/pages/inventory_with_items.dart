@@ -4,7 +4,9 @@ import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/domain/usecases/delete_item.dart';
+import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/pages/widgets/item_card.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 
 import '../../../../generated/l10n.dart';
 
@@ -60,16 +62,22 @@ class _InventoryWithItemsState extends State<InventoryWithItems> {
           ),
           child: Column(
             children: [
-              const VerticalGap.xl(),
+              const VerticalGap.xxxs(),
               Expanded(
                 child: ListView.separated(
                   itemCount: products.length,
-                  itemBuilder: (_, index) => ItemCard(
-                    product: products.elementAt(index),
-                    onDeleteTap: () {
-                      _deleteProduct(index);
-                    },
-                  ),
+                  itemBuilder: (_, index) {
+                    final product = products.elementAt(index);
+                    return ItemCard(
+                      product: product,
+                      onDeleteTap: () {
+                        _deleteProduct(
+                          index,
+                          product.id,
+                        );
+                      },
+                    );
+                  },
                   separatorBuilder: (_, __) => const VerticalGap.xxxs(),
                 ),
               ),
@@ -80,10 +88,22 @@ class _InventoryWithItemsState extends State<InventoryWithItems> {
     );
   }
 
-  void _deleteProduct(int index) {
-    getIt.get<DeleteItem>().call();
-    setState(() {
-      products.removeAt(index);
-    });
+  Future<void> _deleteProduct(int index, String productid) async {
+    final productDeletedOrFailure = await getIt.get<DeleteItem>().call(
+          productId: productid,
+          userId: getIt.get<SessionManagerCubit>().state.maybeWhen(
+                orElse: () => '',
+                authenticated: (user) => user.id,
+              ),
+        );
+    productDeletedOrFailure.fold(
+      () {
+        getIt.get<HasItemCubit>().hasItemRegistered();
+        setState(() {
+          products.removeAt(index);
+        });
+      },
+      (_) => null,
+    );
   }
 }

@@ -430,6 +430,16 @@ class S {
     );
   }
 
+  /// `IP connection`
+  String get settings_connection_option_title {
+    return Intl.message(
+      'IP connection',
+      name: 'settings_connection_option_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get settings_email_option_title {
     return Intl.message(
@@ -1290,6 +1300,36 @@ class S {
     );
   }
 
+  /// `Price`
+  String get add_item_price_option_label {
+    return Intl.message(
+      'Price',
+      name: 'add_item_price_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size`
+  String get add_item_size_option_label {
+    return Intl.message(
+      'Size',
+      name: 'add_item_size_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight in kg`
+  String get add_item_weight_option_label {
+    return Intl.message(
+      'Weight in kg',
+      name: 'add_item_weight_option_label',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Description`
   String get add_item_description_option_label {
     return Intl.message(
@@ -1375,6 +1415,36 @@ class S {
     return Intl.message(
       'Description cannot be empty',
       name: 'product_description_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight cannot be empty`
+  String get product_weight_cannot_be_empty_error_text {
+    return Intl.message(
+      'Weight cannot be empty',
+      name: 'product_weight_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size cannot be empty`
+  String get product_size_cannot_be_empty_error_text {
+    return Intl.message(
+      'Size cannot be empty',
+      name: 'product_size_cannot_be_empty_error_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price cannot be empty`
+  String get product_price_cannot_be_empty_error_text {
+    return Intl.message(
+      'Price cannot be empty',
+      name: 'product_price_cannot_be_empty_error_text',
       desc: '',
       args: [],
     );
@@ -1565,6 +1635,26 @@ class S {
     return Intl.message(
       'Finished',
       name: 'order_status_finished',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown`
+  String get order_status_unknown {
+    return Intl.message(
+      'Unknown',
+      name: 'order_status_unknown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get order_status_pending {
+    return Intl.message(
+      'Pending',
+      name: 'order_status_pending',
       desc: '',
       args: [],
     );
@@ -1865,6 +1955,16 @@ class S {
     return Intl.message(
       'Something went wrong. We couldn\'t create your order, try again or contact our support team.',
       name: 'simulate_order_create_order_error_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `IP Address`
+  String get ip_connection_label {
+    return Intl.message(
+      'IP Address',
+      name: 'ip_connection_label',
       desc: '',
       args: [],
     );

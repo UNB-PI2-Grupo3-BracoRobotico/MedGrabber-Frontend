@@ -1,15 +1,11 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grabber/config/routes/routes.dart';
 import 'package:grabber/core/injection.dart';
 import 'package:grabber/features/dashboard/presentation/widgets/history_request_section.dart';
-import 'package:grabber/features/home/presentation/widgets/low_storage_items_section.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
-import 'package:grabber/features/orders/domain/entities/order.dart';
 import 'package:grabber/features/orders/presentation/blocs/get_orders/get_orders_cubit.dart';
-import 'package:grabber/features/orders/presentation/order_section.dart';
 import 'package:grabber/features/shared/bottom_navigation_bar.dart';
 import 'package:grabber/generated/l10n.dart';
 
@@ -30,7 +26,9 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   void initState() {
     super.initState();
-    _positionsAvailableCubit = PositionsAvailableCubit();
+    _positionsAvailableCubit = PositionsAvailableCubit(
+      getAvailablePositions: getIt.get(),
+    );
     _hasItemCubit = getIt.get<HasItemCubit>();
     _positionsAvailableCubit.checkAvailablePositions();
     _hasItemCubit.hasItemRegistered();

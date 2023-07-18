@@ -2,22 +2,31 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/failures.dart';
+import '../repositories/settings_repository.dart';
 
 abstract class UpdatePhoneNumber {
   Future<Option<Failure>> call(
     String phoneNumber,
+    String userId,
   );
 }
 
 @Injectable(as: UpdatePhoneNumber)
 class UpdatePhoneNumberImpl implements UpdatePhoneNumber {
-  // final SettingsRepository repository;
+  final SettingsRepository repository;
 
-  UpdatePhoneNumberImpl();
+  const UpdatePhoneNumberImpl({
+    required this.repository,
+  });
 
   @override
-  Future<Option<Failure>> call(String phoneNumber) async {
-    //TODO(Mauricio): Integrate with settings repository
-    return const None();
+  Future<Option<Failure>> call(
+    String phoneNumber,
+    String userId,
+  ) async {
+    return await repository.updatePhoneNumber(
+      phoneNumber: phoneNumber,
+      userId: userId,
+    );
   }
 }

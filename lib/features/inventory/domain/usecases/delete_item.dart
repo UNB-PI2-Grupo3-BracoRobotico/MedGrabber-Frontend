@@ -1,23 +1,32 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:grabber/core/failures.dart';
 import 'package:injectable/injectable.dart';
 
+import '../repositories/inventory_repository.dart';
+
 abstract class DeleteItem {
-  Future<Option<Failure>> call();
+  Future<Option<Failure>> call({
+    required String productId,
+    required String userId,
+  });
 }
 
 @Injectable(as: DeleteItem)
 class DeleteItemImpl implements DeleteItem {
+  final InventoryRepository repository;
+
+  const DeleteItemImpl({
+    required this.repository,
+  });
+
   @override
-  Future<Option<Failure>> call() async {
-    await Future.delayed(const Duration(seconds: 2));
-    log(
-      'Item excluído(mock)',
-      name: 'Delete item',
+  Future<Option<Failure>> call({
+    required String productId,
+    required String userId,
+  }) async {
+    return await repository.deleteProduct(
+      productId: productId,
+      userId: userId,
     );
-    //TODO(Mauricio): Implement integration with data layer
-    return const None();
   }
 }

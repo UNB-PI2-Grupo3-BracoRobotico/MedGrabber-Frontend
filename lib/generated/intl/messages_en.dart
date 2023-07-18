@@ -58,8 +58,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "add_item_page_title": MessageLookupByLibrary.simpleMessage("Add Item"),
         "add_item_position_option_label":
             MessageLookupByLibrary.simpleMessage("Position"),
+        "add_item_price_option_label":
+            MessageLookupByLibrary.simpleMessage("Price"),
+        "add_item_size_option_label":
+            MessageLookupByLibrary.simpleMessage("Size"),
         "add_item_success_title":
             MessageLookupByLibrary.simpleMessage("Item created!"),
+        "add_item_weight_option_label":
+            MessageLookupByLibrary.simpleMessage("Weight in kg"),
         "bottom_navigation_dashboard_option":
             MessageLookupByLibrary.simpleMessage("Dashboard"),
         "bottom_navigation_help_option":
@@ -186,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!"),
         "inventory_page_title":
             MessageLookupByLibrary.simpleMessage("Inventory"),
+        "ip_connection_label":
+            MessageLookupByLibrary.simpleMessage("IP Address"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_pattern_error_description":
             MessageLookupByLibrary.simpleMessage("Incorrect e-mail format!"),
@@ -334,10 +342,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Awaiting payment"),
         "order_status_finished":
             MessageLookupByLibrary.simpleMessage("Finished"),
+        "order_status_pending": MessageLookupByLibrary.simpleMessage("Pending"),
         "order_status_processing":
             MessageLookupByLibrary.simpleMessage("Processing"),
         "order_status_ready_to_get":
             MessageLookupByLibrary.simpleMessage("Ready to take out"),
+        "order_status_unknown": MessageLookupByLibrary.simpleMessage("Unknown"),
         "order_value": m9,
         "phone_page_description": MessageLookupByLibrary.simpleMessage(
             "Modify the number of your store to keep clients informed during their purchases."),
@@ -366,11 +376,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Name cannot be empty"),
         "product_position_cannot_be_empty_error_text":
             MessageLookupByLibrary.simpleMessage("Position cannot be empty"),
+        "product_price_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Price cannot be empty"),
+        "product_size_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Size cannot be empty"),
+        "product_weight_cannot_be_empty_error_text":
+            MessageLookupByLibrary.simpleMessage("Weight cannot be empty"),
         "register_user_button_label":
             MessageLookupByLibrary.simpleMessage("Register user"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "settings_address_option_title":
             MessageLookupByLibrary.simpleMessage("Address"),
+        "settings_connection_option_title":
+            MessageLookupByLibrary.simpleMessage("IP connection"),
         "settings_email_option_title":
             MessageLookupByLibrary.simpleMessage("Email"),
         "settings_name_option_title":

@@ -5,11 +5,13 @@ import '../../../../core/failures.dart';
 
 abstract class AuthRepository {
   Future<Either<Failure, Stockist>> signUp({
+    required String token,
     required String email,
     required String password,
+    required String phoneNumber,
   });
 
-  Future<Option<Failure>> signIn({
+  Future<Either<Failure, Stockist>> signIn({
     required String email,
     required String password,
   });
@@ -22,7 +24,7 @@ abstract class AuthRepository {
     required String email,
   });
 
-  Option<Stockist> getSignedUser();
+  Future<Either<Failure, Stockist>> getSignedUser();
 
   Future<void> signOutUser();
 }

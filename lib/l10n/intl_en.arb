@@ -45,6 +45,7 @@
     "settings_phone_option_title": "Phone",
     "settings_address_option_title": "Address",
     "settings_signout_option_title": "Sign out",
+    "settings_connection_option_title": "IP connection",
 
     "settings_email_option_title": "Email",
 
@@ -145,6 +146,9 @@
     "add_item_position_option_label": "Position",
     "add_item_name_option_label": "Name",
     "add_item_amount_option_label": "Amount",
+    "add_item_price_option_label": "Price",
+    "add_item_size_option_label": "Size",
+    "add_item_weight_option_label": "Weight in kg",
     "add_item_description_option_label": "Description",
     "add_item_button_label": "Adicionar",
     "add_item_success_title": "Item created!",
@@ -154,6 +158,9 @@
     "product_name_cannot_be_empty_error_text": "Name cannot be empty",
     "product_amount_cannot_be_empty_error_text": "Amount cannot be empty",
     "product_description_cannot_be_empty_error_text": "Description cannot be empty",
+    "product_weight_cannot_be_empty_error_text": "Weight cannot be empty",
+    "product_size_cannot_be_empty_error_text": "Size cannot be empty",
+    "product_price_cannot_be_empty_error_text": "Price cannot be empty",
 
     "edit_item_page_title": "Edit item",
     "edit_item_loading_title": "Editing item",
@@ -177,6 +184,8 @@
     "order_status_processing": "Processing",
     "order_status_ready_to_get": "Ready to take out",
     "order_status_finished": "Finished",
+    "order_status_unknown": "Unknown",
+    "order_status_pending": "Pending",
     "order_value": "Total value - {value} BRLC",
     "order_check_itens_button_label": "Verify items",
 
@@ -212,5 +221,7 @@
     "simulate_order_finish_order_button_title": "Finish order",
     "simulate_order_create_order_loading_title": "Creating order...",
     "simulate_order_create_order_success_title": "Order created!",
-    "simulate_order_create_order_error_description": "Something went wrong. We couldn't create your order, try again or contact our support team."
+    "simulate_order_create_order_error_description": "Something went wrong. We couldn't create your order, try again or contact our support team.",
+
+    "ip_connection_label": "IP Address"
 }

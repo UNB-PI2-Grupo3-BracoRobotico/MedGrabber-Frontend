@@ -10,10 +10,16 @@ import 'package:grabber/features/shared/base_success_page.dart';
 import 'package:grabber/utils/email_utils.dart';
 import 'package:styled_text/styled_text.dart';
 
+import '../../../../core/injection.dart';
 import '../../../../generated/l10n.dart';
+import '../../../on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 
 class MailPage extends StatefulWidget {
-  const MailPage({super.key});
+  const MailPage({
+    super.key,
+    required this.email,
+  });
+  final String email;
 
   @override
   State<MailPage> createState() => _MailPageState();
@@ -73,6 +79,7 @@ class _MailPageState extends State<MailPage> {
             content: Column(
               children: [
                 DSTextField(
+                  initialValue: widget.email,
                   controller: _controller,
                   errorText: errorText,
                   label: S.current.mail_page_title,
@@ -105,7 +112,14 @@ class _MailPageState extends State<MailPage> {
   }
 
   void _updateStoreName(String newEmail) {
-    context.read<MailPageCubit>().updateUserMail(newEmail);
+    final userId = getIt.get<SessionManagerCubit>().state.maybeWhen(
+          orElse: () => '',
+          authenticated: (user) => user.id,
+        );
+    context.read<MailPageCubit>().updateUserMail(
+          newEmail,
+          userId,
+        );
   }
 
   void _resetUpdateProcess() {

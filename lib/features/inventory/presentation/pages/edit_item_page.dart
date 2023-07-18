@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/inventory/data/mappers/product_size_mapper.dart';
 import 'package:grabber/features/inventory/domain/entities/product.dart';
 import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/item_management/item_management_cubit.dart';
 import 'package:grabber/features/inventory/presentation/blocs/positions_available/positions_available_cubit.dart';
 import 'package:grabber/features/inventory/presentation/pages/widgets/description_textfield.dart';
 import 'package:grabber/features/inventory/presentation/pages/widgets/position_options_button.dart';
+import 'package:grabber/features/inventory/presentation/pages/widgets/size_option_button.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
 import 'package:grabber/features/shared/base_loading_page.dart';
 import 'package:grabber/features/shared/base_success_page.dart';
@@ -29,8 +32,11 @@ class EditItemPage extends StatefulWidget {
 class _EditItemPageState extends State<EditItemPage> {
   late TextEditingController _nameController;
   late TextEditingController _amountController;
+  late TextEditingController _weightController;
+  late TextEditingController _priceController;
   late TextEditingController _descriptionController;
   String position = '';
+  String size = '';
   Map<String, String> errors = {};
 
   @override
@@ -38,6 +44,8 @@ class _EditItemPageState extends State<EditItemPage> {
     super.initState();
     _nameController = TextEditingController();
     _amountController = TextEditingController();
+    _weightController = TextEditingController();
+    _priceController = TextEditingController();
     _descriptionController = TextEditingController();
   }
 
@@ -45,6 +53,8 @@ class _EditItemPageState extends State<EditItemPage> {
   void dispose() {
     _nameController.dispose();
     _amountController.dispose();
+    _weightController.dispose();
+    _priceController.dispose();
     _descriptionController.dispose();
     super.dispose();
   }
@@ -153,6 +163,48 @@ class _EditItemPageState extends State<EditItemPage> {
                                       ],
                                     ),
                                     const VerticalGap.nano(),
+                                    DSTextField(
+                                      initialValue:
+                                          widget.product.price.toString(),
+                                      label:
+                                          S.current.add_item_price_option_label,
+                                      controller: _priceController,
+                                      errorText: errors['price'],
+                                      keyboardType:
+                                          const TextInputType.numberWithOptions(
+                                              decimal: true),
+                                      inputFormatters: [
+                                        FilteringTextInputFormatter.allow(
+                                          RegExp(r'^\d+\.?\d{0,2}'),
+                                        ),
+                                      ],
+                                    ),
+                                    const VerticalGap.nano(),
+                                    SizeOptionButton(
+                                      currentSize: ProductSizeMapper.toModel(
+                                        widget.product.size,
+                                      ),
+                                      onChanged: _updateSize,
+                                      errorText: errors['size'],
+                                    ),
+                                    const VerticalGap.nano(),
+                                    DSTextField(
+                                      initialValue:
+                                          widget.product.weigth.toString(),
+                                      label: S
+                                          .current.add_item_weight_option_label,
+                                      controller: _weightController,
+                                      errorText: errors['weight'],
+                                      keyboardType:
+                                          const TextInputType.numberWithOptions(
+                                              decimal: true),
+                                      inputFormatters: [
+                                        FilteringTextInputFormatter.allow(
+                                          RegExp(r'^\d+\.?\d{0,2}'),
+                                        ),
+                                      ],
+                                    ),
+                                    const VerticalGap.nano(),
                                     DescriptionTextField(
                                       initialValue: widget.product.description,
                                       label: S.current
@@ -164,27 +216,44 @@ class _EditItemPageState extends State<EditItemPage> {
                                   ],
                                 ),
                               ),
+                              const VerticalGap.nano(),
                               DSButton.primary(
                                 onPressed: () {
                                   removeFocus();
                                   context.read<ItemManagementCubit>().editItem(
                                         Product(
+                                          id: widget.product.id,
                                           name: _nameController.text,
                                           amount: int.tryParse(
                                                   _amountController.text) ??
+                                              -1,
+                                          weigth: double.tryParse(
+                                                  _weightController.text) ??
                                               -1,
                                           description:
                                               _descriptionController.text,
                                           position: position.isEmpty
                                               ? widget.product.position
                                               : position,
-                                          //TODO(Mauricio): Add textfield for price
-                                          price: 0.0,
+                                          price: double.tryParse(
+                                                  _weightController.text) ??
+                                              -1,
+                                          size:
+                                              ProductSizeMapper.toEntity(size),
+                                          modifiedByUser: getIt
+                                              .get<SessionManagerCubit>()
+                                              .state
+                                              .maybeWhen(
+                                                authenticated: (user) =>
+                                                    user.id,
+                                                orElse: () => '',
+                                              ),
                                         ),
                                       );
                                 },
                                 label: S.current.edit_item_button_label,
                               ),
+                              const VerticalGap.xxxs(),
                             ],
                           ),
                         ),
@@ -202,6 +271,10 @@ class _EditItemPageState extends State<EditItemPage> {
 
   void _updatePosition(String newPosition) {
     position = newPosition;
+  }
+
+  void _updateSize(String newSize) {
+    size = newSize;
   }
 
   void removeFocus() {

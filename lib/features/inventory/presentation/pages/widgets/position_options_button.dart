@@ -34,7 +34,8 @@ class _PositionOptionsButtonState extends State<PositionOptionsButton> {
   List<String> get options {
     List<String> listOptions = [];
     listOptions.addAll(widget.options);
-    if (widget.currentPosition.isNotEmpty) {
+    if (widget.currentPosition.isNotEmpty &&
+        !listOptions.contains(widget.currentPosition)) {
       listOptions.add(widget.currentPosition);
     }
     return listOptions;

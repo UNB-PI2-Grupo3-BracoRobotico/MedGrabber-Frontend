@@ -26,9 +26,14 @@ class GrabberBottomNavigationBar extends StatelessWidget {
       child: BlocConsumer<NavigationCubit, NavigationState>(
         listener: (context, state) {
           switch (state.currentIndex) {
+            // case 0:
+            //   Navigator.of(context).pushReplacementNamed(
+            //     AppRoutes.dashboard,
+            //   );
+            //   break;
             case 0:
               Navigator.of(context).pushReplacementNamed(
-                AppRoutes.dashboard,
+                AppRoutes.settings,
               );
               break;
             case 1:
@@ -37,11 +42,6 @@ class GrabberBottomNavigationBar extends StatelessWidget {
               );
               break;
             case 2:
-              Navigator.of(context).pushReplacementNamed(
-                AppRoutes.settings,
-              );
-              break;
-            case 3:
               Navigator.of(context).pushReplacementNamed(
                 AppRoutes.help,
                 arguments: true,
@@ -73,12 +73,19 @@ class GrabberBottomNavigationBar extends StatelessWidget {
                 context.read<NavigationCubit>().changeIndex(index);
               },
               items: [
+                // BottomNavigationBarItem(
+                //   icon: DSIcon(
+                //     icon: Icons.dashboard_outlined,
+                //     color: state.currentIndex == 0 ? kBlack : kDarkGrey,
+                //   ),
+                //   label: S.current.bottom_navigation_dashboard_option,
+                // ),
                 BottomNavigationBarItem(
                   icon: DSIcon(
-                    icon: Icons.dashboard_outlined,
+                    icon: Icons.settings_outlined,
                     color: state.currentIndex == 0 ? kBlack : kDarkGrey,
                   ),
-                  label: S.current.bottom_navigation_dashboard_option,
+                  label: S.current.bottom_navigation_settings_option,
                 ),
                 BottomNavigationBarItem(
                   icon: DSIcon(
@@ -89,15 +96,8 @@ class GrabberBottomNavigationBar extends StatelessWidget {
                 ),
                 BottomNavigationBarItem(
                   icon: DSIcon(
-                    icon: Icons.settings_outlined,
-                    color: state.currentIndex == 2 ? kBlack : kDarkGrey,
-                  ),
-                  label: S.current.bottom_navigation_settings_option,
-                ),
-                BottomNavigationBarItem(
-                  icon: DSIcon(
                     icon: Icons.help_outline_rounded,
-                    color: state.currentIndex == 3 ? kBlack : kDarkGrey,
+                    color: state.currentIndex == 2 ? kBlack : kDarkGrey,
                   ),
                   label: S.current.bottom_navigation_help_option,
                 ),

@@ -1,6 +1,8 @@
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grabber/core/injection.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/features/settings/pages/name_option/widgets/name_error_footer.dart';
 import 'package:grabber/features/settings/widgets/base_option_page.dart';
 import 'package:grabber/features/shared/base_error_page.dart';
@@ -12,7 +14,11 @@ import '../../../../generated/l10n.dart';
 import 'blocs/name_page/name_page_cubit.dart';
 
 class NamePage extends StatefulWidget {
-  const NamePage({super.key});
+  const NamePage({
+    super.key,
+    required this.storeName,
+  });
+  final String storeName;
 
   @override
   State<NamePage> createState() => _NamePageState();
@@ -72,6 +78,7 @@ class _NamePageState extends State<NamePage> {
             content: Column(
               children: [
                 DSTextField(
+                  initialValue: widget.storeName,
                   controller: _controller,
                   errorText: errorText,
                   label: S.current.name_page_title,
@@ -105,7 +112,14 @@ class _NamePageState extends State<NamePage> {
   }
 
   void _updateStoreName(String newStoreName) {
-    context.read<NamePageCubit>().updateStoreName(newStoreName);
+    final userId = getIt.get<SessionManagerCubit>().state.maybeWhen(
+          orElse: () => '',
+          authenticated: (user) => user.id,
+        );
+    context.read<NamePageCubit>().updateStoreName(
+          newStoreName,
+          userId,
+        );
   }
 
   void _resetUpdateProcess() {

@@ -12,9 +12,15 @@ class MailPageCubit extends Cubit<MailPageState> {
   })  : _updateEmail = updateEmail,
         super(const MailPageState.initial());
 
-  Future<void> updateUserMail(String newEmail) async {
+  Future<void> updateUserMail(
+    String newEmail,
+    String userId,
+  ) async {
     emit(const MailPageState.loading());
-    final sucessOrFailureUpdate = await _updateEmail.call(newEmail);
+    final sucessOrFailureUpdate = await _updateEmail.call(
+      newEmail,
+      userId,
+    );
     emit(sucessOrFailureUpdate.fold(
       MailPageState.success,
       (_) => const MailPageState.error(),

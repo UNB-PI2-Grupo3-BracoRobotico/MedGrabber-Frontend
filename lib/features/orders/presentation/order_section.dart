@@ -58,6 +58,7 @@ class OrderSection extends StatelessWidget {
                         message: S.current
                             .home_order_section_loaded_orders_in_progress_title,
                         informationValue: ordersInProgress.length,
+                        onTap: () => context.read<GetOrdersCubit>().getOrders(),
                       ),
                     ),
                     const HorizontalGap.xxs(),
@@ -67,6 +68,7 @@ class OrderSection extends StatelessWidget {
                             .home_order_section_loaded_orders_finished_title,
                         informationValue:
                             orders.length - ordersInProgress.length,
+                        onTap: () => context.read<GetOrdersCubit>().getOrders(),
                       ),
                     ),
                   ],
@@ -87,12 +89,6 @@ class OrderSection extends StatelessWidget {
                     AppRoutes.simulateOrder,
                   ),
                   label: S.current.home_order_simulate_order_button_label,
-                ),
-                const VerticalGap.quarck(),
-                DSButton.primary(
-                  //TODO(Mauricio): Implement method
-                  onPressed: () {},
-                  label: S.current.home_order_section_loaded_button_label,
                 ),
                 const VerticalGap.xxxs(),
               ],

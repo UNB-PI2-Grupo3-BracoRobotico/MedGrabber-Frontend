@@ -20,16 +20,16 @@ class SessionManagerCubit extends Cubit<SessionManagerState> {
         _getSignedUser = getSignedUser,
         super(const SessionManagerState.initial());
 
-  void checkAuthenticationStatus() {
+  Future<void> checkAuthenticationStatus() async {
     emit(const SessionManagerState.loading());
 
     Future.delayed(const Duration(milliseconds: 300));
 
-    final userInformationOrFailure = _getSignedUser.call();
+    final userInformationOrFailure = await _getSignedUser();
 
     emit(
       userInformationOrFailure.fold(
-        () => const SessionManagerState.unauthenticated(),
+        (_) => const SessionManagerState.unauthenticated(),
         SessionManagerState.authenticated,
       ),
     );

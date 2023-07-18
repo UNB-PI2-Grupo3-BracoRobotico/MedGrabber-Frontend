@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/generated/l10n.dart';
 
 import '../../../core/injection.dart';
@@ -39,7 +40,9 @@ class _SimulateOrderWithProductsState extends State<SimulateOrderWithProducts> {
   void initState() {
     super.initState();
     availableProducts = List.from(widget.productsAvailable);
-    _createOrderCubit = CreateOrderCubit();
+    _createOrderCubit = CreateOrderCubit(
+      createOrderUsecase: getIt.get(),
+    );
   }
 
   @override
@@ -80,7 +83,13 @@ class _SimulateOrderWithProductsState extends State<SimulateOrderWithProducts> {
             footer: CreateOrderErrorFooter(
               primaryLabel: S.current.try_again,
               secondaryLabel: S.current.got_it,
-              primaryOnTap: () => _createOrderCubit.createOrder(products),
+              primaryOnTap: () => _createOrderCubit.createOrder(
+                products,
+                getIt.get<SessionManagerCubit>().state.maybeWhen(
+                      authenticated: (user) => user.id,
+                      orElse: () => '',
+                    ),
+              ),
               secondaryOnTap: Navigator.of(context).pop,
             ),
           ),
@@ -166,6 +175,10 @@ class _SimulateOrderWithProductsState extends State<SimulateOrderWithProducts> {
                     DSButton.primary(
                       onPressed: () => _createOrderCubit.createOrder(
                         selectedProducts,
+                        getIt.get<SessionManagerCubit>().state.maybeWhen(
+                              authenticated: (user) => user.id,
+                              orElse: () => '',
+                            ),
                       ),
                       label: S.current.simulate_order_finish_order_button_title,
                       enabled: selectedProducts.isNotEmpty,
@@ -201,8 +214,10 @@ class _SimulateOrderWithProductsState extends State<SimulateOrderWithProducts> {
     }
     if (productOnCart == null) {
       productOnCart = DummyProduct(
+        id: productSelected.id,
         name: productSelected.name,
         amount: 1,
+        price: productSelected.price,
       );
     } else {
       selectedProducts.remove(productOnCart);
