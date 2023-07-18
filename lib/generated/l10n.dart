@@ -1959,6 +1959,16 @@ class S {
       args: [],
     );
   }
+
+  /// `IP Address`
+  String get ip_connection_label {
+    return Intl.message(
+      'IP Address',
+      name: 'ip_connection_label',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

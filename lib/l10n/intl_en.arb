@@ -221,5 +221,7 @@
     "simulate_order_finish_order_button_title": "Finish order",
     "simulate_order_create_order_loading_title": "Creating order...",
     "simulate_order_create_order_success_title": "Order created!",
-    "simulate_order_create_order_error_description": "Something went wrong. We couldn't create your order, try again or contact our support team."
+    "simulate_order_create_order_error_description": "Something went wrong. We couldn't create your order, try again or contact our support team.",
+
+    "ip_connection_label": "IP Address"
 }

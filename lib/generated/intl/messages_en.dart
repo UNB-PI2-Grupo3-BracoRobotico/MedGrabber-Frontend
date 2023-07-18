@@ -192,6 +192,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "It seems like you haven\'y registered any item yet. Register now and start managing your business the best way possible!"),
         "inventory_page_title":
             MessageLookupByLibrary.simpleMessage("Inventory"),
+        "ip_connection_label":
+            MessageLookupByLibrary.simpleMessage("IP Address"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_pattern_error_description":
             MessageLookupByLibrary.simpleMessage("Incorrect e-mail format!"),

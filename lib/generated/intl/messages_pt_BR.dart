@@ -190,6 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Parece que você ainda não cadastrou nenhum item. Cadastre um item e comece a gerenciar seu negócio da melhor forma possível!"),
         "inventory_page_title": MessageLookupByLibrary.simpleMessage("Estoque"),
+        "ip_connection_label":
+            MessageLookupByLibrary.simpleMessage("Endereço de IP"),
         "login_button_label": MessageLookupByLibrary.simpleMessage("Login"),
         "login_email_pattern_error_description":
             MessageLookupByLibrary.simpleMessage(
