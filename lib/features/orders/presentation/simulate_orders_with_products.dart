@@ -2,6 +2,7 @@ import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grabber/features/inventory/presentation/blocs/inventory/has_item_cubit.dart';
 import 'package:grabber/features/on_boarding/presentation/blocs/session_manager/session_manager_cubit.dart';
 import 'package:grabber/generated/l10n.dart';
 
@@ -65,6 +66,7 @@ class _SimulateOrderWithProductsState extends State<SimulateOrderWithProducts> {
             ),
           );
           navigator.pop();
+          getIt.get<HasItemCubit>().hasItemRegistered();
         },
       ),
       builder: (context, state) {
